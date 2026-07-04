@@ -11,19 +11,21 @@ a one-time confirmation and are flagged; they are not guessed (handoff Rule 2).
   Netherlands) for the Ministry of Economic Affairs. Administrative borehole
   data is public immediately; well logs (LIS/LAS/DLIS), reports, cuttings and
   cores are released only after a statutory five-year confidentiality period.
-- Borehole index (UI): the Data center overview,
-  https://www.nlog.nl/datacenter/brh-overview , and the interactive map,
-  https://www.nlog.nl/nlog-mapviewer/ .
-- Backing GIS server (the clean, queryable borehole index, no HTML scraping):
-  an ArcGIS server under https://www.gdngeoservices.nl/arcgis/rest/services/nlog .
-  This is the preferred index source: an ArcGIS feature layer returns every
-  borehole with attributes as JSON, paginated, which becomes the ingester's
-  well list.
+- Borehole index (CONFIRMED, live data checked 4 July 2026): NLOG's official
+  GeoServer WFS. One GetFeature call returns every borehole as GeoJSON.
+    base   : https://www.gdngeoservices.nl/geoserver/nlog/ows
+    layer  : nlog:gdw_ng_wll_all_utm   ("All boreholes")
+    format : outputFormat=json (GeoJSON), WFS 1.0.0
+  Per-borehole attributes include BOREHOLE_CODE, BOREHOLE_NAME, UWI,
+  NITG_NUMBER, ON_OFFSHORE_CODE, PUBLIC_AS_OF (the confidentiality release
+  date), coordinates, and URL (the mapviewer detail link ending in a numeric
+  borehole id, e.g. .../nlog-mapviewer/brh/872287025). `nlog.build_index()`
+  turns this into a well-list CSV and is runnable now. The same page also
+  offers direct shapefile/KML/GeoJSON/GML exports of this layer.
 - Log file identity: NLOG log files are named `NLOG_LIS_LAS_{fileid}_...`
   (example: `NLOG_LIS_LAS_7857_FMS_DSI_MAIN_LOG.DLIS`) and NLOG serves
-  individual assets by numeric id (example: the Shell legend at
-  https://www.nlog.nl/media/3367 ). So a per-borehole download resolves to a
-  file-id endpoint, not a per-well guessable path.
+  individual assets by numeric id. The mapviewer borehole id (above) is the key
+  the file-list API uses.
 - Whole-dataset spreadsheet: exists only for non-log datatypes (deviation
   surveys, gas composition, porosity/permeability, Rock-Eval, stratigraphy,
   vitrinite) at
@@ -34,34 +36,23 @@ a one-time confirmation and are flagged; they are not guessed (handoff Rule 2).
   the posture stays pipeline + weights + attribution, no raw mirror. Credit:
   "NLOG / TNO Geological Survey of the Netherlands, Ministry of Economic Affairs."
 
-## Two URLs to confirm (one-time, not guessed)
+## One hop still to confirm (not guessed)
 
-1. The exact ArcGIS borehole layer query URL under the `nlog` folder above (the
-   FeatureServer or MapServer layer whose `.../query?where=1=1&outFields=*&f=json`
-   returns the borehole list). Browsing the folder root in a normal browser
-   lists the services and their layers.
-2. The per-file LAS download URL that the Data center returns in a borehole's
-   file list (the file-id endpoint the "download" button points at).
+The per-borehole LAS file-list API: given a mapviewer borehole id (from the WFS
+`URL` field), the JSON call that lists that borehole's files, and the
+file-download URL it returns. This is the only piece the index does not already
+provide, and it is deliberately left unpinned rather than guessed.
 
 ### Two-minute capture
 
-1. Open https://www.nlog.nl/datacenter/brh-overview , pick any released
-   borehole, and open its Logs (LIS/LAS) tab.
+1. Open a released borehole in the map viewer, e.g. one of the ids from the
+   index (https://www.nlog.nl/nlog-mapviewer/brh/106507075), and open its Logs
+   tab.
 2. Open the browser DevTools Network panel (F12), then click a LAS download.
-3. Copy two request URLs from the Network list: the JSON call that returns the
-   file list for that borehole, and the actual file-download URL. Paste both
-   back here.
+3. Copy two request URLs: the JSON call that returns the file list for that
+   borehole, and the actual file-download URL. Paste both back here.
 
-With those two URLs, `nlog.py` gets a small index-builder (query the ArcGIS
-layer for the well list, resolve each borehole's LAS file-id, write the
-`well_id,las_url` index) and the existing resumable fetch loop runs the bulk
-job. Expected wall-clock at one request per two seconds is hours; it runs as a
-resumable background job.
-
-## Fallback if the capture is blocked
-
-If the office network blocks DevTools capture, the same two URLs can be read by
-browsing the ArcGIS services directory
-(https://www.gdngeoservices.nl/arcgis/rest/services/nlog) in a browser to get
-the borehole layer, and by inspecting one borehole's file list in the Data
-center. Either path confirms the endpoints without guessing.
+With those two URLs, `nlog.resolve_las_urls()` is filled in (query the file list
+per borehole id, filter to LAS, write a well_id,las_url index) and
+`nlog.ingest_from_index()` runs the resumable bulk fetch. Expected wall-clock at
+one request per two seconds is hours; it runs as a resumable background job.

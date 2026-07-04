@@ -54,12 +54,12 @@ escalation triggers (handoff Section 12.2), not to be guessed.
   Netherlands, on behalf of the Ministry of Economic Affairs."
 - Terms pages: https://www.nlog.nl/en/data ;
   https://www.nlog.nl/en/boreholes ; https://www.nlog.nl/en/data-supply
-- Access map: see docs/NLOG_ACCESS.md. Index sources are pinned (Data center
-  overview, interactive map, and the backing ArcGIS server at
-  gdngeoservices.nl/arcgis/rest/services/nlog). Two URLs remain to confirm
-  once (the exact ArcGIS borehole layer query URL and the per-file LAS
-  download URL); the ingester is index-driven and takes a confirmed index, so
-  no endpoint is guessed.
+- Access map: see docs/NLOG_ACCESS.md. The borehole index is CONFIRMED as
+  NLOG's official GeoServer WFS (base gdngeoservices.nl/geoserver/nlog/ows,
+  layer nlog:gdw_ng_wll_all_utm, GeoJSON), verified against live data;
+  build_index() consumes it. One hop remains to confirm (the per-borehole LAS
+  file-list API keyed by the mapviewer borehole id); the ingester is
+  index-driven, so no endpoint is guessed.
 
 ## KGS (Kansas Geological Survey, kgs.ku.edu)
 
