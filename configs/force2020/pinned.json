@@ -1,0 +1,37 @@
+{
+  "penalty_matrix.npy": {
+    "sha256": "c312481af94d3557616b7ed79b5d1a12afee380fd471188785ab31874f159d43",
+    "bytes": 1280,
+    "shape": [
+      12,
+      12
+    ],
+    "url": "https://raw.githubusercontent.com/bolgebrygg/Force-2020-Machine-Learning-competition/master/lithology_competition/data/penalty_matrix.npy"
+  },
+  "starter_notebook.ipynb": {
+    "sha256": "89c3bafc720fd83d39ea4510e04d82fd23e0511f8ba65053f5475b1b1514d9fa",
+    "bytes": 367026,
+    "url": "https://raw.githubusercontent.com/bolgebrygg/Force-2020-Machine-Learning-competition/master/lithology_competition/data/starter_notebook.ipynb"
+  },
+  "counts_verified": {
+    "train_wells": 28,
+    "train_rows": 342177,
+    "open_test_wells": 10,
+    "open_test_well_names": [
+      "15/9-14",
+      "25/10-10",
+      "25/11-24",
+      "25/5-3",
+      "29/3-1",
+      "34/10-16 R",
+      "34/3-3 A",
+      "34/6-1 S",
+      "35/6-2 S",
+      "35/9-8"
+    ],
+    "source_repo": "bolgebrygg/Force-2020-Machine-Learning-competition@master",
+    "train_note": "VERIFIED count is from lithology_competition/code/GIR/train.csv (a team subset = 28 wells, 342177 rows), NOT the official 98-well training set. The canonical 98-well train.csv is hosted on Zenodo DOI 10.5281/zenodo.4351156 and the xeek/thinkonward challenge page, which are not reachable from this build container. The 98 count must be verified by the ingester against the Zenodo release.",
+    "open_test_note": "VERIFIED: 10 open leaderboard wells, matches handoff (98+10)."
+  },
+  "delimiter": "semicolon"
+}

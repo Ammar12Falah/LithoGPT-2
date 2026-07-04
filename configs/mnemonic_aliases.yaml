@@ -1,0 +1,132 @@
+# LithoGPT-2 mnemonic harmonization and QC config
+# version 0.1.0, seeded 2026-07-04
+# Rule: this table is extended from data, never guessed. Any mnemonic the
+# ingester cannot map is appended to unmapped_mnemonics.csv with source,
+# well id, raw unit string, and occurrence count, then triaged weekly.
+# Unit conversions are applied before range gates. Range gates set values
+# to missing, never clip.
+
+version: 0.1.0
+
+depth:
+  canonical: DEPT
+  aliases: [DEPT, DEPTH, MD, DMD, TDEP]
+  unit: m
+  convert:
+    ft: 0.3048
+    f: 0.3048
+
+grid:
+  step_m: 0.1524   # half-foot resample grid
+
+null_values: [-999.25, -999.0, -9999.0, -9999.25, -999.2500, -32767.0, 999.25]
+
+min_usable:
+  interval_m: 100
+  min_curves: 3
+
+curves:
+  GR:
+    aliases: [GR, GRC, GRD, SGR, CGR, GAM, GRGC, GRS, GR_1, GRTO]
+    unit: gAPI
+    valid_range: [0.0, 400.0]
+    transform: none
+    trend_curve: false
+  RHOB:
+    aliases: [RHOB, DEN, DENS, ZDEN, RHOZ, HRHO, DENB, RHO8]
+    unit: g/cc
+    convert:
+      kg/m3: 0.001
+    valid_range: [1.0, 3.2]
+    transform: none
+    trend_curve: true
+    washout_sensitive: true
+  NPHI:
+    aliases: [NPHI, NEU, TNPH, CNC, NPOR, HNPO, NPHL, CNPOR]
+    unit: v/v
+    convert:
+      pu: 0.01
+      percent: 0.01
+    valid_range: [-0.15, 1.0]
+    transform: none
+    trend_curve: true
+    washout_sensitive: true
+  DTC:
+    aliases: [DT, DTC, DTCO, AC, DT4P, DTL, DTLN, SONIC]
+    unit: us/ft
+    convert:
+      us/m: 0.3048
+    valid_range: [40.0, 240.0]
+    transform: none
+    trend_curve: true
+  PEF:
+    aliases: [PE, PEF, PEFZ, PDPE, PEDN]
+    unit: b/e
+    valid_range: [0.5, 20.0]
+    transform: none
+    trend_curve: false
+    washout_sensitive: true
+  SP:
+    aliases: [SP, SPR, SPC]
+    unit: mV
+    valid_range: [-250.0, 250.0]
+    transform: none
+    trend_curve: false
+  CALI:
+    aliases: [CALI, CAL, HCAL, DCAL, CALS, CALX]
+    unit: in
+    convert:
+      mm: 0.0393701
+      cm: 0.393701
+    valid_range: [4.0, 30.0]
+    transform: none
+    trend_curve: false
+  RDEP:
+    aliases: [RDEP, RT, ILD, LLD, RILD, AT90, RLA5, RESD, RD, R85O]
+    unit: ohm.m
+    valid_range: [0.01, 100000.0]
+    transform: log10
+    trend_curve: false
+  RMED:
+    aliases: [RMED, ILM, RILM, AT30, RLA3, RESM, RM]
+    unit: ohm.m
+    valid_range: [0.01, 100000.0]
+    transform: log10
+    trend_curve: false
+  RSHA:
+    aliases: [RSHA, LLS, SFLU, AT10, RLA1, RESS, MSFL, RXOZ, SFL]
+    unit: ohm.m
+    valid_range: [0.01, 100000.0]
+    transform: log10
+    trend_curve: false
+  DTS:
+    aliases: [DTS, DTSM, DT4S, DTSH]
+    unit: us/ft
+    convert:
+      us/m: 0.3048
+    valid_range: [60.0, 600.0]
+    transform: none
+    trend_curve: true
+    optional: true
+
+qc:
+  hampel:
+    window: 11
+    n_sigmas: 4
+    log_modified_fraction: true
+  washout:
+    cali_minus_bitsize_in: 2.0
+    flag_curves: [RHOB, NPHI, PEF]
+  dedup:
+    hash_fields: [location, depth_range, curve_fingerprint]
+
+# Physics prior applicability gate (advisor correction, 2026-07-04):
+# the Athy-form compaction trend is fitted per basin group and applied
+# only where valid. Carbonate-dominated intervals are flagged via PEF
+# where available (PEF above threshold) or an RHOB-NPHI separation
+# heuristic otherwise; flagged intervals bypass the trend and are marked
+# in a prior_confidence channel fed to the model.
+prior_gate:
+  pef_carbonate_threshold: 4.0
+  residual_variance_gate_z: 3.0
+  emit_confidence_channel: true
