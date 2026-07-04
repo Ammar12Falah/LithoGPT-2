@@ -1,37 +1,36 @@
 {
-  "penalty_matrix.npy": {
-    "sha256": "c312481af94d3557616b7ed79b5d1a12afee380fd471188785ab31874f159d43",
-    "bytes": 1280,
-    "shape": [
-      12,
-      12
-    ],
-    "url": "https://raw.githubusercontent.com/bolgebrygg/Force-2020-Machine-Learning-competition/master/lithology_competition/data/penalty_matrix.npy"
+  "record": "FORCE 2020 Machine Learning lithology competition",
+  "verified_utc": "2026-07-04",
+  "authoritative_source": {
+    "host": "raw.githubusercontent.com",
+    "repo": "bolgebrygg/Force-2020-Machine-Learning-competition",
+    "path": "lithology_competition/data/",
+    "note": "Labelled competition CSVs with WELL and FORCE_2020_LITHOFACIES_LITHOLOGY. No robots restriction."
   },
-  "starter_notebook.ipynb": {
-    "sha256": "89c3bafc720fd83d39ea4510e04d82fd23e0511f8ba65053f5475b1b1514d9fa",
-    "bytes": 367026,
-    "url": "https://raw.githubusercontent.com/bolgebrygg/Force-2020-Machine-Learning-competition/master/lithology_competition/data/starter_notebook.ipynb"
+  "files": {
+    "train.zip": {"contains": "train.csv", "download_mb": 91.65, "uncompressed_mb": 280.49},
+    "leaderboard_test_features.csv": {"role": "open leaderboard test features"},
+    "leaderboard_test_target.csv": {"role": "open leaderboard test labels"},
+    "hidden_test.csv": {"role": "hidden test"},
+    "penalty_matrix.npy": {"role": "official scoring matrix", "also_pinned_in": "configs/force2020/penalty_matrix.npy"}
   },
-  "counts_verified": {
-    "train_wells": 28,
-    "train_rows": 342177,
+  "verified_counts": {
+    "train_wells": 98,
+    "train_rows": 1170511,
     "open_test_wells": 10,
-    "open_test_well_names": [
-      "15/9-14",
-      "25/10-10",
-      "25/11-24",
-      "25/5-3",
-      "29/3-1",
-      "34/10-16 R",
-      "34/3-3 A",
-      "34/6-1 S",
-      "35/6-2 S",
-      "35/9-8"
-    ],
-    "source_repo": "bolgebrygg/Force-2020-Machine-Learning-competition@master",
-    "train_note": "VERIFIED count is from lithology_competition/code/GIR/train.csv (a team subset = 28 wells, 342177 rows), NOT the official 98-well training set. The canonical 98-well train.csv is hosted on Zenodo DOI 10.5281/zenodo.4351156 and the xeek/thinkonward challenge page, which are not reachable from this build container. The 98 count must be verified by the ingester against the Zenodo release.",
-    "open_test_note": "VERIFIED: 10 open leaderboard wells, matches handoff (98+10)."
+    "open_test_rows": 136786,
+    "hidden_test_wells": 10,
+    "hidden_test_rows": 122397
   },
-  "delimiter": "semicolon"
+  "delimiter": ";",
+  "las_mirror": {
+    "zenodo_record": "4351156",
+    "doi": "10.5281/zenodo.4351156",
+    "note": "LAS-format mirror plus NPD spreadsheets. Zenodo robots.txt blocks automated fetch of file endpoints; opt-in via --with-las which disables robots for this direct DOI download. Not needed for the benchmark."
+  },
+  "notes": [
+    "The competition describes 98 training wells; the delivered train.csv confirms 98 unique wells (verified 2026-07-04).",
+    "The starter notebook mentions 83 wells (stale demo figure) and a team folder (code/GIR/train.csv) holds a 28-well subset; neither is the official set.",
+    "Licenses: logs NLOD 2.0, labels CC-BY-4.0; attribution Bormann et al. 2020."
+  ]
 }

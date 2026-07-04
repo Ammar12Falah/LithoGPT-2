@@ -20,18 +20,25 @@ escalation triggers (handoff Section 12.2), not to be guessed.
   are NLOD 2.0 and labels are CC-BY-4.0; use the wording "Lithofacies data was
   provided by the FORCE Machine Learning competition with well logs and seismic
   2020."
-- Canonical source: Zenodo DOI 10.5281/zenodo.4351156. Scoring artifacts
-  (penalty matrix, starter notebook) pinned in `configs/force2020/` with sha256
-  in `configs/force2020/pinned.json`.
-- Terms pages: https://zenodo.org/records/4351156 ;
-  https://github.com/bolgebrygg/Force-2020-Machine-Learning-competition ;
+- Authoritative source for the labelled competition CSVs: the FORCE GitHub repo
+  `bolgebrygg/Force-2020-Machine-Learning-competition` under
+  `lithology_competition/data/` (raw.githubusercontent.com, no robots
+  restriction). Files: `train.zip` (contains train.csv), plus
+  `leaderboard_test_features.csv`, `leaderboard_test_target.csv`,
+  `hidden_test.csv`, and `penalty_matrix.npy`. A LAS-format mirror plus NPD
+  spreadsheets is on Zenodo DOI 10.5281/zenodo.4351156, but Zenodo's robots.txt
+  blocks automated fetch of the file endpoints, so the LAS path is opt-in.
+  Scoring artifacts are pinned in `configs/force2020/` with sha256 in
+  `configs/force2020/pinned.json`.
+- Terms pages: https://github.com/bolgebrygg/Force-2020-Machine-Learning-competition ;
+  https://zenodo.org/records/4351156 ;
   https://creativecommons.org/licenses/by/4.0/ ;
   https://data.norge.no/nlod/en/2.0
-- Verified counts (4 July 2026): open leaderboard test = 10 wells (matches
-  handoff). The 98-well training count is NOT yet verified against the Zenodo
-  release: the copy reachable in the GitHub repo
-  (`lithology_competition/code/GIR/train.csv`) is a 28-well team subset. The
-  ingester must verify 98 against the Zenodo download. See pending inputs.
+- Verified counts (4 July 2026, counted from the real files): train.csv = 98
+  unique wells (1,170,511 rows), open leaderboard test = 10 wells (136,786
+  rows), hidden test = 10 wells. This matches the handoff. The earlier 28-well
+  copy (`code/GIR/train.csv`) is a team subset and the starter notebook's
+  83-well figure is stale; neither is the official set.
 
 ## NLOG (Netherlands)
 
