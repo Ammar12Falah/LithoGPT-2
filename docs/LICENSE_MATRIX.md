@@ -54,9 +54,12 @@ escalation triggers (handoff Section 12.2), not to be guessed.
   Netherlands, on behalf of the Ministry of Economic Affairs."
 - Terms pages: https://www.nlog.nl/en/data ;
   https://www.nlog.nl/en/boreholes ; https://www.nlog.nl/en/data-supply
-- Bulk endpoint: PENDING INPUT. The exact Datacenter bulk index / per-borehole
-  LAS URL pattern is not pinned; the ingester is index-driven and must be
-  supplied a confirmed index (do not guess the endpoint).
+- Access map: see docs/NLOG_ACCESS.md. Index sources are pinned (Data center
+  overview, interactive map, and the backing ArcGIS server at
+  gdngeoservices.nl/arcgis/rest/services/nlog). Two URLs remain to confirm
+  once (the exact ArcGIS borehole layer query URL and the per-file LAS
+  download URL); the ingester is index-driven and takes a confirmed index, so
+  no endpoint is guessed.
 
 ## KGS (Kansas Geological Survey, kgs.ku.edu)
 

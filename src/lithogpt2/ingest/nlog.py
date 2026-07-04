@@ -6,14 +6,22 @@ portal run by TNO on behalf of the Ministry of Economic Affairs. Well logs
 administrative data is public immediately. The portal is bulk-friendly and a
 complete dataset can be downloaded for some datatypes via the Datacenter.
 
-Design: this ingester is INDEX-DRIVEN. Step 1 (obtain a borehole index with
-per-borehole LAS download URLs) is a documented prerequisite because the exact
-Datacenter bulk-download endpoint is not pinned here. We do not guess a URL
-(handoff Rule 2 / escalation trigger "source blocking"): the index URL/format
-is a PENDING INPUT to confirm from the NLOG Datacenter before the bulk run.
+Verified index sources (see docs/NLOG_ACCESS.md for the full map):
+  - Borehole overview UI: https://www.nlog.nl/datacenter/brh-overview
+  - Interactive map: https://www.nlog.nl/nlog-mapviewer/
+  - Backing ArcGIS server (queryable borehole index, no scraping):
+    https://www.gdngeoservices.nl/arcgis/rest/services/nlog
+  - Log files (LIS/LAS/DLIS) are per-borehole, released after a five-year
+    confidentiality period, named NLOG_LIS_LAS_{fileid}_... and served by
+    numeric asset id (cf. https://www.nlog.nl/media/{id}).
 
-Once an index is supplied (CSV with columns: well_id, las_url), the fetch loop
-is fully implemented: throttled, resumable, checksummed via PoliteFetcher.
+Design: this ingester is INDEX-DRIVEN. Two concrete URLs remain to be CONFIRMED
+(not guessed, per handoff Rule 2): (a) the exact ArcGIS borehole layer query URL
+under the nlog folder above, and (b) the per-file LAS download URL returned by
+the Datacenter file-list call. docs/NLOG_ACCESS.md gives a two-minute browser
+capture to confirm both. Once an index is supplied (CSV with columns:
+well_id, las_url), the fetch loop below is fully implemented: throttled,
+resumable, checksummed via PoliteFetcher.
 
 Expected wall-clock for a bulk NLOG run at one request / 2 s is HOURS. State the
 estimate before launch and run it as a resumable background job.
@@ -29,10 +37,16 @@ from ._http import FetchLog, PoliteFetcher
 
 SOURCE = "nlog"
 
-# PENDING INPUT: confirm the NLOG Datacenter bulk index endpoint and per-borehole
-# LAS URL pattern before the bulk run. Do not guess. See docs/LICENSE_MATRIX.md.
-INDEX_URL_UNVERIFIED = None
+# Verified index sources (documented facts, not guessed download endpoints).
+DATACENTER_OVERVIEW = "https://www.nlog.nl/datacenter/brh-overview"
+MAPVIEWER = "https://www.nlog.nl/nlog-mapviewer/"
+ARCGIS_NLOG_FOLDER = "https://www.gdngeoservices.nl/arcgis/rest/services/nlog"
 TERMS_URL = "https://www.nlog.nl/en/data"
+DISCLAIMER_URL = "https://www.nlog.nl/en/disclaimer"
+# TO CONFIRM (see docs/NLOG_ACCESS.md): exact ArcGIS borehole layer query URL and
+# the per-file LAS download URL. Do not guess these.
+ARCGIS_BOREHOLE_LAYER_TO_CONFIRM = None
+LAS_DOWNLOAD_URL_PATTERN_TO_CONFIRM = None
 
 
 def ingest_from_index(index_csv: str, raw_root: str = "data/raw") -> FetchLog:
