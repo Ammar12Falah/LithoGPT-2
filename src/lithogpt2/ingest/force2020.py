@@ -32,6 +32,7 @@ mismatch it stops and reports rather than proceeding (handoff Rule 1).
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import urllib.request
 import zipfile
@@ -159,6 +160,90 @@ def ingest(
     if checks:
         print("[force2020] counts verified against EXPECTED. OK.")
     return log
+
+
+# FORCE column units (FORCE 2020 conventions) for the RawWell adapter. Columns
+# not listed and not in FORCE_NONCURVE are still passed with unit "" so the
+# harmonizer logs them as unmapped for triage rather than dropping silently.
+FORCE_CURVE_UNITS = {
+    "CALI": "in", "BS": "in", "DCAL": "in",
+    "RSHA": "ohm.m", "RMED": "ohm.m", "RDEP": "ohm.m", "RMIC": "ohm.m", "RXO": "ohm.m",
+    "RHOB": "g/cm3", "DRHO": "g/cm3",
+    "GR": "gAPI", "SGR": "gAPI",
+    "NPHI": "v/v", "PEF": "b/e",
+    "DTC": "us/ft", "DTS": "us/ft",
+    "SP": "mV",
+}
+FORCE_NONCURVE = frozenset(
+    {
+        "WELL", "DEPTH_MD", "X_LOC", "Y_LOC", "Z_LOC", "GROUP", "FORMATION",
+        "FORCE_2020_LITHOFACIES_LITHOLOGY", "FORCE_2020_LITHOFACIES_CONFIDENCE",
+    }
+)
+
+
+def iter_force_wells(train_csv: str, max_wells: int | None = None):
+    """Yield (well_id, RawWell) per WELL from a FORCE CSV (semicolon-delimited).
+
+    DEPTH_MD is the depth index in metres. Each non-administrative column is a
+    raw curve keyed by its FORCE name so harmonize.py owns the alias mapping.
+    Wells are contiguous in the FORCE files, so this streams and can stop early.
+    """
+    import numpy as np
+
+    from ..io.las import RawCurve, RawWell
+
+    def _f(s: str) -> float:
+        s = s.strip()
+        if not s:
+            return float("nan")
+        try:
+            return float(s)
+        except ValueError:
+            return float("nan")
+
+    with open(train_csv, encoding="utf-8", newline="") as fh:
+        reader = csv.reader(fh, delimiter=";")
+        header = next(reader)
+        idx = {name: i for i, name in enumerate(header)}
+        if "WELL" not in idx or "DEPTH_MD" not in idx:
+            raise ValueError("FORCE CSV missing WELL or DEPTH_MD column")
+        widx, didx = idx["WELL"], idx["DEPTH_MD"]
+        curve_cols = [c for c in header if c not in FORCE_NONCURVE]
+
+        def build(well_id: str, rows: list[list[str]]) -> RawWell:
+            depth = np.array([_f(r[didx]) for r in rows], dtype=float)
+            curves: dict[str, RawCurve] = {}
+            for c in curve_cols:
+                ci = idx[c]
+                data = np.array([_f(r[ci]) if ci < len(r) else float("nan") for r in rows])
+                if np.all(np.isnan(data)):
+                    continue  # curve absent for this well
+                curves[c] = RawCurve(mnemonic=c, unit=FORCE_CURVE_UNITS.get(c, ""), data=data)
+            return RawWell(
+                well_id=well_id, source=SOURCE, depth=depth, depth_unit="m",
+                curves=curves, path=None, header={},
+            )
+
+        cur: str | None = None
+        rows: list[list[str]] = []
+        count = 0
+        for row in reader:
+            if not row:
+                continue
+            w = row[widx]
+            if cur is None:
+                cur = w
+            if w != cur:
+                yield cur, build(cur, rows)
+                count += 1
+                rows = []
+                cur = w
+                if max_wells is not None and count >= max_wells:
+                    return
+            rows.append(row)
+        if rows and (max_wells is None or count < max_wells):
+            yield cur, build(cur, rows)
 
 
 def main() -> None:
