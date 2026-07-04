@@ -34,17 +34,20 @@ escalation triggers (handoff Section 12.2), not to be guessed.
   https://zenodo.org/records/4351156 ;
   https://creativecommons.org/licenses/by/4.0/ ;
   https://data.norge.no/nlod/en/2.0
-- Verified counts (4 July 2026, counted from the real files): train.csv = 98
-  unique wells (1,170,511 rows), open leaderboard test = 10 wells (136,786
-  rows), hidden test = 10 wells. This matches the handoff. The earlier 28-well
-  copy (`code/GIR/train.csv`) is a team subset and the starter notebook's
-  83-well figure is stale; neither is the official set.
+- Verified counts (4 July 2026, counted from the real files): the public FORCE
+  2020 release is 118 wells total = 98 training + 10 open leaderboard test + 10
+  blind final test. train.csv = 98 unique wells (1,170,511 rows), open
+  leaderboard test = 10 wells (136,786 rows), blind final (hidden) test = 10
+  wells. The earlier 28-well copy (`code/GIR/train.csv`) is a team subset and
+  the starter notebook's 83-well figure is stale; neither is the official set.
 
 ## NLOG (Netherlands)
 
 - Redistribute raw: UNCLEAR. NLOG data is public (managed by TNO, Geological
   Survey of the Netherlands, on behalf of the Ministry of Economic Affairs);
-  well logs become public after a statutory five-year confidentiality period.
+  well logs become public after a statutory five-year confidentiality period
+  (source: https://www.nlog.nl/en/boreholes , which states log measurements and
+  reports are available after the five-year confidentiality period expires).
   No explicit named open-data license (e.g. CC-BY) was found on the terms
   pages, so raw redistribution is UNCLEAR. ESCALATE before mirroring raw.
 - Redistribute derived: UNCLEAR (follows from the above).

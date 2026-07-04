@@ -42,6 +42,25 @@ class CurveSpec:
 
 
 @dataclass(frozen=True)
+class AuxCurveSpec:
+    """Specification for an auxiliary QC-only curve (e.g. BS bit size).
+
+    Auxiliary curves are harmonized and kept for QC (washout gate) but are
+    never modeling targets and never count toward the canonical curve set or
+    the minimum-usable-interval check.
+    """
+
+    canonical: str
+    aliases: tuple[str, ...]
+    unit: str
+    valid_range: tuple[float, float]
+    transform: str
+    convert: dict[str, float] = field(default_factory=dict)
+    role: str = "qc_only"
+    used_by: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
 class PriorGate:
     pef_carbonate_threshold: float
     residual_variance_gate_z: float
@@ -55,6 +74,7 @@ class QCParams:
     hampel_log_modified_fraction: bool
     washout_cali_minus_bitsize_in: float
     washout_flag_curves: tuple[str, ...]
+    washout_require_bitsize: bool
     dedup_hash_fields: tuple[str, ...]
 
 
@@ -107,6 +127,32 @@ class HarmonizationConfig:
                 self._alias_index[key] = canonical
         self._depth_alias_set = {a.strip().upper() for a in self.depth_aliases}
 
+        # Auxiliary QC-only curves (e.g. BS). Kept separate from canonical
+        # curves: harmonized for QC, never modeling targets, never counted in
+        # the canonical set or the min-usable check.
+        self._aux_curves: dict[str, AuxCurveSpec] = {}
+        for canonical, spec in (raw.get("auxiliary_curves") or {}).items():
+            self._aux_curves[canonical] = AuxCurveSpec(
+                canonical=canonical,
+                aliases=tuple(spec["aliases"]),
+                unit=spec["unit"],
+                valid_range=(float(spec["valid_range"][0]), float(spec["valid_range"][1])),
+                transform=spec.get("transform", "none"),
+                convert={k: float(v) for k, v in spec.get("convert", {}).items()},
+                role=spec.get("role", "qc_only"),
+                used_by=tuple(spec.get("used_by", ())),
+            )
+        self._aux_alias_index: dict[str, str] = {}
+        for canonical, spec in self._aux_curves.items():
+            for alias in spec.aliases:
+                key = alias.strip().upper()
+                if key in self._alias_index:
+                    raise ValueError(
+                        f"Auxiliary alias {alias!r} collides with canonical "
+                        f"curve {self._alias_index[key]!r}"
+                    )
+                self._aux_alias_index[key] = canonical
+
         qc = raw["qc"]
         self.qc = QCParams(
             hampel_window=int(qc["hampel"]["window"]),
@@ -114,6 +160,7 @@ class HarmonizationConfig:
             hampel_log_modified_fraction=bool(qc["hampel"]["log_modified_fraction"]),
             washout_cali_minus_bitsize_in=float(qc["washout"]["cali_minus_bitsize_in"]),
             washout_flag_curves=tuple(qc["washout"]["flag_curves"]),
+            washout_require_bitsize=bool(qc["washout"].get("require_bitsize", True)),
             dedup_hash_fields=tuple(qc["dedup"]["hash_fields"]),
         )
 
@@ -140,6 +187,16 @@ class HarmonizationConfig:
 
     def curve(self, canonical: str) -> CurveSpec:
         return self._curves[canonical]
+
+    def auxiliary_curves(self) -> tuple[str, ...]:
+        return tuple(self._aux_curves.keys())
+
+    def aux_curve(self, canonical: str) -> AuxCurveSpec:
+        return self._aux_curves[canonical]
+
+    def resolve_aux_alias(self, raw_mnemonic: str) -> str | None:
+        """Return the auxiliary curve name for a raw mnemonic, or None."""
+        return self._aux_alias_index.get(raw_mnemonic.strip().upper())
 
     def resolve_alias(self, raw_mnemonic: str) -> str | None:
         """Return the canonical curve name for a raw mnemonic, or None.

@@ -47,6 +47,8 @@ class HarmonizedWell:
     grid_step_m: float
     curves: dict[str, np.ndarray]  # canonical -> float array, NaN = missing
     masks: dict[str, np.ndarray]  # canonical -> bool array, True = valid
+    aux_curves: dict[str, np.ndarray] = field(default_factory=dict)  # QC-only (e.g. BS)
+    aux_masks: dict[str, np.ndarray] = field(default_factory=dict)
     present_curves: list[str] = field(default_factory=list)
     usable: bool = False
     # (raw_mnemonic, raw_unit) pairs seen in this well that had no mapping.
@@ -114,6 +116,50 @@ def _to_missing_nulls(values: np.ndarray, null_values: tuple[float, ...]) -> np.
     return out
 
 
+def _process_channel(
+    raw_values: np.ndarray,
+    raw_unit: str,
+    convert: dict[str, float],
+    canon_unit: str,
+    valid_range: tuple[float, float],
+    transform: str,
+    depth_m: np.ndarray,
+    grid: np.ndarray,
+    tol: float,
+    null_values: tuple[float, ...],
+    label: str,
+) -> tuple[np.ndarray, str | None]:
+    """Null -> convert -> range-gate -> transform -> resample. One channel.
+
+    Returns the resampled grid array and an optional unit note. Unit conversion
+    is applied before the range gate; out-of-range samples go to missing (never
+    clipped); the transform (log10 or none) runs after gating.
+    """
+    note: str | None = None
+    values = _to_missing_nulls(np.asarray(raw_values, dtype=float), null_values)
+
+    ru = _normalize_unit(raw_unit)
+    conv = {_normalize_unit(k): v for k, v in convert.items()}
+    cu = _normalize_unit(canon_unit)
+    if ru in conv:
+        values = values * conv[ru]
+    elif ru in ("", cu):
+        pass
+    else:
+        note = f"{label}: unrecognized unit {raw_unit!r} (expected {canon_unit!r}); assumed native"
+
+    lo, hi = valid_range
+    values = np.where((values < lo) | (values > hi), np.nan, values)
+
+    if transform == "log10":
+        with np.errstate(invalid="ignore", divide="ignore"):
+            values = np.where(np.isfinite(values) & (values > 0), np.log10(values), np.nan)
+    elif transform != "none":
+        raise ValueError(f"Unknown transform {transform!r} for {label}")
+
+    return _resample_nearest(depth_m, values, grid, tol), note
+
+
 def harmonize_well(raw: RawWell, config: HarmonizationConfig) -> HarmonizedWell:
     """Harmonize one :class:`RawWell` to the canonical grid representation."""
     step = config.grid_step_m
@@ -137,68 +183,68 @@ def harmonize_well(raw: RawWell, config: HarmonizationConfig) -> HarmonizedWell:
     for canonical in config.canonical_curves:
         curves[canonical] = np.full(grid.shape, np.nan, dtype=float)
         masks[canonical] = np.zeros(grid.shape, dtype=bool)
+    aux_curves: dict[str, np.ndarray] = {}
+    aux_masks: dict[str, np.ndarray] = {}
+    for aux in config.auxiliary_curves():
+        aux_curves[aux] = np.full(grid.shape, np.nan, dtype=float)
+        aux_masks[aux] = np.zeros(grid.shape, dtype=bool)
 
     unmapped: list[tuple[str, str]] = []
     unit_notes: list[str] = []
     if du not in depth_convert and du not in ("", "m", "meter", "metre", "meters", "metres"):
         unit_notes.append(f"DEPTH: unrecognized unit {raw.depth_unit!r}, assumed metres")
 
-    # Track which raw mnemonics claimed each canonical curve, to keep the first
-    # and record collisions for triage rather than silently overwriting.
     claimed: dict[str, str] = {}
 
     for mnem, rc in raw.curves.items():
         if config.is_depth_alias(mnem):
             continue
         canonical = config.resolve_alias(mnem)
-        if canonical is None:
-            unmapped.append((mnem, rc.unit))
-            continue
-        if canonical in claimed:
-            unit_notes.append(
-                f"{canonical}: multiple source mnemonics "
-                f"({claimed[canonical]!r} kept, {mnem!r} ignored)"
+        if canonical is not None:
+            if canonical in claimed:
+                unit_notes.append(
+                    f"{canonical}: multiple source mnemonics "
+                    f"({claimed[canonical]!r} kept, {mnem!r} ignored)"
+                )
+                continue
+            claimed[canonical] = mnem
+            spec = config.curve(canonical)
+            resampled, note = _process_channel(
+                rc.data, rc.unit, spec.convert, spec.unit, spec.valid_range,
+                spec.transform, depth_m, grid, tol, config.null_values, canonical,
             )
+            curves[canonical] = resampled
+            masks[canonical] = np.isfinite(resampled)
+            if note:
+                unit_notes.append(note)
             continue
-        claimed[canonical] = mnem
 
-        spec = config.curve(canonical)
-        values = _to_missing_nulls(np.asarray(rc.data, dtype=float), config.null_values)
-
-        # Unit conversion before range gates.
-        ru = _normalize_unit(rc.unit)
-        convert = {_normalize_unit(k): v for k, v in spec.convert.items()}
-        canon_unit = _normalize_unit(spec.unit)
-        if ru in convert:
-            values = values * convert[ru]
-        elif ru in ("", canon_unit):
-            pass  # already native units
-        else:
-            unit_notes.append(
-                f"{canonical}: unrecognized unit {rc.unit!r} "
-                f"(expected {spec.unit!r}); assumed native, no conversion"
+        aux_name = config.resolve_aux_alias(mnem)
+        if aux_name is not None:
+            if aux_name in claimed:
+                unit_notes.append(
+                    f"{aux_name} (aux): multiple source mnemonics "
+                    f"({claimed[aux_name]!r} kept, {mnem!r} ignored)"
+                )
+                continue
+            claimed[aux_name] = mnem
+            aspec = config.aux_curve(aux_name)
+            resampled, note = _process_channel(
+                rc.data, rc.unit, aspec.convert, aspec.unit, aspec.valid_range,
+                aspec.transform, depth_m, grid, tol, config.null_values, f"{aux_name} (aux)",
             )
+            aux_curves[aux_name] = resampled
+            aux_masks[aux_name] = np.isfinite(resampled)
+            if note:
+                unit_notes.append(note)
+            continue
 
-        # Range gate -> missing (linear space, before transform).
-        lo, hi = spec.valid_range
-        out_of_range = (values < lo) | (values > hi)
-        values = np.where(out_of_range, np.nan, values)
-
-        # Transform.
-        if spec.transform == "log10":
-            with np.errstate(invalid="ignore", divide="ignore"):
-                values = np.where(np.isfinite(values) & (values > 0), np.log10(values), np.nan)
-        elif spec.transform != "none":
-            raise ValueError(f"Unknown transform {spec.transform!r} for {canonical}")
-
-        resampled = _resample_nearest(depth_m, values, grid, tol)
-        curves[canonical] = resampled
-        masks[canonical] = np.isfinite(resampled)
+        unmapped.append((mnem, rc.unit))
 
     present = [c for c in config.canonical_curves if bool(np.any(masks[c]))]
 
-    # Usability: at least ``min_curves`` canonical curves each covering at least
-    # ``min_interval_m`` of valid thickness.
+    # Usability: at least ``min_curves`` CANONICAL curves each covering at least
+    # ``min_interval_m`` of valid thickness. Auxiliary curves never count here.
     n_curves_meeting = 0
     if grid.size:
         for c in present:
@@ -214,6 +260,8 @@ def harmonize_well(raw: RawWell, config: HarmonizationConfig) -> HarmonizedWell:
         grid_step_m=step,
         curves=curves,
         masks=masks,
+        aux_curves=aux_curves,
+        aux_masks=aux_masks,
         present_curves=present,
         usable=usable,
         unmapped=unmapped,

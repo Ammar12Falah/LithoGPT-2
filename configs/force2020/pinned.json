@@ -28,8 +28,9 @@
     "doi": "10.5281/zenodo.4351156",
     "note": "LAS-format mirror plus NPD spreadsheets. Zenodo robots.txt blocks automated fetch of file endpoints; opt-in via --with-las which disables robots for this direct DOI download. Not needed for the benchmark."
   },
+  "dataset_breakdown": "118 wells total in the public release = 98 training + 10 open leaderboard test + 10 blind final test",
   "notes": [
-    "The competition describes 98 training wells; the delivered train.csv confirms 98 unique wells (verified 2026-07-04).",
+    "The public FORCE 2020 release is 118 wells total: 98 training + 10 open leaderboard test + 10 blind final test. Verified 2026-07-04: train.csv has 98 unique wells; leaderboard_test_features.csv (open) has 10; hidden_test.csv (blind final) has 10.",
     "The starter notebook mentions 83 wells (stale demo figure) and a team folder (code/GIR/train.csv) holds a 28-well subset; neither is the official set.",
     "Licenses: logs NLOD 2.0, labels CC-BY-4.0; attribution Bormann et al. 2020."
   ]

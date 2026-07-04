@@ -109,6 +109,21 @@ curves:
     trend_curve: true
     optional: true
 
+# Auxiliary curves: harmonized and kept for QC only, never a modeling
+# target and never part of the canonical curve count or the min-usable
+# check. Added from observed FORCE 2020 headers (advisor triage 2026-07-04).
+auxiliary_curves:
+  BS:
+    aliases: [BS, BIT, BITSIZE, BSZ, BSIZ]
+    unit: in
+    convert:
+      mm: 0.0393701
+      cm: 0.393701
+    valid_range: [3.0, 30.0]
+    transform: none
+    role: qc_only
+    used_by: [washout]
+
 qc:
   hampel:
     window: 11
@@ -117,6 +132,11 @@ qc:
   washout:
     cali_minus_bitsize_in: 2.0
     flag_curves: [RHOB, NPHI, PEF]
+    # If BS is absent for a well, do NOT assume a nominal bit size.
+    # Skip washout flagging for that well, set washout_flagged=false,
+    # and record no_bitsize=true in the per-well QC record so coverage
+    # of the washout gate is auditable.
+    require_bitsize: true
   dedup:
     hash_fields: [location, depth_range, curve_fingerprint]
 

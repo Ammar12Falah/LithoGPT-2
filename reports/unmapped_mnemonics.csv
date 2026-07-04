@@ -1,8 +1,7 @@
 source,raw_mnemonic,raw_unit,count
-force2020,ROP,,11
-force2020,DRHO,g/cm3,11
-force2020,BS,in,10
-force2020,MUDWEIGHT,,9
-force2020,RXO,ohm.m,4
-force2020,ROPA,,2
-force2020,RMIC,ohm.m,1
+force2020,DRHO,g/cm3,95
+force2020,ROP,,53
+force2020,RXO,ohm.m,38
+force2020,MUDWEIGHT,,28
+force2020,RMIC,ohm.m,27
+force2020,ROPA,,25

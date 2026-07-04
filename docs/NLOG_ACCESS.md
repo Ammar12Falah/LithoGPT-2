@@ -10,7 +10,10 @@ a one-time confirmation and are flagged; they are not guessed (handoff Rule 2).
 - NLOG is the Dutch subsurface portal, run by TNO (Geological Survey of the
   Netherlands) for the Ministry of Economic Affairs. Administrative borehole
   data is public immediately; well logs (LIS/LAS/DLIS), reports, cuttings and
-  cores are released only after a statutory five-year confidentiality period.
+  cores are released only after a statutory five-year confidentiality period
+  (stated on https://www.nlog.nl/en/boreholes : well log measurements and
+  reports are available after the confidentiality period of five years has
+  expired; corroborated on https://www.grondwatertools.nl/en/node/593 ).
 - Borehole index (CONFIRMED, live data checked 4 July 2026): NLOG's official
   GeoServer WFS. One GetFeature call returns every borehole as GeoJSON.
     base   : https://www.gdngeoservices.nl/geoserver/nlog/ows

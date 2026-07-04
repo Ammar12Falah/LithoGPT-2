@@ -48,7 +48,7 @@ python -m lithogpt2.ingest.nlog --index-csv path/to/nlog_index.csv
 
 ## Sources and licenses
 
-FORCE 2020 (Norway), NLOG (Netherlands), KGS (Kansas). No other sources in v2.
+FORCE 2020 (Norway; 118 wells total = 98 training + 10 open leaderboard test + 10 blind final test), NLOG (Netherlands), KGS (Kansas). No other sources in v2.
 Per-source terms, redistribution rights, and attribution are in
 `docs/LICENSE_MATRIX.md`. Default posture: pipeline + weights + attribution, no
 raw-data mirror.

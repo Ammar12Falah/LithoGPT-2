@@ -1,62 +1,63 @@
 {
+  "provisional": true,
+  "provenance": "PROVISIONAL. Computed on 98 FORCE-only wells from train.zip (training split only; the 10 open-leaderboard and 10 blind-final test wells were not read). Superseded at Gate G2 by stats recomputed on the frozen multi-basin training split.",
   "config_version": "0.1.0",
-  "n_wells": 12,
-  "note": "median/IQR on these FORCE wells; train-split contract",
+  "n_wells": 98,
   "stats": {
     "GR": {
-      "median": 66.254974365,
-      "iqr": 50.5427112575,
-      "n_samples": 132795
+      "median": 68.370559692,
+      "iqr": 41.362361908,
+      "n_samples": 1167181
     },
     "RHOB": {
-      "median": 2.1621294022,
-      "iqr": 0.3751565217499997,
-      "n_samples": 107759
+      "median": 2.32050049305,
+      "iqr": 0.39551770684999976,
+      "n_samples": 1006472
     },
     "NPHI": {
-      "median": 0.3820142746,
-      "iqr": 0.24602724609999999,
-      "n_samples": 91477
+      "median": 0.3267581314,
+      "iqr": 0.18121471627499997,
+      "n_samples": 763350
     },
     "DTC": {
-      "median": 135.99960327,
-      "iqr": 59.46393203550001,
-      "n_samples": 132151
+      "median": 109.653903965,
+      "iqr": 52.944843291750004,
+      "n_samples": 1086500
     },
     "PEF": {
-      "median": 3.765431881,
-      "iqr": 2.2148559093500007,
-      "n_samples": 99863
+      "median": 4.23811364175,
+      "iqr": 2.3304833770249997,
+      "n_samples": 649208
     },
     "SP": {
-      "median": 67.7447052005,
-      "iqr": 41.206525803249995,
-      "n_samples": 88548
+      "median": 55.147121429,
+      "iqr": 49.953876495,
+      "n_samples": 852757
     },
     "CALI": {
-      "median": 12.698579788,
-      "iqr": 3.5514936450000008,
-      "n_samples": 132645
+      "median": 12.556167126,
+      "iqr": 7.280011892325,
+      "n_samples": 1078838
     },
     "RDEP": {
-      "median": 0.05328266369791873,
-      "iqr": 0.3254903227091698,
-      "n_samples": 125462
+      "median": 0.15781913950146054,
+      "iqr": 0.44825465618155874,
+      "n_samples": 1156357
     },
     "RMED": {
-      "median": 0.03965951690056113,
-      "iqr": 0.2943293571261225,
-      "n_samples": 125208
+      "median": 0.15878212662652685,
+      "iqr": 0.46612637411635216,
+      "n_samples": 1128459
     },
     "RSHA": {
-      "median": -0.001096021779811193,
-      "iqr": 0.2811758968939826,
-      "n_samples": 61871
+      "median": 0.14491963729544674,
+      "iqr": 0.5565672104671322,
+      "n_samples": 628930
     },
     "DTS": {
-      "median": 162.54795837,
-      "iqr": 40.31407164999999,
-      "n_samples": 12151
+      "median": 188.21812439,
+      "iqr": 68.65909194999998,
+      "n_samples": 174112
     }
   }
 }
