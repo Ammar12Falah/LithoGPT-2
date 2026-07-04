@@ -78,6 +78,15 @@ escalation triggers (handoff Section 12.2), not to be guessed.
   posture: pipeline + weights, no raw mirror.
 - Required attribution: credit "Kansas Geological Survey (KGS), University of
   Kansas."
+- Access map: see docs/KGS_ACCESS.md. Verified endpoints (4 July 2026): the
+  metadata index ks_las_files.zip
+  (https://www.kgs.ku.edu/PRS/Ora_Archive/ks_las_files.zip) and per-year LAS
+  archive ZIPs under https://www.kgs.ku.edu/PRS/Scans/Log_Summary/ . Corpus
+  size: 21,780 digital LAS logs as of 31 Dec 2024, the G1 volume anchor. LAS is
+  free after a two-year confidentiality period for public service and research
+  (cite: https://www.kgs.ku.edu/Publications/Bulletins/LA/02_digital.html). The
+  KGS ingester is built and index-driven; a full pull is several GB, so it runs
+  as a resumable job.
 - Terms / index pages: https://www.kgs.ku.edu/Magellan/Logs/ (LAS index and the
   pre-created ZIP of all wells with LAS) ;
   https://kgs.ku.edu/data-resources-library-kansas-geological-survey ;
