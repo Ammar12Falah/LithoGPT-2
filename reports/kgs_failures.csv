@@ -1,3 +1,8 @@
 well_id,error
 1055298364,"ValueError: Cannot reshape ~A data size (22059,) into 7 columns"
 1055298605,"ValueError: Cannot reshape ~A data size (16010,) into 15 columns"
+1055386000,read timeout > 60s (skipped)
+1055545228,"ValueError: Cannot reshape ~A data size (264753,) into 22 columns"
+1055545284,"ValueError: Cannot reshape ~A data size (264753,) into 22 columns"
+1055768608,KeyError: '0    ! \xa0     `             2.0'
+1055814177,KeyError: '4.00W'

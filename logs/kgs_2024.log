@@ -6,3 +6,58 @@ KGS QC: 3810 files, 2 skipped as non-LAS, 50 already done, 3759 to process.
   checkpoint: 1000/3759 this run (cumulative 1048 wells, 677 QC-passing, 2 failed), ~20 min left
   checkpoint: 1200/3759 this run (cumulative 1248 wells, 677 QC-passing, 2 failed), ~20 min left
   checkpoint: 1400/3759 this run (cumulative 1448 wells, 677 QC-passing, 2 failed), ~20 min left
+KGS QC: 3810 files, 2 skipped as non-LAS, 1448 already done, 2361 to process.
+  checkpoint: 50/2361 this run (cumulative 1496 wells, 677 QC-passing, 4 failed), ~22 min left
+KGS QC: 3810 files, 2 skipped as non-LAS, 1496 already done, 2313 to process.
+  checkpoint: 50/2313 this run (cumulative 1543 wells, 677 QC-passing, 5 failed), ~68 min left
+  checkpoint: 100/2313 this run (cumulative 1593 wells, 677 QC-passing, 5 failed), ~45 min left
+  checkpoint: 150/2313 this run (cumulative 1643 wells, 677 QC-passing, 5 failed), ~37 min left
+  checkpoint: 200/2313 this run (cumulative 1693 wells, 677 QC-passing, 5 failed), ~35 min left
+  checkpoint: 250/2313 this run (cumulative 1743 wells, 677 QC-passing, 5 failed), ~32 min left
+  checkpoint: 300/2313 this run (cumulative 1793 wells, 677 QC-passing, 5 failed), ~30 min left
+  checkpoint: 350/2313 this run (cumulative 1843 wells, 677 QC-passing, 5 failed), ~28 min left
+  checkpoint: 400/2313 this run (cumulative 1893 wells, 677 QC-passing, 5 failed), ~26 min left
+  checkpoint: 450/2313 this run (cumulative 1943 wells, 677 QC-passing, 5 failed), ~26 min left
+  checkpoint: 500/2313 this run (cumulative 1993 wells, 719 QC-passing, 5 failed), ~24 min left
+  checkpoint: 550/2313 this run (cumulative 2041 wells, 766 QC-passing, 5 failed), ~23 min left
+  checkpoint: 600/2313 this run (cumulative 2090 wells, 792 QC-passing, 6 failed), ~22 min left
+  checkpoint: 650/2313 this run (cumulative 2140 wells, 792 QC-passing, 6 failed), ~21 min left
+  checkpoint: 700/2313 this run (cumulative 2190 wells, 792 QC-passing, 6 failed), ~20 min left
+  checkpoint: 750/2313 this run (cumulative 2240 wells, 792 QC-passing, 6 failed), ~18 min left
+  checkpoint: 800/2313 this run (cumulative 2290 wells, 792 QC-passing, 6 failed), ~17 min left
+  checkpoint: 850/2313 this run (cumulative 2340 wells, 792 QC-passing, 6 failed), ~16 min left
+  checkpoint: 900/2313 this run (cumulative 2390 wells, 792 QC-passing, 6 failed), ~16 min left
+  checkpoint: 950/2313 this run (cumulative 2440 wells, 792 QC-passing, 6 failed), ~15 min left
+  checkpoint: 1000/2313 this run (cumulative 2490 wells, 792 QC-passing, 6 failed), ~14 min left
+  checkpoint: 1050/2313 this run (cumulative 2540 wells, 792 QC-passing, 6 failed), ~14 min left
+  checkpoint: 1100/2313 this run (cumulative 2590 wells, 792 QC-passing, 6 failed), ~13 min left
+  checkpoint: 1150/2313 this run (cumulative 2640 wells, 792 QC-passing, 6 failed), ~12 min left
+  checkpoint: 1200/2313 this run (cumulative 2690 wells, 792 QC-passing, 6 failed), ~12 min left
+  checkpoint: 1250/2313 this run (cumulative 2740 wells, 792 QC-passing, 6 failed), ~11 min left
+  checkpoint: 1300/2313 this run (cumulative 2790 wells, 792 QC-passing, 6 failed), ~10 min left
+  checkpoint: 1350/2313 this run (cumulative 2840 wells, 792 QC-passing, 6 failed), ~10 min left
+  checkpoint: 1400/2313 this run (cumulative 2890 wells, 792 QC-passing, 6 failed), ~9 min left
+  checkpoint: 1450/2313 this run (cumulative 2940 wells, 792 QC-passing, 6 failed), ~9 min left
+  checkpoint: 1500/2313 this run (cumulative 2990 wells, 792 QC-passing, 6 failed), ~8 min left
+  checkpoint: 1550/2313 this run (cumulative 3040 wells, 792 QC-passing, 6 failed), ~8 min left
+  checkpoint: 1600/2313 this run (cumulative 3090 wells, 794 QC-passing, 6 failed), ~7 min left
+  checkpoint: 1650/2313 this run (cumulative 3140 wells, 794 QC-passing, 6 failed), ~7 min left
+  checkpoint: 1700/2313 this run (cumulative 3190 wells, 794 QC-passing, 6 failed), ~6 min left
+  checkpoint: 1750/2313 this run (cumulative 3240 wells, 794 QC-passing, 6 failed), ~6 min left
+  checkpoint: 1800/2313 this run (cumulative 3290 wells, 794 QC-passing, 6 failed), ~5 min left
+  checkpoint: 1850/2313 this run (cumulative 3340 wells, 794 QC-passing, 6 failed), ~5 min left
+  checkpoint: 1900/2313 this run (cumulative 3390 wells, 794 QC-passing, 6 failed), ~4 min left
+  checkpoint: 1950/2313 this run (cumulative 3440 wells, 794 QC-passing, 6 failed), ~4 min left
+  checkpoint: 2000/2313 this run (cumulative 3490 wells, 794 QC-passing, 6 failed), ~3 min left
+  checkpoint: 2050/2313 this run (cumulative 3540 wells, 794 QC-passing, 6 failed), ~3 min left
+  checkpoint: 2100/2313 this run (cumulative 3589 wells, 794 QC-passing, 7 failed), ~2 min left
+  checkpoint: 2150/2313 this run (cumulative 3639 wells, 794 QC-passing, 7 failed), ~2 min left
+  checkpoint: 2200/2313 this run (cumulative 3689 wells, 794 QC-passing, 7 failed), ~1 min left
+  checkpoint: 2250/2313 this run (cumulative 3739 wells, 794 QC-passing, 7 failed), ~1 min left
+  checkpoint: 2300/2313 this run (cumulative 3789 wells, 797 QC-passing, 7 failed), ~0 min left
+  checkpoint: 2313/2313 this run (cumulative 3802 wells, 808 QC-passing, 7 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative wells: 3802   QC-passing: 808/3802
+  non-LAS skipped: 2   distinct unmapped mnemonics: 508
+  records: reports/kgs_qc_records.csv   dashboard: reports/qc_kgs/index.html
