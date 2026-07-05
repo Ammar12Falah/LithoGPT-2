@@ -1,0 +1,3 @@
+well_id,error
+1055298364,"ValueError: Cannot reshape ~A data size (22059,) into 7 columns"
+1055298605,"ValueError: Cannot reshape ~A data size (16010,) into 15 columns"

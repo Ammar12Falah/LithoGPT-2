@@ -15,7 +15,21 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-_ROOT = Path(__file__).resolve().parents[1]
+def _repo_root() -> Path:
+    # Path(__file__) works when run as a file (python / %run / !python). A pasted
+    # Jupyter cell has no __file__, so fall back to searching cwd upward for the
+    # repo root. Run scripts as files, not by pasting the body into a cell.
+    try:
+        return Path(__file__).resolve().parents[1]
+    except NameError:
+        here = Path.cwd().resolve()
+        for cand in (here, *here.parents):
+            if (cand / "src" / "lithogpt2").is_dir():
+                return cand
+        return here
+
+
+_ROOT = _repo_root()
 sys.path.insert(0, str(_ROOT / "src"))
 
 import matplotlib  # noqa: E402

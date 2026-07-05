@@ -1,0 +1,8 @@
+KGS QC: 3810 files, 2 skipped as non-LAS, 50 already done, 3759 to process.
+  checkpoint: 200/3759 this run (cumulative 250 wells, 236 QC-passing, 0 failed), ~35 min left
+  checkpoint: 400/3759 this run (cumulative 449 wells, 431 QC-passing, 1 failed), ~29 min left
+  checkpoint: 600/3759 this run (cumulative 648 wells, 598 QC-passing, 2 failed), ~21 min left
+  checkpoint: 800/3759 this run (cumulative 848 wells, 677 QC-passing, 2 failed), ~22 min left
+  checkpoint: 1000/3759 this run (cumulative 1048 wells, 677 QC-passing, 2 failed), ~20 min left
+  checkpoint: 1200/3759 this run (cumulative 1248 wells, 677 QC-passing, 2 failed), ~20 min left
+  checkpoint: 1400/3759 this run (cumulative 1448 wells, 677 QC-passing, 2 failed), ~20 min left
