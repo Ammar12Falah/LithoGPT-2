@@ -129,22 +129,42 @@ def fetch_archives(
 
 
 def unpack_las(raw_root: str = "data/raw") -> int:
-    """Extract .las files from downloaded archive ZIPs into kgs/las/. Returns count."""
+    # Extract .las from archive ZIPs into kgs/las/. Handles direct .las and
+    # nested zip-of-zips (one inner .zip per well); skips macOS junk; idempotent.
     dest = Path(raw_root) / SOURCE
     arch_dir = dest / "archives"
     out = dest / "las"
     out.mkdir(parents=True, exist_ok=True)
+    existing = {q.name for q in out.glob("*.las")}
     n = 0
+    def _junk(name):
+        return Path(name).name.startswith("._") or "__MACOSX" in name
+    def _write(name, data):
+        nonlocal n
+        (out / name).write_bytes(data); existing.add(name); n += 1
     for zpath in sorted(arch_dir.glob("*.zip")):
         with zipfile.ZipFile(zpath) as zf:
             for member in zf.namelist():
-                if member.lower().endswith(".las"):
-                    target = out / Path(member).name
-                    if target.exists():
+                if _junk(member):
+                    continue
+                low = member.lower()
+                if low.endswith(".las"):
+                    name = Path(member).name
+                    if name not in existing:
+                        _write(name, zf.read(member))
+                elif low.endswith(".zip"):
+                    stem = Path(member).stem
+                    if f"{stem}.las" in existing:
                         continue
-                    with zf.open(member) as src, target.open("wb") as dst:
-                        dst.write(src.read())
-                    n += 1
+                    try:
+                        inner = zipfile.ZipFile(io.BytesIO(zf.read(member)))
+                    except zipfile.BadZipFile:
+                        continue
+                    las = [m for m in inner.namelist() if not _junk(m) and m.lower().endswith(".las")]
+                    for k, m in enumerate(las):
+                        name = f"{stem}.las" if k == 0 else f"{stem}_{k}.las"
+                        if name not in existing:
+                            _write(name, inner.read(m))
     print(f"[kgs] unpacked {n} LAS files to {out}")
     return n
 

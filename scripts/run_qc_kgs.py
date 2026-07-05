@@ -82,6 +82,10 @@ def main() -> None:
     real = [p for p in all_paths if looks_like_las(p)]
     n_junk = len(all_paths) - len(real)
     done = set() if args.fresh else done_well_ids(rec_csv)
+    if args.fresh:
+        for f in (rec_csv, cov_csv, unmapped_csv, fail_csv):
+            if f.exists():
+                f.unlink()
     pending = [p for p in real if p.stem not in done]
     if args.max_wells is not None:
         pending = pending[:args.max_wells]
