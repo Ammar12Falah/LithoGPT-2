@@ -1,5 +1,4 @@
 well_id,error
-1044817556,"ValueError: Cannot reshape ~A data size (697,) into 8 columns"
 1055298364,"ValueError: Cannot reshape ~A data size (22059,) into 7 columns"
 1055298605,"ValueError: Cannot reshape ~A data size (16010,) into 15 columns"
 1055386000,read timeout > 60s (skipped)
@@ -7,3 +6,7 @@ well_id,error
 1055545284,"ValueError: Cannot reshape ~A data size (264753,) into 22 columns"
 1055768608,KeyError: '0    ! \xa0     `             2.0'
 1055814177,KeyError: '4.00W'
+1044817556,"ValueError: Cannot reshape ~A data size (697,) into 8 columns"
+1044859099,ValueError: could not convert string to float: np.str_('1.#INF')
+1044817556,"ValueError: Cannot reshape ~A data size (697,) into 8 columns"
+1044859099,ValueError: could not convert string to float: np.str_('1.#INF')
