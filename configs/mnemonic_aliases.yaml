@@ -82,13 +82,13 @@ curves:
     transform: none
     trend_curve: false
   RDEP:
-    aliases: [RDEP, RT, ILD, LLD, RILD, AT90, RLA5, RESD, RD, R85O, "RES(DI)", "RES(DG)", "RLL3"]
+    aliases: [RDEP, RT, ILD, LLD, RILD, AT90, RLA5, RESD, RD, R85O, "RES(DI)", "RES(DG)"]
     unit: ohm.m
     valid_range: [0.01, 100000.0]
     transform: log10
     trend_curve: false
   RMED:
-    aliases: [RMED, ILM, RILM, AT30, RLA3, RESM, RM, "RES(MI)"]
+    aliases: [RMED, ILM, RILM, AT30, RLA3, RESM, RM, "RES(MI)", "RLL3"]
     unit: ohm.m
     valid_range: [0.01, 100000.0]
     transform: log10

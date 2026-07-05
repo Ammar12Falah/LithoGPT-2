@@ -41,3 +41,6 @@ validated on FORCE lithofacies labels; Athy trend fits per basin group; tokenize
 level sweep against the numeric bar; dataset card with real counts; test manifest
 frozen and hashed; benchmark name collision-checked and decided. Model size set by
 the HANDOFF Section 7.2 rule at G2.
+
+## Gate bar provenance
+The 5,000 QC-passing bar is set by docs/HANDOFF.md Section 11 timeline, week 2 row: 5,000 floor, 8,000 stretch target. Both predate execution. Design authority conditional approval recorded 5 July 2026.
