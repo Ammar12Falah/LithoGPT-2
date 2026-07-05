@@ -8,5 +8,44 @@ well_id,error
 1055814177,KeyError: '4.00W'
 1044817556,"ValueError: Cannot reshape ~A data size (697,) into 8 columns"
 1044859099,ValueError: could not convert string to float: np.str_('1.#INF')
-1044817556,"ValueError: Cannot reshape ~A data size (697,) into 8 columns"
-1044859099,ValueError: could not convert string to float: np.str_('1.#INF')
+1044891433,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891433.las'
+1044891440,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891440.las'
+1044891447,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891447.las'
+1044891453,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891453.las'
+1044891460,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891460.las'
+1044891470,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891470.las'
+1044891477,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891477.las'
+1044891481,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891481.las'
+1044891483,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891483.las'
+1044891489,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891489.las'
+1044891495,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891495.las'
+1044891507,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891507.las'
+1044891510,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891510.las'
+1044891519,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891519.las'
+1044891520,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891520.las'
+1044891524,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891524.las'
+1044891528,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891528.las'
+1044891535,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891535.las'
+1044891539,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891539.las'
+1044891544,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891544.las'
+1044891555,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891555.las'
+1044891557,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891557.las'
+1044891562,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891562.las'
+1044891570,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891570.las'
+1044891574,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891574.las'
+1044891577,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891577.las'
+1044891585,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891585.las'
+1044891593,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891593.las'
+1044891594,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891594.las'
+1044891607,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891607.las'
+1044891618,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891618.las'
+1044891620,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891620.las'
+1044891624,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891624.las'
+1044891628,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891628.las'
+1044891638,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891638.las'
+1044891645,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891645.las'
+1044891646,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/kgs/las/1044891646.las'
+1045662653,"ValueError: Cannot reshape ~A data size (48557,) into 39 columns"
+1045662711,"ValueError: Cannot reshape ~A data size (59513,) into 39 columns"
+1046089038,"ValueError: Cannot reshape ~A data size (161837,) into 39 columns"
+1046102494,"ValueError: Cannot reshape ~A data size (25097,) into 4 columns"
