@@ -1,24 +1,24 @@
+
+!configs/force2020/*.npy
+!tests/**/*.las
+# Data: never commit raw or processed well data (default posture: no raw mirror)
+# Large pinned binaries are allowed under configs/ explicitly
+# Notebooks checkpoints
+# OS
 # Python
-__pycache__/
-*.py[cod]
-.venv/
-venv/
+*.LAS
 *.egg-info/
+*.las
+*.parquet
+*.py[cod]
+.DS_Store
+.ipynb_checkpoints/
 .pytest_cache/
 .ruff_cache/
-
-# Data: never commit raw or processed well data (default posture: no raw mirror)
-data/raw/
+.venv/
+__pycache__/
+data/
 data/processed/
-*.las
-*.LAS
-!tests/**/*.las
-
-# Large pinned binaries are allowed under configs/ explicitly
-!configs/force2020/*.npy
-
-# Notebooks checkpoints
-.ipynb_checkpoints/
-
-# OS
-.DS_Store
+data/raw/
+logs/
+venv/
