@@ -62,6 +62,7 @@ def main() -> None:
     ap.add_argument("--max-wells", type=int, default=None)
     ap.add_argument("--chunk", type=int, default=200)
     ap.add_argument("--fresh", action="store_true")
+    ap.add_argument("--no-parquet", action="store_true")
     args = ap.parse_args()
 
     las_dir = Path(args.las_dir)
@@ -73,7 +74,7 @@ def main() -> None:
     cov_csv = REPORTS / "kgs_coverage.csv"
     unmapped_csv = REPORTS / "kgs_unmapped_mnemonics.csv"
     fail_csv = REPORTS / "kgs_failures.csv"
-    processed_dir = Path("data/processed") / SOURCE
+    processed_dir = None if args.no_parquet else Path("data/processed") / SOURCE
     config = HarmonizationConfig.load()
 
     all_paths = sorted(las_dir.glob("*.las"))

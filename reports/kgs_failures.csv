@@ -1,4 +1,5 @@
 well_id,error
+1044817556,"ValueError: Cannot reshape ~A data size (697,) into 8 columns"
 1055298364,"ValueError: Cannot reshape ~A data size (22059,) into 7 columns"
 1055298605,"ValueError: Cannot reshape ~A data size (16010,) into 15 columns"
 1055386000,read timeout > 60s (skipped)

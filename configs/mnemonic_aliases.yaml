@@ -27,13 +27,13 @@ min_usable:
 
 curves:
   GR:
-    aliases: [GR, GRC, GRD, SGR, CGR, GAM, GRGC, GRS, GR_1, GRTO]
+    aliases: [GR, GRC, GRD, SGR, CGR, GAM, GRGC, GRS, GR_1, GRTO, "GAMMA"]
     unit: gAPI
     valid_range: [0.0, 400.0]
     transform: none
     trend_curve: false
   RHOB:
-    aliases: [RHOB, DEN, DENS, ZDEN, RHOZ, HRHO, DENB, RHO8]
+    aliases: [RHOB, DEN, DENS, ZDEN, RHOZ, HRHO, DENB, RHO8, "DEN(CDL)"]
     unit: g/cc
     convert:
       kg/m3: 0.001
@@ -42,7 +42,7 @@ curves:
     trend_curve: true
     washout_sensitive: true
   NPHI:
-    aliases: [NPHI, NEU, TNPH, CNC, NPOR, HNPO, NPHL, CNPOR]
+    aliases: [NPHI, NEU, TNPH, CNC, NPOR, HNPO, NPHL, CNPOR, "POR(NEU)"]
     unit: v/v
     convert:
       pu: 0.01
@@ -73,7 +73,7 @@ curves:
     transform: none
     trend_curve: false
   CALI:
-    aliases: [CALI, CAL, HCAL, DCAL, CALS, CALX]
+    aliases: [CALI, CAL, HCAL, DCAL, CALS, CALX, "CALIPER", "CALIPERL"]
     unit: in
     convert:
       mm: 0.0393701
@@ -82,13 +82,13 @@ curves:
     transform: none
     trend_curve: false
   RDEP:
-    aliases: [RDEP, RT, ILD, LLD, RILD, AT90, RLA5, RESD, RD, R85O]
+    aliases: [RDEP, RT, ILD, LLD, RILD, AT90, RLA5, RESD, RD, R85O, "RES(DI)", "RES(DG)", "RLL3"]
     unit: ohm.m
     valid_range: [0.01, 100000.0]
     transform: log10
     trend_curve: false
   RMED:
-    aliases: [RMED, ILM, RILM, AT30, RLA3, RESM, RM]
+    aliases: [RMED, ILM, RILM, AT30, RLA3, RESM, RM, "RES(MI)"]
     unit: ohm.m
     valid_range: [0.01, 100000.0]
     transform: log10
