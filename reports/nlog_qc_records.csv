@@ -1,0 +1,13 @@
+well_id,source,n_grid,washout_flagged,no_bitsize,washout_interval_m,min_interval_pass,n_curves_meeting,drop_reason,dedup_hash,present,missing_GR,missing_RHOB,missing_NPHI,missing_DTC,missing_PEF,missing_SP,missing_CALI,missing_RDEP,missing_RMED,missing_RSHA,missing_DTS,hampel_GR,hampel_RHOB,hampel_NPHI,hampel_PEF,hampel_CALI,hampel_RSHA,suspect_m_RHOB,suspect_m_NPHI,suspect_m_PEF,hampel_DTC,hampel_DTS,hampel_RDEP,hampel_SP
+BRW-04,nlog,5542,True,False,5.03,True,6,,834e37eb9eeab17a,"GR,RHOB,NPHI,PEF,CALI,RSHA",0.6951,0.758,0.6951,1.0,0.697,1.0,0.7097,1.0,1.0,0.6952,1.0,0.02485,0.04251,0.02071,0.02799,0.00932,0.03197,5.0,5.0,5.0,,,,
+BRW-05,nlog,4841,True,False,0.0,False,2,only 2 curves >= 100 m (need 3),3304e6c0b6ce66de,"GR,NPHI,CALI",0.0,1.0,0.4666,1.0,1.0,1.0,0.9717,1.0,1.0,1.0,1.0,0.01054,,0.07242,,0.0438,,0.0,0.0,0.0,,,,
+BSKP-01,nlog,10807,False,True,0.0,False,0,only 0 curves >= 100 m (need 3),e6cbe46018bbfaf4,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,0.0,0.0,0.0,,,,
+BSKP-01-S1,nlog,3018,False,True,0.0,False,0,only 0 curves >= 100 m (need 3),ad586b9b0105866b,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,0.0,0.0,0.0,,,,
+BTA-01,nlog,15134,False,True,0.0,True,5,,81b2989a65d2ccfe,"GR,RHOB,DTC,PEF,CALI,DTS",0.6953,0.6953,1.0,0.6953,0.9977,1.0,0.6953,1.0,1.0,1.0,0.6953,0.01149,0.05269,,0.11429,0.00087,,0.0,0.0,0.0,0.00217,0.00455,,
+BTL-01,nlog,5495,False,True,0.0,False,0,only 0 curves >= 100 m (need 3),e815730a08a396e6,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,0.0,0.0,0.0,,,,
+BUI-01,nlog,12746,True,False,29.11,True,5,,50b451973a5fa303,"GR,RHOB,NPHI,PEF,CALI",0.697,0.6952,0.6952,1.0,0.7256,1.0,0.6952,1.0,1.0,1.0,1.0,0.04065,0.01647,0.03218,0.01801,0.01879,,29.1,29.1,25.3,,,,
+BUM-01,nlog,14200,False,True,0.0,True,5,,8bcdb4e67ec7d739,"GR,RHOB,DTC,CALI,RDEP",0.0041,0.6985,1.0,0.3184,1.0,1.0,0.5429,0.3162,1.0,1.0,1.0,0.04391,0.03948,,,0.04653,,0.0,0.0,0.0,0.04081,,0.02925,
+BUMA-01,nlog,13103,False,False,0.0,False,2,only 2 curves >= 100 m (need 3),27ce45d59391425d,"RHOB,PEF",1.0,0.0184,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,,0.06134,,0.02022,,,0.0,0.0,0.0,,,,
+BUMA-01-S1,nlog,7913,False,False,0.0,False,2,only 2 curves >= 100 m (need 3),687e9bebac76be07,"RHOB,PEF",1.0,0.0081,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,,0.03109,,0.01921,,,0.0,0.0,0.0,,,,
+BUR-01,nlog,24606,False,True,0.0,False,2,only 2 curves >= 100 m (need 3),91e7cd044d5496b6,"GR,DTC",0.0026,1.0,1.0,0.0412,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0374,,,,,,0.0,0.0,0.0,0.03658,,,
+BWD-01,nlog,14915,False,True,0.0,True,3,,05449cb62c284154,"SP,RDEP,RSHA",1.0,1.0,1.0,1.0,1.0,0.7036,1.0,0.7036,1.0,0.6867,1.0,,,,,,0.03681,0.0,0.0,0.0,,,0.03755,0.03755
