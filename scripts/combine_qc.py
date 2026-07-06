@@ -32,10 +32,13 @@ def _repo_root() -> Path:
 _ROOT = _repo_root()
 sys.path.insert(0, str(_ROOT / "src"))
 
-import matplotlib  # noqa: E402
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
+try:
+    import matplotlib  # noqa: E402
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt  # noqa: E402
+    _HAS_MPL = True
+except Exception:
+    _HAS_MPL = False  # viz is non-fatal; combine must run without it
 import pandas as pd  # noqa: E402
 
 SOURCES = {
@@ -79,17 +82,18 @@ def main() -> None:
 
     out = reports / "qc_combined"
     out.mkdir(parents=True, exist_ok=True)
-    fig, ax = plt.subplots(figsize=(7, 4))
-    labels = [r["source"] for r in rows]
-    ax.bar(labels, [r["wells"] for r in rows], color="#54617a", label="wells")
-    ax.bar(labels, [r["qc_passing"] for r in rows], color="#4c78a8", label="QC-passing")
-    ax.axhline(G1_TARGET, color="#e45756", linestyle="--", label=f"G1 target {G1_TARGET}")
-    ax.set_ylabel("wells")
-    ax.set_title("QC-passing wells by source")
-    ax.legend()
-    fig.tight_layout()
-    fig.savefig(out / "pass_by_source.png", dpi=120)
-    plt.close(fig)
+    if _HAS_MPL:
+        fig, ax = plt.subplots(figsize=(7, 4))
+        labels = [r["source"] for r in rows]
+        ax.bar(labels, [r["wells"] for r in rows], color="#54617a", label="wells")
+        ax.bar(labels, [r["qc_passing"] for r in rows], color="#4c78a8", label="QC-passing")
+        ax.axhline(G1_TARGET, color="#e45756", linestyle="--", label=f"G1 target {G1_TARGET}")
+        ax.set_ylabel("wells")
+        ax.set_title("QC-passing wells by source")
+        ax.legend()
+        fig.tight_layout()
+        fig.savefig(out / "pass_by_source.png", dpi=120)
+        plt.close(fig)
 
     body = "".join(
         f"<tr><td>{r['label']}</td><td>{r['continent']}</td>"
