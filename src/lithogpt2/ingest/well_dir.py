@@ -78,6 +78,7 @@ def iter_nlog_wells(
     failures: list[tuple[str, str]] | None = None,
     max_wells: int | None = None,
     skip_ids: set[str] | None = None,
+    selected: dict[str, str] | None = None,
 ) -> Iterator[tuple[str, RawWell]]:
     """Yield (borehole_id, RawWell) for each borehole under ``well_dir``.
 
@@ -86,6 +87,10 @@ def iter_nlog_wells(
     the borehole code. Files that fail to read (raising or exceeding the read
     budget) are recorded in ``failures`` as (name, error) and skipped; a
     borehole with no readable file is recorded once and skipped.
+
+    If ``selected`` is given, the winning file's name is recorded per borehole
+    (advisor decision 2), so a metadata pre-selection rule can be validated
+    against the file the curve-count iterator actually chose.
     """
     d = Path(well_dir)
     exts = {".las", ".dlis"}
@@ -125,6 +130,10 @@ def iter_nlog_wells(
             if failures is not None:
                 failures.append((bid, "no readable log file for borehole"))
             continue
+        if selected is not None and best[1].path is not None:
+            # Records which file won (most curves, widest span) so a metadata rule
+            # for at-scale pre-selection can be validated against real choices.
+            selected[bid] = best[1].path.name
         yield bid, best[1]
         n += 1
         if max_wells is not None and n >= max_wells:
