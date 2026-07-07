@@ -15,6 +15,7 @@ dependencies = [
   "pandas>=2.1",
   "pyyaml>=6.0",
   "lasio>=0.31",
+  "dlisio>=1.0",
   "scipy>=1.11",
   "pyarrow>=14.0",
 ]

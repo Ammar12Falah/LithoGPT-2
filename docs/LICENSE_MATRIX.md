@@ -64,6 +64,30 @@ escalation triggers (handoff Section 12.2), not to be guessed.
   file-list API keyed by the mapviewer borehole id); the ingester is
   index-driven, so no endpoint is guessed.
 
+### Update 7 July 2026: access chain confirmed, crawl-manners recorded
+
+Full download chain verified live (see docs/NLOG_ACCESS.md): WFS gives each
+released borehole's internal mapviewer id and PUBLIC_AS_OF; POST
+/nlog-mapviewer/rest/brh/logdocuments (bare id as JSON string) lists a borehole's
+log files with a documentBfileDbk key and fileTypeCode; GET
+/nlog-mapviewer/rest/brh/logdocument/{documentBfileDbk} returns LAS/DLIS bytes.
+Endpoint constants pinned in src/lithogpt2/ingest/nlog.py; an API change mid-crawl
+is an escalation, not a silent workaround.
+
+License: NLOG's terms (https://www.nlog.nl/en/data) permit copying, downloading and
+redistribution with attribution, so raw redistribution is permitted with
+attribution. Default posture stays pipeline + weights; no raw mirror planned.
+
+robots.txt: the 37-borehole slice (7 July 2026) downloaded files successfully, so
+/nlog-mapviewer/rest/ was not blocked for our user-agent. The fetcher reads and
+enforces robots.txt at request time and records 'blocked by robots.txt' if
+disallowed. Re-confirm from the launch log before the full crawl.
+
+Crawl manners (condition 1.2): identifying user-agent with contact email and repo
+URL, 2-second per-host rate limit, exponential backoff on 429/5xx and transport
+errors, resume-on-relaunch via the fetch manifest, and disk-full write/manifest
+guards. Release provenance PUBLIC_AS_OF carried into the QC records (condition 1.3).
+
 ## KGS (Kansas Geological Survey, kgs.ku.edu)
 
 - Redistribute raw: UNCLEAR / likely restricted. KGS publishes free LAS for

@@ -43,6 +43,8 @@ class PoliteFetcher:
         min_interval_s: float = MIN_INTERVAL_S,
         respect_robots: bool = True,
         user_agent: str = USER_AGENT,
+        max_retries: int = 3,
+        backoff_base_s: float = 2.0,
     ) -> None:
         self.source = source
         self.dest_dir = Path(raw_root) / source
@@ -51,6 +53,8 @@ class PoliteFetcher:
         self.min_interval_s = min_interval_s
         self.respect_robots = respect_robots
         self.user_agent = user_agent
+        self.max_retries = max_retries
+        self.backoff_base_s = backoff_base_s
         self._last_request: dict[str, float] = {}
         self._robots: dict[str, RobotFileParser] = {}
         self.manifest: dict[str, dict] = self._load_manifest()
@@ -116,15 +120,32 @@ class PoliteFetcher:
             return None
 
         host = urlsplit(url).netloc
-        self._throttle(host)
         req = urllib.request.Request(url, headers={"User-Agent": self.user_agent})  # noqa: S310
+        # Exponential backoff on transient errors; 4xx client errors not retried.
+        data = None
+        last_exc: Exception | None = None
+        for attempt in range(self.max_retries + 1):
+            self._throttle(host)
+            try:
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                with urllib.request.urlopen(req, timeout=60) as resp:  # noqa: S310
+                    data = resp.read()
+                break
+            except urllib.error.HTTPError as exc:
+                last_exc = exc
+                if exc.code in (400, 401, 403, 404, 405, 410):
+                    break
+            except (urllib.error.URLError, TimeoutError, OSError) as exc:
+                last_exc = exc
+            if attempt < self.max_retries:
+                time.sleep(self.backoff_base_s * (2 ** attempt))
+        if data is None:
+            log.failed.append((url, f"{type(last_exc).__name__}: {last_exc}"))
+            return None
         try:
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            with urllib.request.urlopen(req, timeout=60) as resp:  # noqa: S310
-                data = resp.read()
             dest.write_bytes(data)
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as exc:
-            log.failed.append((url, f"{type(exc).__name__}: {exc}"))
+        except OSError as exc:  # disk full mid-write: report, do not crash the run
+            log.failed.append((url, f"write failed: {type(exc).__name__}: {exc}"))
             return None
 
         digest = _sha256(dest)
@@ -134,7 +155,10 @@ class PoliteFetcher:
             "bytes": dest.stat().st_size,
             "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         }
-        self._save_manifest()
+        try:
+            self._save_manifest()
+        except OSError:
+            pass  # a full disk must not discard a good download; manifest is a cache
         log.ok.append(url)
         return dest
 

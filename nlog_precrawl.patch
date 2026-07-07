@@ -1,0 +1,171 @@
+diff --git a/docs/LICENSE_MATRIX.md b/docs/LICENSE_MATRIX.md
+index fcfe71a..db80502 100644
+--- a/docs/LICENSE_MATRIX.md
++++ b/docs/LICENSE_MATRIX.md
+@@ -64,6 +64,30 @@ escalation triggers (handoff Section 12.2), not to be guessed.
+   file-list API keyed by the mapviewer borehole id); the ingester is
+   index-driven, so no endpoint is guessed.
+ 
++### Update 7 July 2026: access chain confirmed, crawl-manners recorded
++
++Full download chain verified live (see docs/NLOG_ACCESS.md): WFS gives each
++released borehole's internal mapviewer id and PUBLIC_AS_OF; POST
++/nlog-mapviewer/rest/brh/logdocuments (bare id as JSON string) lists a borehole's
++log files with a documentBfileDbk key and fileTypeCode; GET
++/nlog-mapviewer/rest/brh/logdocument/{documentBfileDbk} returns LAS/DLIS bytes.
++Endpoint constants pinned in src/lithogpt2/ingest/nlog.py; an API change mid-crawl
++is an escalation, not a silent workaround.
++
++License: NLOG's terms (https://www.nlog.nl/en/data) permit copying, downloading and
++redistribution with attribution, so raw redistribution is permitted with
++attribution. Default posture stays pipeline + weights; no raw mirror planned.
++
++robots.txt: the 37-borehole slice (7 July 2026) downloaded files successfully, so
++/nlog-mapviewer/rest/ was not blocked for our user-agent. The fetcher reads and
++enforces robots.txt at request time and records 'blocked by robots.txt' if
++disallowed. Re-confirm from the launch log before the full crawl.
++
++Crawl manners (condition 1.2): identifying user-agent with contact email and repo
++URL, 2-second per-host rate limit, exponential backoff on 429/5xx and transport
++errors, resume-on-relaunch via the fetch manifest, and disk-full write/manifest
++guards. Release provenance PUBLIC_AS_OF carried into the QC records (condition 1.3).
++
+ ## KGS (Kansas Geological Survey, kgs.ku.edu)
+ 
+ - Redistribute raw: UNCLEAR / likely restricted. KGS publishes free LAS for
+diff --git a/pyproject.toml b/pyproject.toml
+index 06d7ba8..18109ec 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -15,6 +15,7 @@ dependencies = [
+   "pandas>=2.1",
+   "pyyaml>=6.0",
+   "lasio>=0.31",
++  "dlisio>=1.0",
+   "scipy>=1.11",
+   "pyarrow>=14.0",
+ ]
+diff --git a/src/lithogpt2/ingest/_http.py b/src/lithogpt2/ingest/_http.py
+index 29ad69c..f84b873 100644
+--- a/src/lithogpt2/ingest/_http.py
++++ b/src/lithogpt2/ingest/_http.py
+@@ -43,6 +43,8 @@ class PoliteFetcher:
+         min_interval_s: float = MIN_INTERVAL_S,
+         respect_robots: bool = True,
+         user_agent: str = USER_AGENT,
++        max_retries: int = 3,
++        backoff_base_s: float = 2.0,
+     ) -> None:
+         self.source = source
+         self.dest_dir = Path(raw_root) / source
+@@ -51,6 +53,8 @@ class PoliteFetcher:
+         self.min_interval_s = min_interval_s
+         self.respect_robots = respect_robots
+         self.user_agent = user_agent
++        self.max_retries = max_retries
++        self.backoff_base_s = backoff_base_s
+         self._last_request: dict[str, float] = {}
+         self._robots: dict[str, RobotFileParser] = {}
+         self.manifest: dict[str, dict] = self._load_manifest()
+@@ -116,15 +120,32 @@ class PoliteFetcher:
+             return None
+ 
+         host = urlsplit(url).netloc
+-        self._throttle(host)
+         req = urllib.request.Request(url, headers={"User-Agent": self.user_agent})  # noqa: S310
++        # Exponential backoff on transient errors; 4xx client errors not retried.
++        data = None
++        last_exc: Exception | None = None
++        for attempt in range(self.max_retries + 1):
++            self._throttle(host)
++            try:
++                dest.parent.mkdir(parents=True, exist_ok=True)
++                with urllib.request.urlopen(req, timeout=60) as resp:  # noqa: S310
++                    data = resp.read()
++                break
++            except urllib.error.HTTPError as exc:
++                last_exc = exc
++                if exc.code in (400, 401, 403, 404, 405, 410):
++                    break
++            except (urllib.error.URLError, TimeoutError, OSError) as exc:
++                last_exc = exc
++            if attempt < self.max_retries:
++                time.sleep(self.backoff_base_s * (2 ** attempt))
++        if data is None:
++            log.failed.append((url, f"{type(last_exc).__name__}: {last_exc}"))
++            return None
+         try:
+-            dest.parent.mkdir(parents=True, exist_ok=True)
+-            with urllib.request.urlopen(req, timeout=60) as resp:  # noqa: S310
+-                data = resp.read()
+             dest.write_bytes(data)
+-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as exc:
+-            log.failed.append((url, f"{type(exc).__name__}: {exc}"))
++        except OSError as exc:  # disk full mid-write: report, do not crash the run
++            log.failed.append((url, f"write failed: {type(exc).__name__}: {exc}"))
+             return None
+ 
+         digest = _sha256(dest)
+@@ -134,7 +155,10 @@ class PoliteFetcher:
+             "bytes": dest.stat().st_size,
+             "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+         }
+-        self._save_manifest()
++        try:
++            self._save_manifest()
++        except OSError:
++            pass  # a full disk must not discard a good download; manifest is a cache
+         log.ok.append(url)
+         return dest
+ 
+diff --git a/src/lithogpt2/ingest/nlog.py b/src/lithogpt2/ingest/nlog.py
+index 74acb3e..83b07a5 100644
+--- a/src/lithogpt2/ingest/nlog.py
++++ b/src/lithogpt2/ingest/nlog.py
+@@ -153,12 +153,14 @@ def build_index(
+ # --------------------------------------------------------------------------- #
+ # Step 2: per-borehole log-document list (verified endpoint)
+ # --------------------------------------------------------------------------- #
+-def _post_logdocuments(mapviewer_id: str, timeout: int = 60) -> list[dict]:
++def _post_logdocuments(mapviewer_id: str, timeout: int = 60,
++                       max_retries: int = 3, backoff_base_s: float = 2.0) -> list[dict]:
+     """POST one mapviewer id to the logdocuments endpoint, return the JSON list.
+ 
+     The body is the bare id as a JSON string (the array and object forms both
+-    return 400; the raw string returns 200). Raises on transport/parse errors so
+-    the caller can record them verbatim.
++    return 400; the raw string returns 200). Retries transient errors (429, 5xx,
++    transport) with exponential backoff; a 4xx client error is not retried.
++    Raises the last error if all attempts fail so the caller records it verbatim.
+     """
+     body = json.dumps(mapviewer_id).encode("utf-8")  # -> "106511838"
+     req = urllib.request.Request(  # noqa: S310
+@@ -166,11 +168,23 @@ def _post_logdocuments(mapviewer_id: str, timeout: int = 60) -> list[dict]:
+         headers={"User-Agent": USER_AGENT, "Accept": "application/json",
+                  "Content-Type": "application/json"},
+     )
+-    with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310
+-        payload = json.load(resp)
+-    if isinstance(payload, dict):
+-        payload = payload.get("documents") or payload.get("logDocuments") or []
+-    return payload if isinstance(payload, list) else []
++    last_exc: Exception | None = None
++    for attempt in range(max_retries + 1):
++        try:
++            with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310
++                payload = json.load(resp)
++            if isinstance(payload, dict):
++                payload = payload.get("documents") or payload.get("logDocuments") or []
++            return payload if isinstance(payload, list) else []
++        except urllib.error.HTTPError as exc:
++            last_exc = exc
++            if exc.code in (400, 401, 403, 404, 405, 410):
++                raise
++        except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as exc:
++            last_exc = exc
++        if attempt < max_retries:
++            time.sleep(backoff_base_s * (2 ** attempt))
++    raise last_exc if last_exc else RuntimeError("logdocuments failed")
+ 
+ 
+ def _done_ids(out_csv: Path) -> set[str]:
