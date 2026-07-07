@@ -90,3 +90,5 @@ CAL-GT-05__2276858967.las,"RuntimeError: LASHeaderError: Line 54 (section ~Param
 CAL-GT-05__2276859060.las,"RuntimeError: LASHeaderError: Line 55 (section ~Parameter Information Block): ""Depth"""
 ZWK-01__1091731781.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
 ZWK-01__1091731847.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+AND-06-S1__2243054659.dlis,"read timeout > 120s (killed, skipped)"
+AND-06-S1,no readable log file for borehole
