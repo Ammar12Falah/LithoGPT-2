@@ -1,1 +1,76 @@
-
+well_id,error
+CAL-GT-01__1469265355.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469265355.dlis' is not an existing regular file
+CAL-GT-01__1469265360.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469265360.dlis' is not an existing regular file
+CAL-GT-01__1469265973.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469265973.las'
+CAL-GT-01__1469266006.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266006.las'
+CAL-GT-01__1469266057.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266057.las'
+CAL-GT-01__1469266109.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266109.las'
+CAL-GT-01__1469266120.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266120.las'
+CAL-GT-01__1469266167.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266167.las'
+CAL-GT-01__1469266260.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469266260.dlis' is not an existing regular file
+CAL-GT-01__1469266265.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469266265.dlis' is not an existing regular file
+CAL-GT-01__1469266613.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469266613.dlis' is not an existing regular file
+CAL-GT-01__1469266618.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469266618.dlis' is not an existing regular file
+CAL-GT-01__1469266966.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266966.las'
+CAL-GT-01__1469266995.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266995.las'
+CAL-GT-01__1469267024.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267024.las'
+CAL-GT-01__1469267063.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267063.las'
+CAL-GT-01__1469267103.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267103.las'
+CAL-GT-01__1469267154.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267154.dlis' is not an existing regular file
+CAL-GT-01__1469267159.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267159.dlis' is not an existing regular file
+CAL-GT-01__1469267501.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267501.dlis' is not an existing regular file
+CAL-GT-01__1469267506.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267506.dlis' is not an existing regular file
+CAL-GT-01__1469267869.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267869.las'
+CAL-GT-01__1469267892.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267892.las'
+CAL-GT-01__1469267923.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267923.dlis' is not an existing regular file
+CAL-GT-01__1469267928.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267928.dlis' is not an existing regular file
+CAL-GT-01__1469268023.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469268023.las'
+CAL-GT-01__1469268114.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268114.dlis' is not an existing regular file
+CAL-GT-01__1469268119.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268119.dlis' is not an existing regular file
+CAL-GT-01__1469268327.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268327.dlis' is not an existing regular file
+CAL-GT-01__1469268332.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268332.dlis' is not an existing regular file
+CAL-GT-01__1469268540.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268540.dlis' is not an existing regular file
+CAL-GT-01__1469268545.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268545.dlis' is not an existing regular file
+CAL-GT-01__1469268751.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268751.dlis' is not an existing regular file
+CAL-GT-01__1469268756.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268756.dlis' is not an existing regular file
+CAL-GT-01__1469368342.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469368342.dlis' is not an existing regular file
+CAL-GT-01__1469368347.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469368347.dlis' is not an existing regular file
+CAL-GT-01__1469380587.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469380587.las'
+CAL-GT-01__1469380630.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469380630.dlis' is not an existing regular file
+CAL-GT-01__1469380635.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469380635.dlis' is not an existing regular file
+CAL-GT-01__1469381037.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469381037.las'
+CAL-GT-01__1469382719.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469382719.dlis' is not an existing regular file
+CAL-GT-01__1469382724.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469382724.dlis' is not an existing regular file
+CAL-GT-01__1469383771.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469383771.dlis' is not an existing regular file
+CAL-GT-01__1469383782.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469383782.dlis' is not an existing regular file
+CAL-GT-01__1469390118.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469390118.dlis' is not an existing regular file
+CAL-GT-01__1469390123.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469390123.dlis' is not an existing regular file
+CAL-GT-01__1469390842.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469390842.dlis' is not an existing regular file
+CAL-GT-01__1469390847.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469390847.dlis' is not an existing regular file
+CAL-GT-01__1469391234.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391234.dlis' is not an existing regular file
+CAL-GT-01__1469391239.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391239.dlis' is not an existing regular file
+CAL-GT-01__1469391539.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391539.dlis' is not an existing regular file
+CAL-GT-01__1469391544.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391544.dlis' is not an existing regular file
+CAL-GT-01__1469391842.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469391842.las'
+CAL-GT-01__1469391865.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469391865.las'
+CAL-GT-01__1469391888.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469391888.las'
+CAL-GT-01__1469391931.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469391931.las'
+CAL-GT-01__1469391981.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391981.dlis' is not an existing regular file
+CAL-GT-01__1469391986.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391986.dlis' is not an existing regular file
+CAL-GT-01__1469392054.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392054.dlis' is not an existing regular file
+CAL-GT-01__1469392059.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392059.dlis' is not an existing regular file
+CAL-GT-01__1469392127.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392127.dlis' is not an existing regular file
+CAL-GT-01__1469392132.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392132.dlis' is not an existing regular file
+CAL-GT-01__1469392233.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392233.dlis' is not an existing regular file
+CAL-GT-01__1469392238.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392238.dlis' is not an existing regular file
+CAL-GT-01__1469392361.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392361.dlis' is not an existing regular file
+CAL-GT-01__1469392366.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392366.dlis' is not an existing regular file
+CAL-GT-01__1469392854.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392854.dlis' is not an existing regular file
+CAL-GT-01__1469392859.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392859.dlis' is not an existing regular file
+CAL-GT-01__1469393345.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469393345.las'
+CAL-GT-01__1469393386.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469393386.las'
+CAL-GT-01__1469393429.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469393429.dlis' is not an existing regular file
+CAL-GT-01__1469393434.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469393434.dlis' is not an existing regular file
+CAL-GT-01__1469396237.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469396237.las'
+CAL-GT-01__1470718572.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1470718572.dlis' is not an existing regular file
+CAL-GT-01__1470718577.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1470718577.dlis' is not an existing regular file
