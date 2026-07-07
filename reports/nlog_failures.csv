@@ -74,3 +74,19 @@ CAL-GT-01__1469393434.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469393434.d
 CAL-GT-01__1469396237.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469396237.las'
 CAL-GT-01__1470718572.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1470718572.dlis' is not an existing regular file
 CAL-GT-01__1470718577.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1470718577.dlis' is not an existing regular file
+CAL-GT-01-S1__1470717494.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-01-S1__1470717499.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-02__1471038577.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-02__1471038582.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471319565.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471319570.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471328658.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471328937.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471478863.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471478868.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471479491.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471479496.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-05__2276858967.las,"RuntimeError: LASHeaderError: Line 54 (section ~Parameter Information): ""Depth"""
+CAL-GT-05__2276859060.las,"RuntimeError: LASHeaderError: Line 55 (section ~Parameter Information Block): ""Depth"""
+ZWK-01__1091731781.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+ZWK-01__1091731847.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
