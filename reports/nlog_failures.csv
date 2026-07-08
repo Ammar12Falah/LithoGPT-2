@@ -90,5 +90,80 @@ CAL-GT-05__2276858967.las,"RuntimeError: LASHeaderError: Line 54 (section ~Param
 CAL-GT-05__2276859060.las,"RuntimeError: LASHeaderError: Line 55 (section ~Parameter Information Block): ""Depth"""
 ZWK-01__1091731781.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
 ZWK-01__1091731847.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
-AND-06-S1__2243054659.dlis,"read timeout > 120s (killed, skipped)"
 AND-06-S1,no readable log file for borehole
+AND-06-S1__2243054659.dlis,"read timeout > 120s (killed, skipped)"
+BGM-10-S1,no readable log file for borehole
+BGM-17,no readable log file for borehole
+BGM-17-S1,no readable log file for borehole
+BGM-18,no readable log file for borehole
+BGM-19,no readable log file for borehole
+BGM-23,no readable log file for borehole
+BGM-24,no readable log file for borehole
+BGM-25,no readable log file for borehole
+BGM-28,no readable log file for borehole
+BGM-10-S1__1813911127.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:12:35/27-Dec-2013')
+BGM-17__3839910765.las,RuntimeError: ValueError: could not convert string to float: np.str_('06:02:04/23-Nov-2014')
+BGM-17__3839910897.las,RuntimeError: ValueError: could not convert string to float: np.str_('12:05:00/27-Aug-2014')
+BGM-17__3839910989.las,RuntimeError: ValueError: could not convert string to float: np.str_('11:15:40/03-Sep-2014')
+BGM-17-S1__3839911133.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:15:14/05-Dec-2014')
+BGM-17-S1__3839911211.las,RuntimeError: ValueError: could not convert string to float: np.str_('13:14:39/07-Dec-2014')
+BGM-17-S1__3839911289.las,RuntimeError: ValueError: could not convert string to float: np.str_('14:09:32/10-Dec-2014')
+BGM-17-S1__3839911369.las,RuntimeError: ValueError: could not convert string to float: np.str_('11:32:33/13-Dec-2014')
+BGM-18__1829840157.las,RuntimeError: ValueError: could not convert string to float: np.str_('14:37:41/14-Sep-2014')
+BGM-19__1829841533.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:08:26/07-Aug-2014')
+BGM-19__1829841652.las,RuntimeError: ValueError: could not convert string to float: np.str_('15:35:55/21-Sep-2014')
+BGM-23__1830044599.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:37:32/06-Oct-2014')
+BGM-23__1830044718.las,RuntimeError: ValueError: could not convert string to float: np.str_('11:50:00/27-Sep-2014')
+BGM-24__1799520587.las,RuntimeError: ValueError: could not convert string to float: np.str_('21:10:33/27-Feb-2013')
+BGM-25__1799586460.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:47:47/07-Oct-2013')
+BGM-28__1839013089.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:30:00/09-Sep-2013')
+BLD-01-S2,no readable log file for borehole
+BLD-01-S2__3807796842.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+BLD-01-S2__3807796893.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+D12-B-01__3921480353.las,RuntimeError: ValueError: could not convert string to float: np.str_('06:35:28/17-Oct-2019')
+D12-B-01__3921480493.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:50:00/18-Oct-2019')
+D12-B-01__3921480633.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:05:31/10-Oct-2019')
+D12-B-01,no readable log file for borehole
+D12-B-03,no readable log file for borehole
+D12-B-03__3942723978.dlis,"read timeout > 120s (killed, skipped)"
+D15-FA-101__447382016.dlis,"read timeout > 120s (killed, skipped)"
+D15-FA-102-S1__872329504.dlis,"read timeout > 120s (killed, skipped)"
+D15-FA-104-S1,no readable log file for borehole
+D15-FA-104-S1__1167208055.dlis,"read timeout > 120s (killed, skipped)"
+D15-FA-104-S1__1167208065.dlis,"read timeout > 120s (killed, skipped)"
+D18-A-02,no readable log file for borehole
+D18-A-02__1469242429.dlis,"read timeout > 120s (killed, skipped)"
+E16-04__763868813.las,"RuntimeError: ValueError: Cannot reshape ~A data size (60,) into 7 columns"
+E17-A-06-S2__3826494752.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F02-06__447784551.dlis,"read timeout > 120s (killed, skipped)"
+F03-FB-106-S2__3839907137.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F03-FB-106-S2__3839908678.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F05-04,no readable log file for borehole
+F05-04__449065033.dlis,"RuntimeError: RuntimeError: 
+Problem:      File truncated in Logical Record Segment
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 453724958 (dec), Logical Record tell: 24509988 (dec), Logical Record Segment tell: 24518776 (dec)"
+F06-06-S1,no readable log file for borehole
+F06-06-S1__1710008570.dlis,"read timeout > 120s (killed, skipped)"
+F12-05,no readable log file for borehole
+F12-05__1843909702.las,RuntimeError: ValueError: could not convert string to float: np.str_('21:10:16/07-May-2015')
+F15-A-02-S3,no readable log file for borehole
+F15-A-02-S5,no readable log file for borehole
+F15-A-02-S3__1466049279.las,RuntimeError: ValueError: could not convert string to float: np.str_('23:00:00/03-Jun-2013')
+F15-A-02-S4__1466055368.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F15-A-02-S5__1466060878.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:07:22/11-Jul-2013')
+F15-A-02-S5__1466067700.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:42:26/18-Jul-2013')
+F16-A-03__750979485.dlis,"read timeout > 120s (killed, skipped)"
+F17-10,no readable log file for borehole
+F17-10__1498034820.dlis,"read timeout > 120s (killed, skipped)"
+F17-10__1647976297.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:00:00/20-Oct-2012')
+F17-11,no readable log file for borehole
+F17-11__1701282677.dlis,"read timeout > 120s (killed, skipped)"
+F17-12,no readable log file for borehole
+F17-12__1701280331.dlis,"read timeout > 120s (killed, skipped)"
+F17-14,no readable log file for borehole
+F17-14__3582201738.las,RuntimeError: ValueError: could not convert string to float: np.str_('20:43:28/20-May-2018')
+G14-A-02__751039684.dlis,"read timeout > 120s (killed, skipped)"
+G14-A-02,no readable log file for borehole
