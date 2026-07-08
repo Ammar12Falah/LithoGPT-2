@@ -232,7 +232,7 @@ def main() -> None:
                 fb_log = FetchLog()
                 fetched = 0
                 for wid in fb_ids:
-                    for r in primary_candidates(groups[wid]):
+                    for r in primary_candidates(groups[wid])[:5]:  # cap fallback waste
                         ext = _EXT.get((r.get("file_type") or "").upper(), "bin")
                         fid = (r.get("file_id") or "").strip()
                         if (wells_dir / f"{wid}__{fid}.{ext}").exists():

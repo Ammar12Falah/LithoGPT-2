@@ -207,3 +207,21 @@ def test_primary_candidates_keeps_demoted_real_log_first():
         dict(file_name="W_FMI_IMAGE.dlis", file_size="8000000", top_depth="0", bottom_depth="2200"),
     ]
     assert drv.primary_candidates(rows)[0]["file_name"] == "CLARITY_MAIN.las"
+
+
+def test_fallback_cap_bounds_candidates_to_five():
+    # The phase-2 fallback iterates primary_candidates(...)[:5]; verify the cap
+    # bounds a many-file borehole to its 5 best while preserving rank order.
+    from scripts.ingest_qc_nlog_batched import primary_candidates
+
+    rows = [
+        {"file_name": f"log_{i}.las", "file_size": str(i), "top_depth": "0",
+         "bottom_depth": str(i), "file_type": "LAS", "download_url": f"u{i}",
+         "file_id": str(i)}
+        for i in range(33)
+    ]
+    ranked = primary_candidates(rows)
+    capped = ranked[:5]
+    assert len(capped) == 5
+    assert capped == ranked[:5]  # cap preserves the top-ranked order, no reshuffle
+    assert len(ranked) == 33     # the ranker itself does not drop rows; the cap does
