@@ -225,3 +225,28 @@ def test_fallback_cap_bounds_candidates_to_five():
     assert len(capped) == 5
     assert capped == ranked[:5]  # cap preserves the top-ranked order, no reshuffle
     assert len(ranked) == 33     # the ranker itself does not drop rows; the cap does
+
+
+def test_run_qc_accepts_reprocess_ids_file(tmp_path):
+    # Regression: the batched driver's fallback calls run_qc_nlog.py with
+    # --reprocess-ids-file. That flag must be accepted, not rejected by argparse.
+    # Empty well-dir means the runner exits early without needing real data;
+    # we are asserting the ARGUMENT PARSES, which is exactly what broke the crawl.
+    import subprocess, sys
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    ids_file = tmp_path / "ids.txt"
+    ids_file.write_text("D12-B-02\n", encoding="utf-8")
+    empty_dir = tmp_path / "wells"
+    empty_dir.mkdir()
+
+    r = subprocess.run(
+        [sys.executable, str(root / "scripts" / "run_qc_nlog.py"),
+         "--well-dir", str(empty_dir),
+         "--reprocess-ids-file", str(ids_file)],
+        capture_output=True, text=True, cwd=str(root),
+    )
+    # Must not be the argparse "unrecognized arguments" failure (exit 2).
+    assert "unrecognized arguments" not in r.stderr, r.stderr
+    assert "--reprocess-ids-file" not in r.stderr, r.stderr

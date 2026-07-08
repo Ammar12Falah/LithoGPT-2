@@ -66,6 +66,8 @@ def main() -> None:
     ap.add_argument("--max-wells", type=int, default=None)
     ap.add_argument("--chunk", type=int, default=200)
     ap.add_argument("--fresh", action="store_true")
+    ap.add_argument("--reprocess-ids-file", default=None,
+                    help="newline-delimited borehole IDs to force-reprocess (fallback re-QC)")
     ap.add_argument("--no-parquet", action="store_true")
     args = ap.parse_args()
 
@@ -87,7 +89,13 @@ def main() -> None:
         for f in (rec_csv, cov_csv, unmapped_csv, fail_csv):
             if f.exists():
                 f.unlink()
-    pending = [b for b in all_ids if b not in done]
+    if args.reprocess_ids_file:
+        from pathlib import Path as _P
+        force = {ln.strip() for ln in _P(args.reprocess_ids_file).read_text(
+            encoding="utf-8").splitlines() if ln.strip()}
+        pending = [b for b in all_ids if b in force]
+    else:
+        pending = [b for b in all_ids if b not in done]
     if args.max_wells is not None:
         pending = pending[:args.max_wells]
 
