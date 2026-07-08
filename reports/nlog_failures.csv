@@ -180,3 +180,33 @@ K02-A-04__1012503233.dlis,"read timeout > 120s (killed, skipped)"
 K02-A-05,no readable log file for borehole
 K02-A-05__1099386224.dlis,"read timeout > 120s (killed, skipped)"
 K02-A-05__1099386257.dlis,"read timeout > 120s (killed, skipped)"
+K05-A-06,no readable log file for borehole
+K05-A-06__1763618136.dlis,"read timeout > 120s (killed, skipped)"
+K05-B-03,no readable log file for borehole
+K05-A-06-S1__1763732317.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:02:04/05-Jan-2015')
+K05-A-06-S1__1763772710.las,RuntimeError: ValueError: could not convert string to float: np.str_('09:22:33/16-Jan-2015')
+K05-A-06-S1__1763772751.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:34:43/18-Jan-2015')
+K05-A-06-S1,no readable log file for borehole
+K05-B-03__1706566123.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:13:21/23-Dec-2011')
+K05-CU-01,no readable log file for borehole
+K05-B-03-S1__1706495955.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:00:00/31-Dec-2011')
+K05-B-03-S1__1706550926.las,RuntimeError: ValueError: could not convert string to float: np.str_('04:00:00/03-Jan-2012')
+K05-B-03-S1__1706646545.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:00:00/23-Jan-2012')
+K05-B-03-S1,no readable log file for borehole
+K05-CU-01__1756551147.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:00:00/08-Jul-2009')
+K05-D-04__2458423153.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:00:00/18-Sep-2011')
+K05-ENC-02-S2,no readable log file for borehole
+K05-ENC-02-S2__753733449.las,RuntimeError: KeyError: 'INTE'
+K05-F-03__2117247924.las,RuntimeError: ValueError: could not convert string to float: np.str_('22:02:04/17-Mar-2016')
+K05-F-03__2117248095.las,RuntimeError: ValueError: could not convert string to float: np.str_('12:18:08/06-Mar-2016')
+K05-F-03__2117248175.las,RuntimeError: ValueError: could not convert string to float: np.str_('22:16:30/11-Mar-2016')
+K05-F-03,no readable log file for borehole
+K05-F-03-S1__2117260280.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:23:20/09-Apr-2016')
+K05-F-03-S1__2117260392.las,RuntimeError: ValueError: could not convert string to float: np.str_('21:56:34/19-Apr-2016')
+K05-F-03-S1__2117260614.las,RuntimeError: ValueError: could not convert string to float: np.str_('23:50:30/01-May-2016')
+K05-F-03-S1,no readable log file for borehole
+K06-GT-04-S1,no readable log file for borehole
+K06-GT-04-S1__446587807.dlis,"read timeout > 120s (killed, skipped)"
+K06-GT-04-S1__446587817.dlis,"read timeout > 120s (killed, skipped)"
+K06-GT-06,no readable log file for borehole
+K06-GT-06__1756157363.las,RuntimeError: ValueError: could not convert string to float: np.str_('22:34:46/02-Jul-2010')
