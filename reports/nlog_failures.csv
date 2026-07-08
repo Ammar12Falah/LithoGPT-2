@@ -210,3 +210,79 @@ K06-GT-04-S1__446587807.dlis,"read timeout > 120s (killed, skipped)"
 K06-GT-04-S1__446587817.dlis,"read timeout > 120s (killed, skipped)"
 K06-GT-06,no readable log file for borehole
 K06-GT-06__1756157363.las,RuntimeError: ValueError: could not convert string to float: np.str_('22:34:46/02-Jul-2010')
+K09AB-B-03-S6__2228062665.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+K09AB-B-05,no readable log file for borehole
+K09AB-B-05__1974135841.dlis,"read timeout > 120s (killed, skipped)"
+K09C-A-06__2635822840.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+K10-17,no readable log file for borehole
+K10-17__2427886490.las,"RuntimeError: ValueError: Cannot reshape ~A data size (102,) into 19 columns"
+K12-B-11,no readable log file for borehole
+K12-B-11__1347246108.dlis,"read timeout > 120s (killed, skipped)"
+K12-B-11__1347246113.dlis,"read timeout > 120s (killed, skipped)"
+K12-C-05-S1__1807829459.dlis,"read timeout > 120s (killed, skipped)"
+K12-D-03,no readable log file for borehole
+K12-D-03__2288971756.dlis,"read timeout > 120s (killed, skipped)"
+K12-G-05-S1,no readable log file for borehole
+K12-G-05-S1__2246550475.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+K12-G-09,no readable log file for borehole
+K12-G-09__1342093740.dlis,"read timeout > 120s (killed, skipped)"
+K12-G-09__1342096439.dlis,"read timeout > 120s (killed, skipped)"
+K15-FG-104-S2__2786640525.las,"RuntimeError: ValueError: Cannot reshape ~A data size (3385818,) into 16 columns"
+K15-FK-101__1349846048.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-101__1349846210.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-101__446538094.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-101,no readable log file for borehole
+K15-FK-103-S2,no readable log file for borehole
+K15-FK-103-S2__446355894.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-103-S2__446355904.dlis,"read timeout > 120s (killed, skipped)"
+K16-06-S1__446295387.dlis,"read timeout > 120s (killed, skipped)"
+K18-07-S1,no readable log file for borehole
+K18-07-S1__3839852377.dlis,"RuntimeError: RuntimeError: 
+Problem:      rp66: Incorrect format version in Visible Record 1930
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 507512738 (dec), Logical Record tell: 12797378 (dec), Logical Record Segment tell: 12805566 (dec)"
+K18-09__1644667613.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:33:09/05-Jul-2012')
+K18-G-02,no readable log file for borehole
+K18-G-02__3942732694.las,RuntimeError: ValueError: could not convert string to float: np.str_('2014/12/17:')
+K18-G-04__1647974686.las,RuntimeError: ValueError: could not convert string to float: np.str_('05:19:28/18-Jun-2012')
+K18-G-04__1647974734.las,RuntimeError: ValueError: could not convert string to float: np.str_('04:15:00/20-Jun-2012')
+K18-KOTTER-10-S1__3949145155.las,"RuntimeError: LASHeaderError: Line 32 (section ~Disclaimer): ""Baker Hughes INTEQ does not guarantee the accuracy  or correctness"""
+K18-KOTTER-10-S1,no readable log file for borehole
+KHL-GT-02__2395227171.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L02-09__2700304915.dlis,"read timeout > 120s (killed, skipped)"
+L04-A-07-S1,no readable log file for borehole
+L04-A-07-S1__1537560836.las,RuntimeError: ValueError: could not convert string to float: np.str_('07:00:00/17-Jun-2012')
+L04-A-07-S1__1537560889.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:00:00/20-Jun-2012')
+L05-12,no readable log file for borehole
+L05-12__765311333.dlis,"read timeout > 120s (killed, skipped)"
+L05-12__765311391.dlis,"read timeout > 120s (killed, skipped)"
+L05-13__1403560192.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-15__1404058000.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-15__1404058114.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__1191426896.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__433330653.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__433330688.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01,no readable log file for borehole
+L05-C-02-S3,no readable log file for borehole
+L05-C-02-S3__1756551352.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:00:00/26-Apr-2011')
+L05-C-02-S3__1756552378.dlis,"read timeout > 120s (killed, skipped)"
+L05-C-03,no readable log file for borehole
+L05-C-03__642734454.las,"read timeout > 120s (killed, skipped)"
+L05-D-01__1884906062.dlis,"read timeout > 120s (killed, skipped)"
+L05-D-01__1885015002.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L06-07,no readable log file for borehole
+L06-07__636229876.dlis,"read timeout > 120s (killed, skipped)"
+L06-08__2372017759.las,RuntimeError: ValueError: could not convert string to float: np.str_('06:00:00/29-Jun-2010')
+L08-P4-02__1471500137.dlis,"read timeout > 120s (killed, skipped)"
+L08-P4-02__446699957.dlis,"RuntimeError: RuntimeError: 
+Problem:      Too short logical record. Length can't be less than 4, but was 0
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 19302056 (dec), Logical Record tell: 19228721 (dec), Logical Record Segment tell: 19264312 (dec)"
+L08-P4-02__446699966.dlis,"read timeout > 120s (killed, skipped)"
+L08-P4-02,no readable log file for borehole
+L08-P4-02-S2,no readable log file for borehole
+L08-P4-02-S2__447020337.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
