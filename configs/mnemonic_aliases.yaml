@@ -27,7 +27,7 @@ min_usable:
 
 curves:
   GR:
-    aliases: [GR, GRC, GRD, SGR, CGR, GAM, GRGC, GRS, GR_1, GRTO, "GAMMA"]
+    aliases: [GR, GRC, GRD, SGR, CGR, GAM, GRGC, GRS, GR_1, GRTO, "GAMMA", RGR, ECGR]
     unit: gAPI
     valid_range: [0.0, 400.0]
     transform: none
@@ -52,7 +52,7 @@ curves:
     trend_curve: true
     washout_sensitive: true
   DTC:
-    aliases: [DT, DTC, DTCO, AC, DT4P, DTL, DTLN, SONIC]
+    aliases: [DT, DTC, DTCO, AC, DT4P, DTL, DTLN, SONIC, SON]
     unit: us/ft
     convert:
       us/m: 0.3048
@@ -73,7 +73,7 @@ curves:
     transform: none
     trend_curve: false
   CALI:
-    aliases: [CALI, CAL, HCAL, DCAL, CALS, CALX, "CALIPER", "CALIPERL"]
+    aliases: [CALI, CAL, HCAL, DCAL, CALS, CALX, "CALIPER", "CALIPERL", RCAL, CAL1, CAL2]
     unit: in
     convert:
       mm: 0.0393701
