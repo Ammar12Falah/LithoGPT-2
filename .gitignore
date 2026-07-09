@@ -22,3 +22,5 @@ data/processed/
 data/raw/
 logs/
 venv/
+g1_nlog_evidence.tar.gz
+SHA256_MANIFEST.txt
