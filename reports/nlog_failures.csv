@@ -440,3 +440,16 @@ VNW-01,no readable log file for borehole
 VNW-01__1175887149.dlis,"read timeout > 120s (killed, skipped)"
 VNW-01__446259334.dlis,"read timeout > 120s (killed, skipped)"
 VRS-10__2782447966.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WWS-02__446367107.dlis,"read timeout > 120s (killed, skipped)"
+WYK-102__3666974584.dlis,"read timeout > 120s (killed, skipped)"
+WYK-201__2840330977.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WYK-201__2840331027.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WYK-202__3091696639.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:59:07/09-Dec-2016')
+WYK-202__3091696705.las,RuntimeError: ValueError: could not convert string to float: np.str_('04:20:00/12-Dec-2016')
+ZND-11,no readable log file for borehole
+ZND-11__991812201.dlis,"read timeout > 120s (killed, skipped)"
+ZND-11__991820064.dlis,"read timeout > 120s (killed, skipped)"
+ZUR-01__359828893.las,RuntimeError: KeyError: 'No ~ sections found. Is this a LAS file?'
+ZVB-GT-01__2884977641.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+ZWD-A1B,no readable log file for borehole
+ZWD-A1B__3093142467.dlis,"read timeout > 120s (killed, skipped)"
