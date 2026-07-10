@@ -114,6 +114,14 @@ def main() -> None:
         result = run_batch(wells, config, SOURCE,
                            processed_dir=processed_dir, keep_harmonized=False)
         new_rec_rows = [r.as_row() for r in result["records"]]
+        # Structural-gap fix: persist each well's unmapped-mnemonic SET per well,
+        # not just global counts. result["unmapped"] is (source, well_id, mnem, unit).
+        _um = {}
+        for _s, _wid, _mnem, _unit in result["unmapped"]:
+            _um.setdefault(str(_wid), set()).add(str(_mnem))
+        for _row in new_rec_rows:
+            _got = _um.get(str(_row.get("well_id", "")), set())
+            _row["unmapped_mnemonics"] = ";".join(sorted(_got))
         new_fail_rows = [{"well_id": w, "error": e}
                          for w, e in (read_failures + result["failures"])]
         rec_df, _, unmapped_df, fail_df = _write_reports(
