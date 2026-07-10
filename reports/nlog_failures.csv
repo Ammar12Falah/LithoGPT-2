@@ -63,3 +63,4 @@ D18-A-02,no readable log file for borehole
 D18-A-02__1469242429.dlis,"read timeout > 120s (killed, skipped)"
 E16-04__763868813.las,"RuntimeError: ValueError: Cannot reshape ~A data size (60,) into 7 columns"
 E17-A-06-S2__3826494752.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F02-06__447784551.dlis,"read timeout > 120s (killed, skipped)"
