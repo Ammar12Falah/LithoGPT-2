@@ -88,13 +88,13 @@ curves:
     transform: log10
     trend_curve: false
   RMED:
-    aliases: [RMED, ILM, RILM, AT30, RLA3, RESM, RM, "RES(MI)", "RLL3"]
+    aliases: [RMED, ILM, RILM, AT30, RLA3, RESM, RM, "RES(MI)", "RLL3", LN]
     unit: ohm.m
     valid_range: [0.01, 100000.0]
     transform: log10
     trend_curve: false
   RSHA:
-    aliases: [RSHA, LLS, SFLU, AT10, RLA1, RESS, MSFL, RXOZ, SFL]
+    aliases: [RSHA, LLS, SFLU, AT10, RLA1, RESS, MSFL, RXOZ, SFL, SN]
     unit: ohm.m
     valid_range: [0.01, 100000.0]
     transform: log10
