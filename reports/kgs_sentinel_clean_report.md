@@ -49,3 +49,24 @@ floor at the next QC count. Accepted: real numbers over inflated ones.
 ## Provenance
 KGS processed parquets are derived (untracked); this report is the durable record.
 Related commits: rail rule 60f7473, e2e tests f224347, pre-alias snapshot 206af98.
+
+
+## Count reconciliation (sample memo vs census)
+
+Two counts of the same fills differ between reports and the difference is stated here so a
+skeptical reader meets no unexplained jump. The earlier sample memo estimated the RDEP
+ceiling fill at about 27 wells and the 3775-class mass at about 16 wells; the full census
+found 3,634 and 254. Cause: the sample counted only wells where the fill was the DOMINANT
+exact mass in the channel, while the census counted ANY presence of the exact fill value
+above a small threshold. A second, smaller contributor is the rounding conflation already
+disclosed, the recurring value is exactly 3777 ohmm (log10 3.5771469848275252), not 3775.
+Exact linear values nulled: resistivity ceiling 100000 ohmm, RDEP fill 3777 ohmm, GR floor
+0.0 gAPI.
+
+## GR floor is edge padding, not interval fill
+
+The GR floor nulling is 8,852 samples across 4,248 wells, about 2.08 samples per well. That
+per-well rate is the signature of edge padding (a couple of zero-valued samples at curve
+start/end) rather than interval fill, which preempts the reader who wonders how four thousand
+wells could carry gamma-ray fill. The samples are removed regardless (a padded 0.0 gAPI is
+not a measurement), but the mechanism is padding, not a corrupt logging run.
