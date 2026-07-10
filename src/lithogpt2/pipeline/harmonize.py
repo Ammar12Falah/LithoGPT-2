@@ -116,6 +116,35 @@ def _to_missing_nulls(values: np.ndarray, null_values: tuple[float, ...]) -> np.
     return out
 
 
+
+_RAIL_EPS = 1e-6          # closeness to a valid_range bound (post-transform space handled by caller)
+_RAIL_MIN_FRAC = 0.05     # a value must hold >=5% of finite samples to count as a discrete mass
+_RAIL_MIN_COUNT = 25      # and at least this many samples, so tiny wells don't false-trigger
+
+def _null_rail_pileup(values, lo, hi):
+    """Null discrete masses welded to a valid_range rail (off-scale fill sentinels).
+
+    A value is nulled only if it (a) equals a range bound within _RAIL_EPS and
+    (b) is held by a large, discrete fraction of finite samples. Mid-range modes
+    (real rock modes like RHOB density) are never near a bound, so they are exempt.
+    Sets to missing (NaN); never clips. Returns (values, nulled_count).
+    """
+    import numpy as _np
+    v = values
+    finite = _np.isfinite(v)
+    n = int(finite.sum())
+    if n == 0:
+        return values, 0
+    nulled = 0
+    for bound in (lo, hi):
+        on_rail = finite & (_np.abs(v - bound) <= _RAIL_EPS)
+        c = int(on_rail.sum())
+        if c >= _RAIL_MIN_COUNT and (c / n) >= _RAIL_MIN_FRAC:
+            v = _np.where(on_rail, _np.nan, v)
+            nulled += c
+    return v, nulled
+
+
 def _process_channel(
     raw_values: np.ndarray,
     raw_unit: str,
@@ -150,6 +179,7 @@ def _process_channel(
 
     lo, hi = valid_range
     values = np.where((values < lo) | (values > hi), np.nan, values)
+    values, _ = _null_rail_pileup(values, lo, hi)  # sentinel rail pileup -> missing (advisor 2026-07-10)
 
     if transform == "log10":
         with np.errstate(invalid="ignore", divide="ignore"):
