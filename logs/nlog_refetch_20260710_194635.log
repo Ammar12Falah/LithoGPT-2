@@ -21813,3 +21813,295 @@ DONE. cumulative boreholes: 4757   QC-passing: 2246/4757
 [batch 1075/1107] fallback: 2 boreholes below pass on primary, 2 extra files fetched, 0 now passing
 [batch 1075/1107] deleted 7 raw files. cumulative: 4757 boreholes, 2246 QC-passing. 1197 min elapsed.
 
+[batch 1076/1107] downloaded 6 (skipped 0, failed 0) of 6 files for 6 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 6 boreholes, 4757 already done, 6 to process.
+  checkpoint: 6/6 this run (cumulative 4763 boreholes, 2249 QC-passing, 348 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4763   QC-passing: 2249/4763
+  distinct unmapped mnemonics: 18294
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 6 boreholes, 4763 already done, 3 to process.
+  checkpoint: 3/3 this run (cumulative 4763 boreholes, 2250 QC-passing, 348 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4763   QC-passing: 2250/4763
+  distinct unmapped mnemonics: 18294
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1076/1107] fallback: 3 boreholes below pass on primary, 6 extra files fetched, 1 now passing
+[batch 1076/1107] deleted 12 raw files. cumulative: 4763 boreholes, 2250 QC-passing. 1198 min elapsed.
+
+[batch 1077/1107] downloaded 1 (skipped 0, failed 0) of 1 files for 1 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 1 boreholes, 4763 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4764 boreholes, 2251 QC-passing, 348 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4764   QC-passing: 2251/4764
+  distinct unmapped mnemonics: 18304
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1077/1107] deleted 1 raw files. cumulative: 4764 boreholes, 2251 QC-passing. 1198 min elapsed.
+
+[batch 1078/1107] downloaded 1 (skipped 0, failed 0) of 1 files for 1 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 1 boreholes, 4764 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4765 boreholes, 2251 QC-passing, 348 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4765   QC-passing: 2251/4765
+  distinct unmapped mnemonics: 18302
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 1 boreholes, 4765 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4765 boreholes, 2251 QC-passing, 348 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4765   QC-passing: 2251/4765
+  distinct unmapped mnemonics: 18319
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1078/1107] fallback: 1 boreholes below pass on primary, 2 extra files fetched, 0 now passing
+[batch 1078/1107] deleted 3 raw files. cumulative: 4765 boreholes, 2251 QC-passing. 1198 min elapsed.
+
+[batch 1079/1107] downloaded 3 (skipped 0, failed 0) of 3 files for 3 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 3 boreholes, 4765 already done, 3 to process.
+  checkpoint: 3/3 this run (cumulative 4768 boreholes, 2252 QC-passing, 348 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4768   QC-passing: 2252/4768
+  distinct unmapped mnemonics: 18302
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 3 boreholes, 4768 already done, 2 to process.
+  checkpoint: 2/2 this run (cumulative 4768 boreholes, 2253 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4768   QC-passing: 2253/4768
+  distinct unmapped mnemonics: 18302
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1079/1107] fallback: 2 boreholes below pass on primary, 5 extra files fetched, 1 now passing
+[batch 1079/1107] deleted 8 raw files. cumulative: 4768 boreholes, 2253 QC-passing. 1199 min elapsed.
+
+[batch 1080/1107] downloaded 12 (skipped 0, failed 0) of 12 files for 12 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 12 boreholes, 4768 already done, 12 to process.
+  checkpoint: 12/12 this run (cumulative 4780 boreholes, 2258 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4780   QC-passing: 2258/4780
+  distinct unmapped mnemonics: 18314
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 12 boreholes, 4780 already done, 7 to process.
+[batch 1080/1107] fallback: 7 boreholes below pass on primary, 19 extra files fetched, 0 now passing
+[batch 1080/1107] deleted 31 raw files. cumulative: 4780 boreholes, 2258 QC-passing. 1202 min elapsed.
+
+[batch 1081/1107] downloaded 17 (skipped 0, failed 0) of 17 files for 17 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 17 boreholes, 4780 already done, 17 to process.
+  checkpoint: 17/17 this run (cumulative 4797 boreholes, 2270 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4797   QC-passing: 2270/4797
+  distinct unmapped mnemonics: 18315
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 17 boreholes, 4797 already done, 5 to process.
+  checkpoint: 5/5 this run (cumulative 4797 boreholes, 2274 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4797   QC-passing: 2274/4797
+  distinct unmapped mnemonics: 18325
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1081/1107] fallback: 5 boreholes below pass on primary, 17 extra files fetched, 4 now passing
+[batch 1081/1107] deleted 34 raw files. cumulative: 4797 boreholes, 2274 QC-passing. 1204 min elapsed.
+
+[batch 1082/1107] downloaded 16 (skipped 0, failed 0) of 16 files for 16 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 16 boreholes, 4797 already done, 16 to process.
+  checkpoint: 16/16 this run (cumulative 4813 boreholes, 2279 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4813   QC-passing: 2279/4813
+  distinct unmapped mnemonics: 18328
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 16 boreholes, 4813 already done, 10 to process.
+  checkpoint: 10/10 this run (cumulative 4813 boreholes, 2281 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4813   QC-passing: 2281/4813
+  distinct unmapped mnemonics: 18344
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1082/1107] fallback: 10 boreholes below pass on primary, 23 extra files fetched, 2 now passing
+[batch 1082/1107] deleted 39 raw files. cumulative: 4813 boreholes, 2281 QC-passing. 1207 min elapsed.
+
+[batch 1083/1107] downloaded 10 (skipped 0, failed 0) of 10 files for 10 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 10 boreholes, 4813 already done, 10 to process.
+  checkpoint: 10/10 this run (cumulative 4823 boreholes, 2285 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4823   QC-passing: 2285/4823
+  distinct unmapped mnemonics: 18345
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 10 boreholes, 4823 already done, 6 to process.
+  checkpoint: 6/6 this run (cumulative 4823 boreholes, 2288 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4823   QC-passing: 2288/4823
+  distinct unmapped mnemonics: 18351
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1083/1107] fallback: 6 boreholes below pass on primary, 21 extra files fetched, 3 now passing
+[batch 1083/1107] deleted 31 raw files. cumulative: 4823 boreholes, 2288 QC-passing. 1208 min elapsed.
+
+[batch 1084/1107] downloaded 4 (skipped 0, failed 0) of 4 files for 4 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 4 boreholes, 4823 already done, 4 to process.
+  checkpoint: 4/4 this run (cumulative 4827 boreholes, 2290 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4827   QC-passing: 2290/4827
+  distinct unmapped mnemonics: 18377
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 4 boreholes, 4827 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4827 boreholes, 2290 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4827   QC-passing: 2290/4827
+  distinct unmapped mnemonics: 18363
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1084/1107] fallback: 1 boreholes below pass on primary, 4 extra files fetched, 0 now passing
+[batch 1084/1107] deleted 8 raw files. cumulative: 4827 boreholes, 2290 QC-passing. 1209 min elapsed.
+
+[batch 1085/1107] downloaded 1 (skipped 0, failed 0) of 1 files for 1 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 1 boreholes, 4827 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4828 boreholes, 2291 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4828   QC-passing: 2291/4828
+  distinct unmapped mnemonics: 18346
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1085/1107] deleted 1 raw files. cumulative: 4828 boreholes, 2291 QC-passing. 1209 min elapsed.
+
+[batch 1086/1107] downloaded 2 (skipped 0, failed 0) of 2 files for 2 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 2 boreholes, 4828 already done, 2 to process.
+  checkpoint: 2/2 this run (cumulative 4830 boreholes, 2293 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4830   QC-passing: 2293/4830
+  distinct unmapped mnemonics: 18349
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1086/1107] deleted 2 raw files. cumulative: 4830 boreholes, 2293 QC-passing. 1209 min elapsed.
+
+[batch 1087/1107] downloaded 1 (skipped 0, failed 0) of 1 files for 1 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 1 boreholes, 4830 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4831 boreholes, 2293 QC-passing, 349 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4831   QC-passing: 2293/4831
+  distinct unmapped mnemonics: 18349
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 1 boreholes, 4831 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4831 boreholes, 2294 QC-passing, 350 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4831   QC-passing: 2294/4831
+  distinct unmapped mnemonics: 18359
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1087/1107] fallback: 1 boreholes below pass on primary, 4 extra files fetched, 1 now passing
+[batch 1087/1107] deleted 5 raw files. cumulative: 4831 boreholes, 2294 QC-passing. 1213 min elapsed.
+
+[batch 1088/1107] downloaded 13 (skipped 0, failed 0) of 13 files for 13 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 13 boreholes, 4831 already done, 13 to process.
+  checkpoint: 13/13 this run (cumulative 4844 boreholes, 2298 QC-passing, 350 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4844   QC-passing: 2298/4844
+  distinct unmapped mnemonics: 18369
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 13 boreholes, 4844 already done, 8 to process.
+  checkpoint: 8/8 this run (cumulative 4844 boreholes, 2300 QC-passing, 350 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4844   QC-passing: 2300/4844
+  distinct unmapped mnemonics: 18368
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1088/1107] fallback: 8 boreholes below pass on primary, 25 extra files fetched, 2 now passing
+[batch 1088/1107] deleted 38 raw files. cumulative: 4844 boreholes, 2300 QC-passing. 1215 min elapsed.
+
+[batch 1089/1107] downloaded 1 (skipped 0, failed 0) of 1 files for 1 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 1 boreholes, 4844 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4844 boreholes, 2300 QC-passing, 352 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4844   QC-passing: 2300/4844
+  distinct unmapped mnemonics: 18357
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 1 boreholes, 4844 already done, 1 to process.
+  checkpoint: 1/1 this run (cumulative 4845 boreholes, 2300 QC-passing, 352 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4845   QC-passing: 2300/4845
+  distinct unmapped mnemonics: 18437
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1089/1107] fallback: 1 boreholes below pass on primary, 4 extra files fetched, 0 now passing
+[batch 1089/1107] deleted 5 raw files. cumulative: 4845 boreholes, 2300 QC-passing. 1220 min elapsed.
+
+[batch 1090/1107] downloaded 28 (skipped 0, failed 0) of 28 files for 28 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 28 boreholes, 4845 already done, 28 to process.
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 28 boreholes, 4845 already done, 25 to process.
+  checkpoint: 25/25 this run (cumulative 4870 boreholes, 2317 QC-passing, 356 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4870   QC-passing: 2317/4870
+  distinct unmapped mnemonics: 18492
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1090/1107] fallback: 25 boreholes below pass on primary, 96 extra files fetched, 17 now passing
+[batch 1090/1107] deleted 124 raw files. cumulative: 4870 boreholes, 2317 QC-passing. 1226 min elapsed.
+
+[batch 1091/1107] downloaded 4 (skipped 0, failed 0) of 4 files for 4 boreholes
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 4 boreholes, 4870 already done, 4 to process.

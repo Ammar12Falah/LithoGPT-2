@@ -367,3 +367,11 @@ VNW-01,no readable log file for borehole
 VNW-01__1175887149.dlis,"read timeout > 120s (killed, skipped)"
 VNW-01__446259334.dlis,"read timeout > 120s (killed, skipped)"
 VRS-10__2782447966.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WFM-03__2117135701.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WWS-02__446367107.dlis,"read timeout > 120s (killed, skipped)"
+WYK-102,no readable log file for borehole
+WYK-102__3666974584.dlis,"read timeout > 120s (killed, skipped)"
+WYK-201__2840330977.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WYK-201__2840331027.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WYK-202__3091696639.las,RuntimeError: ValueError: could not convert string to float: '18:59:07/09-Dec-2016'
+WYK-202__3091696705.las,RuntimeError: ValueError: could not convert string to float: '04:20:00/12-Dec-2016'
