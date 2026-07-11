@@ -154,3 +154,6 @@ K12-G-05-S1__2246550475.dlis,RuntimeError: ValueError: no depth-indexed frame wi
 K12-G-09,no readable log file for borehole
 K12-G-09__1342093740.dlis,"read timeout > 120s (killed, skipped)"
 K12-G-09__1342096439.dlis,"read timeout > 120s (killed, skipped)"
+K15-FG-104-S2__2786640525.las,"RuntimeError: ValueError: Cannot reshape ~A data size (3385818,) into 16 columns"
+K15-FK-101__446538094.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-101,no readable log file for borehole
