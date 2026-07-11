@@ -324,3 +324,12 @@ Q01-D-02-S1,no readable log file for borehole
 Q01-D-02-S1__1704152552.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
 Q01-D-02-S2,no readable log file for borehole
 Q01-D-02-S2__3749550553.las,RuntimeError: ValueError: could not convert string to float: '20:05:54/27-Mar-2018'
+Q04-09-S1,no readable log file for borehole
+Q04-09-S1__447710853.dlis,"read timeout > 120s (killed, skipped)"
+Q04-A-03,no readable log file for borehole
+Q04-A-03__447112004.dlis,"read timeout > 120s (killed, skipped)"
+Q04-A-03__447112012.dlis,"read timeout > 120s (killed, skipped)"
+Q07-07,no readable log file for borehole
+Q07-07__2390288306.las,RuntimeError: ValueError: could not convert string to float: '15:39:51/30-Sep-2016'
+Q07-07__2390288508.las,RuntimeError: ValueError: could not convert string to float: '18:37:20/24-Sep-2016'
+Q10-A-02__3839761817.dlis,"read timeout > 120s (killed, skipped)"
