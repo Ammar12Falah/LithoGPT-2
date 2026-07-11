@@ -354,3 +354,12 @@ SCH-205__613573012.las,"RuntimeError: ValueError: Cannot reshape ~A data size (6
 SCH-205,no readable log file for borehole
 SCH-224__653123632.las,"RuntimeError: ValueError: Cannot reshape ~A data size (16085,) into 6 columns"
 SCH-224,no readable log file for borehole
+SGZ-04__796941900.dlis,"read timeout > 120s (killed, skipped)"
+SLD-06-S1,no readable log file for borehole
+SLD-07,no readable log file for borehole
+SLD-06-S1__1859217252.las,RuntimeError: ValueError: could not convert string to float: '20:06:26/24-Apr-2015'
+SLD-07__1860018510.las,RuntimeError: ValueError: could not convert string to float: '01:52:21/15-May-2015'
+SLD-07__1860146977.las,RuntimeError: ValueError: could not convert string to float: '18:11:15/18-May-2015'
+SLD-07-S1__1860018057.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+SPKO-04,no readable log file for borehole
+SPKO-04__3462243466.las,RuntimeError: ValueError: could not convert string to float: '16:29:20/02-Apr-2020'
