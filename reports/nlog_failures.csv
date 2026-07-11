@@ -99,5 +99,11 @@ GAG-06-S1__975896946.dlis,"read timeout > 120s (killed, skipped)"
 K01-A-03-S2,no readable log file for borehole
 K01-A-03-S2__884097974.dlis,"read timeout > 120s (killed, skipped)"
 K01-A-03-S2__884097979.dlis,"read timeout > 120s (killed, skipped)"
-K01-A-04-S2__872253148.dlis,"read timeout > 120s (killed, skipped)"
 K01-A-04-S2,no readable log file for borehole
+K01-A-04-S2__872253148.dlis,"read timeout > 120s (killed, skipped)"
+K02-A-04,no readable log file for borehole
+K02-A-04__1012503228.dlis,"read timeout > 120s (killed, skipped)"
+K02-A-04__1012503233.dlis,"read timeout > 120s (killed, skipped)"
+K02-A-05,no readable log file for borehole
+K02-A-05__1099386224.dlis,"read timeout > 120s (killed, skipped)"
+K02-A-05__1099386257.dlis,"read timeout > 120s (killed, skipped)"
