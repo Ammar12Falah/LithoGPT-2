@@ -14,9 +14,9 @@ import numpy as np
 import pytest
 
 from lithogpt2.config import HarmonizationConfig
-from lithogpt2.io.dlis import _depth_factor_m, _frame_to_rawwell
 from lithogpt2.ingest import nlog
 from lithogpt2.ingest.well_dir import _borehole_id, iter_nlog_wells
+from lithogpt2.io.dlis import _depth_factor_m, _frame_to_rawwell
 from lithogpt2.pipeline.batch import run_batch
 
 
@@ -232,7 +232,8 @@ def test_run_qc_accepts_reprocess_ids_file(tmp_path):
     # --reprocess-ids-file. That flag must be accepted, not rejected by argparse.
     # Empty well-dir means the runner exits early without needing real data;
     # we are asserting the ARGUMENT PARSES, which is exactly what broke the crawl.
-    import subprocess, sys
+    import subprocess
+    import sys
     from pathlib import Path
 
     root = Path(__file__).resolve().parents[1]

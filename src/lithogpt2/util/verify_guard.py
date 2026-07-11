@@ -1,5 +1,6 @@
 """Verification guard: fail loudly on an empty target set. See OPERATING_RULES.md."""
 from __future__ import annotations
+
 import os
 
 

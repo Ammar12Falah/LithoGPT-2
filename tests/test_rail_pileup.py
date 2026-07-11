@@ -1,5 +1,7 @@
 import numpy as np
+
 from lithogpt2.pipeline.harmonize import _null_rail_pileup
+
 
 def test_rail_pileup_nulled_high():
     v = np.concatenate([np.linspace(1.0, 4.0, 200), np.full(60, 5.0)])  # 60 welded to hi=5.0

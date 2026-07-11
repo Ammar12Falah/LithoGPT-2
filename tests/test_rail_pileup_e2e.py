@@ -6,6 +6,7 @@ null in linear pre-transform space (bounds 0.01..100000) and logs afterward. The
 tests exercise that real sequence: null -> convert -> gate -> rail -> log10 -> resample.
 """
 import numpy as np
+
 from lithogpt2.pipeline.harmonize import _process_channel
 
 
