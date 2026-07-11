@@ -260,3 +260,10 @@ LTG-GT-03,no readable log file for borehole
 LTG-GT-03__3311700343.las,"read timeout > 120s (killed, skipped)"
 LTG-GT-04,no readable log file for borehole
 LTG-GT-04__3360762540.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+M01-04,no readable log file for borehole
+M01-04__1756157410.las,RuntimeError: ValueError: could not convert string to float: '17:59:03/15-May-2010'
+M07-A-02,no readable log file for borehole
+M07-A-02__1756550779.las,RuntimeError: ValueError: could not convert string to float: '10:44:55/19-Jul-2010'
+M07-A-02__1756551056.las,RuntimeError: ValueError: could not convert string to float: '10:44:55/19-Jul-2010'
+MDM-GT-06-S2__3625911024.las,"read timeout > 120s (killed, skipped)"
+MGT-03__1856738359.dlis,"read timeout > 120s (killed, skipped)"
