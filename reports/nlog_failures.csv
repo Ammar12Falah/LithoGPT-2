@@ -138,5 +138,11 @@ K06-GT-04-S1__446587817.dlis,"read timeout > 120s (killed, skipped)"
 K06-GT-06,no readable log file for borehole
 K06-GT-06__1756157363.las,RuntimeError: ValueError: could not convert string to float: '22:34:46/02-Jul-2010'
 K09AB-B-03-S6__2228062665.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
-K09AB-B-05__1974135841.dlis,"read timeout > 120s (killed, skipped)"
 K09AB-B-05,no readable log file for borehole
+K09AB-B-05__1974135841.dlis,"read timeout > 120s (killed, skipped)"
+K09C-A-06__2635822840.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+K10-17,no readable log file for borehole
+K10-17__2427886490.las,"RuntimeError: ValueError: Cannot reshape ~A data size (102,) into 19 columns"
+K12-B-11,no readable log file for borehole
+K12-B-11__1347246108.dlis,"read timeout > 120s (killed, skipped)"
+K12-B-11__1347246113.dlis,"read timeout > 120s (killed, skipped)"
