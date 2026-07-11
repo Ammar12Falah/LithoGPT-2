@@ -64,3 +64,22 @@ D18-A-02__1469242429.dlis,"read timeout > 120s (killed, skipped)"
 E16-04__763868813.las,"RuntimeError: ValueError: Cannot reshape ~A data size (60,) into 7 columns"
 E17-A-06-S2__3826494752.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
 F02-06__447784551.dlis,"read timeout > 120s (killed, skipped)"
+F03-FB-106-S2__3839907137.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F03-FB-106-S2__3839908678.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F05-04,no readable log file for borehole
+F05-04__449065033.dlis,"RuntimeError: RuntimeError: 
+Problem:      File truncated in Logical Record Segment
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 453724958 (dec), Logical Record tell: 24509988 (dec), Logical Record Segment tell: 24518776 (dec)"
+F06-06-S1,no readable log file for borehole
+F06-06-S1__1710008570.dlis,"read timeout > 120s (killed, skipped)"
+F12-05,no readable log file for borehole
+F12-05__1843909702.las,RuntimeError: ValueError: could not convert string to float: '21:10:16/07-May-2015'
+F15-A-02-S3,no readable log file for borehole
+F15-A-02-S3__1466049279.las,RuntimeError: ValueError: could not convert string to float: '23:00:00/03-Jun-2013'
+F15-A-02-S4__1466055368.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F15-A-02-S5,no readable log file for borehole
+F15-A-02-S5__1466060878.las,RuntimeError: ValueError: could not convert string to float: '00:07:22/11-Jul-2013'
+F15-A-02-S5__1466067700.las,RuntimeError: ValueError: could not convert string to float: '17:42:26/18-Jul-2013'
