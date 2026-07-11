@@ -1,7 +1,7 @@
 source,raw_mnemonic,raw_unit,count
 nlog,DRHO,G/C3,595
 nlog,TIME,MS,507
-nlog,DEPT:2,M,484
+nlog,DEPT:2,M,485
 nlog,LATL,OHMM,406
 nlog,CALF,IN,389
 nlog,TVD,m,382
@@ -26,6 +26,8 @@ nlog,ROP5,m/h,164
 nlog,MTEM,DEGC,163
 nlog,CGRC,api,160
 nlog,HV,V,159
+nlog,CCL,CPS,158
+nlog,NGAM,CPS,158
 nlog,SFXE,hr,158
 nlog,CVEL,m/min,157
 nlog,SPI,MV,155
@@ -122,11 +124,11 @@ nlog,RACHM,ohm.m,68
 nlog,RPCLM,ohm.m,68
 nlog,KNEE,MS,67
 nlog,SPD,m/min,67
+nlog,GR:1,GAPI,66
+nlog,GR:2,GAPI,66
 nlog,LLG,OHMM,66
 nlog,SHTM,MS,66
 nlog,TT,US,66
-nlog,GR:1,GAPI,65
-nlog,GR:2,GAPI,65
 nlog,KDRF,MS,65
 nlog,RACLM,ohm.m,65
 nlog,GRPD,GAPI,64
@@ -197,9 +199,7 @@ nlog,NCRF,CPS,56
 nlog,NCRN,CPS,56
 nlog,P34H,ohm.m,56
 nlog,TRPM_RT,c/min,56
-nlog,CCL,CPS,55
 nlog,DTC3,US/F,55
-nlog,NGAM,CPS,55
 nlog,DTC1,US/F,54
 nlog,DTC2,US/F,54
 nlog,K,%,54
@@ -2215,6 +2215,8 @@ nlog,BCAV,in,8
 nlog,BCHO,in,8
 nlog,BCVE,in,8
 nlog,BPHI_UNC,pu,8
+nlog,CBLE_ACC,ENC.g,8
+nlog,CCL,ROB,8
 nlog,CERP,,8
 nlog,CETP,,8
 nlog,CHT,LB,8
@@ -2236,8 +2238,10 @@ nlog,CNCSS,pu,8
 nlog,CPPZ,pu,8
 nlog,CPPZC,pu,8
 nlog,CSGP,PSIA,8
+nlog,CURRENT,PSU.mA,8
 nlog,DBPHI,pu,8
 nlog,DCI2,,8
+nlog,DIFF-TENSION,TEN.N,8
 nlog,DNLV,MV,8
 nlog,DRHO,UNKNOWN,8
 nlog,DT2,US/F,8
@@ -2312,6 +2316,7 @@ nlog,MWFD_ROC,,8
 nlog,N1TD:15,CPS,8
 nlog,N2TD:11,CPS,8
 nlog,N3TD:15,CPS,8
+nlog,NGAM,ROB,8
 nlog,NPL,V/V,8
 nlog,P10H_COND,mS/m,8
 nlog,P10H_UNC,ohm.m,8
@@ -2405,6 +2410,7 @@ nlog,SNBD,g/cc,8
 nlog,SNDS,m,8
 nlog,SNP2,b/e,8
 nlog,SNPE,b/e,8
+nlog,SPEED,ENC,8
 nlog,SPM,,8
 nlog,SPM1,----,8
 nlog,SPP,BAR,8
@@ -2437,8 +2443,10 @@ nlog,TAB_NEU,h,8
 nlog,TAU:15,US,8
 nlog,TAU:16,US,8
 nlog,TDIS,m,8
+nlog,TENSION,TEN.N,8
 nlog,TEST,m/h,8
 nlog,TGST,M/S2,8
+nlog,TIME,ENC,8
 nlog,TNRA_UNC,,8
 nlog,TOJ,S,8
 nlog,TQA,kN.m,8
@@ -2453,6 +2461,7 @@ nlog,UAPI,gAPI,8
 nlog,USBI_RF,,8
 nlog,UTDL,US,8
 nlog,VIB_X,g,8
+nlog,VOLTAGE,PSU.V,8
 nlog,VSH,%,8
 nlog,WTGR_ROC,,8
 nlog,7A,MM/M,7
@@ -2560,6 +2569,7 @@ nlog,GNMN,dB,7
 nlog,GNMX,dB,7
 nlog,GRAFM,gAPI,7
 nlog,GRCFM,gAPI,7
+nlog,GRN,IMP,7
 nlog,GRSL.2,1/s,7
 nlog,GR_B,GAPI,7
 nlog,GR_CDR_RT,gAPI,7
@@ -3827,6 +3837,7 @@ nlog,NCNL:2,CPS,5
 nlog,NCNL:3,CPS,5
 nlog,NCNL:4,CPS,5
 nlog,NDIA,,5
+nlog,NEUT,IMP,5
 nlog,NLTV,V,5
 nlog,NPR2,,5
 nlog,NRAT:1,,5
@@ -4281,10 +4292,8 @@ nlog,CASL,,4
 nlog,CASR,,4
 nlog,CBL,%,4
 nlog,CBL5,MV,4
-nlog,CBLE_ACC,ENC.g,4
 nlog,CBLROT,°,4
 nlog,CBST,,4
-nlog,CCL,ROB,4
 nlog,CCVO:1,M3,4
 nlog,CCVO:2,M3,4
 nlog,CDCR,MM/M,4
@@ -4350,7 +4359,6 @@ nlog,CSL3,1/s,4
 nlog,CSTS_LDS,,4
 nlog,CTEM,DEGF,4
 nlog,CTMP,DEGC,4
-nlog,CURRENT,PSU.mA,4
 nlog,CVEL:1,m/h,4
 nlog,CVEL:2,m/h,4
 nlog,DB1A,,4
@@ -4382,7 +4390,6 @@ nlog,DGA4,,4
 nlog,DHAP,KPA,4
 nlog,DHRO,G/C3,4
 nlog,DI90,UA,4
-nlog,DIFF-TENSION,TEN.N,4
 nlog,DILD:1,OHMM,4
 nlog,DILD:2,OHMM,4
 nlog,DILD:3,OHMM,4
@@ -4711,7 +4718,6 @@ nlog,NDHV,V,4
 nlog,NDPH,m3/m3,4
 nlog,NFPI,MV,4
 nlog,NG8,,4
-nlog,NGAM,ROB,4
 nlog,NIOM,,4
 nlog,NREJ.I,,4
 nlog,N_BUTANE,VOLPERCENT,4
@@ -5040,7 +5046,6 @@ nlog,SPDF,MV,4
 nlog,SPDH,MV,4
 nlog,SPDP,MV,4
 nlog,SPDZ,MV,4
-nlog,SPEED,ENC,4
 nlog,SPI:1,%,4
 nlog,SPI:2,%,4
 nlog,SPI:3,%,4
@@ -5087,7 +5092,6 @@ nlog,TENS:1,lbf,4
 nlog,TENS:2,lbf,4
 nlog,TENSB,psi,4
 nlog,TENSB.S,psi,4
-nlog,TENSION,TEN.N,4
 nlog,TERP,US,4
 nlog,TERS,US,4
 nlog,TERS,us,4
@@ -5099,7 +5103,6 @@ nlog,THKD,1000_kgf,4
 nlog,THPG,PSIG,4
 nlog,TICK_IMP_GR,,4
 nlog,TILD,DEG,4
-nlog,TIME,ENC,4
 nlog,TIME.I,ms,4
 nlog,TMP,DEGC,4
 nlog,TMPV_SLDT,degC,4
@@ -5394,7 +5397,6 @@ nlog,VIBC,CPS,4
 nlog,VIBLAT_RT,g,4
 nlog,VMAT:1,%,4
 nlog,VMAT:2,%,4
-nlog,VOLTAGE,PSU.V,4
 nlog,VP,KM/S,4
 nlog,VR:1,%,4
 nlog,VR:2,%,4
@@ -5940,7 +5942,6 @@ nlog,GRBC,GAPI,3
 nlog,GRDP,gAPI,3
 nlog,GRHO,G/C3,3
 nlog,GRIM,unitless,3
-nlog,GRN,IMP,3
 nlog,GRPD,gAPI,3
 nlog,GRR,1/S,3
 nlog,GRS:1,API,3
@@ -6123,7 +6124,6 @@ nlog,NER1,1/S,3
 nlog,NER2,1/S,3
 nlog,NER2_CAL,1/S,3
 nlog,NER3,1/s,3
-nlog,NEUT,IMP,3
 nlog,NPES,PU,3
 nlog,NPLC,PU,3
 nlog,NPR1,,3
@@ -8037,6 +8037,7 @@ nlog,GRM1:1,GAPI,2
 nlog,GRM1:2,GAPI,2
 nlog,GRN,CPS,2
 nlog,GRN,GAPI,2
+nlog,GRN,IMP/MIN,2
 nlog,GRN1,API,2
 nlog,GRN3,API,2
 nlog,GRN_:1,API,2
@@ -8943,6 +8944,7 @@ nlog,NEUTRON,dec,2
 nlog,NEUT_00J,%,2
 nlog,NFDC,1/S,2
 nlog,NG10,,2
+nlog,NGAM,IMP,2
 nlog,NHVS,V,2
 nlog,NICR,,2
 nlog,NICR_SIG,,2
@@ -13618,7 +13620,8 @@ nlog,GRKT_CH,gAPI,1
 nlog,GRL:1,GAPI,1
 nlog,GRL:2,GAPI,1
 nlog,GRLL,,1
-nlog,GRN,IMP/MIN,1
+nlog,GRN:1,IMP,1
+nlog,GRN:2,IMP,1
 nlog,GRPO,%,1
 nlog,GRPR,GAPI,1
 nlog,GRQS,gAPI,1
@@ -14582,7 +14585,6 @@ nlog,NFDC:3,CPS,1
 nlog,NFDC:4,CPS,1
 nlog,NFDC:5,CPS,1
 nlog,NFIX,,1
-nlog,NGAM,IMP,1
 nlog,NGE,,1
 nlog,NGN,,1
 nlog,NGPT,1/S,1

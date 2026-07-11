@@ -21425,3 +21425,15 @@ NLOG QC: 169 boreholes, 4195 already done, 169 to process.
 DONE. cumulative boreholes: 4364   QC-passing: 2174/4364
   distinct unmapped mnemonics: 18076
   records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/qc.py:26: UserWarning: A NumPy version >=1.26.4 and <2.7.0 is required for this version of SciPy (detected version 1.26.3)
+  from scipy.ndimage import median_filter
+NLOG QC: 169 boreholes, 4364 already done, 159 to process.
+  checkpoint: 159/159 this run (cumulative 4364 boreholes, 2175 QC-passing, 344 failed), ~0 min left
+/workspace/LithoGPT-2/src/lithogpt2/pipeline/batch.py:140: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(curves, rotation=45, ha="right")
+DONE. cumulative boreholes: 4364   QC-passing: 2175/4364
+  distinct unmapped mnemonics: 18078
+  records: reports/nlog_qc_records.csv   dashboard: reports/qc_nlog/index.html
+[batch 1057/1107] fallback: 159 boreholes below pass on primary, 273 extra files fetched, 1 now passing
+[batch 1057/1107] deleted 442 raw files. cumulative: 4364 boreholes, 2175 QC-passing. 1134 min elapsed.
+
