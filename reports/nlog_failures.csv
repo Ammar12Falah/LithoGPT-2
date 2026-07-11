@@ -348,3 +348,9 @@ Q13-A-05-S1,no readable log file for borehole
 Q13-A-05-S1__1716057873.dlis,"read timeout > 120s (killed, skipped)"
 Q14-03,no readable log file for borehole
 Q14-03__1536626602.dlis,"read timeout > 120s (killed, skipped)"
+SCH-152__613571421.las,"RuntimeError: ValueError: Cannot reshape ~A data size (12369,) into 5 columns"
+SCH-152,no readable log file for borehole
+SCH-205__613573012.las,"RuntimeError: ValueError: Cannot reshape ~A data size (6411,) into 5 columns"
+SCH-205,no readable log file for borehole
+SCH-224__653123632.las,"RuntimeError: ValueError: Cannot reshape ~A data size (16085,) into 6 columns"
+SCH-224,no readable log file for borehole
