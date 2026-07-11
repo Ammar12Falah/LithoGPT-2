@@ -146,3 +146,11 @@ K10-17__2427886490.las,"RuntimeError: ValueError: Cannot reshape ~A data size (1
 K12-B-11,no readable log file for borehole
 K12-B-11__1347246108.dlis,"read timeout > 120s (killed, skipped)"
 K12-B-11__1347246113.dlis,"read timeout > 120s (killed, skipped)"
+K12-C-05-S1__1807829459.dlis,"read timeout > 120s (killed, skipped)"
+K12-D-03,no readable log file for borehole
+K12-D-03__2288971756.dlis,"read timeout > 120s (killed, skipped)"
+K12-G-05-S1,no readable log file for borehole
+K12-G-05-S1__2246550475.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+K12-G-09,no readable log file for borehole
+K12-G-09__1342093740.dlis,"read timeout > 120s (killed, skipped)"
+K12-G-09__1342096439.dlis,"read timeout > 120s (killed, skipped)"
