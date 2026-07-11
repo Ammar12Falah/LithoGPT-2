@@ -288,3 +288,12 @@ P02-10-S1__2336222738.las,RuntimeError: ValueError: could not convert string to 
 P02-10-S1__2336222757.las,RuntimeError: ValueError: could not convert string to float: '08:38:37/19-Apr-2012'
 P02-10-S1__2336346800.las,RuntimeError: ValueError: could not convert string to float: '22:29:04/30-Apr-2012'
 P02-10-S1,no readable log file for borehole
+P06-A-07__1498927383.dlis,"read timeout > 120s (killed, skipped)"
+P08-08,no readable log file for borehole
+P08-08__975181106.dlis,"read timeout > 120s (killed, skipped)"
+P08-08__975181117.dlis,"read timeout > 120s (killed, skipped)"
+P09-HORIZON-A-09-S1,no readable log file for borehole
+P09-HORIZON-A-09-S2,no readable log file for borehole
+P09-HORIZON-A-09-S1__3834565605.las,RuntimeError: ValueError: could not convert string to float: '00:00:00/28-Jul-2019'
+P09-HORIZON-A-09-S2__3834566458.las,RuntimeError: ValueError: could not convert string to float: '17:32:07/09-Sep-2019'
+P11-09__1547374327.dlis,"read timeout > 120s (killed, skipped)"
