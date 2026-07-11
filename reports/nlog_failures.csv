@@ -163,3 +163,19 @@ K15-FK-103-S2,no readable log file for borehole
 K15-FK-103-S2__446355894.dlis,"read timeout > 120s (killed, skipped)"
 K15-FK-103-S2__446355904.dlis,"read timeout > 120s (killed, skipped)"
 K16-06-S1__446295387.dlis,"read timeout > 120s (killed, skipped)"
+K18-07-S1,no readable log file for borehole
+K18-07-S1__3839852377.dlis,"RuntimeError: RuntimeError: 
+Problem:      rp66: Incorrect format version in Visible Record 1930
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 507512738 (dec), Logical Record tell: 12797378 (dec), Logical Record Segment tell: 12805566 (dec)"
+K18-09__1644667613.las,RuntimeError: ValueError: could not convert string to float: '17:33:09/05-Jul-2012'
+K18-G-02,no readable log file for borehole
+K18-G-02__3942732694.las,RuntimeError: ValueError: could not convert string to float: '2014/12/17:'
+K18-G-04__1647974686.las,RuntimeError: ValueError: could not convert string to float: '05:19:28/18-Jun-2012'
+K18-G-04__1647974734.las,RuntimeError: ValueError: could not convert string to float: '04:15:00/20-Jun-2012'
+K18-KOTTER-10-S1__3949145155.las,"RuntimeError: LASHeaderError: Line 32 (section ~Disclaimer): ""Baker Hughes INTEQ does not guarantee the accuracy  or correctness"""
+K18-KOTTER-10-S1,no readable log file for borehole
+KHL-GT-02__2395227171.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L02-09__2700304915.dlis,"read timeout > 120s (killed, skipped)"
