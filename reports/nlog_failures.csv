@@ -297,3 +297,21 @@ P09-HORIZON-A-09-S2,no readable log file for borehole
 P09-HORIZON-A-09-S1__3834565605.las,RuntimeError: ValueError: could not convert string to float: '00:00:00/28-Jul-2019'
 P09-HORIZON-A-09-S2__3834566458.las,RuntimeError: ValueError: could not convert string to float: '17:32:07/09-Sep-2019'
 P11-09__1547374327.dlis,"read timeout > 120s (killed, skipped)"
+P11-C-01-S2__974668716.dlis,"read timeout > 120s (killed, skipped)"
+P11-C-01-S2__974670683.dlis,"read timeout > 120s (killed, skipped)"
+P11-E-02,no readable log file for borehole
+P11-E-02__3701382944.las,RuntimeError: ValueError: could not convert string to float: '02:27:46/16-Aug-2016'
+P15-RIJN-A-02-S1,no readable log file for borehole
+P15-RIJN-A-02-S1__2071105487.las,RuntimeError: ValueError: could not convert string to float: '09:33:47/04-Feb-2015'
+P15-RIJN-A-09-S1,no readable log file for borehole
+P15-RIJN-A-09-S1__3145900554.las,RuntimeError: ValueError: could not convert string to float: '14:10:32/21-Mar-2014'
+P15-RIJN-A-09-S1__3145933775.las,RuntimeError: ValueError: could not convert string to float: '02:01:37/26-Mar-2014'
+P15-RIJN-A-13-S4,no readable log file for borehole
+P15-RIJN-A-13-S4__1723700938.las,RuntimeError: ValueError: could not convert string to float: '05:50:51/22-Apr-2014'
+P18-07__2071706573.las,RuntimeError: ValueError: could not convert string to float: '18:20:48/19-Mar-2015'
+P18-07__2280227610.las,RuntimeError: ValueError: could not convert string to float: '03:50:00/02-Apr-2015'
+PRW-06-S1,no readable log file for borehole
+PRW-06-S1__3701364749.las,RuntimeError: ValueError: could not convert string to float: '16:29:34/12-Oct-2020'
+PRW-06-S1__3701364788.las,RuntimeError: ValueError: could not convert string to float: '17:45:58/07-Oct-2020'
+PSP-02__866138573.dlis,"read timeout > 120s (killed, skipped)"
+PSP-02,no readable log file for borehole
