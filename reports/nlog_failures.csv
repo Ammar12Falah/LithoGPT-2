@@ -95,3 +95,4 @@ F17-14__3582201738.las,RuntimeError: ValueError: could not convert string to flo
 G14-A-02,no readable log file for borehole
 G14-A-02__751039577.dlis,"read timeout > 120s (killed, skipped)"
 G14-A-02__751039684.dlis,"read timeout > 120s (killed, skipped)"
+GAG-06-S1__975896946.dlis,"read timeout > 120s (killed, skipped)"
