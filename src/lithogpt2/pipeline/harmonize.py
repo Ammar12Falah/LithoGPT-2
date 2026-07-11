@@ -117,7 +117,7 @@ def _to_missing_nulls(values: np.ndarray, null_values: tuple[float, ...]) -> np.
 
 
 
-_RAIL_EPS = 1e-6          # closeness to a valid_range bound (post-transform space handled by caller)
+_RAIL_EPS = 1e-6        # closeness to a valid_range bound
 _RAIL_MIN_FRAC = 0.05     # a value must hold >=5% of finite samples to count as a discrete mass
 _RAIL_MIN_COUNT = 25      # and at least this many samples, so tiny wells don't false-trigger
 
@@ -179,7 +179,8 @@ def _process_channel(
 
     lo, hi = valid_range
     values = np.where((values < lo) | (values > hi), np.nan, values)
-    values, _ = _null_rail_pileup(values, lo, hi)  # sentinel rail pileup -> missing (advisor 2026-07-10)
+    # sentinel rail pileup -> missing (advisor 2026-07-10)
+    values, _ = _null_rail_pileup(values, lo, hi)
 
     if transform == "log10":
         with np.errstate(invalid="ignore", divide="ignore"):

@@ -11,13 +11,13 @@ requires-python = ">=3.11"
 license = { text = "Apache-2.0" }
 authors = [{ name = "Ammar Falah Hasan Al Saeedi" }]
 dependencies = [
-  "numpy>=1.26.4,<2.0",
+  "numpy>=1.26.3,<2.0",
   "pandas>=2.1",
   "pyyaml>=6.0",
   "lasio>=0.31",
   "dlisio>=1.0",
   "scipy>=1.11",
-  "pyarrow>=14.0,<18.0",
+  "pyarrow>=14.0,<26.0",
 ]
 
 [project.optional-dependencies]

@@ -105,7 +105,7 @@ def _frame_to_rawwell(frame, source: str, well_id, path) -> RawWell | None:
             continue
         try:
             data = np.asarray(ch.curves(), dtype=float).ravel()
-        except Exception:  # noqa: BLE001
+        except Exception:  # noqa: BLE001, S112 - intentionally skip curves that fail to read
             continue
         if data.size != n:
             continue  # cannot align to this frame's depth

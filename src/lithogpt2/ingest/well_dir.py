@@ -17,6 +17,7 @@ guard was a no-op both off the main thread and against a C-level hang. The
 borehole currently being read is written to logs/nlog_current.txt so a long
 read is visible from outside.
 """
+
 from __future__ import annotations
 
 import multiprocessing as mp
@@ -67,9 +68,13 @@ def _read_worker(path_str: str, source: str, well_id: str, q) -> None:
         q.put(("err", f"{type(e).__name__}: {e}"))
 
 
-def _read_with_timeout(path: Path, source: str, well_id: str,
-                       timeout_s: float = _READ_TIMEOUT_S,
-                       start_method: str | None = None) -> RawWell:
+def _read_with_timeout(
+    path: Path,
+    source: str,
+    well_id: str,
+    timeout_s: float = _READ_TIMEOUT_S,
+    start_method: str | None = None,
+) -> RawWell:
     """Read one file in a child process, killing it if it exceeds ``timeout_s``.
 
     Uses the ``fork`` start method: the child is a copy of the parent, so it
@@ -83,7 +88,7 @@ def _read_with_timeout(path: Path, source: str, well_id: str,
     C-level parser hang unable to outlast the budget.
     """
     ctx = None
-    for name in ([start_method] if start_method else ["fork"]):
+    for name in [start_method] if start_method else ["fork"]:
         try:
             ctx = mp.get_context(name)
             break
@@ -94,8 +99,7 @@ def _read_with_timeout(path: Path, source: str, well_id: str,
         return _read_dispatch(path, source, well_id)
 
     q: mp.Queue = ctx.Queue()
-    proc = ctx.Process(target=_read_worker, args=(str(path), source, well_id, q),
-                       daemon=True)
+    proc = ctx.Process(target=_read_worker, args=(str(path), source, well_id, q), daemon=True)
     proc.start()
     try:
         status, payload = q.get(timeout=timeout_s)  # drain before join (large object)
@@ -105,7 +109,7 @@ def _read_with_timeout(path: Path, source: str, well_id: str,
         if proc.is_alive():
             proc.kill()
             proc.join(5)
-        raise _ReadTimeout()
+        raise _ReadTimeout() from None
     proc.join(5)
     if proc.is_alive():
         proc.terminate()
@@ -160,7 +164,9 @@ def iter_nlog_wells(
                 raw = _read_with_timeout(p, source, bid, read_timeout_s)
             except _ReadTimeout:
                 if failures is not None:
-                    failures.append((p.name, f"read timeout > {read_timeout_s:.0f}s (killed, skipped)"))
+                    failures.append(
+                        (p.name, f"read timeout > {read_timeout_s:.0f}s (killed, skipped)")
+                    )
                 continue
             except Exception as e:  # noqa: BLE001 - bulk robustness; record and continue
                 if failures is not None:

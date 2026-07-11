@@ -64,13 +64,29 @@ DEFAULT_FILE_TYPES = ("LAS", "DLIS")
 _EXT = {"LAS": "las", "DLIS": "dlis"}
 
 INDEX_FIELDS = [
-    "well_id", "borehole_name", "uwi", "nitg_number", "mapviewer_id",
-    "public_as_of", "on_offshore", "lon", "lat", "detail_url",
+    "well_id",
+    "borehole_name",
+    "uwi",
+    "nitg_number",
+    "mapviewer_id",
+    "public_as_of",
+    "on_offshore",
+    "lon",
+    "lat",
+    "detail_url",
 ]
 
 DOC_FIELDS = [
-    "well_id", "mapviewer_id", "file_id", "file_name", "file_type",
-    "file_size", "top_depth", "bottom_depth", "document_group", "download_url",
+    "well_id",
+    "mapviewer_id",
+    "file_id",
+    "file_name",
+    "file_type",
+    "file_size",
+    "top_depth",
+    "bottom_depth",
+    "document_group",
+    "download_url",
 ]
 
 _MIN_INTERVAL_S = 2.0  # per-host spacing for the logdocuments API, matches _http
@@ -82,8 +98,12 @@ _MIN_INTERVAL_S = 2.0  # per-host spacing for the logdocuments API, matches _htt
 def fetch_borehole_geojson(srs: str = "EPSG:4326", timeout: int = 300) -> dict:
     """Fetch the full 'All boreholes' layer as GeoJSON from the NLOG WFS."""
     params = {
-        "service": "WFS", "version": "1.0.0", "request": "GetFeature",
-        "typeName": WFS_LAYER, "outputFormat": "json", "srsName": srs,
+        "service": "WFS",
+        "version": "1.0.0",
+        "request": "GetFeature",
+        "typeName": WFS_LAYER,
+        "outputFormat": "json",
+        "srsName": srs,
     }
     url = f"{WFS_BASE}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})  # noqa: S310
@@ -134,17 +154,20 @@ def build_index(
                 continue  # cannot resolve documents without the mapviewer id
             geom = feat.get("geometry") or {}
             coords = geom.get("coordinates") or [None, None]
-            writer.writerow({
-                "well_id": p.get("BOREHOLE_CODE") or mvid,
-                "borehole_name": p.get("BOREHOLE_NAME") or "",
-                "uwi": p.get("UWI") or "",
-                "nitg_number": p.get("NITG_NUMBER") or "",
-                "mapviewer_id": mvid,
-                "public_as_of": p.get("PUBLIC_AS_OF") or "",
-                "on_offshore": p.get("ON_OFFSHORE_CODE") or "",
-                "lon": coords[0], "lat": coords[1],
-                "detail_url": p.get("URL") or "",
-            })
+            writer.writerow(
+                {
+                    "well_id": p.get("BOREHOLE_CODE") or mvid,
+                    "borehole_name": p.get("BOREHOLE_NAME") or "",
+                    "uwi": p.get("UWI") or "",
+                    "nitg_number": p.get("NITG_NUMBER") or "",
+                    "mapviewer_id": mvid,
+                    "public_as_of": p.get("PUBLIC_AS_OF") or "",
+                    "on_offshore": p.get("ON_OFFSHORE_CODE") or "",
+                    "lon": coords[0],
+                    "lat": coords[1],
+                    "detail_url": p.get("URL") or "",
+                }
+            )
             n += 1
     print(f"[nlog] wrote {n} released boreholes to {out_csv} (released_only={released_only})")
     return n
@@ -153,8 +176,9 @@ def build_index(
 # --------------------------------------------------------------------------- #
 # Step 2: per-borehole log-document list (verified endpoint)
 # --------------------------------------------------------------------------- #
-def _post_logdocuments(mapviewer_id: str, timeout: int = 60,
-                       max_retries: int = 3, backoff_base_s: float = 2.0) -> list[dict]:
+def _post_logdocuments(
+    mapviewer_id: str, timeout: int = 60, max_retries: int = 3, backoff_base_s: float = 2.0
+) -> list[dict]:
     """POST one mapviewer id to the logdocuments endpoint, return the JSON list.
 
     The body is the bare id as a JSON string (the array and object forms both
@@ -164,9 +188,14 @@ def _post_logdocuments(mapviewer_id: str, timeout: int = 60,
     """
     body = json.dumps(mapviewer_id).encode("utf-8")  # -> "106511838"
     req = urllib.request.Request(  # noqa: S310
-        LOGDOCS_URL, data=body, method="POST",
-        headers={"User-Agent": USER_AGENT, "Accept": "application/json",
-                 "Content-Type": "application/json"},
+        LOGDOCS_URL,
+        data=body,
+        method="POST",
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        },
     )
     last_exc: Exception | None = None
     for attempt in range(max_retries + 1):
@@ -183,7 +212,7 @@ def _post_logdocuments(mapviewer_id: str, timeout: int = 60,
         except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as exc:
             last_exc = exc
         if attempt < max_retries:
-            time.sleep(backoff_base_s * (2 ** attempt))
+            time.sleep(backoff_base_s * (2**attempt))
     raise last_exc if last_exc else RuntimeError("logdocuments failed")
 
 
@@ -215,7 +244,9 @@ def resolve_log_documents(
     """
     index_path = Path(index_csv)
     if not index_path.exists():
-        raise FileNotFoundError(f"NLOG borehole index not found: {index_csv}. Run build_index first.")
+        raise FileNotFoundError(
+            f"NLOG borehole index not found: {index_csv}. Run build_index first."
+        )
     out_path = Path(out_csv)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     keep = {t.upper() for t in file_types}
@@ -241,10 +272,19 @@ def resolve_log_documents(
             time.sleep(_MIN_INTERVAL_S)
             try:
                 docs = _post_logdocuments(mvid)
-            except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
-                    OSError, ValueError, json.JSONDecodeError) as exc:
-                print(f"[nlog] FAILED logdocuments {well_id} (id {mvid}): "
-                      f"{type(exc).__name__}: {exc}", flush=True)
+            except (
+                urllib.error.URLError,
+                urllib.error.HTTPError,
+                TimeoutError,
+                OSError,
+                ValueError,
+                json.JSONDecodeError,
+            ) as exc:
+                print(
+                    f"[nlog] FAILED logdocuments {well_id} (id {mvid}): "
+                    f"{type(exc).__name__}: {exc}",
+                    flush=True,
+                )
                 continue
             kept = [d for d in docs if str(d.get("fileTypeCode", "")).upper() in keep]
             if kept:
@@ -253,25 +293,34 @@ def resolve_log_documents(
                 fid = d.get("documentBfileDbk")
                 if fid is None:
                     continue
-                writer.writerow({
-                    "well_id": well_id, "mapviewer_id": mvid, "file_id": fid,
-                    "file_name": d.get("fileName") or "",
-                    "file_type": str(d.get("fileTypeCode", "")).upper(),
-                    "file_size": d.get("fileSize") or "",
-                    "top_depth": d.get("topDepth"), "bottom_depth": d.get("bottomDepth"),
-                    "document_group": d.get("documentGroup") or "",
-                    "download_url": f"{DOWNLOAD_BASE}{fid}",
-                })
+                writer.writerow(
+                    {
+                        "well_id": well_id,
+                        "mapviewer_id": mvid,
+                        "file_id": fid,
+                        "file_name": d.get("fileName") or "",
+                        "file_type": str(d.get("fileTypeCode", "")).upper(),
+                        "file_size": d.get("fileSize") or "",
+                        "top_depth": d.get("topDepth"),
+                        "bottom_depth": d.get("bottomDepth"),
+                        "document_group": d.get("documentGroup") or "",
+                        "download_url": f"{DOWNLOAD_BASE}{fid}",
+                    }
+                )
                 written += 1
             if i % 100 == 0 or i == len(pending):
                 fh.flush()
                 rate = i / max(1e-9, time.time() - t0)
                 eta = (len(pending) - i) / rate / 60 if rate else 0
-                print(f"[nlog] logdocuments {i}/{len(pending)} boreholes, "
-                      f"{n_with_logs} with logs, {written} files, ~{eta:.0f} min left",
-                      flush=True)
-    print(f"[nlog] resolved {written} downloadable files "
-          f"({', '.join(sorted(keep))}) from {len(pending)} boreholes -> {out_csv}")
+                print(
+                    f"[nlog] logdocuments {i}/{len(pending)} boreholes, "
+                    f"{n_with_logs} with logs, {written} files, ~{eta:.0f} min left",
+                    flush=True,
+                )
+    print(
+        f"[nlog] resolved {written} downloadable files "
+        f"({', '.join(sorted(keep))}) from {len(pending)} boreholes -> {out_csv}"
+    )
     return written
 
 
@@ -311,8 +360,9 @@ def ingest_from_index(index_csv: str, raw_root: str = "data/raw") -> FetchLog:
                 continue
             n += 1
             fetcher.fetch(url, rel_path=f"wells/{well_id}__{fid}.{ext}", log=log)
-    print(f"[nlog] indexed={n} ok={len(log.ok)} skipped={len(log.skipped)} "
-          f"failed={len(log.failed)}")
+    print(
+        f"[nlog] indexed={n} ok={len(log.ok)} skipped={len(log.skipped)} failed={len(log.failed)}"
+    )
     for url, err in log.failed[:50]:
         print(f"[nlog] FAILED {url}: {err}")
     return log
@@ -343,8 +393,9 @@ def main() -> None:
         build_index(args.out_csv, released_only=not args.all, onshore_only=args.onshore_only)
     elif args.cmd == "resolve":
         types = tuple(t.strip().upper() for t in args.file_types.split(",") if t.strip())
-        resolve_log_documents(args.index_csv, args.out_csv, file_types=types,
-                              max_boreholes=args.max_boreholes)
+        resolve_log_documents(
+            args.index_csv, args.out_csv, file_types=types, max_boreholes=args.max_boreholes
+        )
     elif args.cmd == "fetch":
         ingest_from_index(args.index_csv, raw_root=args.raw_root)
 

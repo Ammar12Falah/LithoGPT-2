@@ -107,9 +107,7 @@ def parse_index(index_path: str | Path) -> tuple[list[str], list[dict[str, str]]
     return header, rows
 
 
-def fetch_archives(
-    years: list[str] | None = None, raw_root: str = "data/raw"
-) -> FetchLog:
+def fetch_archives(years: list[str] | None = None, raw_root: str = "data/raw") -> FetchLog:
     """Download selected per-year LAS archive ZIPs (resumable, checksummed).
 
     Large: these total several GB across all years. Default is the G1 subset.
@@ -138,11 +136,16 @@ def unpack_las(raw_root: str = "data/raw") -> int:
     out.mkdir(parents=True, exist_ok=True)
     existing = {q.name for q in out.glob("*.las")}
     n = 0
+
     def _junk(name):
         return Path(name).name.startswith("._") or "__MACOSX" in name
+
     def _write(name, data):
         nonlocal n
-        (out / name).write_bytes(data); existing.add(name); n += 1
+        (out / name).write_bytes(data)
+        existing.add(name)
+        n += 1
+
     for zpath in sorted(arch_dir.glob("*.zip")):
         with zipfile.ZipFile(zpath) as zf:
             for member in zf.namelist():
@@ -161,7 +164,9 @@ def unpack_las(raw_root: str = "data/raw") -> int:
                         inner = zipfile.ZipFile(io.BytesIO(zf.read(member)))
                     except zipfile.BadZipFile:
                         continue
-                    las = [m for m in inner.namelist() if not _junk(m) and m.lower().endswith(".las")]
+                    las = [
+                        m for m in inner.namelist() if not _junk(m) and m.lower().endswith(".las")
+                    ]
                     for k, m in enumerate(las):
                         name = f"{stem}.las" if k == 0 else f"{stem}_{k}.las"
                         if name not in existing:
@@ -202,13 +207,18 @@ def ingest(
 def main() -> None:
     ap = argparse.ArgumentParser(description="KGS (Kansas) LAS ingester.")
     ap.add_argument("--raw-root", default="data/raw")
-    ap.add_argument("--years", nargs="*", default=None,
-                    help=f"Archive zips to fetch (default G1 subset: {RECOMMENDED_G1_YEARS}).")
+    ap.add_argument(
+        "--years",
+        nargs="*",
+        default=None,
+        help=f"Archive zips to fetch (default G1 subset: {RECOMMENDED_G1_YEARS}).",
+    )
     ap.add_argument("--index-only", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
-    ingest(raw_root=args.raw_root, years=args.years,
-           index_only=args.index_only, dry_run=args.dry_run)
+    ingest(
+        raw_root=args.raw_root, years=args.years, index_only=args.index_only, dry_run=args.dry_run
+    )
 
 
 if __name__ == "__main__":
