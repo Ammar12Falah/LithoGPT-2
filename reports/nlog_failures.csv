@@ -313,5 +313,14 @@ P18-07__2280227610.las,RuntimeError: ValueError: could not convert string to flo
 PRW-06-S1,no readable log file for borehole
 PRW-06-S1__3701364749.las,RuntimeError: ValueError: could not convert string to float: '16:29:34/12-Oct-2020'
 PRW-06-S1__3701364788.las,RuntimeError: ValueError: could not convert string to float: '17:45:58/07-Oct-2020'
-PSP-02__866138573.dlis,"read timeout > 120s (killed, skipped)"
 PSP-02,no readable log file for borehole
+PSP-02__866138573.dlis,"read timeout > 120s (killed, skipped)"
+PSP-02-S1,no readable log file for borehole
+PSP-02-S1__651858191.dlis,"read timeout > 120s (killed, skipped)"
+PSP-02-S1__653084037.dlis,"read timeout > 120s (killed, skipped)"
+Q01-27__1118596533.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+Q01-27__1118596807.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+Q01-D-02-S1,no readable log file for borehole
+Q01-D-02-S1__1704152552.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+Q01-D-02-S2,no readable log file for borehole
+Q01-D-02-S2__3749550553.las,RuntimeError: ValueError: could not convert string to float: '20:05:54/27-Mar-2018'
