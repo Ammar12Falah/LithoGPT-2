@@ -83,3 +83,12 @@ F15-A-02-S4__1466055368.dlis,RuntimeError: ValueError: no depth-indexed frame wi
 F15-A-02-S5,no readable log file for borehole
 F15-A-02-S5__1466060878.las,RuntimeError: ValueError: could not convert string to float: '00:07:22/11-Jul-2013'
 F15-A-02-S5__1466067700.las,RuntimeError: ValueError: could not convert string to float: '17:42:26/18-Jul-2013'
+F17-10,no readable log file for borehole
+F17-10__1498034820.dlis,"read timeout > 120s (killed, skipped)"
+F17-10__1647976297.las,RuntimeError: ValueError: could not convert string to float: '18:00:00/20-Oct-2012'
+F17-11,no readable log file for borehole
+F17-11__1701282677.dlis,"read timeout > 120s (killed, skipped)"
+F17-12,no readable log file for borehole
+F17-12__1701280331.dlis,"read timeout > 120s (killed, skipped)"
+F17-14,no readable log file for borehole
+F17-14__3582201738.las,RuntimeError: ValueError: could not convert string to float: '20:43:28/20-May-2018'
