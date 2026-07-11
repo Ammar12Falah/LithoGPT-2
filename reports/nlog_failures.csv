@@ -179,3 +179,21 @@ K18-KOTTER-10-S1__3949145155.las,"RuntimeError: LASHeaderError: Line 32 (section
 K18-KOTTER-10-S1,no readable log file for borehole
 KHL-GT-02__2395227171.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
 L02-09__2700304915.dlis,"read timeout > 120s (killed, skipped)"
+L04-A-07-S1,no readable log file for borehole
+L04-A-07-S1__1537560836.las,RuntimeError: ValueError: could not convert string to float: '07:00:00/17-Jun-2012'
+L04-A-07-S1__1537560889.las,RuntimeError: ValueError: could not convert string to float: '00:00:00/20-Jun-2012'
+L05-12,no readable log file for borehole
+L05-12__765311333.dlis,"read timeout > 120s (killed, skipped)"
+L05-12__765311391.dlis,"read timeout > 120s (killed, skipped)"
+L05-13__1403560192.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-15__1404058000.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-15__1404058114.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__1191426896.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__433330653.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__433330688.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01,no readable log file for borehole
+L05-C-02-S3,no readable log file for borehole
+L05-C-02-S3__1756551352.las,RuntimeError: ValueError: could not convert string to float: '18:00:00/26-Apr-2011'
+L05-C-02-S3__1756552378.dlis,"read timeout > 120s (killed, skipped)"
+L05-C-03,no readable log file for borehole
+L05-C-03__642734454.las,"read timeout > 120s (killed, skipped)"
