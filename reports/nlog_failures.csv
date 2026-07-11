@@ -211,3 +211,16 @@ Action taken: Indexing is suspended at last valid Logical Record
 Debug info:   Physical tell: 19302056 (dec), Logical Record tell: 19228721 (dec), Logical Record Segment tell: 19264312 (dec)"
 L08-P4-02__446699966.dlis,"read timeout > 120s (killed, skipped)"
 L08-P4-02,no readable log file for borehole
+L08-P4-02-S2,no readable log file for borehole
+L08-P4-02-S2__447020337.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L09-FF-107-S2,no readable log file for borehole
+L09-FF-107-S2__446257544.dlis,"RuntimeError: RuntimeError: 
+Problem:      File truncated in Logical Record Segment
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 450760898 (dec), Logical Record tell: 82598664 (dec), Logical Record Segment tell: 82602688 (dec)"
+L10-37-S1,no readable log file for borehole
+L10-37-S1__1793112654.dlis,"read timeout > 120s (killed, skipped)"
+L10-L-06__1900123067.dlis,"read timeout > 120s (killed, skipped)"
+L10-L-06,no readable log file for borehole
