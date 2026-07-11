@@ -197,3 +197,17 @@ L05-C-02-S3__1756551352.las,RuntimeError: ValueError: could not convert string t
 L05-C-02-S3__1756552378.dlis,"read timeout > 120s (killed, skipped)"
 L05-C-03,no readable log file for borehole
 L05-C-03__642734454.las,"read timeout > 120s (killed, skipped)"
+L05-D-01__1884906062.dlis,"read timeout > 120s (killed, skipped)"
+L05-D-01__1885015002.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L06-07,no readable log file for borehole
+L06-07__636229876.dlis,"read timeout > 120s (killed, skipped)"
+L06-08__2372017759.las,RuntimeError: ValueError: could not convert string to float: '06:00:00/29-Jun-2010'
+L08-P4-02__1471500137.dlis,"read timeout > 120s (killed, skipped)"
+L08-P4-02__446699957.dlis,"RuntimeError: RuntimeError: 
+Problem:      Too short logical record. Length can't be less than 4, but was 0
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 19302056 (dec), Logical Record tell: 19228721 (dec), Logical Record Segment tell: 19264312 (dec)"
+L08-P4-02__446699966.dlis,"read timeout > 120s (killed, skipped)"
+L08-P4-02,no readable log file for borehole
