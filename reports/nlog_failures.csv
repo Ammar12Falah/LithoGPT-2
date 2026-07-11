@@ -363,3 +363,7 @@ SLD-07__1860146977.las,RuntimeError: ValueError: could not convert string to flo
 SLD-07-S1__1860018057.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
 SPKO-04,no readable log file for borehole
 SPKO-04__3462243466.las,RuntimeError: ValueError: could not convert string to float: '16:29:20/02-Apr-2020'
+VNW-01,no readable log file for borehole
+VNW-01__1175887149.dlis,"read timeout > 120s (killed, skipped)"
+VNW-01__446259334.dlis,"read timeout > 120s (killed, skipped)"
+VRS-10__2782447966.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
