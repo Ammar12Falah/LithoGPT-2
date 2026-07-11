@@ -267,3 +267,14 @@ M07-A-02__1756550779.las,RuntimeError: ValueError: could not convert string to f
 M07-A-02__1756551056.las,RuntimeError: ValueError: could not convert string to float: '10:44:55/19-Jul-2010'
 MDM-GT-06-S2__3625911024.las,"read timeout > 120s (killed, skipped)"
 MGT-03__1856738359.dlis,"read timeout > 120s (killed, skipped)"
+MLD-GT-01__2607592914.dlis,"read timeout > 120s (killed, skipped)"
+MLD-GT-02-S2__2613030246.dlis,"read timeout > 120s (killed, skipped)"
+N05-01-S3,no readable log file for borehole
+N05-01-S3__2617253783.las,RuntimeError: ValueError: could not convert string to float: '02:14:13/28-Jul-2017'
+N07-04A,no readable log file for borehole
+N07-04A__2807778527.dlis,"read timeout > 120s (killed, skipped)"
+N07-04A-S1__2815533001.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+NLW-GT-03-S1,no readable log file for borehole
+NLW-GT-03-S1__3447461047.dlis,"read timeout > 120s (killed, skipped)"
+NMD-02__1434272565.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+NMD-03__1772762097.dlis,"read timeout > 120s (killed, skipped)"
