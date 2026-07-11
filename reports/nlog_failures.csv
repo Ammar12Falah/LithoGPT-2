@@ -92,3 +92,6 @@ F17-12,no readable log file for borehole
 F17-12__1701280331.dlis,"read timeout > 120s (killed, skipped)"
 F17-14,no readable log file for borehole
 F17-14__3582201738.las,RuntimeError: ValueError: could not convert string to float: '20:43:28/20-May-2018'
+G14-A-02,no readable log file for borehole
+G14-A-02__751039577.dlis,"read timeout > 120s (killed, skipped)"
+G14-A-02__751039684.dlis,"read timeout > 120s (killed, skipped)"
