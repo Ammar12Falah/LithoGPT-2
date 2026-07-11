@@ -248,3 +248,15 @@ L16-LOGGER-07-S1__3949152882.las,"RuntimeError: ValueError: Cannot reshape ~A da
 L16-LOGGER-08,no readable log file for borehole
 L16-LOGGER-08__3949153927.las,"RuntimeError: ValueError: Cannot reshape ~A data size (25515,) into 73 columns"
 L16-LOGGER-08__3949154613.las,"RuntimeError: ValueError: Cannot reshape ~A data size (25317,) into 26 columns"
+LIR-GT-02__1681448068.dlis,"read timeout > 120s (killed, skipped)"
+LSL-GT-01__2607481835.dlis,"read timeout > 120s (killed, skipped)"
+LSL-GT-02__2607482075.dlis,"read timeout > 120s (killed, skipped)"
+LTG-GT-01,no readable log file for borehole
+LTG-GT-01__3265184411.las,RuntimeError: ValueError: could not convert string to float: '17:42:52/18-Feb-2018'
+LTG-GT-01__3311548994.las,"read timeout > 120s (killed, skipped)"
+LTG-GT-02,no readable log file for borehole
+LTG-GT-02__3311700074.las,"read timeout > 120s (killed, skipped)"
+LTG-GT-03,no readable log file for borehole
+LTG-GT-03__3311700343.las,"read timeout > 120s (killed, skipped)"
+LTG-GT-04,no readable log file for borehole
+LTG-GT-04__3360762540.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
