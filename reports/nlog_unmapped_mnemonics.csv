@@ -2,6 +2,8 @@ source,raw_mnemonic,raw_unit,count
 nlog,DRHO,G/C3,595
 nlog,TIME,MS,507
 nlog,DEPT:2,M,485
+nlog,CCL,CPS,427
+nlog,NGAM,CPS,427
 nlog,LATL,OHMM,406
 nlog,CALF,IN,389
 nlog,TVD,m,382
@@ -9,16 +11,16 @@ nlog,CS,F/HR,380
 nlog,GRIC,API,368
 nlog,FDC,G/C3,354
 nlog,ETIM,S,320
-nlog,DILD,OHMM,297
+nlog,DILD,OHMM,298
 nlog,MARK,M,289
-nlog,TIME,ms,274
+nlog,TIME,ms,275
 nlog,TOD,S,265
 nlog,DIFF,M,246
 nlog,TENS,LBF,235
 nlog,TENS,LB,233
-nlog,TENS,lbf,231
-nlog,CS,ft/h,212
-nlog,ETIM,s,193
+nlog,TENS,lbf,232
+nlog,CS,ft/h,213
+nlog,ETIM,s,194
 nlog,DGXT,hr,167
 nlog,MRES,OHMM,165
 nlog,SPD,M/MN,165
@@ -26,10 +28,8 @@ nlog,ROP5,m/h,164
 nlog,MTEM,DEGC,163
 nlog,CGRC,api,160
 nlog,HV,V,159
-nlog,CCL,CPS,158
-nlog,NGAM,CPS,158
+nlog,CVEL,m/min,158
 nlog,SFXE,hr,158
-nlog,CVEL,m/min,157
 nlog,SPI,MV,155
 nlog,STSG,,152
 nlog,TT1,US,152
@@ -294,9 +294,11 @@ nlog,CTEM,degC,45
 nlog,PR,,45
 nlog,ROPA,M/HR,45
 nlog,BHRM,ohm.m,44
+nlog,CCL,ROB,44
 nlog,ED,m,44
 nlog,LSSL,US/F,44
 nlog,ND,m,44
+nlog,NGAM,ROB,44
 nlog,RHGX,G/C3,44
 nlog,TVDE,m,44
 nlog,CMCG,,43
@@ -821,6 +823,7 @@ nlog,N2TD:5,CPS,21
 nlog,N3TD:8,CPS,21
 nlog,NC4,PPM,21
 nlog,ND,M,21
+nlog,NEUT,NAPI,21
 nlog,P22H_UNC,ohm.m,21
 nlog,P28H_UNC,ohm.m,21
 nlog,P34H_UNC,ohm.m,21
@@ -890,7 +893,6 @@ nlog,MS2I,MA,20
 nlog,MSF1,OHMM,20
 nlog,MSF2,OHMM,20
 nlog,NBI,,20
-nlog,NEUT,NAPI,20
 nlog,NTDT:1,CPS,20
 nlog,NTDT:2,CPS,20
 nlog,P40H_COND,MS/M,20
@@ -1344,6 +1346,7 @@ nlog,DSOU,in,13
 nlog,EFR1,%,13
 nlog,EFR2,%,13
 nlog,FHM,,13
+nlog,GAM(NAT),CPS,13
 nlog,GRSL,GAPI,13
 nlog,IDWD,M,13
 nlog,KDRF,S,13
@@ -1412,10 +1415,12 @@ nlog,ATC6,dB/ft,12
 nlog,ATMN,dB/ft,12
 nlog,AZ,M/S2,12
 nlog,BCDE,,12
+nlog,CBLE_ACC,ENC.g,12
 nlog,CDEF,,12
 nlog,CGHPH,,12
 nlog,CLLD,MMHO,12
 nlog,CONDUC_OUT,MSIEMENSPERCM,12
+nlog,CURRENT,PSU.mA,12
 nlog,D1RB,deg,12
 nlog,DECL,,12
 nlog,DECS,,12
@@ -1435,6 +1440,7 @@ nlog,DFX1,V,12
 nlog,DFX2,V,12
 nlog,DFX3,V,12
 nlog,DFX4,V,12
+nlog,DIFF-TENSION,TEN.N,12
 nlog,DIHV,V,12
 nlog,DLS,DEG/30M,12
 nlog,DP1S,,12
@@ -1540,6 +1546,7 @@ nlog,SCO2,g/cc,12
 nlog,SIGM:19,CU,12
 nlog,SIGM:20,CU,12
 nlog,SKET,,12
+nlog,SPEED,ENC,12
 nlog,SSD,,12
 nlog,SW,----,12
 nlog,SW:2,%,12
@@ -1547,12 +1554,15 @@ nlog,TAB_IMP_GR,s,12
 nlog,TAB_RES,h,12
 nlog,TAU:11,US,12
 nlog,TAU:12,US,12
+nlog,TENSION,TEN.N,12
 nlog,TIMC:1,S,12
 nlog,TIMC:2,S,12
+nlog,TIME,ENC,12
 nlog,TNPL,pu,12
 nlog,TRAT:16,,12
 nlog,TRAT:2,RATI,12
 nlog,V0DC,,12
+nlog,VOLTAGE,PSU.V,12
 nlog,VSH,----,12
 nlog,VSM1,PU,12
 nlog,WPRE,bar,12
@@ -2032,7 +2042,6 @@ nlog,FZCSS,,9
 nlog,FZDL,,9
 nlog,FZLS,,9
 nlog,FZSS,,9
-nlog,GAM(NAT),CPS,9
 nlog,GE1S,CPS,9
 nlog,GE2S,CPS,9
 nlog,GHID,IN,9
@@ -2214,9 +2223,8 @@ nlog,AZMH,deg,8
 nlog,BCAV,in,8
 nlog,BCHO,in,8
 nlog,BCVE,in,8
+nlog,BIT_SIZE,in,8
 nlog,BPHI_UNC,pu,8
-nlog,CBLE_ACC,ENC.g,8
-nlog,CCL,ROB,8
 nlog,CERP,,8
 nlog,CETP,,8
 nlog,CHT,LB,8
@@ -2238,10 +2246,8 @@ nlog,CNCSS,pu,8
 nlog,CPPZ,pu,8
 nlog,CPPZC,pu,8
 nlog,CSGP,PSIA,8
-nlog,CURRENT,PSU.mA,8
 nlog,DBPHI,pu,8
 nlog,DCI2,,8
-nlog,DIFF-TENSION,TEN.N,8
 nlog,DNLV,MV,8
 nlog,DRHO,UNKNOWN,8
 nlog,DT2,US/F,8
@@ -2266,6 +2272,7 @@ nlog,GRMB_FILT,gAPI,8
 nlog,GRML_FILT,gAPI,8
 nlog,GRMR_FILT,gAPI,8
 nlog,GRMU_FILT,gAPI,8
+nlog,GRN,IMP,8
 nlog,GRSLC,gAPI,8
 nlog,GR_ARC_CAL,gAPI,8
 nlog,GX_CAL,g,8
@@ -2316,7 +2323,6 @@ nlog,MWFD_ROC,,8
 nlog,N1TD:15,CPS,8
 nlog,N2TD:11,CPS,8
 nlog,N3TD:15,CPS,8
-nlog,NGAM,ROB,8
 nlog,NPL,V/V,8
 nlog,P10H_COND,mS/m,8
 nlog,P10H_UNC,ohm.m,8
@@ -2410,7 +2416,6 @@ nlog,SNBD,g/cc,8
 nlog,SNDS,m,8
 nlog,SNP2,b/e,8
 nlog,SNPE,b/e,8
-nlog,SPEED,ENC,8
 nlog,SPM,,8
 nlog,SPM1,----,8
 nlog,SPP,BAR,8
@@ -2443,10 +2448,8 @@ nlog,TAB_NEU,h,8
 nlog,TAU:15,US,8
 nlog,TAU:16,US,8
 nlog,TDIS,m,8
-nlog,TENSION,TEN.N,8
 nlog,TEST,m/h,8
 nlog,TGST,M/S2,8
-nlog,TIME,ENC,8
 nlog,TNRA_UNC,,8
 nlog,TOJ,S,8
 nlog,TQA,kN.m,8
@@ -2461,7 +2464,6 @@ nlog,UAPI,gAPI,8
 nlog,USBI_RF,,8
 nlog,UTDL,US,8
 nlog,VIB_X,g,8
-nlog,VOLTAGE,PSU.V,8
 nlog,VSH,%,8
 nlog,WTGR_ROC,,8
 nlog,7A,MM/M,7
@@ -2487,7 +2489,6 @@ nlog,AZXE.I,deg,7
 nlog,BATM,dB/m,7
 nlog,BCSL:3,US/F,7
 nlog,BHKGR,gAPI,7
-nlog,BIT_SIZE,in,7
 nlog,BONDIX,,7
 nlog,BPRE,kPa,7
 nlog,BRAD,in,7
@@ -2569,7 +2570,6 @@ nlog,GNMN,dB,7
 nlog,GNMX,dB,7
 nlog,GRAFM,gAPI,7
 nlog,GRCFM,gAPI,7
-nlog,GRN,IMP,7
 nlog,GRSL.2,1/s,7
 nlog,GR_B,GAPI,7
 nlog,GR_CDR_RT,gAPI,7
@@ -2622,6 +2622,7 @@ nlog,MXR1,in,7
 nlog,MXR2,in,7
 nlog,NATN,DB/M,7
 nlog,NDIST,M,7
+nlog,NEUT,IMP,7
 nlog,NFPI,mV,7
 nlog,NPL,,7
 nlog,NPL1,,7
@@ -2637,6 +2638,7 @@ nlog,PHIDC,UNKNOWN,7
 nlog,PHIE,UNKNOWN,7
 nlog,PHINC,UNKNOWN,7
 nlog,PHIS,UNKNOWN,7
+nlog,POROSITY,dec,7
 nlog,PPT,US,7
 nlog,PSR,OHMM,7
 nlog,PSXO,PU,7
@@ -2886,6 +2888,7 @@ nlog,CHT:9,LB,6
 nlog,CILD,MS/M,6
 nlog,CIRF_FIL,,6
 nlog,CIRN_FIL,,6
+nlog,CLAY_INDICATOR,dec,6
 nlog,CLLD,mS/m,6
 nlog,CNC:3,%,6
 nlog,CRMI,IN,6
@@ -2952,6 +2955,7 @@ nlog,DIP_INC_TRUE,deg,6
 nlog,DITG,1/s,6
 nlog,DITH,1/s,6
 nlog,DLSS,0.1 deg/m,6
+nlog,DOLOMITE,dec,6
 nlog,DP5S,,6
 nlog,DP6S,,6
 nlog,DP7S,,6
@@ -3111,6 +3115,7 @@ nlog,KWIT,----,6
 nlog,LDEN,G/CM3,6
 nlog,LDLD,OHMM,6
 nlog,LDLS,OHMM,6
+nlog,LIMESTONE,dec,6
 nlog,LL7,,6
 nlog,LSAT_SLDT,s,6
 nlog,LSR_PPC1,,6
@@ -3172,7 +3177,6 @@ nlog,PFTH7,V,6
 nlog,PFTH8,V,6
 nlog,PHAS,ъ/M,6
 nlog,PHIE,m3/m3,6
-nlog,POROSITY,dec,6
 nlog,PP1,,6
 nlog,PP2,,6
 nlog,PPTIME,h,6
@@ -3331,6 +3335,7 @@ nlog,SPA,MV,6
 nlog,SPAP,MV,6
 nlog,SPAZ,MV,6
 nlog,SPD,ft/min,6
+nlog,SPEED,m/min,6
 nlog,SPHI,,6
 nlog,SPM2,----,6
 nlog,SPM3,----,6
@@ -3416,6 +3421,7 @@ nlog,VH:1,%,6
 nlog,VH:2,%,6
 nlog,VOH,,6
 nlog,VOL,,6
+nlog,VP,m/s,6
 nlog,VRH,,6
 nlog,VRL,,6
 nlog,VSM4,PU,6
@@ -3472,6 +3478,7 @@ nlog,A222,,5
 nlog,A232,,5
 nlog,A242,,5
 nlog,A252,,5
+nlog,ACOUSTIC_IMPEDANCE,kg/sm2,5
 nlog,AECF,,5
 nlog,AHSCA,mV,5
 nlog,AHSFI,mV,5
@@ -3549,7 +3556,6 @@ nlog,CIL1,,5
 nlog,CIL2,,5
 nlog,CIL3,,5
 nlog,CIL4,,5
-nlog,CLAY_INDICATOR,dec,5
 nlog,CLOS,m,5
 nlog,CMLL,,5
 nlog,CNC:1,H.%,5
@@ -3585,6 +3591,8 @@ nlog,DELAY:1,MS,5
 nlog,DELAY:2,MS,5
 nlog,DELAYINV:1,MS,5
 nlog,DELAYINV:2,MS,5
+nlog,DENSITY_CORRECTION,kg/m3,5
+nlog,DENSITY_ED,kg/m3,5
 nlog,DEPT:2,DM,5
 nlog,DEPTH.,1IN,5
 nlog,DEPTH:3,M,5
@@ -3605,7 +3613,6 @@ nlog,DIFF:3,M,5
 nlog,DIFF:4,M,5
 nlog,DIFF:5,M,5
 nlog,DIP_HEIGHT,M,5
-nlog,DOLOMITE,dec,5
 nlog,DPAA_NAZ,DEG,5
 nlog,DPAA_TOH,DEG,5
 nlog,DPAA_TOH_RT,deg,5
@@ -3696,6 +3703,7 @@ nlog,GR:1,gAPI,5
 nlog,GR:2,gAPI,5
 nlog,GRA1,,5
 nlog,GRCM,API/sec,5
+nlog,GRIC,GAPI,5
 nlog,GRSL:1,GAPI,5
 nlog,GRSL:2,2.1/S,5
 nlog,GRSLC,GAPI,5
@@ -3747,7 +3755,6 @@ nlog,LC5,ppm,5
 nlog,LCQR,%,5
 nlog,LDIG,,5
 nlog,LIC4,ppm,5
-nlog,LIMESTONE,dec,5
 nlog,LL3R,OHMM,5
 nlog,LL9D,,5
 nlog,LL9S,,5
@@ -3837,7 +3844,6 @@ nlog,NCNL:2,CPS,5
 nlog,NCNL:3,CPS,5
 nlog,NCNL:4,CPS,5
 nlog,NDIA,,5
-nlog,NEUT,IMP,5
 nlog,NLTV,V,5
 nlog,NPR2,,5
 nlog,NRAT:1,,5
@@ -4024,6 +4030,7 @@ nlog,SHK3TM_RT,MIN,5
 nlog,SI0,uA,5
 nlog,SIBH_R2P,cu,5
 nlog,SIGM_R2P,cu,5
+nlog,SONIC_ED,uSec/m,5
 nlog,SPHI,M3/M3,5
 nlog,SPHV,V,5
 nlog,SPL,,5
@@ -4106,7 +4113,6 @@ nlog,URAN,,5
 nlog,UWFD,g/cm3,5
 nlog,UZ,,5
 nlog,VIBTOR_RT,g,5
-nlog,VP,m/s,5
 nlog,VS,m,5
 nlog,VX1,,5
 nlog,VX2,,5
@@ -4166,7 +4172,6 @@ nlog,ACCX,----,4
 nlog,ACCY,----,4
 nlog,ACCZ,----,4
 nlog,ACGR,API,4
-nlog,ACOUSTIC_IMPEDANCE,kg/sm2,4
 nlog,ACPE,ms,4
 nlog,ACTC,,4
 nlog,ACTC02,US/M,4
@@ -4292,6 +4297,7 @@ nlog,CASL,,4
 nlog,CASR,,4
 nlog,CBL,%,4
 nlog,CBL5,MV,4
+nlog,CBLE_ACC,g,4
 nlog,CBLROT,°,4
 nlog,CBST,,4
 nlog,CCVO:1,M3,4
@@ -4359,6 +4365,7 @@ nlog,CSL3,1/s,4
 nlog,CSTS_LDS,,4
 nlog,CTEM,DEGF,4
 nlog,CTMP,DEGC,4
+nlog,CURRENT,mA,4
 nlog,CVEL:1,m/h,4
 nlog,CVEL:2,m/h,4
 nlog,DB1A,,4
@@ -4377,8 +4384,6 @@ nlog,DECR,G/C3,4
 nlog,DECSB,psi,4
 nlog,DECSB.S,psi,4
 nlog,DEEP_RESISTIVITY,OHMM,4
-nlog,DENSITY_CORRECTION,kg/m3,4
-nlog,DENSITY_ED,kg/m3,4
 nlog,DEPT:2,,4
 nlog,DEPTH.I,m,4
 nlog,DEVI,,4
@@ -4390,6 +4395,7 @@ nlog,DGA4,,4
 nlog,DHAP,KPA,4
 nlog,DHRO,G/C3,4
 nlog,DI90,UA,4
+nlog,DIFF-TENSION,N,4
 nlog,DILD:1,OHMM,4
 nlog,DILD:2,OHMM,4
 nlog,DILD:3,OHMM,4
@@ -4510,6 +4516,7 @@ nlog,FLIT:1,,4
 nlog,FLIT:2,,4
 nlog,FMAG,----,4
 nlog,FMBT,,4
+nlog,FORMTEMP,degC,4
 nlog,FPAD,psi,4
 nlog,FPAD.S,psi,4
 nlog,FTIM,MS,4
@@ -4553,7 +4560,6 @@ nlog,GRAX,GAPI,4
 nlog,GRCF,GAPI,4
 nlog,GRD4,GAPI,4
 nlog,GRF,,4
-nlog,GRIC,GAPI,4
 nlog,GRKT,gAPI,4
 nlog,GRL,,4
 nlog,GRMA,GAPI,4
@@ -4648,6 +4654,7 @@ nlog,LLS1,1/s,4
 nlog,LLS2,1/s,4
 nlog,LLTH,1/s,4
 nlog,LMP,cm,4
+nlog,LN160,OHM-M,4
 nlog,LQLS,,4
 nlog,LQSS,,4
 nlog,LSD.9,,4
@@ -5019,11 +5026,11 @@ nlog,SIWA:2,CU,4
 nlog,SLEW,CPS,4
 nlog,SLIDE,----,4
 nlog,SMOD,----,4
+nlog,SN40,OHM-M,4
 nlog,SNR3,,4
 nlog,SNR4,,4
 nlog,SNUM,,4
 nlog,SOBS,IN,4
-nlog,SONIC_ED,uSec/m,4
 nlog,SPA2,deg,4
 nlog,SPCF,,4
 nlog,SPD,MV,4
@@ -5092,6 +5099,7 @@ nlog,TENS:1,lbf,4
 nlog,TENS:2,lbf,4
 nlog,TENSB,psi,4
 nlog,TENSB.S,psi,4
+nlog,TENSION,N,4
 nlog,TERP,US,4
 nlog,TERS,US,4
 nlog,TERS,us,4
@@ -5103,6 +5111,7 @@ nlog,THKD,1000_kgf,4
 nlog,THPG,PSIG,4
 nlog,TICK_IMP_GR,,4
 nlog,TILD,DEG,4
+nlog,TIME,s,4
 nlog,TIME.I,ms,4
 nlog,TMP,DEGC,4
 nlog,TMPV_SLDT,degC,4
@@ -5397,6 +5406,7 @@ nlog,VIBC,CPS,4
 nlog,VIBLAT_RT,g,4
 nlog,VMAT:1,%,4
 nlog,VMAT:2,%,4
+nlog,VOLTAGE,V,4
 nlog,VP,KM/S,4
 nlog,VR:1,%,4
 nlog,VR:2,%,4
@@ -5918,7 +5928,6 @@ nlog,FGACBL.I,,3
 nlog,FGPCBL.I,us,3
 nlog,FLINPUMP_3,l/min,3
 nlog,FLOW_OUT_%,WEIGHTPERCENT,3
-nlog,FORMTEMP,degC,3
 nlog,FPG,kg/L,3
 nlog,FPG_RT,g/cm3,3
 nlog,FRAC,,3
@@ -6124,6 +6133,7 @@ nlog,NER1,1/S,3
 nlog,NER2,1/S,3
 nlog,NER2_CAL,1/S,3
 nlog,NER3,1/s,3
+nlog,NEUTRON,dec,3
 nlog,NPES,PU,3
 nlog,NPLC,PU,3
 nlog,NPR1,,3
@@ -6159,6 +6169,7 @@ nlog,PH_IN,NOUNIT,3
 nlog,PL,OHMM,3
 nlog,PNB_SW,,3
 nlog,POTASSIUM,dec,3
+nlog,POTASSIUM,m3/m3,3
 nlog,PPG_CDR_RT,g/cm3,3
 nlog,PRESS_IN_3,bar,3
 nlog,PRSA_RT,kPa,3
@@ -6417,6 +6428,7 @@ nlog,THMX,IN,3
 nlog,THOR:1,PPM,3
 nlog,THOR:2,PPM,3
 nlog,THORIUM,PPM,3
+nlog,THORIUM,ppm,3
 nlog,TICK_ARC_RES,----,3
 nlog,TICK_IMP_GR,----,3
 nlog,TIME,GDTIME,3
@@ -6509,6 +6521,7 @@ nlog,UMA,B/C3,3
 nlog,UNKNOWN,,3
 nlog,UPGA[0],DB,3
 nlog,URANIUM,PPM,3
+nlog,URANIUM,ppm,3
 nlog,USFC,,3
 nlog,VCL_HILT,m3/m3,3
 nlog,VERR_RT,ohm.m,3
@@ -7418,6 +7431,7 @@ nlog,DCVOWQI,m3,2
 nlog,DDCC,CPS,2
 nlog,DDMOB5,,2
 nlog,DDV.S,cm3,2
+nlog,DEEP_IND_RESISTIVITY,ohm.m,2
 nlog,DEN:1,,2
 nlog,DEN:2,,2
 nlog,DEN:3,,2
@@ -8392,7 +8406,6 @@ nlog,LL_1:4,CPS,2
 nlog,LL_1:5,CPS,2
 nlog,LL_1:6,CPS,2
 nlog,LMVL_DL,V,2
-nlog,LN160,OHM-M,2
 nlog,LOAD,kg,2
 nlog,LPAV,kPa,2
 nlog,LQC_HW_STAT[1],,2
@@ -8506,6 +8519,7 @@ nlog,MCBW,pu,2
 nlog,MCI,,2
 nlog,MCO,,2
 nlog,MDIA,KG/L,2
+nlog,MEDIUM_IND_RESISTIVITY,ohm.m,2
 nlog,MEMS,,2
 nlog,MFFI,,2
 nlog,MFI,L/M,2
@@ -8938,9 +8952,9 @@ nlog,NCOR,,2
 nlog,NCOR_SIG,,2
 nlog,NDLS,,2
 nlog,NEAF,,2
+nlog,NEUT,I/MIN,2
 nlog,NEUT,,2
 nlog,NEUTRON,V/V,2
-nlog,NEUTRON,dec,2
 nlog,NEUT_00J,%,2
 nlog,NFDC,1/S,2
 nlog,NG10,,2
@@ -9181,7 +9195,6 @@ nlog,POTA,PPM,2
 nlog,POTA,pu,2
 nlog,POTA:1,%,2
 nlog,POTA:2,%,2
-nlog,POTASSIUM,m3/m3,2
 nlog,PPPG,G/C3,2
 nlog,PPRE,BAR,2
 nlog,PPRT,,2
@@ -10001,7 +10014,6 @@ nlog,SMTT,us,2
 nlog,SN2S,,2
 nlog,SN3,OHMM,2
 nlog,SN4,OHMM,2
-nlog,SN40,OHM-M,2
 nlog,SN:1,ohm.m,2
 nlog,SN:2,ohm.m,2
 nlog,SN:3,ohm.m,2
@@ -10095,7 +10107,6 @@ nlog,SPDP,mV,2
 nlog,SPDQI,m/min,2
 nlog,SPDZ,mV,2
 nlog,SPEE,,2
-nlog,SPEED,m/min,2
 nlog,SPHI,pu,2
 nlog,SPI1,MV,2
 nlog,SPI1,RPS,2
@@ -10401,7 +10412,6 @@ nlog,THKA_MIN,IN,2
 nlog,THKD,KLBF,2
 nlog,THMN_RF,IN,2
 nlog,THMX_RF,IN,2
-nlog,THORIUM,ppm,2
 nlog,THPG,BAR,2
 nlog,THQI,ppm,2
 nlog,THVD,V,2
@@ -10623,7 +10633,6 @@ nlog,UPRH,G/C3,2
 nlog,UQI,ppm,2
 nlog,URAN:1,PPM,2
 nlog,URAN:2,PPM,2
-nlog,URANIUM,ppm,2
 nlog,UT,,2
 nlog,UTIM[0],,2
 nlog,UTMM,S,2
@@ -12789,7 +12798,6 @@ nlog,DEC,,1
 nlog,DEEP_ILD_RESISTIVITY,OHMM,1
 nlog,DEEP_INDUCTION_RESISTIVITY,OHMM,1
 nlog,DEEP_IND_RESISTIVITY,OHMM,1
-nlog,DEEP_IND_RESISTIVITY,ohm.m,1
 nlog,DEEP_RESISTIVITY,ohm.m,1
 nlog,DEGF,,1
 nlog,DELAY,MS,1
@@ -14358,7 +14366,6 @@ nlog,MEB2_DL,%,1
 nlog,MED-SHALL_IND_RESISTIVITY,ohm.m,1
 nlog,MEDIUM_DEEP_RESISTIVITY,OHMM,1
 nlog,MEDIUM_ILM_RESISTIVITY,OHMM,1
-nlog,MEDIUM_IND_RESISTIVITY,ohm.m,1
 nlog,MEDIUM_RESISTIVITY,OHMM,1
 nlog,MEDIUM_RESISTIVITY,ohm.m,1
 nlog,MEDIUM_SHALLOW_RESISTIVITY,OHMM,1
@@ -14606,6 +14613,7 @@ nlog,NOR1,OHMM,1
 nlog,NP5R,0.01,1
 nlog,NPES,m3/m3,1
 nlog,NPES,pu,1
+nlog,NPGN,CPS,1
 nlog,NPH1,LPU,1
 nlog,NPHI:1,US,1
 nlog,NPHI:1,V/V,1
@@ -15997,6 +16005,7 @@ nlog,SGZ,,1
 nlog,SH,FRAC,1
 nlog,SHAL,OHMM,1
 nlog,SHALLOWEST_IND_RESISTIVITY,ohm.m,1
+nlog,SHALLOW_IND_RESISITIVITY,ohm.m,1
 nlog,SHALLOW_IND_RESISTIVITY,ohm.m,1
 nlog,SHALLOW_RESISTIVITY,ohm.m,1
 nlog,SHALLOW_SFL_RESISTIVITY,OHMM,1
