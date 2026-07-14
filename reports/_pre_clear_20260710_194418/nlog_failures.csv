@@ -1,0 +1,455 @@
+well_id,error
+CAL-GT-01__1469265355.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469265355.dlis' is not an existing regular file
+CAL-GT-01__1469265360.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469265360.dlis' is not an existing regular file
+CAL-GT-01__1469265973.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469265973.las'
+CAL-GT-01__1469266006.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266006.las'
+CAL-GT-01__1469266057.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266057.las'
+CAL-GT-01__1469266109.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266109.las'
+CAL-GT-01__1469266120.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266120.las'
+CAL-GT-01__1469266167.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266167.las'
+CAL-GT-01__1469266260.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469266260.dlis' is not an existing regular file
+CAL-GT-01__1469266265.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469266265.dlis' is not an existing regular file
+CAL-GT-01__1469266613.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469266613.dlis' is not an existing regular file
+CAL-GT-01__1469266618.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469266618.dlis' is not an existing regular file
+CAL-GT-01__1469266966.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266966.las'
+CAL-GT-01__1469266995.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469266995.las'
+CAL-GT-01__1469267024.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267024.las'
+CAL-GT-01__1469267063.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267063.las'
+CAL-GT-01__1469267103.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267103.las'
+CAL-GT-01__1469267154.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267154.dlis' is not an existing regular file
+CAL-GT-01__1469267159.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267159.dlis' is not an existing regular file
+CAL-GT-01__1469267501.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267501.dlis' is not an existing regular file
+CAL-GT-01__1469267506.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267506.dlis' is not an existing regular file
+CAL-GT-01__1469267869.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267869.las'
+CAL-GT-01__1469267892.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469267892.las'
+CAL-GT-01__1469267923.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267923.dlis' is not an existing regular file
+CAL-GT-01__1469267928.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469267928.dlis' is not an existing regular file
+CAL-GT-01__1469268023.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469268023.las'
+CAL-GT-01__1469268114.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268114.dlis' is not an existing regular file
+CAL-GT-01__1469268119.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268119.dlis' is not an existing regular file
+CAL-GT-01__1469268327.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268327.dlis' is not an existing regular file
+CAL-GT-01__1469268332.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268332.dlis' is not an existing regular file
+CAL-GT-01__1469268540.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268540.dlis' is not an existing regular file
+CAL-GT-01__1469268545.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268545.dlis' is not an existing regular file
+CAL-GT-01__1469268751.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268751.dlis' is not an existing regular file
+CAL-GT-01__1469268756.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469268756.dlis' is not an existing regular file
+CAL-GT-01__1469368342.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469368342.dlis' is not an existing regular file
+CAL-GT-01__1469368347.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469368347.dlis' is not an existing regular file
+CAL-GT-01__1469380587.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469380587.las'
+CAL-GT-01__1469380630.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469380630.dlis' is not an existing regular file
+CAL-GT-01__1469380635.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469380635.dlis' is not an existing regular file
+CAL-GT-01__1469381037.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469381037.las'
+CAL-GT-01__1469382719.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469382719.dlis' is not an existing regular file
+CAL-GT-01__1469382724.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469382724.dlis' is not an existing regular file
+CAL-GT-01__1469383771.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469383771.dlis' is not an existing regular file
+CAL-GT-01__1469383782.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469383782.dlis' is not an existing regular file
+CAL-GT-01__1469390118.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469390118.dlis' is not an existing regular file
+CAL-GT-01__1469390123.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469390123.dlis' is not an existing regular file
+CAL-GT-01__1469390842.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469390842.dlis' is not an existing regular file
+CAL-GT-01__1469390847.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469390847.dlis' is not an existing regular file
+CAL-GT-01__1469391234.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391234.dlis' is not an existing regular file
+CAL-GT-01__1469391239.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391239.dlis' is not an existing regular file
+CAL-GT-01__1469391539.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391539.dlis' is not an existing regular file
+CAL-GT-01__1469391544.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391544.dlis' is not an existing regular file
+CAL-GT-01__1469391842.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469391842.las'
+CAL-GT-01__1469391865.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469391865.las'
+CAL-GT-01__1469391888.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469391888.las'
+CAL-GT-01__1469391931.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469391931.las'
+CAL-GT-01__1469391981.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391981.dlis' is not an existing regular file
+CAL-GT-01__1469391986.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469391986.dlis' is not an existing regular file
+CAL-GT-01__1469392054.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392054.dlis' is not an existing regular file
+CAL-GT-01__1469392059.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392059.dlis' is not an existing regular file
+CAL-GT-01__1469392127.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392127.dlis' is not an existing regular file
+CAL-GT-01__1469392132.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392132.dlis' is not an existing regular file
+CAL-GT-01__1469392233.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392233.dlis' is not an existing regular file
+CAL-GT-01__1469392238.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392238.dlis' is not an existing regular file
+CAL-GT-01__1469392361.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392361.dlis' is not an existing regular file
+CAL-GT-01__1469392366.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392366.dlis' is not an existing regular file
+CAL-GT-01__1469392854.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392854.dlis' is not an existing regular file
+CAL-GT-01__1469392859.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469392859.dlis' is not an existing regular file
+CAL-GT-01__1469393345.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469393345.las'
+CAL-GT-01__1469393386.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469393386.las'
+CAL-GT-01__1469393429.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469393429.dlis' is not an existing regular file
+CAL-GT-01__1469393434.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1469393434.dlis' is not an existing regular file
+CAL-GT-01__1469396237.las,FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/nlog/wells/CAL-GT-01__1469396237.las'
+CAL-GT-01__1470718572.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1470718572.dlis' is not an existing regular file
+CAL-GT-01__1470718577.dlis,OSError: 'data/raw/nlog/wells/CAL-GT-01__1470718577.dlis' is not an existing regular file
+CAL-GT-01-S1__1470717494.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-01-S1__1470717499.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-02__1471038577.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-02__1471038582.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471319565.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471319570.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471328658.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471328937.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471478863.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471478868.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471479491.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-03__1471479496.dlis,"read timeout > 120s (killed, skipped)"
+CAL-GT-05__2276858967.las,"RuntimeError: LASHeaderError: Line 54 (section ~Parameter Information): ""Depth"""
+CAL-GT-05__2276859060.las,"RuntimeError: LASHeaderError: Line 55 (section ~Parameter Information Block): ""Depth"""
+ZWK-01__1091731781.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+ZWK-01__1091731847.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+AND-06-S1,no readable log file for borehole
+AND-06-S1__2243054659.dlis,"read timeout > 120s (killed, skipped)"
+BGM-10-S1,no readable log file for borehole
+BGM-17,no readable log file for borehole
+BGM-17-S1,no readable log file for borehole
+BGM-18,no readable log file for borehole
+BGM-19,no readable log file for borehole
+BGM-23,no readable log file for borehole
+BGM-24,no readable log file for borehole
+BGM-25,no readable log file for borehole
+BGM-28,no readable log file for borehole
+BGM-10-S1__1813911127.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:12:35/27-Dec-2013')
+BGM-17__3839910765.las,RuntimeError: ValueError: could not convert string to float: np.str_('06:02:04/23-Nov-2014')
+BGM-17__3839910897.las,RuntimeError: ValueError: could not convert string to float: np.str_('12:05:00/27-Aug-2014')
+BGM-17__3839910989.las,RuntimeError: ValueError: could not convert string to float: np.str_('11:15:40/03-Sep-2014')
+BGM-17-S1__3839911133.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:15:14/05-Dec-2014')
+BGM-17-S1__3839911211.las,RuntimeError: ValueError: could not convert string to float: np.str_('13:14:39/07-Dec-2014')
+BGM-17-S1__3839911289.las,RuntimeError: ValueError: could not convert string to float: np.str_('14:09:32/10-Dec-2014')
+BGM-17-S1__3839911369.las,RuntimeError: ValueError: could not convert string to float: np.str_('11:32:33/13-Dec-2014')
+BGM-18__1829840157.las,RuntimeError: ValueError: could not convert string to float: np.str_('14:37:41/14-Sep-2014')
+BGM-19__1829841533.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:08:26/07-Aug-2014')
+BGM-19__1829841652.las,RuntimeError: ValueError: could not convert string to float: np.str_('15:35:55/21-Sep-2014')
+BGM-23__1830044599.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:37:32/06-Oct-2014')
+BGM-23__1830044718.las,RuntimeError: ValueError: could not convert string to float: np.str_('11:50:00/27-Sep-2014')
+BGM-24__1799520587.las,RuntimeError: ValueError: could not convert string to float: np.str_('21:10:33/27-Feb-2013')
+BGM-25__1799586460.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:47:47/07-Oct-2013')
+BGM-28__1839013089.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:30:00/09-Sep-2013')
+BLD-01-S2,no readable log file for borehole
+BLD-01-S2__3807796842.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+BLD-01-S2__3807796893.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+D12-B-01__3921480353.las,RuntimeError: ValueError: could not convert string to float: np.str_('06:35:28/17-Oct-2019')
+D12-B-01__3921480493.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:50:00/18-Oct-2019')
+D12-B-01__3921480633.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:05:31/10-Oct-2019')
+D12-B-01,no readable log file for borehole
+D12-B-03,no readable log file for borehole
+D12-B-03__3942723978.dlis,"read timeout > 120s (killed, skipped)"
+D15-FA-101__447382016.dlis,"read timeout > 120s (killed, skipped)"
+D15-FA-102-S1__872329504.dlis,"read timeout > 120s (killed, skipped)"
+D15-FA-104-S1,no readable log file for borehole
+D15-FA-104-S1__1167208055.dlis,"read timeout > 120s (killed, skipped)"
+D15-FA-104-S1__1167208065.dlis,"read timeout > 120s (killed, skipped)"
+D18-A-02,no readable log file for borehole
+D18-A-02__1469242429.dlis,"read timeout > 120s (killed, skipped)"
+E16-04__763868813.las,"RuntimeError: ValueError: Cannot reshape ~A data size (60,) into 7 columns"
+E17-A-06-S2__3826494752.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F02-06__447784551.dlis,"read timeout > 120s (killed, skipped)"
+F03-FB-106-S2__3839907137.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F03-FB-106-S2__3839908678.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F05-04,no readable log file for borehole
+F05-04__449065033.dlis,"RuntimeError: RuntimeError: 
+Problem:      File truncated in Logical Record Segment
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 453724958 (dec), Logical Record tell: 24509988 (dec), Logical Record Segment tell: 24518776 (dec)"
+F06-06-S1,no readable log file for borehole
+F06-06-S1__1710008570.dlis,"read timeout > 120s (killed, skipped)"
+F12-05,no readable log file for borehole
+F12-05__1843909702.las,RuntimeError: ValueError: could not convert string to float: np.str_('21:10:16/07-May-2015')
+F15-A-02-S3,no readable log file for borehole
+F15-A-02-S5,no readable log file for borehole
+F15-A-02-S3__1466049279.las,RuntimeError: ValueError: could not convert string to float: np.str_('23:00:00/03-Jun-2013')
+F15-A-02-S4__1466055368.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+F15-A-02-S5__1466060878.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:07:22/11-Jul-2013')
+F15-A-02-S5__1466067700.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:42:26/18-Jul-2013')
+F16-A-03__750979485.dlis,"read timeout > 120s (killed, skipped)"
+F17-10,no readable log file for borehole
+F17-10__1498034820.dlis,"read timeout > 120s (killed, skipped)"
+F17-10__1647976297.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:00:00/20-Oct-2012')
+F17-11,no readable log file for borehole
+F17-11__1701282677.dlis,"read timeout > 120s (killed, skipped)"
+F17-12,no readable log file for borehole
+F17-12__1701280331.dlis,"read timeout > 120s (killed, skipped)"
+F17-14,no readable log file for borehole
+F17-14__3582201738.las,RuntimeError: ValueError: could not convert string to float: np.str_('20:43:28/20-May-2018')
+G14-A-02,no readable log file for borehole
+G14-A-02__751039577.dlis,"read timeout > 120s (killed, skipped)"
+G14-A-02__751039684.dlis,"read timeout > 120s (killed, skipped)"
+GAG-06-S1__975896946.dlis,"read timeout > 120s (killed, skipped)"
+K01-A-03-S2,no readable log file for borehole
+K01-A-03-S2__884097974.dlis,"read timeout > 120s (killed, skipped)"
+K01-A-03-S2__884097979.dlis,"read timeout > 120s (killed, skipped)"
+K01-A-04-S2,no readable log file for borehole
+K01-A-04-S2__872253148.dlis,"read timeout > 120s (killed, skipped)"
+K02-A-04,no readable log file for borehole
+K02-A-04__1012503228.dlis,"read timeout > 120s (killed, skipped)"
+K02-A-04__1012503233.dlis,"read timeout > 120s (killed, skipped)"
+K02-A-05,no readable log file for borehole
+K02-A-05__1099386224.dlis,"read timeout > 120s (killed, skipped)"
+K02-A-05__1099386257.dlis,"read timeout > 120s (killed, skipped)"
+K05-A-06,no readable log file for borehole
+K05-A-06__1763618136.dlis,"read timeout > 120s (killed, skipped)"
+K05-B-03,no readable log file for borehole
+K05-A-06-S1__1763732317.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:02:04/05-Jan-2015')
+K05-A-06-S1__1763772710.las,RuntimeError: ValueError: could not convert string to float: np.str_('09:22:33/16-Jan-2015')
+K05-A-06-S1__1763772751.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:34:43/18-Jan-2015')
+K05-A-06-S1,no readable log file for borehole
+K05-B-03__1706566123.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:13:21/23-Dec-2011')
+K05-CU-01,no readable log file for borehole
+K05-B-03-S1__1706495955.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:00:00/31-Dec-2011')
+K05-B-03-S1__1706550926.las,RuntimeError: ValueError: could not convert string to float: np.str_('04:00:00/03-Jan-2012')
+K05-B-03-S1__1706646545.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:00:00/23-Jan-2012')
+K05-B-03-S1,no readable log file for borehole
+K05-CU-01__1756551147.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:00:00/08-Jul-2009')
+K05-D-04__2458423153.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:00:00/18-Sep-2011')
+K05-ENC-02-S2,no readable log file for borehole
+K05-ENC-02-S2__753733449.las,RuntimeError: KeyError: 'INTE'
+K05-F-03__2117247924.las,RuntimeError: ValueError: could not convert string to float: np.str_('22:02:04/17-Mar-2016')
+K05-F-03__2117248095.las,RuntimeError: ValueError: could not convert string to float: np.str_('12:18:08/06-Mar-2016')
+K05-F-03__2117248175.las,RuntimeError: ValueError: could not convert string to float: np.str_('22:16:30/11-Mar-2016')
+K05-F-03,no readable log file for borehole
+K05-F-03-S1__2117260280.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:23:20/09-Apr-2016')
+K05-F-03-S1__2117260392.las,RuntimeError: ValueError: could not convert string to float: np.str_('21:56:34/19-Apr-2016')
+K05-F-03-S1__2117260614.las,RuntimeError: ValueError: could not convert string to float: np.str_('23:50:30/01-May-2016')
+K05-F-03-S1,no readable log file for borehole
+K06-GT-04-S1,no readable log file for borehole
+K06-GT-04-S1__446587807.dlis,"read timeout > 120s (killed, skipped)"
+K06-GT-04-S1__446587817.dlis,"read timeout > 120s (killed, skipped)"
+K06-GT-06,no readable log file for borehole
+K06-GT-06__1756157363.las,RuntimeError: ValueError: could not convert string to float: np.str_('22:34:46/02-Jul-2010')
+K09AB-B-03-S6__2228062665.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+K09AB-B-05,no readable log file for borehole
+K09AB-B-05__1974135841.dlis,"read timeout > 120s (killed, skipped)"
+K09C-A-06__2635822840.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+K10-17,no readable log file for borehole
+K10-17__2427886490.las,"RuntimeError: ValueError: Cannot reshape ~A data size (102,) into 19 columns"
+K12-B-11,no readable log file for borehole
+K12-B-11__1347246108.dlis,"read timeout > 120s (killed, skipped)"
+K12-B-11__1347246113.dlis,"read timeout > 120s (killed, skipped)"
+K12-C-05-S1__1807829459.dlis,"read timeout > 120s (killed, skipped)"
+K12-D-03,no readable log file for borehole
+K12-D-03__2288971756.dlis,"read timeout > 120s (killed, skipped)"
+K12-G-05-S1,no readable log file for borehole
+K12-G-05-S1__2246550475.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+K12-G-09,no readable log file for borehole
+K12-G-09__1342093740.dlis,"read timeout > 120s (killed, skipped)"
+K12-G-09__1342096439.dlis,"read timeout > 120s (killed, skipped)"
+K15-FG-104-S2__2786640525.las,"RuntimeError: ValueError: Cannot reshape ~A data size (3385818,) into 16 columns"
+K15-FK-101__1349846048.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-101__1349846210.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-101__446538094.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-101,no readable log file for borehole
+K15-FK-103-S2,no readable log file for borehole
+K15-FK-103-S2__446355894.dlis,"read timeout > 120s (killed, skipped)"
+K15-FK-103-S2__446355904.dlis,"read timeout > 120s (killed, skipped)"
+K16-06-S1__446295387.dlis,"read timeout > 120s (killed, skipped)"
+K18-07-S1,no readable log file for borehole
+K18-07-S1__3839852377.dlis,"RuntimeError: RuntimeError: 
+Problem:      rp66: Incorrect format version in Visible Record 1930
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 507512738 (dec), Logical Record tell: 12797378 (dec), Logical Record Segment tell: 12805566 (dec)"
+K18-09__1644667613.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:33:09/05-Jul-2012')
+K18-G-02,no readable log file for borehole
+K18-G-02__3942732694.las,RuntimeError: ValueError: could not convert string to float: np.str_('2014/12/17:')
+K18-G-04__1647974686.las,RuntimeError: ValueError: could not convert string to float: np.str_('05:19:28/18-Jun-2012')
+K18-G-04__1647974734.las,RuntimeError: ValueError: could not convert string to float: np.str_('04:15:00/20-Jun-2012')
+K18-KOTTER-10-S1__3949145155.las,"RuntimeError: LASHeaderError: Line 32 (section ~Disclaimer): ""Baker Hughes INTEQ does not guarantee the accuracy  or correctness"""
+K18-KOTTER-10-S1,no readable log file for borehole
+KHL-GT-02__2395227171.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L02-09__2700304915.dlis,"read timeout > 120s (killed, skipped)"
+L04-A-07-S1,no readable log file for borehole
+L04-A-07-S1__1537560836.las,RuntimeError: ValueError: could not convert string to float: np.str_('07:00:00/17-Jun-2012')
+L04-A-07-S1__1537560889.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:00:00/20-Jun-2012')
+L05-12,no readable log file for borehole
+L05-12__765311333.dlis,"read timeout > 120s (killed, skipped)"
+L05-12__765311391.dlis,"read timeout > 120s (killed, skipped)"
+L05-13__1403560192.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-15__1404058000.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-15__1404058114.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__1191426896.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__433330653.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01__433330688.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L05-C-01,no readable log file for borehole
+L05-C-02-S3,no readable log file for borehole
+L05-C-02-S3__1756551352.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:00:00/26-Apr-2011')
+L05-C-02-S3__1756552378.dlis,"read timeout > 120s (killed, skipped)"
+L05-C-03,no readable log file for borehole
+L05-C-03__642734454.las,"read timeout > 120s (killed, skipped)"
+L05-D-01__1884906062.dlis,"read timeout > 120s (killed, skipped)"
+L05-D-01__1885015002.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L06-07,no readable log file for borehole
+L06-07__636229876.dlis,"read timeout > 120s (killed, skipped)"
+L06-08__2372017759.las,RuntimeError: ValueError: could not convert string to float: np.str_('06:00:00/29-Jun-2010')
+L08-P4-02__1471500137.dlis,"read timeout > 120s (killed, skipped)"
+L08-P4-02__446699957.dlis,"RuntimeError: RuntimeError: 
+Problem:      Too short logical record. Length can't be less than 4, but was 0
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 19302056 (dec), Logical Record tell: 19228721 (dec), Logical Record Segment tell: 19264312 (dec)"
+L08-P4-02__446699966.dlis,"read timeout > 120s (killed, skipped)"
+L08-P4-02,no readable log file for borehole
+L08-P4-02-S2,no readable log file for borehole
+L08-P4-02-S2__447020337.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L09-FF-107-S2,no readable log file for borehole
+L09-FF-107-S2__446257544.dlis,"RuntimeError: RuntimeError: 
+Problem:      File truncated in Logical Record Segment
+Where:        dlis::findoffsets (indexing logical file)
+Severity:     critical
+Action taken: Indexing is suspended at last valid Logical Record
+Debug info:   Physical tell: 450760898 (dec), Logical Record tell: 82598664 (dec), Logical Record Segment tell: 82602688 (dec)"
+L10-37-S1,no readable log file for borehole
+L10-37-S1__1793112654.dlis,"read timeout > 120s (killed, skipped)"
+L10-L-06,no readable log file for borehole
+L10-L-06__1900123067.dlis,"read timeout > 120s (killed, skipped)"
+L10-L-06__1900126720.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L11B-A-06-S1__3592875219.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:13:10/11-Dec-2019')
+L11B-A-06-S1__3620246931.las,RuntimeError: ValueError: could not convert string to float: np.str_('15:40:40/17-Dec-2019')
+L11B-A-06-S1__3620247120.las,RuntimeError: ValueError: could not convert string to float: np.str_('06:34:25/27-Dec-2019')
+L11B-A-06-S1,no readable log file for borehole
+L11B-A-10,no readable log file for borehole
+L11B-A-10__3103303062.las,RuntimeError: ValueError: could not convert string to float: np.str_('01:00:23/07-Jul-2018')
+L11B-A-10__3103303590.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:24:30/11-Jul-2018')
+L13-FI-101,no readable log file for borehole
+L13-FI-102-S1,no readable log file for borehole
+L13-FI-101__3953445589.las,RuntimeError: ValueError: could not convert string to float: np.str_('05:21:48/06-Apr-2018')
+L13-FI-102-S1__3953461509.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:04:15/07-Feb-2018')
+L13-FI-102-S1__3953461618.las,RuntimeError: ValueError: could not convert string to float: np.str_('04:22:06/25-Jan-2018')
+L13-FI-103-S1__3092015224.las,RuntimeError: ValueError: could not convert string to float: np.str_('08:56:54/09-Dec-2017')
+L13-FI-103-S1__3092015376.las,RuntimeError: ValueError: could not convert string to float: np.str_('12:04:05/18-Dec-2017')
+L15-A-108A-S2,no readable log file for borehole
+L15-A-108A-S2__1681266674.las,RuntimeError: ValueError: could not convert string to float: np.str_('10:08:07/19-Jun-2014')
+L15-A-108A-S2__1714814399.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+L16-LOGGER-07-S1,no readable log file for borehole
+L16-LOGGER-07-S1__3949152409.las,"RuntimeError: ValueError: Cannot reshape ~A data size (23205,) into 80 columns"
+L16-LOGGER-07-S1__3949152882.las,"RuntimeError: ValueError: Cannot reshape ~A data size (23205,) into 80 columns"
+L16-LOGGER-08,no readable log file for borehole
+L16-LOGGER-08__3949153927.las,"RuntimeError: ValueError: Cannot reshape ~A data size (25515,) into 73 columns"
+L16-LOGGER-08__3949154613.las,"RuntimeError: ValueError: Cannot reshape ~A data size (25317,) into 26 columns"
+LIR-GT-02__1681448068.dlis,"read timeout > 120s (killed, skipped)"
+LSL-GT-01__2607481835.dlis,"read timeout > 120s (killed, skipped)"
+LSL-GT-02__2607482075.dlis,"read timeout > 120s (killed, skipped)"
+LTG-GT-01,no readable log file for borehole
+LTG-GT-01__3265184411.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:42:52/18-Feb-2018')
+LTG-GT-01__3311548994.las,"read timeout > 120s (killed, skipped)"
+LTG-GT-02,no readable log file for borehole
+LTG-GT-02__3311700074.las,"read timeout > 120s (killed, skipped)"
+LTG-GT-03,no readable log file for borehole
+LTG-GT-03__3311700343.las,"read timeout > 120s (killed, skipped)"
+LTG-GT-04,no readable log file for borehole
+LTG-GT-04__3360762540.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+M01-04,no readable log file for borehole
+M01-04__1756157410.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:59:03/15-May-2010')
+M07-A-02,no readable log file for borehole
+M07-A-02__1756550779.las,RuntimeError: ValueError: could not convert string to float: np.str_('10:44:55/19-Jul-2010')
+M07-A-02__1756551056.las,RuntimeError: ValueError: could not convert string to float: np.str_('10:44:55/19-Jul-2010')
+MDM-GT-06-S2__3625911024.las,"read timeout > 120s (killed, skipped)"
+MGT-03__1856738359.dlis,"read timeout > 120s (killed, skipped)"
+MLD-GT-01__2607592914.dlis,"read timeout > 120s (killed, skipped)"
+MLD-GT-02-S2__2613030246.dlis,"read timeout > 120s (killed, skipped)"
+N05-01-S3,no readable log file for borehole
+N05-01-S3__2617253783.las,RuntimeError: ValueError: could not convert string to float: np.str_('02:14:13/28-Jul-2017')
+N07-04A,no readable log file for borehole
+N07-04A__2807778527.dlis,"read timeout > 120s (killed, skipped)"
+N07-04A-S1__2815533001.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+NLW-GT-03-S1,no readable log file for borehole
+NLW-GT-03-S1__3447461047.dlis,"read timeout > 120s (killed, skipped)"
+NMD-02__1434272565.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+NMD-03__1772762097.dlis,"read timeout > 120s (killed, skipped)"
+NOR-41__1770003675.dlis,"read timeout > 120s (killed, skipped)"
+NSS-01-S1,no readable log file for borehole
+NSS-01-S1__524668953.las,RuntimeError: KeyError: 'INTE'
+P02-10,no readable log file for borehole
+P02-10__2230356947.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:44:19/16-Mar-2012')
+P02-10__2230356966.las,RuntimeError: ValueError: could not convert string to float: np.str_('08:12:08/25-Mar-2012')
+P02-10-S1__2336222738.las,RuntimeError: ValueError: could not convert string to float: np.str_('19:21:52/15-Apr-2012')
+P02-10-S1__2336222757.las,RuntimeError: ValueError: could not convert string to float: np.str_('08:38:37/19-Apr-2012')
+P02-10-S1__2336346800.las,RuntimeError: ValueError: could not convert string to float: np.str_('22:29:04/30-Apr-2012')
+P02-10-S1,no readable log file for borehole
+P06-A-07__1498927383.dlis,"read timeout > 120s (killed, skipped)"
+P08-08,no readable log file for borehole
+P08-08__975181106.dlis,"read timeout > 120s (killed, skipped)"
+P08-08__975181117.dlis,"read timeout > 120s (killed, skipped)"
+P09-HORIZON-A-09-S1,no readable log file for borehole
+P09-HORIZON-A-09-S2,no readable log file for borehole
+P09-HORIZON-A-09-S1__3834565605.las,RuntimeError: ValueError: could not convert string to float: np.str_('00:00:00/28-Jul-2019')
+P09-HORIZON-A-09-S2__3834566458.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:32:07/09-Sep-2019')
+P11-09__1547374327.dlis,"read timeout > 120s (killed, skipped)"
+P11-C-01-S2__974668716.dlis,"read timeout > 120s (killed, skipped)"
+P11-C-01-S2__974670683.dlis,"read timeout > 120s (killed, skipped)"
+P11-E-02,no readable log file for borehole
+P11-E-02__3701382944.las,RuntimeError: ValueError: could not convert string to float: np.str_('02:27:46/16-Aug-2016')
+P15-RIJN-A-02-S1,no readable log file for borehole
+P15-RIJN-A-02-S1__2071105487.las,RuntimeError: ValueError: could not convert string to float: np.str_('09:33:47/04-Feb-2015')
+P15-RIJN-A-09-S1,no readable log file for borehole
+P15-RIJN-A-09-S1__3145900554.las,RuntimeError: ValueError: could not convert string to float: np.str_('14:10:32/21-Mar-2014')
+P15-RIJN-A-09-S1__3145933775.las,RuntimeError: ValueError: could not convert string to float: np.str_('02:01:37/26-Mar-2014')
+P15-RIJN-A-13-S4,no readable log file for borehole
+P15-RIJN-A-13-S4__1723700938.las,RuntimeError: ValueError: could not convert string to float: np.str_('05:50:51/22-Apr-2014')
+P18-07__2071706573.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:20:48/19-Mar-2015')
+P18-07__2280227610.las,RuntimeError: ValueError: could not convert string to float: np.str_('03:50:00/02-Apr-2015')
+PRW-06-S1,no readable log file for borehole
+PRW-06-S1__3701364749.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:29:34/12-Oct-2020')
+PRW-06-S1__3701364788.las,RuntimeError: ValueError: could not convert string to float: np.str_('17:45:58/07-Oct-2020')
+PSP-02,no readable log file for borehole
+PSP-02__866138573.dlis,"read timeout > 120s (killed, skipped)"
+PSP-02-S1,no readable log file for borehole
+PSP-02-S1__651858191.dlis,"read timeout > 120s (killed, skipped)"
+PSP-02-S1__653084037.dlis,"read timeout > 120s (killed, skipped)"
+Q01-27__1118596533.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+Q01-27__1118596807.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+Q01-D-02-S1,no readable log file for borehole
+Q01-D-02-S1__1704152552.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+Q01-D-02-S2,no readable log file for borehole
+Q01-D-02-S2__3749550553.las,RuntimeError: ValueError: could not convert string to float: np.str_('20:05:54/27-Mar-2018')
+Q04-09-S1,no readable log file for borehole
+Q04-09-S1__447710853.dlis,"read timeout > 120s (killed, skipped)"
+Q04-A-03,no readable log file for borehole
+Q04-A-03__447112004.dlis,"read timeout > 120s (killed, skipped)"
+Q04-A-03__447112012.dlis,"read timeout > 120s (killed, skipped)"
+Q07-07,no readable log file for borehole
+Q07-07__2390288306.las,RuntimeError: ValueError: could not convert string to float: np.str_('15:39:51/30-Sep-2016')
+Q07-07__2390288508.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:37:20/24-Sep-2016')
+Q10-A-02__3839761817.dlis,"read timeout > 120s (killed, skipped)"
+Q10-A-06,no readable log file for borehole
+Q10-A-06__3839846553.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:18:44/04-Aug-2019')
+Q10-A-06__3839849214.las,RuntimeError: ValueError: could not convert string to float: np.str_('11:56:25/10-Aug-2019')
+Q13-A-02__1516674863.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+Q13-A-02__1517257072.dlis,"read timeout > 120s (killed, skipped)"
+Q13-A-02__1793113062.dlis,"read timeout > 120s (killed, skipped)"
+Q13-A-02,no readable log file for borehole
+Q13-A-03,no readable log file for borehole
+Q13-A-03__1497409250.dlis,"read timeout > 120s (killed, skipped)"
+Q13-A-04,no readable log file for borehole
+Q13-A-04__1815863393.dlis,"read timeout > 120s (killed, skipped)"
+Q13-A-05-S1,no readable log file for borehole
+Q13-A-05-S1__1716057873.dlis,"read timeout > 120s (killed, skipped)"
+Q14-03,no readable log file for borehole
+Q14-03__1536626602.dlis,"read timeout > 120s (killed, skipped)"
+SCH-152__613571421.las,"RuntimeError: ValueError: Cannot reshape ~A data size (12369,) into 5 columns"
+SCH-152,no readable log file for borehole
+SCH-205__613573012.las,"RuntimeError: ValueError: Cannot reshape ~A data size (6411,) into 5 columns"
+SCH-205,no readable log file for borehole
+SCH-224__653123632.las,"RuntimeError: ValueError: Cannot reshape ~A data size (16085,) into 6 columns"
+SCH-224,no readable log file for borehole
+SGZ-04__796941900.dlis,"read timeout > 120s (killed, skipped)"
+SLD-06-S1,no readable log file for borehole
+SLD-07,no readable log file for borehole
+SLD-06-S1__1859217252.las,RuntimeError: ValueError: could not convert string to float: np.str_('20:06:26/24-Apr-2015')
+SLD-07__1860018510.las,RuntimeError: ValueError: could not convert string to float: np.str_('01:52:21/15-May-2015')
+SLD-07__1860146977.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:11:15/18-May-2015')
+SLD-07-S1__1860018057.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+SPKO-04,no readable log file for borehole
+SPKO-04__3462243466.las,RuntimeError: ValueError: could not convert string to float: np.str_('16:29:20/02-Apr-2020')
+VNW-01,no readable log file for borehole
+VNW-01__1175887149.dlis,"read timeout > 120s (killed, skipped)"
+VNW-01__446259334.dlis,"read timeout > 120s (killed, skipped)"
+VRS-10__2782447966.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WWS-02__446367107.dlis,"read timeout > 120s (killed, skipped)"
+WYK-102__3666974584.dlis,"read timeout > 120s (killed, skipped)"
+WYK-201__2840330977.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WYK-201__2840331027.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+WYK-202__3091696639.las,RuntimeError: ValueError: could not convert string to float: np.str_('18:59:07/09-Dec-2016')
+WYK-202__3091696705.las,RuntimeError: ValueError: could not convert string to float: np.str_('04:20:00/12-Dec-2016')
+ZND-11,no readable log file for borehole
+ZND-11__991812201.dlis,"read timeout > 120s (killed, skipped)"
+ZND-11__991820064.dlis,"read timeout > 120s (killed, skipped)"
+ZUR-01__359828893.las,RuntimeError: KeyError: 'No ~ sections found. Is this a LAS file?'
+ZVB-GT-01__2884977641.dlis,RuntimeError: ValueError: no depth-indexed frame with scalar curves in DLIS
+ZWD-A1B,no readable log file for borehole
+ZWD-A1B__3093142467.dlis,"read timeout > 120s (killed, skipped)"

@@ -1,26 +1,47 @@
-
-!configs/force2020/*.npy
-!tests/**/*.las
-# Data: never commit raw or processed well data (default posture: no raw mirror)
-# Large pinned binaries are allowed under configs/ explicitly
-# Notebooks checkpoints
-# OS
 # Python
-*.LAS
-*.egg-info/
-*.las
-*.parquet
+__pycache__/
 *.py[cod]
-.DS_Store
-.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
 .pytest_cache/
 .ruff_cache/
-.venv/
-__pycache__/
-data/
-data/processed/
-data/raw/
+
+# OS
+.DS_Store
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
 logs/
-venv/
+
+# Well data: no raw or processed log data in git (default posture: no raw mirror)
+*.las
+*.LAS
+*.parquet
+data/*
+
+# Large pinned binaries allowed under configs/ explicitly
+!configs/force2020/*.npy
+
+# Test fixtures are the exception to the LAS ban
+!tests/**/*.las
+
+# Evidence durability (operating rule 5). The two derived-metadata files that make
+# the spatial splits reproducible ARE committed. Both are metadata, not log data:
+#   data/splits/kgs_coord_crosswalk.csv   well_id -> lat/lon/PLSS, from the public KGS registry
+#   data/raw/nlog/borehole_index.csv      well_id -> lon/lat/on_offshore, the NLOG index
+# A bare "data/" stops git descending, so each level is re-included explicitly.
+!data/raw/
+data/raw/*
+!data/raw/nlog/
+data/raw/nlog/*
+!data/raw/nlog/borehole_index.csv
+!data/splits/
+data/splits/*
+!data/splits/kgs_coord_crosswalk.csv
+
+# Evidence tarballs are downloaded off-pod, never committed
 g1_nlog_evidence.tar.gz
 SHA256_MANIFEST.txt
