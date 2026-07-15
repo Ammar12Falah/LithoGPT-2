@@ -1,0 +1,16 @@
+{
+  "generated_utc": "2026-07-15T19:40:57.561184Z",
+  "provenance": "RECONSTRUCTED after loss of original uncommitted build_manifest.py",
+  "reconstructed_from": [
+    "build_splits.py",
+    "dupes_and_vintage.py",
+    "pre_hash_forensics.py",
+    "docs/G2_freeze_plan.md",
+    "docs/HANDOFF.md",
+    "HANDOFF_CONTINUING_AGENT"
+  ],
+  "establishing_run": "No golden hash was recorded from the original builder; this establishes the freeze hash.",
+  "qc_config_pin_note": "Amendment 2 names a 'QC config' sha pin, but no standalone QC config file exists. QC logic is in committed run_qc_*.py and is pinned transitively via split_gen_commit. ADVISOR TO CONFIRM at gate.",
+  "hashed_payload": "corpus_manifest.json (sort_keys, compact, allow_nan=False)",
+  "not_in_hash": "meta file, pretty copy, timestamp"
+}
