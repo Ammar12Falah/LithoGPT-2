@@ -27,7 +27,7 @@ combined ~8,789. Everything else -> future-work list.
   future work. Asymmetry sentence: enriched aliases applied to NLOG at ingestion, to KGS prospectively.
 
 ## Amendment 5 — CARD ACCEPTANCE TEST (all required)
-1. Outcome taxonomy, fixed denominators (5,004 processed / 2,355 passing / 384 hard-fail / remainder floor-fail).
+1. Outcome taxonomy, fixed denominators (5,004 processed / 2,355 passing / 363 hard-fail / remainder floor-fail).
 2. Rail-rule NLOG impact decomposing +543 (alias gains vs sentinel losses).
 3. All-but-5 borehole disposition, per-borehole reasons.
 4. KGS counts-jump explanation (sample vs census).

@@ -23,7 +23,7 @@ Both runs used the SAME select-primary-plus-fallback policy, so the comparison i
 is no selection-strictness effect and no regression. An earlier draft carried a false-regression
 narrative on a miscomputed baseline; corrected here before it reached the card. True story: correct
 aliasing of old tool names (SN, LN) raised count and rate together, using no new data.
-- 384 hard failures with recorded reasons (reports/nlog_failures.csv); remainder are floor QC-fails.
+- 363 hard failures with recorded reasons (reports/nlog_failures.csv); remainder are floor QC-fails.
 - select all (every file per borehole) is documented future-work, not a re-opening of this window.
 
 ## 4. Sentinel-clean (completed earlier; recap)
@@ -46,7 +46,7 @@ all-but-5 boreholes; decision-capture; corpus freeze; G2 milestone report then S
 1. Rail-rule NLOG impact reported with coverage: wells with nulled rail masses, any dropped below
    floor, so +543 decomposes into alias gains vs sentinel losses.
 2. All-but-13 is stale: retry recovered 8 -> disposition is all-but-5, per-borehole reasons for five.
-3. Outcome taxonomy, fixed denominators, once: 5,004 processed / 2,355 passing / 384 hard fail /
+3. Outcome taxonomy, fixed denominators, once: 5,004 processed / 2,355 passing / 363 hard fail /
    remainder floor-fail. Every coverage % labeled with denominator (coverage figures are of PROCESSED).
 4. CI red on main NOT deferrable past freeze. Read actual CI error, then fix (hypothesis: pin
    numpy>=1.26.4,<2.0), then green. Final records must be on MAIN before the manifest hash.
