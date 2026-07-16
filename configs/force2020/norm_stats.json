@@ -1,63 +1,70 @@
 {
-  "provisional": true,
-  "provenance": "PROVISIONAL. Computed on 98 FORCE-only wells from train.zip (training split only; the 10 open-leaderboard and 10 blind-final test wells were not read). Superseded at Gate G2 by stats recomputed on the frozen multi-basin training split.",
+  "provisional": false,
+  "provenance": "FROZEN G2 norm stats. Robust median/IQR via compute_norm_stats on the FROZEN TRAIN split only (7,589 wells: {'force2020': 98, 'kgs': 5734, 'nlog': 1757}). Manifest f497206bb9bd..., split_gen_commit d4113797. Mask-gated real samples only. Resistivities log10 (verified pre-compute). Dev and all test splits excluded.",
   "config_version": "0.1.0",
-  "n_wells": 98,
+  "manifest_sha256": "f497206bb9bd2305bb7b50868adda2c286b006fa8d22fa8a17f378c68c9417cb",
+  "split_gen_commit": "d4113797",
+  "train_wells": {
+    "total": 7589,
+    "force2020": 98,
+    "kgs": 5734,
+    "nlog": 1757
+  },
   "stats": {
     "GR": {
-      "median": 68.370559692,
-      "iqr": 41.362361908,
-      "n_samples": 1167181
+      "median": 61.08,
+      "iqr": 49.54489999999999,
+      "n_samples": 54407219
     },
     "RHOB": {
-      "median": 2.32050049305,
-      "iqr": 0.39551770684999976,
-      "n_samples": 1006472
+      "median": 2.437538,
+      "iqr": 0.41290000000000004,
+      "n_samples": 35102089
     },
     "NPHI": {
-      "median": 0.3267581314,
-      "iqr": 0.18121471627499997,
-      "n_samples": 763350
+      "median": 0.211742,
+      "iqr": 0.17791500000000005,
+      "n_samples": 16443472
     },
     "DTC": {
-      "median": 109.653903965,
-      "iqr": 52.944843291750004,
-      "n_samples": 1086500
+      "median": 83.2523,
+      "iqr": 38.899587999999994,
+      "n_samples": 25404465
     },
     "PEF": {
-      "median": 4.23811364175,
-      "iqr": 2.3304833770249997,
-      "n_samples": 649208
+      "median": 3.59,
+      "iqr": 1.6629427093249998,
+      "n_samples": 7140908
     },
     "SP": {
-      "median": 55.147121429,
-      "iqr": 49.953876495,
-      "n_samples": 852757
+      "median": -23.7873,
+      "iqr": 114.1765,
+      "n_samples": 37299859
     },
     "CALI": {
-      "median": 12.556167126,
-      "iqr": 7.280011892325,
-      "n_samples": 1078838
+      "median": 8.2243,
+      "iqr": 1.6991180000000004,
+      "n_samples": 24582205
     },
     "RDEP": {
-      "median": 0.15781913950146054,
-      "iqr": 0.44825465618155874,
-      "n_samples": 1156357
+      "median": 0.6987875623381173,
+      "iqr": 0.6398330125632983,
+      "n_samples": 37062071
     },
     "RMED": {
-      "median": 0.15878212662652685,
-      "iqr": 0.46612637411635216,
-      "n_samples": 1128459
+      "median": 0.7389073412854165,
+      "iqr": 0.629472480484163,
+      "n_samples": 34233495
     },
     "RSHA": {
-      "median": 0.14491963729544674,
-      "iqr": 0.5565672104671322,
-      "n_samples": 628930
+      "median": 0.325022800270452,
+      "iqr": 0.656710176019107,
+      "n_samples": 7302836
     },
     "DTS": {
-      "median": 188.21812439,
-      "iqr": 68.65909194999998,
-      "n_samples": 174112
+      "median": 144.949,
+      "iqr": 85.4516014,
+      "n_samples": 502531
     }
   }
 }
