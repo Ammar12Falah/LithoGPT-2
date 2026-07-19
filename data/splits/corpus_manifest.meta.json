@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-07-15T19:40:57.561184Z",
+  "generated_utc": "2026-07-19T20:33:56.191903Z",
   "provenance": "RECONSTRUCTED after loss of original uncommitted build_manifest.py",
   "reconstructed_from": [
     "build_splits.py",
@@ -12,5 +12,6 @@
   "establishing_run": "No golden hash was recorded from the original builder; this establishes the freeze hash.",
   "qc_config_pin_note": "Amendment 2 names a 'QC config' sha pin, but no standalone QC config file exists. QC logic is in committed run_qc_*.py and is pinned transitively via split_gen_commit. ADVISOR TO CONFIRM at gate.",
   "hashed_payload": "corpus_manifest.json (sort_keys, compact, allow_nan=False)",
-  "not_in_hash": "meta file, pretty copy, timestamp"
+  "not_in_hash": "meta file, pretty copy, timestamp",
+  "lineage": "f497206b superseded by 88255b43 (full: f497206bb9bd2305bb7b50868adda2c286b006fa8d22fa8a17f378c68c9417cb -> 88255b4391ea610a26f21fd315dbd462ba16438991e32be0121087d5779554cb); cause=pin-set completion (kgs_vintage_crosswalk_sha256 + qc_code_sha256); split membership unchanged (row_count 8809, all 9 split counts identical)."
 }

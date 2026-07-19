@@ -45,3 +45,7 @@ data/splits/*
 # Evidence tarballs are downloaded off-pod, never committed
 g1_nlog_evidence.tar.gz
 SHA256_MANIFEST.txt
+
+# Corpus-freeze pin-set completion: keep these on a clean checkout
+!data/splits/kgs_vintage_crosswalk.csv
+!data/splits/qc_pin_manifest.txt

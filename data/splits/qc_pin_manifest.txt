@@ -1,0 +1,49 @@
+QC PIN MANIFEST  --  LithoGPT-2 Stage B corpus freeze (amendment: qc_code_sha256)
+================================================================================
+V1  rail-null rule location: src/lithogpt2/pipeline/harmonize.py
+      _null_rail_pileup() (def ~L124-146); applied in _process_channel ~L182-183
+      comment '# sentinel rail pileup -> missing (advisor 2026-07-10)'. In the set.
+V2  runtime-read QC definitions: NOT hardcoded -- loaded from a data file.
+      src/lithogpt2/config.py:26 DEFAULT_CONFIG_PATH = configs/mnemonic_aliases.yaml
+      HarmonizationConfig.load() (config.py:178-181) -> yaml.safe_load(fh).
+      All 3 QC entry points call load() with no arg: run_qc_kgs:78, run_qc_nlog:84,
+      run_qc_force:131. The YAML supplies curves/valid_range/unit/convert/transform,
+      auxiliary_curves, null_values, depth-unit table, qc + prior_gate params.
+      => configs/mnemonic_aliases.yaml INCLUDED in this QC set (V2 standing ruling).
+      OVERLAP NOTE: this file is ALSO pinned separately as alias_yaml_sha256 in the
+      manifest payload. The double-pin is intentional belt-and-suspenders, not a conflict.
+Sentinel-clean script: NONE. No standalone script rewrites KGS parquet values. The KGS
+      sentinel/rail value-nulling is harmonize.py::_null_rail_pileup (same module as V1),
+      applied at harmonize/QC time. Nothing was added on this basis.
+
+METHOD: qc_code_sha256 = sha256 over the raw bytes of the files listed below,
+        concatenated in C-locale (byte-lexicographic) sorted path order, no separators.
+        Per-file sha256 recorded for diagnosability; the pin is the combined hash.
+================================================================================
+FILES (24), sorted -- <sha256>  <path>  (<bytes>):
+  e888ac7bcfd6060ff6c0de38c9253125332e39b5e2b7acac2a2fc40d91cf165c  configs/mnemonic_aliases.yaml  (4256 bytes)
+  d8dfdc3cc0f50927f400439d89fd6a255286aae52009fdee030480b67551f9a1  pyproject.toml  (1085 bytes)
+  4d8a641140490cc397e196c82877ac480ae71f262c4039d7ce3756ae06f6c01e  requirements.txt  (115 bytes)
+  27552e248ea75c64709ad314fe4a2ecca6efd56dd48093ab83fc9409f52dd5fb  scripts/combine_qc.py  (4884 bytes)
+  131e15500e5ac4d0d13b7a8c81d24435822421712f5b5e3aa60d7c881e9db8cf  scripts/ingest_qc_nlog_batched.py  (11521 bytes)
+  213d63899f7397caedf76a972af8d9770829a14538cfb3447cf8d8ef40566774  scripts/run_qc_force.py  (8702 bytes)
+  669d3f8d31677d292d295a7b845fb58334cce6147e2ffa11f1960e1437eaeaf3  scripts/run_qc_kgs.py  (5716 bytes)
+  06a44820b00149bc055a6931769b6477102cd89b8113c1ffa4c49a364df40604  scripts/run_qc_nlog.py  (6565 bytes)
+  82da3723857060feef6d497985152213b746a987e52e349c01d0ce90cdb2bfde  src/lithogpt2/config.py  (8932 bytes)
+  6c1ebea9c3eba77143c44a3c40cc7795c548b7fd9c291ad9112759165275e056  src/lithogpt2/ingest/__init__.py  (255 bytes)
+  b562a582a5d7cda1a7e4d3165ef278203c28c6e1585a5c8caacb518f1b2358fa  src/lithogpt2/ingest/_http.py  (6385 bytes)
+  75d410f951038c2c1a97c2f1a5534bc9fabeda1e63d4e859d75ebc847f28318c  src/lithogpt2/ingest/force2020.py  (9800 bytes)
+  243f79ceb9c808c4814fd8a0d9193d4249e4d52036ec6fc3ae1ed988c585a6b0  src/lithogpt2/ingest/kgs.py  (8737 bytes)
+  ddbefb77973bc8e54e17ac7dda19244c700fdab4e4c910174128f876b3a994d7  src/lithogpt2/ingest/las_dir.py  (3313 bytes)
+  4672a5c9e6d52401413deacfeb656db3bc6e4882857e4c35a4c592281ab480b3  src/lithogpt2/ingest/nlog.py  (16182 bytes)
+  0be62b47bf01bbf4731a67e50fd46791d5671453b696decc5478306ac8a8a4ed  src/lithogpt2/ingest/well_dir.py  (7272 bytes)
+  bf8a3eeabc70c86776c2dc83ff31e422a60f52f2f471f8d4073127e3b1d9777b  src/lithogpt2/io/__init__.py  (44 bytes)
+  a0e672ba291817cf5c4617eb059afcf4e5873fb989d5b8427da8ad1d11c5b544  src/lithogpt2/io/dlis.py  (6099 bytes)
+  bdf988ee4ec39f99fc106ccff45e33d778f83e7d85118c5327b97c053855b00c  src/lithogpt2/io/las.py  (2958 bytes)
+  3a9af31ab243ab49b73f4801bfd544ebda33f3ed9283bafac76dcdd42d6ed1f9  src/lithogpt2/pipeline/__init__.py  (84 bytes)
+  f5e36870161e49ceaed7d2d1405c4bebca6243d71546f7c9997635ebf8b482fb  src/lithogpt2/pipeline/batch.py  (8244 bytes)
+  f0edcf53c1bf751cd580f92120c49c1a366f1841884f24e37fccdf2b29c8e966  src/lithogpt2/pipeline/harmonize.py  (13610 bytes)
+  e8398112e1612455d126dcf34b3b17870ebe5121434651b7cfb8cce38ac7a146  src/lithogpt2/pipeline/incremental.py  (4011 bytes)
+  dc4d7ceb601544eb4a391db6d74086f3cd629e79b4936e0d8d377bdebfdf96db  src/lithogpt2/pipeline/qc.py  (9082 bytes)
+================================================================================
+qc_code_sha256 = 4221fa5421cba139aecb0e2008b32b06a578c3709ad8e620c44e8142d1e713e0

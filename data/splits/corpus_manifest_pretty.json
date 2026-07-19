@@ -5,7 +5,9 @@
     "seed": 20260715,
     "alias_yaml_sha256": "e888ac7bcfd6060ff6c0de38c9253125332e39b5e2b7acac2a2fc40d91cf165c",
     "kgs_coord_crosswalk_sha256": "3b074650a482208f6877ca8050c94822d27d10edd87781567fa10ca2555cb653",
-    "force_pinned_sha256": "b7731ff503aad1fc020baa493f8969ecf405cbd5c59f0365dda77983c686421f"
+    "force_pinned_sha256": "b7731ff503aad1fc020baa493f8969ecf405cbd5c59f0365dda77983c686421f",
+    "kgs_vintage_crosswalk_sha256": "60fbb409739309929a41a0ccdb4bd34054dc4ab3b57a4ca7f2cb428875e659ec",
+    "qc_code_sha256": "4221fa5421cba139aecb0e2008b32b06a578c3709ad8e620c44e8142d1e713e0"
   },
   "counts": {
     "kgs/train": 5734,
