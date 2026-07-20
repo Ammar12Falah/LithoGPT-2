@@ -55,3 +55,48 @@ borehole-level counts.
 Cause: binding ruling history is amended on the record when shown wrong, never silently
 reconciled. The originally-ordered entry (ruled 07-19) was not committed at the time; this
 records it, late, with the landing date stated.
+
+
+## 2026-07-20  GATE G2 APPROVED -- Stage-B corpus freeze closed (advisor ruling)
+
+Advisor recorded GATE APPROVED for Gate G2, the Stage-B corpus freeze, closed 20 July 2026,
+bound to manifest d5b35a00, freeze HEAD chain 9168d83 -> 212faed9 -> 41e0e51 with evidence
+commits through bfa3b1d, evidence tarball a7244b35...cea5e6cc hash-verified off-pod, splits
+invariant at 8,809 rows across all nine counts, regenerable from committed code, tamper-evident
+under the completed pin set.
+
+Activation condition (MET): CI green at bfa3b1d. GitHub Actions run 29764701685 concluded
+success at bfa3b1d (https://github.com/Ammar12Falah/LithoGPT-2/actions/runs/29764701685) --
+ci.yml installs the `==`-pinned deps fresh on the runner, then ruff + pytest. This resolves the
+11 July concern about hashing a freeze against an unverified runner state after the runtime-pin
+fold-in. Post-gate sequence unchanged (BasinShift construction -> TS-FM tripwire baseline ->
+FSQ tokenizer -> physics gate -> G3 training); the blind-10 rule travels with all of it.
+Nothing crosses G2 until this entry stands. Attribution: advisor. Reviewed at capture.
+
+## 2026-07-20  Unpacker contradiction resolved (first-session audit task)
+
+The 07-19 review flagged a contradiction: dataset-card Correction 1 states the nested-archive
+recovery mechanism "appears in zero committed artifacts," while the 11 July session report
+attributed the KGS reprocess recovery to a nested-archive unpacker "fixed at f41cc8a." Settled
+by git log: f41cc8a EXISTS on main (full f41cc8a4b17418394f871f0f1766ae4430c96a79, dated
+2026-07-05, subject "kgs.unpack_las handles nested archives; run_qc_kgs --fresh truncates"), an
+ancestor of HEAD, touching src/lithogpt2/ingest/kgs.py (+34/-7) and scripts/run_qc_kgs.py (+4);
+a second commit d80b2c5 also carries fetch/unpack machinery.
+
+Outcome: the session-report hash was NOT fabricated -- the audit trail is clean. The CARD is
+wrong on the narrow point: the mechanism does appear in a committed artifact (code at f41cc8a).
+Cause: the card's "zero committed artifacts" was written checking committed data/reports, not
+the ingest-code history. Remedy: one-line card correction at the next evidence commit --
+Correction 1 to read that the nested-archive unpacker is committed as code at f41cc8a, while
+the specific count-growth attribution remains only what the committed before/after counts
+support.
+
+## 2026-07-20  Conductivity-conversion parking recorded (chat-only ruling, now on record)
+
+The conductivity-to-resistivity conversion for COND(DI) and CILD (via reciprocal transform)
+was genuinely ruled approved future work, but the ruling lived only in chat. Recorded here with
+that provenance so it does not vanish. It is parked, not admitted: no conductivity-conversion
+item exists in committed artifacts today (0 "conductivity" hits repo-wide), and the dataset
+card's parked-item line names the resistivity-channel disambiguation (SN/LN/LATL) it can
+source. Governing principle reaffirmed: chat-only facts are not authoritative; committed
+artifacts are. Attribution: advisor. Reviewed at capture.
