@@ -1,0 +1,1726 @@
+{
+  "benchmark": "BasinShift",
+  "blind_rule": "FORCE blind-10 (split==blind_force) is never in any test pool and its DATA is never loaded (only names, for the absence assertion). Touched once by the final scoring path at G3 (roadmap 6.6).",
+  "caveats": {
+    "kansas_DTC": "n=9, low well support, wide uncertainty. Only 9 of 263 test_kgs wells carry >=100 valid DTC (sonic) samples (Kansas rarely logs sonic). This cell (directions B and C1, target DTC) is RETAINED as a true fact about the data, not dropped. Any Kansas-DTC RMSE MUST be reported with n=9 alongside it, never RMSE alone."
+  },
+  "directions": {
+    "A_cross_to_norway": {
+      "kind": "cross-basin",
+      "test_pool": "force2020:test_force_open",
+      "train_splits": [
+        "kgs:train",
+        "nlog:train"
+      ]
+    },
+    "B_cross_to_kansas": {
+      "kind": "cross-basin",
+      "test_pool": "kgs:test_kgs",
+      "train_splits": [
+        "nlog:train",
+        "force2020:train"
+      ]
+    },
+    "C1_in_kansas": {
+      "kind": "in-basin",
+      "test_pool": "kgs:test_kgs",
+      "train_splits": [
+        "kgs:train"
+      ]
+    },
+    "C2_in_norway": {
+      "kind": "in-basin",
+      "test_pool": "force2020:test_force_open",
+      "train_splits": [
+        "force2020:train"
+      ]
+    }
+  },
+  "frozen_against": {
+    "corpus_manifest_sha256": "d5b35a00ffa49aab7f7e634013c238aa1fc989a17e3ad1c5a5d83f7606e3a8a9",
+    "seed": 20260715,
+    "split_gen_commit": "d4113797cbd2885f4585004b754fc9856527a6c9"
+  },
+  "provenance": "built from data/splits/split_assignment.csv at freeze d5b35a00; evidence artifact outside the hashed set; does not move qc_code_sha256 or d5b35a00.",
+  "scoreable_wells_by_target": {
+    "force2020:test_force_open": {
+      "DTC": 10,
+      "NPHI": 10,
+      "RHOB": 10
+    },
+    "kgs:test_kgs": {
+      "DTC": 9,
+      "NPHI": 181,
+      "RHOB": 239
+    }
+  },
+  "scoring": {
+    "aggregation": [
+      "pooled_over_samples",
+      "macro_over_wells"
+    ],
+    "metrics": [
+      "RMSE",
+      "MAE"
+    ],
+    "min_target_samples_to_score": 100,
+    "reporting_rule": "every reported RMSE MUST be accompanied by its scored well count; never RMSE alone. This is mandatory for the Kansas-DTC cell (n=9)."
+  },
+  "targets_hidden": [
+    "DTC",
+    "RHOB",
+    "NPHI"
+  ],
+  "task": "cross-basin curve imputation: hide one canonical target curve per config, predict per depth-sample from the remaining canonical log curves + depth_m",
+  "test_pools": {
+    "force2020:test_force_open": {
+      "n_wells": 10,
+      "wells": [
+        {
+          "safe_name": "15_9-14",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "15/9-14"
+        },
+        {
+          "safe_name": "25_10-10",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "25/10-10"
+        },
+        {
+          "safe_name": "25_11-24",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "25/11-24"
+        },
+        {
+          "safe_name": "25_5-3",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "25/5-3"
+        },
+        {
+          "safe_name": "29_3-1",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "29/3-1"
+        },
+        {
+          "safe_name": "34_10-16_R",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "34/10-16 R"
+        },
+        {
+          "safe_name": "34_3-3_A",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "34/3-3 A"
+        },
+        {
+          "safe_name": "34_6-1_S",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "34/6-1 S"
+        },
+        {
+          "safe_name": "35_6-2_S",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "35/6-2 S"
+        },
+        {
+          "safe_name": "35_9-8",
+          "source": "force2020",
+          "split": "test_force_open",
+          "well_id": "35/9-8"
+        }
+      ]
+    },
+    "kgs:test_kgs": {
+      "n_wells": 263,
+      "wells": [
+        {
+          "safe_name": "1044753454",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044753454"
+        },
+        {
+          "safe_name": "1044753459",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044753459"
+        },
+        {
+          "safe_name": "1044756587",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044756587"
+        },
+        {
+          "safe_name": "1044761922",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044761922"
+        },
+        {
+          "safe_name": "1044762081",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044762081"
+        },
+        {
+          "safe_name": "1044772826",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044772826"
+        },
+        {
+          "safe_name": "1044772830",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044772830"
+        },
+        {
+          "safe_name": "1044772833",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044772833"
+        },
+        {
+          "safe_name": "1044882076",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044882076"
+        },
+        {
+          "safe_name": "1044882080",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044882080"
+        },
+        {
+          "safe_name": "1044891331",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044891331"
+        },
+        {
+          "safe_name": "1044909702",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044909702"
+        },
+        {
+          "safe_name": "1044913743",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913743"
+        },
+        {
+          "safe_name": "1044913745",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913745"
+        },
+        {
+          "safe_name": "1044913747",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913747"
+        },
+        {
+          "safe_name": "1044913748",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913748"
+        },
+        {
+          "safe_name": "1044913757",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913757"
+        },
+        {
+          "safe_name": "1044913760",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913760"
+        },
+        {
+          "safe_name": "1044913764",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913764"
+        },
+        {
+          "safe_name": "1044913766",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913766"
+        },
+        {
+          "safe_name": "1044913771",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913771"
+        },
+        {
+          "safe_name": "1044913781",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913781"
+        },
+        {
+          "safe_name": "1044913785",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913785"
+        },
+        {
+          "safe_name": "1044913786",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913786"
+        },
+        {
+          "safe_name": "1044913809",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913809"
+        },
+        {
+          "safe_name": "1044913811",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044913811"
+        },
+        {
+          "safe_name": "1044916790",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044916790"
+        },
+        {
+          "safe_name": "1044916791",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044916791"
+        },
+        {
+          "safe_name": "1044955721",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044955721"
+        },
+        {
+          "safe_name": "1044955765",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044955765"
+        },
+        {
+          "safe_name": "1044955772",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1044955772"
+        },
+        {
+          "safe_name": "1045386972",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1045386972"
+        },
+        {
+          "safe_name": "1055298314",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298314"
+        },
+        {
+          "safe_name": "1055298315",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298315"
+        },
+        {
+          "safe_name": "1055298336",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298336"
+        },
+        {
+          "safe_name": "1055298337",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298337"
+        },
+        {
+          "safe_name": "1055298338",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298338"
+        },
+        {
+          "safe_name": "1055298339",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298339"
+        },
+        {
+          "safe_name": "1055298340",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298340"
+        },
+        {
+          "safe_name": "1055298342",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298342"
+        },
+        {
+          "safe_name": "1055298345",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298345"
+        },
+        {
+          "safe_name": "1055298346",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298346"
+        },
+        {
+          "safe_name": "1055298347",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298347"
+        },
+        {
+          "safe_name": "1055298348",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298348"
+        },
+        {
+          "safe_name": "1055298349",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298349"
+        },
+        {
+          "safe_name": "1055298350",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298350"
+        },
+        {
+          "safe_name": "1055298351",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298351"
+        },
+        {
+          "safe_name": "1055298352",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298352"
+        },
+        {
+          "safe_name": "1055298353",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298353"
+        },
+        {
+          "safe_name": "1055298354",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298354"
+        },
+        {
+          "safe_name": "1055298355",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298355"
+        },
+        {
+          "safe_name": "1055298359",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298359"
+        },
+        {
+          "safe_name": "1055298360",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298360"
+        },
+        {
+          "safe_name": "1055298362",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298362"
+        },
+        {
+          "safe_name": "1055298363",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298363"
+        },
+        {
+          "safe_name": "1055298365",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298365"
+        },
+        {
+          "safe_name": "1055298367",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298367"
+        },
+        {
+          "safe_name": "1055298368",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298368"
+        },
+        {
+          "safe_name": "1055298370",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298370"
+        },
+        {
+          "safe_name": "1055298371",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298371"
+        },
+        {
+          "safe_name": "1055298372",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298372"
+        },
+        {
+          "safe_name": "1055298378",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298378"
+        },
+        {
+          "safe_name": "1055298379",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298379"
+        },
+        {
+          "safe_name": "1055298380",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298380"
+        },
+        {
+          "safe_name": "1055298381",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298381"
+        },
+        {
+          "safe_name": "1055298383",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298383"
+        },
+        {
+          "safe_name": "1055298384",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298384"
+        },
+        {
+          "safe_name": "1055298385",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298385"
+        },
+        {
+          "safe_name": "1055298386",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298386"
+        },
+        {
+          "safe_name": "1055298387",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298387"
+        },
+        {
+          "safe_name": "1055298388",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298388"
+        },
+        {
+          "safe_name": "1055298389",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298389"
+        },
+        {
+          "safe_name": "1055298390",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298390"
+        },
+        {
+          "safe_name": "1055298391",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298391"
+        },
+        {
+          "safe_name": "1055298392",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298392"
+        },
+        {
+          "safe_name": "1055298394",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298394"
+        },
+        {
+          "safe_name": "1055298395",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298395"
+        },
+        {
+          "safe_name": "1055298396",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298396"
+        },
+        {
+          "safe_name": "1055298397",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298397"
+        },
+        {
+          "safe_name": "1055298398",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298398"
+        },
+        {
+          "safe_name": "1055298399",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298399"
+        },
+        {
+          "safe_name": "1055298400",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298400"
+        },
+        {
+          "safe_name": "1055298403",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298403"
+        },
+        {
+          "safe_name": "1055298404",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298404"
+        },
+        {
+          "safe_name": "1055298405",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298405"
+        },
+        {
+          "safe_name": "1055298406",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298406"
+        },
+        {
+          "safe_name": "1055298407",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298407"
+        },
+        {
+          "safe_name": "1055298408",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298408"
+        },
+        {
+          "safe_name": "1055298409",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298409"
+        },
+        {
+          "safe_name": "1055298412",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298412"
+        },
+        {
+          "safe_name": "1055298511",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298511"
+        },
+        {
+          "safe_name": "1055298512",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298512"
+        },
+        {
+          "safe_name": "1055298513",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298513"
+        },
+        {
+          "safe_name": "1055298514",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298514"
+        },
+        {
+          "safe_name": "1055298519",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298519"
+        },
+        {
+          "safe_name": "1055298520",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298520"
+        },
+        {
+          "safe_name": "1055298530",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298530"
+        },
+        {
+          "safe_name": "1055298531",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298531"
+        },
+        {
+          "safe_name": "1055298538",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298538"
+        },
+        {
+          "safe_name": "1055298547",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055298547"
+        },
+        {
+          "safe_name": "1055385229",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385229"
+        },
+        {
+          "safe_name": "1055385230",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385230"
+        },
+        {
+          "safe_name": "1055385237",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385237"
+        },
+        {
+          "safe_name": "1055385238",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385238"
+        },
+        {
+          "safe_name": "1055385468",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385468"
+        },
+        {
+          "safe_name": "1055385653",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385653"
+        },
+        {
+          "safe_name": "1055385658",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385658"
+        },
+        {
+          "safe_name": "1055385659",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385659"
+        },
+        {
+          "safe_name": "1055385665",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385665"
+        },
+        {
+          "safe_name": "1055385666",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385666"
+        },
+        {
+          "safe_name": "1055385683",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385683"
+        },
+        {
+          "safe_name": "1055385686",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055385686"
+        },
+        {
+          "safe_name": "1055812757",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812757"
+        },
+        {
+          "safe_name": "1055812770",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812770"
+        },
+        {
+          "safe_name": "1055812803",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812803"
+        },
+        {
+          "safe_name": "1055812818",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812818"
+        },
+        {
+          "safe_name": "1055812819",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812819"
+        },
+        {
+          "safe_name": "1055812820",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812820"
+        },
+        {
+          "safe_name": "1055812822",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812822"
+        },
+        {
+          "safe_name": "1055812823",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812823"
+        },
+        {
+          "safe_name": "1055812824",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812824"
+        },
+        {
+          "safe_name": "1055812825",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812825"
+        },
+        {
+          "safe_name": "1055812826",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812826"
+        },
+        {
+          "safe_name": "1055812865",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812865"
+        },
+        {
+          "safe_name": "1055812903",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812903"
+        },
+        {
+          "safe_name": "1055812904",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812904"
+        },
+        {
+          "safe_name": "1055812905",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812905"
+        },
+        {
+          "safe_name": "1055812906",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812906"
+        },
+        {
+          "safe_name": "1055812907",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812907"
+        },
+        {
+          "safe_name": "1055812912",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812912"
+        },
+        {
+          "safe_name": "1055812917",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812917"
+        },
+        {
+          "safe_name": "1055812923",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812923"
+        },
+        {
+          "safe_name": "1055812947",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812947"
+        },
+        {
+          "safe_name": "1055812959",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812959"
+        },
+        {
+          "safe_name": "1055812967",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812967"
+        },
+        {
+          "safe_name": "1055812969",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812969"
+        },
+        {
+          "safe_name": "1055812972",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812972"
+        },
+        {
+          "safe_name": "1055812973",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812973"
+        },
+        {
+          "safe_name": "1055812974",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812974"
+        },
+        {
+          "safe_name": "1055812975",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812975"
+        },
+        {
+          "safe_name": "1055812979",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812979"
+        },
+        {
+          "safe_name": "1055812980",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812980"
+        },
+        {
+          "safe_name": "1055812986",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812986"
+        },
+        {
+          "safe_name": "1055812989",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055812989"
+        },
+        {
+          "safe_name": "1055813002",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813002"
+        },
+        {
+          "safe_name": "1055813006",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813006"
+        },
+        {
+          "safe_name": "1055813008",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813008"
+        },
+        {
+          "safe_name": "1055813018",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813018"
+        },
+        {
+          "safe_name": "1055813029",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813029"
+        },
+        {
+          "safe_name": "1055813033",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813033"
+        },
+        {
+          "safe_name": "1055813034",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813034"
+        },
+        {
+          "safe_name": "1055813035",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813035"
+        },
+        {
+          "safe_name": "1055813048",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813048"
+        },
+        {
+          "safe_name": "1055813049",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813049"
+        },
+        {
+          "safe_name": "1055813063",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813063"
+        },
+        {
+          "safe_name": "1055813070",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813070"
+        },
+        {
+          "safe_name": "1055813075",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813075"
+        },
+        {
+          "safe_name": "1055813081",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813081"
+        },
+        {
+          "safe_name": "1055813082",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813082"
+        },
+        {
+          "safe_name": "1055813085",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813085"
+        },
+        {
+          "safe_name": "1055813086",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813086"
+        },
+        {
+          "safe_name": "1055813090",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813090"
+        },
+        {
+          "safe_name": "1055813098",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813098"
+        },
+        {
+          "safe_name": "1055813136",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813136"
+        },
+        {
+          "safe_name": "1055813142",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813142"
+        },
+        {
+          "safe_name": "1055813143",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813143"
+        },
+        {
+          "safe_name": "1055813144",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813144"
+        },
+        {
+          "safe_name": "1055813145",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813145"
+        },
+        {
+          "safe_name": "1055813150",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813150"
+        },
+        {
+          "safe_name": "1055813172",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813172"
+        },
+        {
+          "safe_name": "1055813178",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813178"
+        },
+        {
+          "safe_name": "1055813179",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813179"
+        },
+        {
+          "safe_name": "1055813181",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813181"
+        },
+        {
+          "safe_name": "1055813233",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813233"
+        },
+        {
+          "safe_name": "1055813235",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813235"
+        },
+        {
+          "safe_name": "1055813241",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813241"
+        },
+        {
+          "safe_name": "1055813246",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813246"
+        },
+        {
+          "safe_name": "1055813285",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813285"
+        },
+        {
+          "safe_name": "1055813298",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813298"
+        },
+        {
+          "safe_name": "1055813313",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813313"
+        },
+        {
+          "safe_name": "1055813323",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813323"
+        },
+        {
+          "safe_name": "1055813335",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813335"
+        },
+        {
+          "safe_name": "1055813340",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813340"
+        },
+        {
+          "safe_name": "1055813348",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813348"
+        },
+        {
+          "safe_name": "1055813352",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813352"
+        },
+        {
+          "safe_name": "1055813357",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813357"
+        },
+        {
+          "safe_name": "1055813360",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813360"
+        },
+        {
+          "safe_name": "1055813379",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813379"
+        },
+        {
+          "safe_name": "1055813383",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813383"
+        },
+        {
+          "safe_name": "1055813384",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813384"
+        },
+        {
+          "safe_name": "1055813387",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813387"
+        },
+        {
+          "safe_name": "1055813391",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813391"
+        },
+        {
+          "safe_name": "1055813436",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813436"
+        },
+        {
+          "safe_name": "1055813455",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813455"
+        },
+        {
+          "safe_name": "1055813611",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813611"
+        },
+        {
+          "safe_name": "1055813615",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813615"
+        },
+        {
+          "safe_name": "1055813661",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813661"
+        },
+        {
+          "safe_name": "1055813719",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813719"
+        },
+        {
+          "safe_name": "1055813720",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813720"
+        },
+        {
+          "safe_name": "1055813721",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813721"
+        },
+        {
+          "safe_name": "1055813722",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813722"
+        },
+        {
+          "safe_name": "1055813745",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813745"
+        },
+        {
+          "safe_name": "1055813746",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813746"
+        },
+        {
+          "safe_name": "1055813752",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813752"
+        },
+        {
+          "safe_name": "1055813754",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813754"
+        },
+        {
+          "safe_name": "1055813755",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813755"
+        },
+        {
+          "safe_name": "1055813757",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813757"
+        },
+        {
+          "safe_name": "1055813758",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813758"
+        },
+        {
+          "safe_name": "1055813759",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813759"
+        },
+        {
+          "safe_name": "1055813760",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813760"
+        },
+        {
+          "safe_name": "1055813761",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813761"
+        },
+        {
+          "safe_name": "1055813762",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813762"
+        },
+        {
+          "safe_name": "1055813763",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813763"
+        },
+        {
+          "safe_name": "1055813764",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813764"
+        },
+        {
+          "safe_name": "1055813765",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813765"
+        },
+        {
+          "safe_name": "1055813771",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813771"
+        },
+        {
+          "safe_name": "1055813772",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813772"
+        },
+        {
+          "safe_name": "1055813780",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813780"
+        },
+        {
+          "safe_name": "1055813783",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813783"
+        },
+        {
+          "safe_name": "1055813784",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813784"
+        },
+        {
+          "safe_name": "1055813785",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813785"
+        },
+        {
+          "safe_name": "1055813786",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813786"
+        },
+        {
+          "safe_name": "1055813787",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813787"
+        },
+        {
+          "safe_name": "1055813788",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813788"
+        },
+        {
+          "safe_name": "1055813815",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813815"
+        },
+        {
+          "safe_name": "1055813816",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813816"
+        },
+        {
+          "safe_name": "1055813818",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813818"
+        },
+        {
+          "safe_name": "1055813820",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813820"
+        },
+        {
+          "safe_name": "1055813832",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813832"
+        },
+        {
+          "safe_name": "1055813833",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813833"
+        },
+        {
+          "safe_name": "1055813835",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813835"
+        },
+        {
+          "safe_name": "1055813842",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813842"
+        },
+        {
+          "safe_name": "1055813851",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813851"
+        },
+        {
+          "safe_name": "1055813891",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055813891"
+        },
+        {
+          "safe_name": "1055814235",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814235"
+        },
+        {
+          "safe_name": "1055814236",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814236"
+        },
+        {
+          "safe_name": "1055814237",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814237"
+        },
+        {
+          "safe_name": "1055814248",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814248"
+        },
+        {
+          "safe_name": "1055814265",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814265"
+        },
+        {
+          "safe_name": "1055814267",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814267"
+        },
+        {
+          "safe_name": "1055814268",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814268"
+        },
+        {
+          "safe_name": "1055814269",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814269"
+        },
+        {
+          "safe_name": "1055814272",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814272"
+        },
+        {
+          "safe_name": "1055814273",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814273"
+        },
+        {
+          "safe_name": "1055814274",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814274"
+        },
+        {
+          "safe_name": "1055814275",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814275"
+        },
+        {
+          "safe_name": "1055814276",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814276"
+        },
+        {
+          "safe_name": "1055814277",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814277"
+        },
+        {
+          "safe_name": "1055814278",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814278"
+        },
+        {
+          "safe_name": "1055814280",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814280"
+        },
+        {
+          "safe_name": "1055814281",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814281"
+        },
+        {
+          "safe_name": "1055814285",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814285"
+        },
+        {
+          "safe_name": "1055814286",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814286"
+        },
+        {
+          "safe_name": "1055814292",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814292"
+        },
+        {
+          "safe_name": "1055814293",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814293"
+        },
+        {
+          "safe_name": "1055814304",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814304"
+        },
+        {
+          "safe_name": "1055814305",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814305"
+        },
+        {
+          "safe_name": "1055814326",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814326"
+        },
+        {
+          "safe_name": "1055814333",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814333"
+        },
+        {
+          "safe_name": "1055814337",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814337"
+        },
+        {
+          "safe_name": "1055814338",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814338"
+        },
+        {
+          "safe_name": "1055814345",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814345"
+        },
+        {
+          "safe_name": "1055814360",
+          "source": "kgs",
+          "split": "test_kgs",
+          "well_id": "1055814360"
+        }
+      ]
+    }
+  },
+  "version": "1.0"
+}

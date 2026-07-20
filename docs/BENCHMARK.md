@@ -64,7 +64,7 @@ Results (pooled RMSE / MAE; global-mean-of-train floor in parens; `w` = scored t
 
 | Target | A cross→Norway | C2 in Norway | B cross→Kansas | C1 in Kansas |
 |---|---|---|---|---|
-| DTC  | 15.94 / 12.28 (floor 32.3) · 10w | **6.66** / 4.85 · 10w | 30.45 / 21.76 (floor 32.0) · **9w** | **12.61** / 6.84 · 9w |
+| DTC  | 15.94 / 12.28 (floor 32.3) · 10w | **6.66** / 4.85 · 10w | 30.45 / 21.76 · **n=9, low support, wide uncertainty** | **12.61** / 6.84 · **n=9, low support, wide uncertainty** |
 | RHOB | 0.128 / 0.095 (floor 0.24) · 10w | **0.094** / 0.065 · 10w | 0.479 / 0.438 (floor **0.21**) · 239w | **0.125** / 0.080 · 239w |
 | NPHI | 0.070 / 0.053 (floor 0.16) · 10w | **0.060** / 0.045 · 10w | 0.254 / 0.218 (floor **0.13**) · 181w | **0.084** / 0.055 · 181w |
 
@@ -74,8 +74,11 @@ built to surface.
 
 **Data quirk (CP1 decision):** only **9 of 263** `test_kgs` wells carry ≥100 valid DTC (sonic)
 samples — Kansas rarely logs sonic — so the Kansas-DTC cell (B/C1) is thin. RHOB (239) and NPHI
-(181) are well-populated; Norway open-10 carries all three targets in all 10 wells. Plan to
-rule: keep DTC→Kansas flagged-as-thin, or drop DTC from the Kansas direction.
+(181) are well-populated; Norway open-10 carries all three targets in all 10 wells.
+
+**Ruling (CP1):** the Kansas-DTC cell is KEPT, flagged thin (**n=9, low well support, wide
+uncertainty**) — a true fact about the data, not hidden by deletion. Any Kansas-DTC score MUST
+report the well count (n=9) alongside RMSE, never RMSE alone.
 
 ### 5. Evaluation-set composition (frozen splits only)
 Backing: `reports/basinshift/eval_composition.json`, `run_log.txt`.
