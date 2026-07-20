@@ -13,9 +13,9 @@ Recorded per advisor amendment 4; pre-registration predates the post-benchmark-f
 ## BasinShift — Cross-Basin Well-Log Imputation Benchmark (roadmap 6.1)
 
 Built against the frozen corpus (manifest `d5b35a00`, split-gen `d4113797`, seed `20260715`).
-Every number traces to a committed artifact or to `reports/basinshift/run_log.txt`. **This is
-the design/CP1 version; the immutable BasinShift test-manifest hash is added only after Plan
-clears CHECKPOINT 1 (Phase 2).**
+Every number traces to a committed artifact or to `reports/basinshift/run_log.txt`. **Test manifest FROZEN: `reports/basinshift/basinshift_test_manifest.json`, sha256
+`e5f653077587f2fa80aa4bf1c236e45735798d1421329c735e7dbb620bcfbb71` (commit `bd344e5`); CP2
+leakage suite ALL PASS (commit `1ba8bf7`).**
 
 ### 1. Task
 **Curve imputation under basin shift.** One canonical *target* curve is hidden per well and
@@ -103,6 +103,10 @@ well by well_id or safe_name), **train_test_overlap = 0**. All four runs PASS.
 - Evidence artifact, outside the hashed set; does not move `qc_code_sha256` or `d5b35a00`.
 
 ### 8. Artifacts
-`scripts/basinshift/basinshift_baseline.py`; `reports/basinshift/{run_log.txt,
-baseline_results.json, eval_composition.json, test_manifest_PROPOSED.json}`. The proposed
-manifest is **NOT hashed** (CP1 review); the immutable hash lands after Plan clears CP1.
+**Frozen manifest:** `reports/basinshift/basinshift_test_manifest.json` (sha256
+`e5f653077587f2fa80aa4bf1c236e45735798d1421329c735e7dbb620bcfbb71`, `.sha256` alongside).
+**Standing opponent (committed):** `scripts/basinshift/basinshift_baseline.py` + outputs
+`reports/basinshift/{run_log.txt, baseline_results.json, eval_composition.json}`.
+**Builder / leakage:** `scripts/basinshift/{build_test_manifest.py, leakage_suite.py}` +
+`reports/basinshift/leakage_suite.txt` (CP2 ALL PASS). **Env:** `docs/basinshift_env_2026-07-20.txt`.
+The superseded `test_manifest_PROPOSED.json` is retained for provenance.
