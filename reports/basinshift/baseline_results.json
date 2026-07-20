@@ -1,0 +1,172 @@
+{
+  "A_cross_to_norway": {
+    "label": "cross-basin -> Norway (open-10)",
+    "train_pools": [
+      "kgs_train",
+      "nlog_train"
+    ],
+    "test_pool": "open10",
+    "targets": {
+      "DTC": {
+        "pooled_rmse": 15.943634986877441,
+        "pooled_mae": 12.27783203125,
+        "macro_well_rmse": 13.334325218200684,
+        "n_samples": 135604,
+        "n_wells": 10,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 10,
+        "test_wells_dropped_lt_min": 0,
+        "global_mean_floor_rmse": 32.32173538208008
+      },
+      "RHOB": {
+        "pooled_rmse": 0.12796372175216675,
+        "pooled_mae": 0.09478560090065002,
+        "macro_well_rmse": 0.11987945660948754,
+        "n_samples": 119506,
+        "n_wells": 10,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 10,
+        "test_wells_dropped_lt_min": 0,
+        "global_mean_floor_rmse": 0.24250458180904388
+      },
+      "NPHI": {
+        "pooled_rmse": 0.07007213681936264,
+        "pooled_mae": 0.05267595499753952,
+        "macro_well_rmse": 0.0755616419017315,
+        "n_samples": 103766,
+        "n_wells": 10,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 10,
+        "test_wells_dropped_lt_min": 0,
+        "global_mean_floor_rmse": 0.1616993546485901
+      }
+    }
+  },
+  "B_cross_to_kansas": {
+    "label": "cross-basin -> Kansas (test_kgs)",
+    "train_pools": [
+      "nlog_train",
+      "force_train"
+    ],
+    "test_pool": "test_kgs",
+    "targets": {
+      "DTC": {
+        "pooled_rmse": 30.453548431396484,
+        "pooled_mae": 21.764707565307617,
+        "macro_well_rmse": 29.050440894232857,
+        "n_samples": 69373,
+        "n_wells": 9,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 9,
+        "test_wells_dropped_lt_min": 254,
+        "global_mean_floor_rmse": 32.043582916259766
+      },
+      "RHOB": {
+        "pooled_rmse": 0.47914236783981323,
+        "pooled_mae": 0.4376530647277832,
+        "macro_well_rmse": 0.48652974475627164,
+        "n_samples": 575579,
+        "n_wells": 239,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 239,
+        "test_wells_dropped_lt_min": 24,
+        "global_mean_floor_rmse": 0.2067970633506775
+      },
+      "NPHI": {
+        "pooled_rmse": 0.25391852855682373,
+        "pooled_mae": 0.21801547706127167,
+        "macro_well_rmse": 0.26912857262798434,
+        "n_samples": 457578,
+        "n_wells": 181,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 181,
+        "test_wells_dropped_lt_min": 82,
+        "global_mean_floor_rmse": 0.12571164965629578
+      }
+    }
+  },
+  "C1_in_kansas": {
+    "label": "in-basin -> Kansas (test_kgs)",
+    "train_pools": [
+      "kgs_train"
+    ],
+    "test_pool": "test_kgs",
+    "targets": {
+      "DTC": {
+        "pooled_rmse": 12.605813980102539,
+        "pooled_mae": 6.835235118865967,
+        "macro_well_rmse": 11.585624059041342,
+        "n_samples": 69373,
+        "n_wells": 9,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 9,
+        "test_wells_dropped_lt_min": 254,
+        "global_mean_floor_rmse": 23.241195678710938
+      },
+      "RHOB": {
+        "pooled_rmse": 0.12497752904891968,
+        "pooled_mae": 0.07994835078716278,
+        "macro_well_rmse": 0.10966260277638874,
+        "n_samples": 575579,
+        "n_wells": 239,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 239,
+        "test_wells_dropped_lt_min": 24,
+        "global_mean_floor_rmse": 0.24373719096183777
+      },
+      "NPHI": {
+        "pooled_rmse": 0.08392322063446045,
+        "pooled_mae": 0.054825250059366226,
+        "macro_well_rmse": 0.07411392436501729,
+        "n_samples": 457578,
+        "n_wells": 181,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 181,
+        "test_wells_dropped_lt_min": 82,
+        "global_mean_floor_rmse": 0.11799503117799759
+      }
+    }
+  },
+  "C2_in_norway": {
+    "label": "in-basin -> Norway (open-10)",
+    "train_pools": [
+      "force_train"
+    ],
+    "test_pool": "open10",
+    "targets": {
+      "DTC": {
+        "pooled_rmse": 6.6576337814331055,
+        "pooled_mae": 4.849668025970459,
+        "macro_well_rmse": 5.785410594940186,
+        "n_samples": 135604,
+        "n_wells": 10,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 10,
+        "test_wells_dropped_lt_min": 0,
+        "global_mean_floor_rmse": 27.598453521728516
+      },
+      "RHOB": {
+        "pooled_rmse": 0.09416399151086807,
+        "pooled_mae": 0.0648360326886177,
+        "macro_well_rmse": 0.08922932222485543,
+        "n_samples": 119506,
+        "n_wells": 10,
+        "train_samples_used": 1000000,
+        "test_wells_scored": 10,
+        "test_wells_dropped_lt_min": 0,
+        "global_mean_floor_rmse": 0.2457510083913803
+      },
+      "NPHI": {
+        "pooled_rmse": 0.0596163384616375,
+        "pooled_mae": 0.04518726095557213,
+        "macro_well_rmse": 0.05717823170125484,
+        "n_samples": 103766,
+        "n_wells": 10,
+        "train_samples_used": 763350,
+        "test_wells_scored": 10,
+        "test_wells_dropped_lt_min": 0,
+        "global_mean_floor_rmse": 0.120569609105587
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+[splits] blind_force wells (never loaded): 10  names=['15/9-23', '16/2-7', '16/7-6', '17/4-1', '25/10-9', '31/2-10', '31/2-21 S', '34/3-2 S', '35/11-5', '35/9-7']
+[pool] kgs_train: 5734 wells
+[pool] nlog_train: 1757 wells
+[pool] force_train: 98 wells
+[pool] test_kgs: 263 wells
+[pool] open10: 10 wells
+
+===== RUN A_cross_to_norway  [cross-basin -> Norway (open-10)] =====
+  assertions PASS: blind_overlap=0 train_test_overlap=0 (train wells=7491, test wells=10)
+  [DTC] train_n=1000000 test_wells=10(dropped 0) samples=135604  RMSE=15.9436 MAE=12.2778 macro_well_RMSE=13.3343 (floor 32.3217)
+  [RHOB] train_n=1000000 test_wells=10(dropped 0) samples=119506  RMSE=0.1280 MAE=0.0948 macro_well_RMSE=0.1199 (floor 0.2425)
+  [NPHI] train_n=1000000 test_wells=10(dropped 0) samples=103766  RMSE=0.0701 MAE=0.0527 macro_well_RMSE=0.0756 (floor 0.1617)
+
+===== RUN B_cross_to_kansas  [cross-basin -> Kansas (test_kgs)] =====
+  assertions PASS: blind_overlap=0 train_test_overlap=0 (train wells=1855, test wells=263)
+  [DTC] train_n=1000000 test_wells=9(dropped 254) samples=69373  RMSE=30.4535 MAE=21.7647 macro_well_RMSE=29.0504 (floor 32.0436)
+  [RHOB] train_n=1000000 test_wells=239(dropped 24) samples=575579  RMSE=0.4791 MAE=0.4377 macro_well_RMSE=0.4865 (floor 0.2068)
+  [NPHI] train_n=1000000 test_wells=181(dropped 82) samples=457578  RMSE=0.2539 MAE=0.2180 macro_well_RMSE=0.2691 (floor 0.1257)
+
+===== RUN C1_in_kansas  [in-basin -> Kansas (test_kgs)] =====
+  assertions PASS: blind_overlap=0 train_test_overlap=0 (train wells=5734, test wells=263)
+  [DTC] train_n=1000000 test_wells=9(dropped 254) samples=69373  RMSE=12.6058 MAE=6.8352 macro_well_RMSE=11.5856 (floor 23.2412)
+  [RHOB] train_n=1000000 test_wells=239(dropped 24) samples=575579  RMSE=0.1250 MAE=0.0799 macro_well_RMSE=0.1097 (floor 0.2437)
+  [NPHI] train_n=1000000 test_wells=181(dropped 82) samples=457578  RMSE=0.0839 MAE=0.0548 macro_well_RMSE=0.0741 (floor 0.1180)
+
+===== RUN C2_in_norway  [in-basin -> Norway (open-10)] =====
+  assertions PASS: blind_overlap=0 train_test_overlap=0 (train wells=98, test wells=10)
+  [DTC] train_n=1000000 test_wells=10(dropped 0) samples=135604  RMSE=6.6576 MAE=4.8497 macro_well_RMSE=5.7854 (floor 27.5985)
+  [RHOB] train_n=1000000 test_wells=10(dropped 0) samples=119506  RMSE=0.0942 MAE=0.0648 macro_well_RMSE=0.0892 (floor 0.2458)
+  [NPHI] train_n=763350 test_wells=10(dropped 0) samples=103766  RMSE=0.0596 MAE=0.0452 macro_well_RMSE=0.0572 (floor 0.1206)
+
+[done] wells cached: 7862  elapsed 327.9s
+[written] reports/basinshift/{run_log.txt,baseline_results.json,eval_composition.json,test_manifest_PROPOSED.json}

@@ -1,0 +1,108 @@
+{
+  "A_cross_to_norway": {
+    "label": "cross-basin -> Norway (open-10)",
+    "train_pools": {
+      "kgs_train": 5734,
+      "nlog_train": 1757
+    },
+    "test_pool": {
+      "open10": 10
+    },
+    "per_target": {
+      "DTC": {
+        "scored_wells": 10,
+        "dropped_wells": 0,
+        "test_samples": 135604
+      },
+      "RHOB": {
+        "scored_wells": 10,
+        "dropped_wells": 0,
+        "test_samples": 119506
+      },
+      "NPHI": {
+        "scored_wells": 10,
+        "dropped_wells": 0,
+        "test_samples": 103766
+      }
+    }
+  },
+  "B_cross_to_kansas": {
+    "label": "cross-basin -> Kansas (test_kgs)",
+    "train_pools": {
+      "nlog_train": 1757,
+      "force_train": 98
+    },
+    "test_pool": {
+      "test_kgs": 263
+    },
+    "per_target": {
+      "DTC": {
+        "scored_wells": 9,
+        "dropped_wells": 254,
+        "test_samples": 69373
+      },
+      "RHOB": {
+        "scored_wells": 239,
+        "dropped_wells": 24,
+        "test_samples": 575579
+      },
+      "NPHI": {
+        "scored_wells": 181,
+        "dropped_wells": 82,
+        "test_samples": 457578
+      }
+    }
+  },
+  "C1_in_kansas": {
+    "label": "in-basin -> Kansas (test_kgs)",
+    "train_pools": {
+      "kgs_train": 5734
+    },
+    "test_pool": {
+      "test_kgs": 263
+    },
+    "per_target": {
+      "DTC": {
+        "scored_wells": 9,
+        "dropped_wells": 254,
+        "test_samples": 69373
+      },
+      "RHOB": {
+        "scored_wells": 239,
+        "dropped_wells": 24,
+        "test_samples": 575579
+      },
+      "NPHI": {
+        "scored_wells": 181,
+        "dropped_wells": 82,
+        "test_samples": 457578
+      }
+    }
+  },
+  "C2_in_norway": {
+    "label": "in-basin -> Norway (open-10)",
+    "train_pools": {
+      "force_train": 98
+    },
+    "test_pool": {
+      "open10": 10
+    },
+    "per_target": {
+      "DTC": {
+        "scored_wells": 10,
+        "dropped_wells": 0,
+        "test_samples": 135604
+      },
+      "RHOB": {
+        "scored_wells": 10,
+        "dropped_wells": 0,
+        "test_samples": 119506
+      },
+      "NPHI": {
+        "scored_wells": 10,
+        "dropped_wells": 0,
+        "test_samples": 103766
+      }
+    }
+  }
+}
