@@ -31,9 +31,10 @@ train wells (sample vs census; stated wherever the two differ).
 **Count growth from G1.** At the G1 milestone the KGS-only counts were **8,084 ingested /
 5,546 passing** (`reports/status_g1.md`); the combined KGS+FORCE G1 total was 8,182 / 5,644.
 KGS subsequently rose to the frozen **9,307 / 6,336** through additional well recovery and
-the audited alias admissions. *The committed artifacts record the before/after counts but
-do not document a specific recovery mechanism; no mechanism is asserted here beyond what is
-committed.*
+the audited alias admissions. *The committed artifacts record the before/after counts; the
+recovery mechanism is committed as code (kgs.unpack_las, commit f41cc8a, 2026-07-05; related
+machinery in d80b2c5), but no committed artifact quantifies its contribution to that growth,
+so no recovery magnitude is asserted beyond what the counts support.*
 *Source: `reports/{kgs,nlog,force2020}_qc_records.csv`, `corpus_manifest.json`,
 `reports/status_g1.md`.*
 ---
