@@ -1,0 +1,10 @@
+=== NLOG disposition (from committed artifacts) ===
+borehole_index boreholes      = 6609
+processed boreholes (in index)= 5004   (processed not in index = 0)
+never-processed               = 1605
+  no-log-document             = 1563
+  log-bearing but unprocessed = 42
+log-bearing subtotal          = 5046
+on/offshore                   = ON 4457 / OFF 2152 (sum 6609)
+STOP-CONDITIONS PASS: no_log + log_unproc == never_proc == 1605 ; on+off == 6609
+log_index.csv.gz sha256 = d2f256dec54b38bdde58ebfea3422229a495cd3544bb55b20b8de569c8c7d15d
