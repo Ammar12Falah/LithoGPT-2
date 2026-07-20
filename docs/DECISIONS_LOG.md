@@ -146,3 +146,29 @@ green at bfa3b1d (GitHub Actions run 29764701685, conclusion success). The prere
 ruling listed as open are already met.
 
 Attribution: advisor. Reviewed at capture. Outside the hashed set; d5b35a00 untouched.
+
+
+### 2026-07-20 — Interpretation annex to the amended R7 (TS-FM Stage 1)
+
+Clause text, threshold (>25% rel-RMSE on all three curves), and comparator (XGBoost) are
+UNCHANGED from the R7 amendment. This annex adds two things and moves no goalposts:
+
+1. A matched random-initialization control. The Stage-1 surgery (frozen MOMENT encoder +
+   LoRA q,v + trainable cross-channel head) is run twice — pretrained MOMENT-1-large and
+   the same architecture randomly initialized, identical trainable budget — so the
+   pretraining contribution is measured (the pretrained-minus-random delta) rather than
+   argued. The >25% clause fires on the full adapted system (plan-protection); the delta
+   informs what a firing conversation concludes: large delta = generic temporal pretraining
+   transfers, from-scratch premise under pressure; small delta = a small trained
+   cross-channel module beats XGBoost, evidence FOR the from-scratch design (the S-model is
+   that module grown up).
+
+2. A shared evaluation harness. One scorer for all systems (XGBoost, TS-FM, S-model, main),
+   asserting evaluation-population identity (count + per-well mask hash) and refusing to
+   score on mismatch, in physical units after inverse-transform. Prevents a denominator
+   artifact from firing the clause spuriously — structurally, not by care.
+
+Guardrails: all adaptation training on frozen TRAIN only; dev/open eval-only; head
+pre-declared (two candidate configs, selected on dev, no further search). Blind-10
+untouched. The frozen committed predictions Stage 2 compares against are the full adapted
+system's dev+open predictions; control predictions committed alongside.
