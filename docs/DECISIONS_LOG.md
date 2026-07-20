@@ -100,3 +100,49 @@ item exists in committed artifacts today (0 "conductivity" hits repo-wide), and 
 card's parked-item line names the resistivity-channel disambiguation (SN/LN/LATL) it can
 source. Governing principle reaffirmed: chat-only facts are not authoritative; committed
 artifacts are. Attribution: advisor. Reviewed at capture.
+
+
+## 2026-07-20  R7 TS-FM tripwire amendment: split into Stage 1 (6.2) and Stage 2 (6.5) (advisor ruling)
+
+Supersedes the single pre-registered tripwire captured 2026-07-11, whose text conflated two
+distinct comparisons into one impossible sentence.
+
+Original R7 text (2026-07-11, verbatim):
+"Method for the transfer track is a from-scratch decoder-only transformer. A LoRA-adapted open
+time-series foundation model runs as a two-day baseline immediately after benchmark freeze,
+evaluated on dev and open-leaderboard wells only. Pre-registered tripwire: if the adapted TS-FM
+beats the from-scratch S-model cross-basin on the dev slice by more than 10 percent relative RMSE
+on at least two of three target curves, a scope amendment is brought before further training
+spend. The FORCE blind wells are touched once, by the final scoring path, and never by selection,
+comparison, or tripwire evaluation."
+
+The conflation: one sentence merges (a) a TS-FM baseline run "immediately after benchmark freeze,"
+when the only committed opponent is XGBoost, with (b) a decisive tripwire comparing TS-FM against
+the from-scratch S-model. These cannot both hold: the S-model does not exist until 6.5, so TS-FM
+cannot be compared against it "immediately after benchmark freeze." The early baseline (vs
+XGBoost) and the decisive tripwire (vs S-model) are two different events at two different times,
+wrongly registered as one.
+
+Superseding two-stage structure (advisor):
+- Stage 1 (roadmap 6.2, now): LoRA-adapted TS-FM vs the committed XGBoost baseline, on dev +
+  open-leaderboard wells only. Predictions are FROZEN at completion (pre-registered; no later
+  retuning). Escalation clause: if TS-FM beats XGBoost by more than 25 percent relative RMSE on
+  ALL three target curves, an immediate scope amendment is brought before proceeding.
+- Stage 2 (roadmap 6.5): the decisive R7 tripwire, LoRA-TS-FM vs the from-scratch S-model, more
+  than 10 percent relative RMSE on at least two of three target curves, brought before the main
+  training run.
+- Recorded rule: proxy comparators (XGBoost, or any TS-FM stand-in) are BANNED as the decisive
+  tripwire opponent; the Stage 2 tripwire opponent must be the S-model itself. XGBoost is the
+  Stage 1 opponent only.
+- FORCE blind wells remain untouched throughout both stages; touched once, by the final scoring
+  path at G3 (6.6).
+
+Prerequisites (verified read-only this session; the ruling referenced a state predating recent
+sessions): BasinShift is built and its test manifest is frozen
+(reports/basinshift/basinshift_test_manifest.json sha256
+e5f653077587f2fa80aa4bf1c236e45735798d1421329c735e7dbb620bcfbb71, commit bd344e5); the XGBoost
+standing opponent (scripts/basinshift/basinshift_baseline.py) and its outputs are committed; CI is
+green at bfa3b1d (GitHub Actions run 29764701685, conclusion success). The prerequisites the
+ruling listed as open are already met.
+
+Attribution: advisor. Reviewed at capture. Outside the hashed set; d5b35a00 untouched.
