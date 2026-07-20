@@ -1,0 +1,8 @@
+=== NLOG failure/borehole bridge (from committed artifacts) ===
+failure rows (file-level)      = 363
+distinct failure boreholes     = 174
+recovered into processed (5004)= 159
+never-processed                = 15
+sum                            = 174  (must == 174)
+recovered fraction             = 91.4%
+STOP-CONDITION PASS: recovered + never_processed == distinct failure boreholes
