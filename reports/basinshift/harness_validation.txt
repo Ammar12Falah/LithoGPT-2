@@ -1,0 +1,27 @@
+=== Shared eval harness: reproduce committed XGBoost baseline (physical units) ===
+[A_cross_to_norway/DTC] n=135604 (committed 135604) wells=10 popsig=8b5685d56fe3 truth0=0.00e+00
+    RMSE harness=15.9436 committed=15.9436 d=4.70e-08 | MAE 12.2778/12.2778 d=1.82e-06 | macro 13.3343/13.3343 d=2.30e-07  -> PASS
+[A_cross_to_norway/RHOB] n=119506 (committed 119506) wells=10 popsig=b2ca3ff20b30 truth0=0.00e+00
+    RMSE harness=0.1280 committed=0.1280 d=3.88e-09 | MAE 0.0948/0.0948 d=2.49e-09 | macro 0.1199/0.1199 d=2.20e-09  -> PASS
+[A_cross_to_norway/NPHI] n=103766 (committed 103766) wells=10 popsig=98fde1878815 truth0=0.00e+00
+    RMSE harness=0.0701 committed=0.0701 d=5.58e-10 | MAE 0.0527/0.0527 d=1.56e-09 | macro 0.0756/0.0756 d=8.70e-11  -> PASS
+[B_cross_to_kansas/DTC] n=69373 (committed 69373) wells=9 popsig=73dd15d80e24 truth0=0.00e+00
+    RMSE harness=30.4535 committed=30.4535 d=2.30e-06 | MAE 21.7647/21.7647 d=1.87e-06 | macro 29.0504/29.0504 d=6.81e-07  -> PASS
+[B_cross_to_kansas/RHOB] n=575579 (committed 575579) wells=239 popsig=ce1798d2d6db truth0=0.00e+00
+    RMSE harness=0.4791 committed=0.4791 d=5.51e-09 | MAE 0.4377/0.4377 d=7.45e-08 | macro 0.4865/0.4865 d=1.05e-09  -> PASS
+[B_cross_to_kansas/NPHI] n=457578 (committed 457578) wells=181 popsig=fbc4f1a5b58b truth0=0.00e+00
+    RMSE harness=0.2539 committed=0.2539 d=3.53e-09 | MAE 0.2180/0.2180 d=3.69e-08 | macro 0.2691/0.2691 d=1.29e-09  -> PASS
+[C1_in_kansas/DTC] n=69373 (committed 69373) wells=9 popsig=73dd15d80e24 truth0=0.00e+00
+    RMSE harness=12.6058 committed=12.6058 d=3.26e-07 | MAE 6.8352/6.8352 d=2.41e-07 | macro 11.5856/11.5856 d=2.68e-07  -> PASS
+[C1_in_kansas/RHOB] n=575579 (committed 575579) wells=239 popsig=ce1798d2d6db truth0=0.00e+00
+    RMSE harness=0.1250 committed=0.1250 d=3.80e-11 | MAE 0.0799/0.0799 d=4.64e-09 | macro 0.1097/0.1097 d=3.01e-11  -> PASS
+[C1_in_kansas/NPHI] n=457578 (committed 457578) wells=181 popsig=fbc4f1a5b58b truth0=0.00e+00
+    RMSE harness=0.0839 committed=0.0839 d=4.29e-09 | MAE 0.0548/0.0548 d=2.66e-09 | macro 0.0741/0.0741 d=3.27e-10  -> PASS
+[C2_in_norway/DTC] n=135604 (committed 135604) wells=10 popsig=8b5685d56fe3 truth0=0.00e+00
+    RMSE harness=6.6576 committed=6.6576 d=7.35e-07 | MAE 4.8497/4.8497 d=4.46e-07 | macro 5.7854/5.7854 d=1.21e-07  -> PASS
+[C2_in_norway/RHOB] n=119506 (committed 119506) wells=10 popsig=b2ca3ff20b30 truth0=0.00e+00
+    RMSE harness=0.0942 committed=0.0942 d=4.87e-09 | MAE 0.0648/0.0648 d=2.65e-10 | macro 0.0892/0.0892 d=1.04e-09  -> PASS
+[C2_in_norway/NPHI] n=103766 (committed 103766) wells=10 popsig=98fde1878815 truth0=0.00e+00
+    RMSE harness=0.0596 committed=0.0596 d=1.06e-09 | MAE 0.0452/0.0452 d=3.87e-09 | macro 0.0572/0.0572 d=1.44e-09  -> PASS
+
+=== HARNESS VALIDATION: ALL PASS (reproduces committed XGBoost) ===
