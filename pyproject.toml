@@ -11,8 +11,8 @@ requires-python = ">=3.11"
 license = { text = "Apache-2.0" }
 authors = [{ name = "Ammar Falah Hasan Al Saeedi" }]
 dependencies = [
-  "numpy>=1.26.3,<2.0",
-  "pandas>=2.1",
+  "numpy==1.26.3",
+  "pandas==2.2.3",
   "pyyaml>=6.0",
   "lasio>=0.31",
   "dlisio>=1.0",

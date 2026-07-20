@@ -1,17 +1,9 @@
 {
-  "generated_utc": "2026-07-19T20:33:56.191903Z",
-  "provenance": "RECONSTRUCTED after loss of original uncommitted build_manifest.py",
-  "reconstructed_from": [
-    "build_splits.py",
-    "dupes_and_vintage.py",
-    "pre_hash_forensics.py",
-    "docs/G2_freeze_plan.md",
-    "docs/HANDOFF.md",
-    "HANDOFF_CONTINUING_AGENT"
-  ],
-  "establishing_run": "No golden hash was recorded from the original builder; this establishes the freeze hash.",
-  "qc_config_pin_note": "Amendment 2 names a 'QC config' sha pin, but no standalone QC config file exists. QC logic is in committed run_qc_*.py and is pinned transitively via split_gen_commit. ADVISOR TO CONFIRM at gate.",
+  "generated_utc": "2026-07-20T08:42:50.191887Z",
+  "provenance": "Seven-pin manifest, regenerable from committed builder scripts/build_manifest.py (MANIFEST_ROOT/MANIFEST_HEAD).",
+  "builder_commit": "212faed9a5c93de130a2e0e0fde3bf7d506127c9",
   "hashed_payload": "corpus_manifest.json (sort_keys, compact, allow_nan=False)",
   "not_in_hash": "meta file, pretty copy, timestamp",
-  "lineage": "f497206b superseded by 88255b43 (full: f497206bb9bd2305bb7b50868adda2c286b006fa8d22fa8a17f378c68c9417cb -> 88255b4391ea610a26f21fd315dbd462ba16438991e32be0121087d5779554cb); cause=pin-set completion (kgs_vintage_crosswalk_sha256 + qc_code_sha256); split membership unchanged (row_count 8809, all 9 split counts identical)."
+  "lineage": "f497206bb9bd2305bb7b50868adda2c286b006fa8d22fa8a17f378c68c9417cb -> 88255b4391ea610a26f21fd315dbd462ba16438991e32be0121087d5779554cb (pin-set completion: kgs_vintage_crosswalk_sha256 + qc_code_sha256) -> d5b35a00ffa49aab7f7e634013c238aa1fc989a17e3ad1c5a5d83f7606e3a8a9 (runtime pin fold-in + dlisio declaration reconciliation). Splits unchanged throughout: row_count 8809, all nine split counts identical (kgs 5734/339/263, nlog 1757/257/341, force 98/10/10).",
+  "runtime_pin": "pandas==2.2.3 / numpy==1.26.3 pinned == (reproduction-verified by clean-environment regeneration this session). pyarrow/lasio/scipy/dlisio remain declared ranges: outside the manifest-path closure and ingestion-time versions unrecorded. See qc_pin_manifest.txt."
 }

@@ -22,8 +22,8 @@ METHOD: qc_code_sha256 = sha256 over the raw bytes of the files listed below,
 ================================================================================
 FILES (24), sorted -- <sha256>  <path>  (<bytes>):
   e888ac7bcfd6060ff6c0de38c9253125332e39b5e2b7acac2a2fc40d91cf165c  configs/mnemonic_aliases.yaml  (4256 bytes)
-  d8dfdc3cc0f50927f400439d89fd6a255286aae52009fdee030480b67551f9a1  pyproject.toml  (1085 bytes)
-  4d8a641140490cc397e196c82877ac480ae71f262c4039d7ce3756ae06f6c01e  requirements.txt  (115 bytes)
+  66cbfffbab1fd6484c1ff34635cf432d75caab1a6ed9cfc4ebba672a6117befc  pyproject.toml  (1082 bytes)
+  f3923390638447b7733245bc8c58f97c7f0c3c1f5ae8f5aa5cfeec1c1e4c07af  requirements.txt  (124 bytes)
   27552e248ea75c64709ad314fe4a2ecca6efd56dd48093ab83fc9409f52dd5fb  scripts/combine_qc.py  (4884 bytes)
   131e15500e5ac4d0d13b7a8c81d24435822421712f5b5e3aa60d7c881e9db8cf  scripts/ingest_qc_nlog_batched.py  (11521 bytes)
   213d63899f7397caedf76a972af8d9770829a14538cfb3447cf8d8ef40566774  scripts/run_qc_force.py  (8702 bytes)
@@ -46,4 +46,37 @@ FILES (24), sorted -- <sha256>  <path>  (<bytes>):
   e8398112e1612455d126dcf34b3b17870ebe5121434651b7cfb8cce38ac7a146  src/lithogpt2/pipeline/incremental.py  (4011 bytes)
   dc4d7ceb601544eb4a391db6d74086f3cd629e79b4936e0d8d377bdebfdf96db  src/lithogpt2/pipeline/qc.py  (9082 bytes)
 ================================================================================
-qc_code_sha256 = 4221fa5421cba139aecb0e2008b32b06a578c3709ad8e620c44e8142d1e713e0
+qc_code_sha256 = e12d4b64fc6dc1d9335696fead286a5ae39fbc84d64f268b485d2032efe2167f
+
+================================================================================
+AMENDMENT 2026-07-20 -- runtime pin fold-in + dlisio declaration reconciliation
+--------------------------------------------------------------------------------
+BODY UPDATED (not silent): the requirements.txt and pyproject.toml per-file sha lines
+above and the aggregate qc_code_sha256 were updated from the 4221fa5-era values to the
+e12d4b64 set at this runtime fold-in. Superseded values, for the record:
+  requirements.txt  4d8a641140490cc397e196c82877ac480ae71f262c4039d7ce3756ae06f6c01e (115 bytes) -> f3923390638447b7733245bc8c58f97c7f0c3c1f5ae8f5aa5cfeec1c1e4c07af (124 bytes)
+  pyproject.toml    d8dfdc3cc0f50927f400439d89fd6a255286aae52009fdee030480b67551f9a1 (1085 bytes) -> 66cbfffbab1fd6484c1ff34635cf432d75caab1a6ed9cfc4ebba672a6117befc (1082 bytes)
+  qc_code_sha256    4221fa5421cba139aecb0e2008b32b06a578c3709ad8e620c44e8142d1e713e0 -> e12d4b64fc6dc1d9335696fead286a5ae39fbc84d64f268b485d2032efe2167f
+Manifest lineage: 88255b43 -> d5b35a00 (runtime pin fold-in). Only these two of the 24
+hashed files changed; the other 22 are byte-identical.
+
+Verified pair (reproduction-verified this session):
+  pandas==2.2.3 / numpy==1.26.3 -- verified by clean-environment regeneration of the
+  corpus manifest against 88255b43 (byte-identical). The measured manifest-path
+  dependency closure is pandas + numpy + transitive only (python-dateutil, pytz, six,
+  tzdata); no pyarrow/lasio/scipy/dlisio in it.
+
+pyarrow / lasio / scipy / dlisio (declared ranges, NOT pinned ==), two distinct facts:
+  (a) They are provably OUTSIDE the manifest-path closure (measured above).
+  (b) SEPARATELY, the versions that wrote the frozen parquets at ingestion time were not
+      recorded; the frozen parquets on disk are ground truth, so regeneration from raw is
+      subject to parser-version variance.
+
+dlisio>=1.0 added to requirements.txt to reconcile with pyproject.toml (dlisio was
+  declared only in pyproject before this amendment).
+
+mnemonic_aliases.yaml remains double-pinned (alias_yaml_sha256 in the manifest payload
+  AND membership in this 24-file qc_code set); intentional, not a conflict.
+
+Freeze-closure rebuild environment recorded at docs/freeze_closure_env_2026-07-20.txt
+  (rebuild env, NOT the ingestion environment).
