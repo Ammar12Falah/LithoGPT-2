@@ -1,0 +1,10 @@
+NLOG rail-rule COMPLETENESS scan -- residual pileups surviving in the frozen processed set.
+*** NOT the historical rail-impact count (unrecoverable without reopening the frozen corpus:
+    processed parquets store rail-nulls as NaN; raw NLOG wells are gone). ***
+OUTSIDE the hashed set: nothing here moves qc_code_sha256 or the FINAL manifest d5b35a00.
+
+wells scanned                 = 5004
+N wells with residual pileup  = 0
+K of N near coverage floor    = 0
+floor margin                  = curve-count slack 0 (passing AND n_curves_meeting == min_curves=3)
+criteria                      = within 1e-06 of a valid_range bound, >=25 samples AND >=5% of finite real
