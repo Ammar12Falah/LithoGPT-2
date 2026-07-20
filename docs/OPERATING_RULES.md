@@ -26,3 +26,12 @@ no-orphan-producers breach (the 88255b43 pin-completion step was unrecorded; rem
 the regenerable seven-pin builder at commit 212faed9). Ingestion-time parser versions for
 this corpus were not recorded and cannot be reconstructed; the frozen parquets are ground
 truth. Rule 13 exists so a sixth instance does not occur.
+
+
+## Rule 14 — Mutation counters mandatory in ingestion (v2.1+)
+Any value-mutating step in ingestion/QC code (sentinel nulling, rail rule, any fill or
+drop) must carry a counter that records what it mutated, into the run records, at run
+time. The NLOG rail rule (_null_rail_pileup) discarded its nulled-count, making the
+historical NLOG rail impact permanently unrecoverable without reopening the frozen corpus
+(the eighth instance of silent-metadata-at-freeze-time). Future ingestion (v2.1 onward)
+makes mutation counters non-optional. Cited to the 2026-07-20 rail-impact finding.
