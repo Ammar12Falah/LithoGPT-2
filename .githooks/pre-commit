@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# pre-commit secret-scan guard (LithoGPT-2).
+# Blocks a commit whose staged files contain credential-shaped strings.
+# Remedy for the ordered secret scan that never landed (only a manual scrub
+# script existed). CONVENIENCE guard: bypassable with 'git commit --no-verify',
+# and it does NOT undo an already-exposed or revoked credential.
+# Outside the hashed set; does not touch freeze d5b35a00.
+set -u
+
+patterns=(
+  'ghp_[A-Za-z0-9]{36}'
+  'github_pat_[A-Za-z0-9_]{82}'
+  'AKIA[0-9A-Z]{16}'
+  'BEGIN[ A-Z]*PRIVATE KEY'
+)
+
+hit=0
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
+  blob="$(git show ":$f" 2>/dev/null)" || continue
+  for p in "${patterns[@]}"; do
+    if printf '%s' "$blob" | grep -Eq -- "$p"; then
+      echo "pre-commit BLOCK: pattern /$p/ matched in staged file: $f"
+      hit=1
+    fi
+  done
+done < <(git diff --cached --name-only --diff-filter=ACM)
+
+if [ "$hit" -ne 0 ]; then
+  echo "pre-commit secret-scan: commit blocked. Override (not recommended): git commit --no-verify"
+  exit 1
+fi
+exit 0
