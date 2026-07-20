@@ -1,0 +1,26 @@
+=== 42 log-bearing-never-processed NLOG boreholes: decomposition (R5) ===
+42 set size = 42
+A. failure-blocked (in nlog_failures)      = 15
+B. remainder (not in nlog_failures)        = 27
+   B1 fetched-but-no-record               = 27
+   B2 never-fetched (no doc in manifest)   = 0
+SUM CHECK  A + B = 42  (must == 42)
+           A + B1 + B2 = 42
+
+cross-check: failure-boreholes not processed (the 15) = 15; all in the 42 = 15
+'5 permanent retry failures' = G1-era note (docs/milestone_G1_nlog.md: 13 of 5,009); NO distinct committed 5-borehole artifact today. Per-file reasons are in nlog_failures.csv.
+
+A) failure-blocked per-FILE reasons (a borehole can hold several failure rows):
+     21  RuntimeError: ValueError: could not convert string to f
+     15  no readable log file for borehole
+      7  read timeout > 120s (killed, skipped)
+      4  RuntimeError: ValueError: no depth-indexed frame with s
+      3  RuntimeError: ValueError: Cannot reshape ~A data size (
+      1  RuntimeError: LASHeaderError: Line 32 (section ~Disclai
+      1  RuntimeError: RuntimeError: 
+Problem:      Too short lo
+
+B) remainder log-doc file_types: {'LAS': 361, 'DLIS': 88}
+   remainder boreholes with >=1 LAS/DLIS doc = 27 of 27
+
+STOP-CONDITION PASS: buckets sum to 42 exactly.
