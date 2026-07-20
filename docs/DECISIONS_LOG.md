@@ -34,3 +34,24 @@ Verbatim ruling:
 "Method for the transfer track is a from-scratch decoder-only transformer. A LoRA-adapted open time-series foundation model runs as a two-day baseline immediately after benchmark freeze, evaluated on dev and open-leaderboard wells only. Pre-registered tripwire: if the adapted TS-FM beats the from-scratch S-model cross-basin on the dev slice by more than 10 percent relative RMSE on at least two of three target curves, a scope amendment is brought before further training spend. The FORCE blind wells are touched once, by the final scoring path, and never by selection, comparison, or tripwire evaluation."
 
 Recorded per advisor amendment 4; pre-registration predates the post-benchmark-freeze TS-FM tripwire baseline. Attribution: advisor. Reviewed at capture.
+
+### 2026-07-19 — Ruling 2 amendment: borehole vs file partition axes (landed 2026-07-20)
+
+Supersedes the taxonomy sentence in the corpus state that conflated two partition levels.
+The 363 NLOG failures are a FILE-level count spanning 174 distinct boreholes; the earlier
+"266 never produced a QC record" is likewise file-level and does NOT slot into the
+borehole-level 1,605 as previously framed.
+
+Authoritative borehole-level taxonomy:
+  6,609 released = 1,563 (no log document) + 42 (log-bearing, never processed) + 5,004
+  processed. Within 5,004: 2,355 passing + 2,649 floor-fail.
+  The 42 = 15 failure-blocked + 27 fetched-but-silently-dropped (never-fetched = 0,
+  verified by byte+sha download evidence).
+
+File-level failures are reported separately (363 file reads across 174 boreholes; 159 of
+those boreholes recovered via alternate files, 15 not) and never blended with the
+borehole-level counts.
+
+Cause: binding ruling history is amended on the record when shown wrong, never silently
+reconciled. The originally-ordered entry (ruled 07-19) was not committed at the time; this
+records it, late, with the landing date stated.
