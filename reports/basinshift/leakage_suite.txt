@@ -1,0 +1,315 @@
+=== BasinShift leakage suite (CHECKPOINT 2) ===
+blind_force names (never in any set): ['15/9-23', '16/2-7', '16/7-6', '17/4-1', '25/10-9', '31/2-10', '31/2-21 S', '34/3-2 S', '35/11-5', '35/9-7']
+[spatial] kgs:test_kgs: split-origin counts = {'test_kgs': 263}  -> all from frozen holdout/open? True
+[spatial] force2020:test_force_open: split-origin counts = {'test_force_open': 10}  -> all from frozen holdout/open? True
+
+--- A_cross_to_norway  train=['kgs:train', 'nlog:train']  test=force2020:test_force_open ---
+  [1] train/test well-id overlap: 0  (expect 0)
+  [2] blind in test (id|safe): 0  (expect 0)
+  [3] test split-origins = {'test_force_open': 10}; from a training block: 0  -> all holdout/open? True
+  [4] test pool is a dev split? False  (expect False)
+  [5] train/test safe_name overlap: 0  (expect 0)
+  => A_cross_to_norway: PASS
+
+--- B_cross_to_kansas  train=['nlog:train', 'force2020:train']  test=kgs:test_kgs ---
+  [1] train/test well-id overlap: 0  (expect 0)
+  [2] blind in test (id|safe): 0  (expect 0)
+  [3] test split-origins = {'test_kgs': 263}; from a training block: 0  -> all holdout/open? True
+  [4] test pool is a dev split? False  (expect False)
+  [5] train/test safe_name overlap: 0  (expect 0)
+  => B_cross_to_kansas: PASS
+
+--- C1_in_kansas  train=['kgs:train']  test=kgs:test_kgs ---
+  [1] train/test well-id overlap: 0  (expect 0)
+  [2] blind in test (id|safe): 0  (expect 0)
+  [3] test split-origins = {'test_kgs': 263}; from a training block: 0  -> all holdout/open? True
+  [4] test pool is a dev split? False  (expect False)
+  [5] train/test safe_name overlap: 0  (expect 0)
+  => C1_in_kansas: PASS
+
+--- C2_in_norway  train=['force2020:train']  test=force2020:test_force_open ---
+  [1] train/test well-id overlap: 0  (expect 0)
+  [2] blind in test (id|safe): 0  (expect 0)
+  [3] test split-origins = {'test_force_open': 10}; from a training block: 0  -> all holdout/open? True
+  [4] test pool is a dev split? False  (expect False)
+  [5] train/test safe_name overlap: 0  (expect 0)
+  => C2_in_norway: PASS
+
+=== per-well split origin (test sets) ===
+[force2020:test_force_open]  (10 wells)
+    15/9-14	force2020	test_force_open
+    25/10-10	force2020	test_force_open
+    25/11-24	force2020	test_force_open
+    25/5-3	force2020	test_force_open
+    29/3-1	force2020	test_force_open
+    34/10-16 R	force2020	test_force_open
+    34/3-3 A	force2020	test_force_open
+    34/6-1 S	force2020	test_force_open
+    35/6-2 S	force2020	test_force_open
+    35/9-8	force2020	test_force_open
+[kgs:test_kgs]  (263 wells)
+    1044753454	kgs	test_kgs
+    1044753459	kgs	test_kgs
+    1044756587	kgs	test_kgs
+    1044761922	kgs	test_kgs
+    1044762081	kgs	test_kgs
+    1044772826	kgs	test_kgs
+    1044772830	kgs	test_kgs
+    1044772833	kgs	test_kgs
+    1044882076	kgs	test_kgs
+    1044882080	kgs	test_kgs
+    1044891331	kgs	test_kgs
+    1044909702	kgs	test_kgs
+    1044913743	kgs	test_kgs
+    1044913745	kgs	test_kgs
+    1044913747	kgs	test_kgs
+    1044913748	kgs	test_kgs
+    1044913757	kgs	test_kgs
+    1044913760	kgs	test_kgs
+    1044913764	kgs	test_kgs
+    1044913766	kgs	test_kgs
+    1044913771	kgs	test_kgs
+    1044913781	kgs	test_kgs
+    1044913785	kgs	test_kgs
+    1044913786	kgs	test_kgs
+    1044913809	kgs	test_kgs
+    1044913811	kgs	test_kgs
+    1044916790	kgs	test_kgs
+    1044916791	kgs	test_kgs
+    1044955721	kgs	test_kgs
+    1044955765	kgs	test_kgs
+    1044955772	kgs	test_kgs
+    1045386972	kgs	test_kgs
+    1055298314	kgs	test_kgs
+    1055298315	kgs	test_kgs
+    1055298336	kgs	test_kgs
+    1055298337	kgs	test_kgs
+    1055298338	kgs	test_kgs
+    1055298339	kgs	test_kgs
+    1055298340	kgs	test_kgs
+    1055298342	kgs	test_kgs
+    1055298345	kgs	test_kgs
+    1055298346	kgs	test_kgs
+    1055298347	kgs	test_kgs
+    1055298348	kgs	test_kgs
+    1055298349	kgs	test_kgs
+    1055298350	kgs	test_kgs
+    1055298351	kgs	test_kgs
+    1055298352	kgs	test_kgs
+    1055298353	kgs	test_kgs
+    1055298354	kgs	test_kgs
+    1055298355	kgs	test_kgs
+    1055298359	kgs	test_kgs
+    1055298360	kgs	test_kgs
+    1055298362	kgs	test_kgs
+    1055298363	kgs	test_kgs
+    1055298365	kgs	test_kgs
+    1055298367	kgs	test_kgs
+    1055298368	kgs	test_kgs
+    1055298370	kgs	test_kgs
+    1055298371	kgs	test_kgs
+    1055298372	kgs	test_kgs
+    1055298378	kgs	test_kgs
+    1055298379	kgs	test_kgs
+    1055298380	kgs	test_kgs
+    1055298381	kgs	test_kgs
+    1055298383	kgs	test_kgs
+    1055298384	kgs	test_kgs
+    1055298385	kgs	test_kgs
+    1055298386	kgs	test_kgs
+    1055298387	kgs	test_kgs
+    1055298388	kgs	test_kgs
+    1055298389	kgs	test_kgs
+    1055298390	kgs	test_kgs
+    1055298391	kgs	test_kgs
+    1055298392	kgs	test_kgs
+    1055298394	kgs	test_kgs
+    1055298395	kgs	test_kgs
+    1055298396	kgs	test_kgs
+    1055298397	kgs	test_kgs
+    1055298398	kgs	test_kgs
+    1055298399	kgs	test_kgs
+    1055298400	kgs	test_kgs
+    1055298403	kgs	test_kgs
+    1055298404	kgs	test_kgs
+    1055298405	kgs	test_kgs
+    1055298406	kgs	test_kgs
+    1055298407	kgs	test_kgs
+    1055298408	kgs	test_kgs
+    1055298409	kgs	test_kgs
+    1055298412	kgs	test_kgs
+    1055298511	kgs	test_kgs
+    1055298512	kgs	test_kgs
+    1055298513	kgs	test_kgs
+    1055298514	kgs	test_kgs
+    1055298519	kgs	test_kgs
+    1055298520	kgs	test_kgs
+    1055298530	kgs	test_kgs
+    1055298531	kgs	test_kgs
+    1055298538	kgs	test_kgs
+    1055298547	kgs	test_kgs
+    1055385229	kgs	test_kgs
+    1055385230	kgs	test_kgs
+    1055385237	kgs	test_kgs
+    1055385238	kgs	test_kgs
+    1055385468	kgs	test_kgs
+    1055385653	kgs	test_kgs
+    1055385658	kgs	test_kgs
+    1055385659	kgs	test_kgs
+    1055385665	kgs	test_kgs
+    1055385666	kgs	test_kgs
+    1055385683	kgs	test_kgs
+    1055385686	kgs	test_kgs
+    1055812757	kgs	test_kgs
+    1055812770	kgs	test_kgs
+    1055812803	kgs	test_kgs
+    1055812818	kgs	test_kgs
+    1055812819	kgs	test_kgs
+    1055812820	kgs	test_kgs
+    1055812822	kgs	test_kgs
+    1055812823	kgs	test_kgs
+    1055812824	kgs	test_kgs
+    1055812825	kgs	test_kgs
+    1055812826	kgs	test_kgs
+    1055812865	kgs	test_kgs
+    1055812903	kgs	test_kgs
+    1055812904	kgs	test_kgs
+    1055812905	kgs	test_kgs
+    1055812906	kgs	test_kgs
+    1055812907	kgs	test_kgs
+    1055812912	kgs	test_kgs
+    1055812917	kgs	test_kgs
+    1055812923	kgs	test_kgs
+    1055812947	kgs	test_kgs
+    1055812959	kgs	test_kgs
+    1055812967	kgs	test_kgs
+    1055812969	kgs	test_kgs
+    1055812972	kgs	test_kgs
+    1055812973	kgs	test_kgs
+    1055812974	kgs	test_kgs
+    1055812975	kgs	test_kgs
+    1055812979	kgs	test_kgs
+    1055812980	kgs	test_kgs
+    1055812986	kgs	test_kgs
+    1055812989	kgs	test_kgs
+    1055813002	kgs	test_kgs
+    1055813006	kgs	test_kgs
+    1055813008	kgs	test_kgs
+    1055813018	kgs	test_kgs
+    1055813029	kgs	test_kgs
+    1055813033	kgs	test_kgs
+    1055813034	kgs	test_kgs
+    1055813035	kgs	test_kgs
+    1055813048	kgs	test_kgs
+    1055813049	kgs	test_kgs
+    1055813063	kgs	test_kgs
+    1055813070	kgs	test_kgs
+    1055813075	kgs	test_kgs
+    1055813081	kgs	test_kgs
+    1055813082	kgs	test_kgs
+    1055813085	kgs	test_kgs
+    1055813086	kgs	test_kgs
+    1055813090	kgs	test_kgs
+    1055813098	kgs	test_kgs
+    1055813136	kgs	test_kgs
+    1055813142	kgs	test_kgs
+    1055813143	kgs	test_kgs
+    1055813144	kgs	test_kgs
+    1055813145	kgs	test_kgs
+    1055813150	kgs	test_kgs
+    1055813172	kgs	test_kgs
+    1055813178	kgs	test_kgs
+    1055813179	kgs	test_kgs
+    1055813181	kgs	test_kgs
+    1055813233	kgs	test_kgs
+    1055813235	kgs	test_kgs
+    1055813241	kgs	test_kgs
+    1055813246	kgs	test_kgs
+    1055813285	kgs	test_kgs
+    1055813298	kgs	test_kgs
+    1055813313	kgs	test_kgs
+    1055813323	kgs	test_kgs
+    1055813335	kgs	test_kgs
+    1055813340	kgs	test_kgs
+    1055813348	kgs	test_kgs
+    1055813352	kgs	test_kgs
+    1055813357	kgs	test_kgs
+    1055813360	kgs	test_kgs
+    1055813379	kgs	test_kgs
+    1055813383	kgs	test_kgs
+    1055813384	kgs	test_kgs
+    1055813387	kgs	test_kgs
+    1055813391	kgs	test_kgs
+    1055813436	kgs	test_kgs
+    1055813455	kgs	test_kgs
+    1055813611	kgs	test_kgs
+    1055813615	kgs	test_kgs
+    1055813661	kgs	test_kgs
+    1055813719	kgs	test_kgs
+    1055813720	kgs	test_kgs
+    1055813721	kgs	test_kgs
+    1055813722	kgs	test_kgs
+    1055813745	kgs	test_kgs
+    1055813746	kgs	test_kgs
+    1055813752	kgs	test_kgs
+    1055813754	kgs	test_kgs
+    1055813755	kgs	test_kgs
+    1055813757	kgs	test_kgs
+    1055813758	kgs	test_kgs
+    1055813759	kgs	test_kgs
+    1055813760	kgs	test_kgs
+    1055813761	kgs	test_kgs
+    1055813762	kgs	test_kgs
+    1055813763	kgs	test_kgs
+    1055813764	kgs	test_kgs
+    1055813765	kgs	test_kgs
+    1055813771	kgs	test_kgs
+    1055813772	kgs	test_kgs
+    1055813780	kgs	test_kgs
+    1055813783	kgs	test_kgs
+    1055813784	kgs	test_kgs
+    1055813785	kgs	test_kgs
+    1055813786	kgs	test_kgs
+    1055813787	kgs	test_kgs
+    1055813788	kgs	test_kgs
+    1055813815	kgs	test_kgs
+    1055813816	kgs	test_kgs
+    1055813818	kgs	test_kgs
+    1055813820	kgs	test_kgs
+    1055813832	kgs	test_kgs
+    1055813833	kgs	test_kgs
+    1055813835	kgs	test_kgs
+    1055813842	kgs	test_kgs
+    1055813851	kgs	test_kgs
+    1055813891	kgs	test_kgs
+    1055814235	kgs	test_kgs
+    1055814236	kgs	test_kgs
+    1055814237	kgs	test_kgs
+    1055814248	kgs	test_kgs
+    1055814265	kgs	test_kgs
+    1055814267	kgs	test_kgs
+    1055814268	kgs	test_kgs
+    1055814269	kgs	test_kgs
+    1055814272	kgs	test_kgs
+    1055814273	kgs	test_kgs
+    1055814274	kgs	test_kgs
+    1055814275	kgs	test_kgs
+    1055814276	kgs	test_kgs
+    1055814277	kgs	test_kgs
+    1055814278	kgs	test_kgs
+    1055814280	kgs	test_kgs
+    1055814281	kgs	test_kgs
+    1055814285	kgs	test_kgs
+    1055814286	kgs	test_kgs
+    1055814292	kgs	test_kgs
+    1055814293	kgs	test_kgs
+    1055814304	kgs	test_kgs
+    1055814305	kgs	test_kgs
+    1055814326	kgs	test_kgs
+    1055814333	kgs	test_kgs
+    1055814337	kgs	test_kgs
+    1055814338	kgs	test_kgs
+    1055814345	kgs	test_kgs
+    1055814360	kgs	test_kgs
+
+=== LEAKAGE SUITE: ALL PASS ===
