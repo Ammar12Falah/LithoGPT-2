@@ -1,0 +1,19 @@
+=== TS-FM Stage 1 A40 cost estimate (from CPU smoke) ===
+CPU per-window fwd+bwd: cfgA=4.27s cfgB=7.29s (batch 4 smoke)
+Proposed schedule: 12 cells x 600 steps x batch 32 = 230400 window-presentations/config
+3 configs (pretrained-A, pretrained-B, control). A40 rate expected $0.44/hr (secure).
+
+scenario                           train_hr infer_hr  total_hr      USD
+LOW  (S=120, control=A, $0.35)          8.4     0.42       8.9     3.10
+EXP  (S=75,  control=A, $0.44)         13.5     0.68      14.2     6.24
+HIGH (S=40,  control=B, $0.44)         30.1     1.27      31.4    13.82
+
+-- speedup sensitivity (expected schedule, control=A, $0.44/hr) --
+ speedup  total_hr      USD
+      40      26.6    11.70
+      60      17.7     7.80
+      75      14.2     6.24
+      90      11.8     5.20
+     120       8.9     3.90
+
+Two-day (48 h) budget fit: HIGH total = 31.4 h -> FITS

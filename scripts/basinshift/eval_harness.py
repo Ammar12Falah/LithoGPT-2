@@ -132,33 +132,35 @@ def xgb_preds(train_pools, target, grid):
 POOLS_ALL = [(s, sn, w) for pool in POOLS.values() for (s, sn, w) in pool]
 
 # ---------------- VALIDATION ----------------
-committed = json.loads((OUT / "baseline_results.json").read_text())
-lines = []
-def log(*a): s = " ".join(str(x) for x in a); print(s); lines.append(s)
 
-log("=== Shared eval harness: reproduce committed XGBoost baseline (physical units) ===")
-allpass = True
-for (name, train_pools, test_pool) in RUNS:
-    for tgt in TARGETS:
-        grid = build_grid(test_pool, tgt)
-        n, sig = population_signature(grid)
-        # scorer sanity: truth-as-pred -> 0
-        zero = score(grid, {wid: y for (wid, valid, y) in grid}, tgt)["pooled_rmse"]
-        preds = xgb_preds(train_pools, tgt, grid)
-        got = score(grid, preds, tgt)
-        c = committed[name]["targets"][tgt]
-        d_rmse = abs(got["pooled_rmse"] - c["pooled_rmse"])
-        d_mae = abs(got["pooled_mae"] - c["pooled_mae"])
-        d_macro = abs(got["macro_well_rmse"] - c["macro_well_rmse"])
-        ok = (got["n_samples"] == c["n_samples"] and got["n_wells"] == c["test_wells_scored"]
-              and d_rmse < 1e-4 and d_mae < 1e-4 and d_macro < 1e-4 and zero < 1e-9)
-        allpass &= ok
-        log(f"[{name}/{tgt}] n={got['n_samples']} (committed {c['n_samples']}) wells={got['n_wells']} "
-            f"popsig={sig[:12]} truth0={zero:.2e}")
-        log(f"    RMSE harness={got['pooled_rmse']:.4f} committed={c['pooled_rmse']:.4f} d={d_rmse:.2e} | "
-            f"MAE {got['pooled_mae']:.4f}/{c['pooled_mae']:.4f} d={d_mae:.2e} | "
-            f"macro {got['macro_well_rmse']:.4f}/{c['macro_well_rmse']:.4f} d={d_macro:.2e}  -> {'PASS' if ok else 'FAIL'}")
+if __name__ == "__main__":
+    committed = json.loads((OUT / "baseline_results.json").read_text())
+    lines = []
+    def log(*a): s = " ".join(str(x) for x in a); print(s); lines.append(s)
 
-log(f"\n=== HARNESS VALIDATION: {'ALL PASS (reproduces committed XGBoost)' if allpass else 'FAILURE'} ===")
-(OUT / "harness_validation.txt").write_text("\n".join(lines) + "\n")
-print("HARNESS_VALIDATION_DONE" if allpass else "HARNESS_VALIDATION_FAILED")
+    log("=== Shared eval harness: reproduce committed XGBoost baseline (physical units) ===")
+    allpass = True
+    for (name, train_pools, test_pool) in RUNS:
+        for tgt in TARGETS:
+            grid = build_grid(test_pool, tgt)
+            n, sig = population_signature(grid)
+            # scorer sanity: truth-as-pred -> 0
+            zero = score(grid, {wid: y for (wid, valid, y) in grid}, tgt)["pooled_rmse"]
+            preds = xgb_preds(train_pools, tgt, grid)
+            got = score(grid, preds, tgt)
+            c = committed[name]["targets"][tgt]
+            d_rmse = abs(got["pooled_rmse"] - c["pooled_rmse"])
+            d_mae = abs(got["pooled_mae"] - c["pooled_mae"])
+            d_macro = abs(got["macro_well_rmse"] - c["macro_well_rmse"])
+            ok = (got["n_samples"] == c["n_samples"] and got["n_wells"] == c["test_wells_scored"]
+                  and d_rmse < 1e-4 and d_mae < 1e-4 and d_macro < 1e-4 and zero < 1e-9)
+            allpass &= ok
+            log(f"[{name}/{tgt}] n={got['n_samples']} (committed {c['n_samples']}) wells={got['n_wells']} "
+                f"popsig={sig[:12]} truth0={zero:.2e}")
+            log(f"    RMSE harness={got['pooled_rmse']:.4f} committed={c['pooled_rmse']:.4f} d={d_rmse:.2e} | "
+                f"MAE {got['pooled_mae']:.4f}/{c['pooled_mae']:.4f} d={d_mae:.2e} | "
+                f"macro {got['macro_well_rmse']:.4f}/{c['macro_well_rmse']:.4f} d={d_macro:.2e}  -> {'PASS' if ok else 'FAIL'}")
+
+    log(f"\n=== HARNESS VALIDATION: {'ALL PASS (reproduces committed XGBoost)' if allpass else 'FAILURE'} ===")
+    (OUT / "harness_validation.txt").write_text("\n".join(lines) + "\n")
+    print("HARNESS_VALIDATION_DONE" if allpass else "HARNESS_VALIDATION_FAILED")
