@@ -1,0 +1,730 @@
+{
+  "epochs": 30,
+  "configs": [
+    {
+      "name": "cb64",
+      "levels": [
+        8,
+        8
+      ],
+      "codebook_size": 64,
+      "patch": 32,
+      "epochs": 30,
+      "per_curve": {
+        "GR": {
+          "raw_rmse": 25.684157483715403,
+          "recon_rmse": 28.203825515480883,
+          "degradation": 0.09810203170429213,
+          "n_samples": 5487809,
+          "n_wells": 559,
+          "degenerate": false,
+          "cause": null
+        },
+        "RHOB": {
+          "raw_rmse": 0.1975571430533653,
+          "recon_rmse": 0.2089546540557189,
+          "degradation": 0.05769222426584102,
+          "n_samples": 2994770,
+          "n_wells": 483,
+          "degenerate": false,
+          "cause": null
+        },
+        "NPHI": {
+          "raw_rmse": 0.07329760749644937,
+          "recon_rmse": 0.07973405340929536,
+          "degradation": 0.08781249665151461,
+          "n_samples": 1189400,
+          "n_wells": 273,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTC": {
+          "raw_rmse": 14.100294683511459,
+          "recon_rmse": 15.913371731144556,
+          "degradation": 0.12858433730135196,
+          "n_samples": 3266374,
+          "n_wells": 319,
+          "degenerate": false,
+          "cause": null
+        },
+        "PEF": {
+          "raw_rmse": 1.4653819179102283,
+          "recon_rmse": 1.750604013218567,
+          "degradation": 0.19464010837194717,
+          "n_samples": 510985,
+          "n_wells": 125,
+          "degenerate": false,
+          "cause": null
+        },
+        "SP": {
+          "raw_rmse": 65.00689080133135,
+          "recon_rmse": 65.48075733108273,
+          "degradation": 0.007289481528959255,
+          "n_samples": 2773570,
+          "n_wells": 401,
+          "degenerate": false,
+          "cause": null
+        },
+        "CALI": {
+          "raw_rmse": 2.2271015120593085,
+          "recon_rmse": 2.2426968459677745,
+          "degradation": 0.0070025249518355604,
+          "n_samples": 2659658,
+          "n_wells": 453,
+          "degenerate": false,
+          "cause": null
+        },
+        "RDEP": {
+          "raw_rmse": 2031.9850373112602,
+          "recon_rmse": 2279.755535290681,
+          "degradation": 0.12193519805995864,
+          "n_samples": 2832967,
+          "n_wells": 422,
+          "degenerate": false,
+          "cause": null
+        },
+        "RMED": {
+          "raw_rmse": 988.185931002003,
+          "recon_rmse": 1006.2043746762511,
+          "degradation": 0.01823385975145148,
+          "n_samples": 2329153,
+          "n_wells": 350,
+          "degenerate": false,
+          "cause": null
+        },
+        "RSHA": {
+          "raw_rmse": 1563.9602491419687,
+          "recon_rmse": 1571.4284792396695,
+          "degradation": 0.004775204549986548,
+          "n_samples": 640414,
+          "n_wells": 112,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTS": {
+          "raw_rmse": 23.742481028372705,
+          "recon_rmse": 27.750677653470596,
+          "degradation": 0.16881962000129735,
+          "n_samples": 27164,
+          "n_wells": 3,
+          "degenerate": false,
+          "cause": null
+        }
+      },
+      "n_curves_scored": 11,
+      "degenerate_curves": [],
+      "median_degradation": 0.08781249665151461,
+      "max_degradation": 0.19464010837194717,
+      "bar_median_le_5pct": false,
+      "bar_max_le_10pct": false,
+      "elapsed_s": 1337.8
+    },
+    {
+      "name": "cb125",
+      "levels": [
+        5,
+        5,
+        5
+      ],
+      "codebook_size": 125,
+      "patch": 32,
+      "epochs": 30,
+      "per_curve": {
+        "GR": {
+          "raw_rmse": 25.684157483715403,
+          "recon_rmse": 28.504032930645053,
+          "degradation": 0.10979045930229729,
+          "n_samples": 5487809,
+          "n_wells": 559,
+          "degenerate": false,
+          "cause": null
+        },
+        "RHOB": {
+          "raw_rmse": 0.1975571430533653,
+          "recon_rmse": 0.20820022467252858,
+          "degradation": 0.053873433552783775,
+          "n_samples": 2994770,
+          "n_wells": 483,
+          "degenerate": false,
+          "cause": null
+        },
+        "NPHI": {
+          "raw_rmse": 0.07329760749644937,
+          "recon_rmse": 0.07865247170931502,
+          "degradation": 0.07305646658555742,
+          "n_samples": 1189400,
+          "n_wells": 273,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTC": {
+          "raw_rmse": 14.100294683511459,
+          "recon_rmse": 15.796232877903703,
+          "degradation": 0.12027679083724635,
+          "n_samples": 3266374,
+          "n_wells": 319,
+          "degenerate": false,
+          "cause": null
+        },
+        "PEF": {
+          "raw_rmse": 1.4653819179102283,
+          "recon_rmse": 1.7440524835787727,
+          "degradation": 0.1901692400203455,
+          "n_samples": 510985,
+          "n_wells": 125,
+          "degenerate": false,
+          "cause": null
+        },
+        "SP": {
+          "raw_rmse": 65.00689080133135,
+          "recon_rmse": 65.2269559990568,
+          "degradation": 0.0033852595472992483,
+          "n_samples": 2773570,
+          "n_wells": 401,
+          "degenerate": false,
+          "cause": null
+        },
+        "CALI": {
+          "raw_rmse": 2.2271015120593085,
+          "recon_rmse": 2.2338216424698403,
+          "degradation": 0.0030174333653601357,
+          "n_samples": 2659658,
+          "n_wells": 453,
+          "degenerate": false,
+          "cause": null
+        },
+        "RDEP": {
+          "raw_rmse": 2031.9850373112602,
+          "recon_rmse": 2291.680419019523,
+          "degradation": 0.12780378641561949,
+          "n_samples": 2832967,
+          "n_wells": 422,
+          "degenerate": false,
+          "cause": null
+        },
+        "RMED": {
+          "raw_rmse": 988.185931002003,
+          "recon_rmse": 1005.8386897073811,
+          "degradation": 0.01786380290546996,
+          "n_samples": 2329153,
+          "n_wells": 350,
+          "degenerate": false,
+          "cause": null
+        },
+        "RSHA": {
+          "raw_rmse": 1563.9602491419687,
+          "recon_rmse": 1571.1354578028354,
+          "degradation": 0.004587845928183416,
+          "n_samples": 640414,
+          "n_wells": 112,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTS": {
+          "raw_rmse": 23.742481028372705,
+          "recon_rmse": 27.441151931984184,
+          "degradation": 0.15578283074930116,
+          "n_samples": 27164,
+          "n_wells": 3,
+          "degenerate": false,
+          "cause": null
+        }
+      },
+      "n_curves_scored": 11,
+      "degenerate_curves": [],
+      "median_degradation": 0.07305646658555742,
+      "max_degradation": 0.1901692400203455,
+      "bar_median_le_5pct": false,
+      "bar_max_le_10pct": false,
+      "elapsed_s": 1333.2
+    },
+    {
+      "name": "cb240",
+      "levels": [
+        8,
+        6,
+        5
+      ],
+      "codebook_size": 240,
+      "patch": 32,
+      "epochs": 30,
+      "per_curve": {
+        "GR": {
+          "raw_rmse": 25.684157483715403,
+          "recon_rmse": 27.842474061581875,
+          "degradation": 0.08403299112438925,
+          "n_samples": 5487809,
+          "n_wells": 559,
+          "degenerate": false,
+          "cause": null
+        },
+        "RHOB": {
+          "raw_rmse": 0.1975571430533653,
+          "recon_rmse": 0.20666023089505423,
+          "degradation": 0.046078252099596026,
+          "n_samples": 2994770,
+          "n_wells": 483,
+          "degenerate": false,
+          "cause": null
+        },
+        "NPHI": {
+          "raw_rmse": 0.07329760749644937,
+          "recon_rmse": 0.07671862710356757,
+          "degradation": 0.04667300508115383,
+          "n_samples": 1189400,
+          "n_wells": 273,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTC": {
+          "raw_rmse": 14.100294683511459,
+          "recon_rmse": 15.821680287863883,
+          "degradation": 0.12208153396718512,
+          "n_samples": 3266374,
+          "n_wells": 319,
+          "degenerate": false,
+          "cause": null
+        },
+        "PEF": {
+          "raw_rmse": 1.4653819179102283,
+          "recon_rmse": 1.7549365487548156,
+          "degradation": 0.1975966997446777,
+          "n_samples": 510985,
+          "n_wells": 125,
+          "degenerate": false,
+          "cause": null
+        },
+        "SP": {
+          "raw_rmse": 65.00689080133135,
+          "recon_rmse": 65.31598111663553,
+          "degradation": 0.004754731559901721,
+          "n_samples": 2773570,
+          "n_wells": 401,
+          "degenerate": false,
+          "cause": null
+        },
+        "CALI": {
+          "raw_rmse": 2.2271015120593085,
+          "recon_rmse": 2.2671836434908363,
+          "degradation": 0.017997442511933616,
+          "n_samples": 2659658,
+          "n_wells": 453,
+          "degenerate": false,
+          "cause": null
+        },
+        "RDEP": {
+          "raw_rmse": 2031.9850373112602,
+          "recon_rmse": 2220.3967119776316,
+          "degradation": 0.09272296360788139,
+          "n_samples": 2832967,
+          "n_wells": 422,
+          "degenerate": false,
+          "cause": null
+        },
+        "RMED": {
+          "raw_rmse": 988.185931002003,
+          "recon_rmse": 1005.2058523718332,
+          "degradation": 0.017223399803488675,
+          "n_samples": 2329153,
+          "n_wells": 350,
+          "degenerate": false,
+          "cause": null
+        },
+        "RSHA": {
+          "raw_rmse": 1563.9602491419687,
+          "recon_rmse": 1570.9081106098133,
+          "degradation": 0.004442479578145556,
+          "n_samples": 640414,
+          "n_wells": 112,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTS": {
+          "raw_rmse": 23.742481028372705,
+          "recon_rmse": 26.02097162201715,
+          "degradation": 0.09596682802111568,
+          "n_samples": 27164,
+          "n_wells": 3,
+          "degenerate": false,
+          "cause": null
+        }
+      },
+      "n_curves_scored": 11,
+      "degenerate_curves": [],
+      "median_degradation": 0.04667300508115383,
+      "max_degradation": 0.1975966997446777,
+      "bar_median_le_5pct": true,
+      "bar_max_le_10pct": false,
+      "elapsed_s": 1312.5
+    },
+    {
+      "name": "cb1000",
+      "levels": [
+        8,
+        5,
+        5,
+        5
+      ],
+      "codebook_size": 1000,
+      "patch": 32,
+      "epochs": 30,
+      "per_curve": {
+        "GR": {
+          "raw_rmse": 25.684157483715403,
+          "recon_rmse": 27.741822314936403,
+          "degradation": 0.08011416502665611,
+          "n_samples": 5487809,
+          "n_wells": 559,
+          "degenerate": false,
+          "cause": null
+        },
+        "RHOB": {
+          "raw_rmse": 0.1975571430533653,
+          "recon_rmse": 0.2050869172452058,
+          "degradation": 0.03811441123040799,
+          "n_samples": 2994770,
+          "n_wells": 483,
+          "degenerate": false,
+          "cause": null
+        },
+        "NPHI": {
+          "raw_rmse": 0.07329760749644937,
+          "recon_rmse": 0.07537787366980811,
+          "degradation": 0.02838109243142093,
+          "n_samples": 1189400,
+          "n_wells": 273,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTC": {
+          "raw_rmse": 14.100294683511459,
+          "recon_rmse": 15.60875261763282,
+          "degradation": 0.10698059636195516,
+          "n_samples": 3266374,
+          "n_wells": 319,
+          "degenerate": false,
+          "cause": null
+        },
+        "PEF": {
+          "raw_rmse": 1.4653819179102283,
+          "recon_rmse": 1.7655717827997586,
+          "degradation": 0.20485435313520797,
+          "n_samples": 510985,
+          "n_wells": 125,
+          "degenerate": false,
+          "cause": null
+        },
+        "SP": {
+          "raw_rmse": 65.00689080133135,
+          "recon_rmse": 65.08757840023537,
+          "degradation": 0.0012412160912388733,
+          "n_samples": 2773570,
+          "n_wells": 401,
+          "degenerate": false,
+          "cause": null
+        },
+        "CALI": {
+          "raw_rmse": 2.2271015120593085,
+          "recon_rmse": 2.2445939524514795,
+          "degradation": 0.00785435252836611,
+          "n_samples": 2659658,
+          "n_wells": 453,
+          "degenerate": false,
+          "cause": null
+        },
+        "RDEP": {
+          "raw_rmse": 2031.9850373112602,
+          "recon_rmse": 2154.7588211951847,
+          "degradation": 0.06042061414309423,
+          "n_samples": 2832967,
+          "n_wells": 422,
+          "degenerate": false,
+          "cause": null
+        },
+        "RMED": {
+          "raw_rmse": 988.185931002003,
+          "recon_rmse": 1005.060172303353,
+          "degradation": 0.01707597808465037,
+          "n_samples": 2329153,
+          "n_wells": 350,
+          "degenerate": false,
+          "cause": null
+        },
+        "RSHA": {
+          "raw_rmse": 1563.9602491419687,
+          "recon_rmse": 1570.5389780855419,
+          "degradation": 0.00420645534129302,
+          "n_samples": 640414,
+          "n_wells": 112,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTS": {
+          "raw_rmse": 23.742481028372705,
+          "recon_rmse": 26.62280407185142,
+          "degradation": 0.12131516668526239,
+          "n_samples": 27164,
+          "n_wells": 3,
+          "degenerate": false,
+          "cause": null
+        }
+      },
+      "n_curves_scored": 11,
+      "degenerate_curves": [],
+      "median_degradation": 0.03811441123040799,
+      "max_degradation": 0.20485435313520797,
+      "bar_median_le_5pct": true,
+      "bar_max_le_10pct": false,
+      "elapsed_s": 1270.6
+    },
+    {
+      "name": "cb4375",
+      "levels": [
+        7,
+        5,
+        5,
+        5,
+        5
+      ],
+      "codebook_size": 4375,
+      "patch": 32,
+      "epochs": 30,
+      "per_curve": {
+        "GR": {
+          "raw_rmse": 25.684157483715403,
+          "recon_rmse": 27.751368956350298,
+          "degradation": 0.08048585880014071,
+          "n_samples": 5487809,
+          "n_wells": 559,
+          "degenerate": false,
+          "cause": null
+        },
+        "RHOB": {
+          "raw_rmse": 0.1975571430533653,
+          "recon_rmse": 0.20269027314616483,
+          "degradation": 0.025983014400106707,
+          "n_samples": 2994770,
+          "n_wells": 483,
+          "degenerate": false,
+          "cause": null
+        },
+        "NPHI": {
+          "raw_rmse": 0.07329760749644937,
+          "recon_rmse": 0.07583704960862497,
+          "degradation": 0.03464563440626106,
+          "n_samples": 1189400,
+          "n_wells": 273,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTC": {
+          "raw_rmse": 14.100294683511459,
+          "recon_rmse": 15.494682185715133,
+          "degradation": 0.09889066388337522,
+          "n_samples": 3266374,
+          "n_wells": 319,
+          "degenerate": false,
+          "cause": null
+        },
+        "PEF": {
+          "raw_rmse": 1.4653819179102283,
+          "recon_rmse": 1.764650551648444,
+          "degradation": 0.20422569029990545,
+          "n_samples": 510985,
+          "n_wells": 125,
+          "degenerate": false,
+          "cause": null
+        },
+        "SP": {
+          "raw_rmse": 65.00689080133135,
+          "recon_rmse": 65.01971717980081,
+          "degradation": 0.00019730798245149497,
+          "n_samples": 2773570,
+          "n_wells": 401,
+          "degenerate": false,
+          "cause": null
+        },
+        "CALI": {
+          "raw_rmse": 2.2271015120593085,
+          "recon_rmse": 2.2423966708270595,
+          "degradation": 0.006867742078630356,
+          "n_samples": 2659658,
+          "n_wells": 453,
+          "degenerate": false,
+          "cause": null
+        },
+        "RDEP": {
+          "raw_rmse": 2031.9850373112602,
+          "recon_rmse": 2183.049559796348,
+          "degradation": 0.07434332424267151,
+          "n_samples": 2832967,
+          "n_wells": 422,
+          "degenerate": false,
+          "cause": null
+        },
+        "RMED": {
+          "raw_rmse": 988.185931002003,
+          "recon_rmse": 1004.3950400092847,
+          "degradation": 0.016402893927912842,
+          "n_samples": 2329153,
+          "n_wells": 350,
+          "degenerate": false,
+          "cause": null
+        },
+        "RSHA": {
+          "raw_rmse": 1563.9602491419687,
+          "recon_rmse": 1570.5279838141687,
+          "degradation": 0.0041994255773465106,
+          "n_samples": 640414,
+          "n_wells": 112,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTS": {
+          "raw_rmse": 23.742481028372705,
+          "recon_rmse": 25.653495224133117,
+          "degradation": 0.08048923756016546,
+          "n_samples": 27164,
+          "n_wells": 3,
+          "degenerate": false,
+          "cause": null
+        }
+      },
+      "n_curves_scored": 11,
+      "degenerate_curves": [],
+      "median_degradation": 0.03464563440626106,
+      "max_degradation": 0.20422569029990545,
+      "bar_median_le_5pct": true,
+      "bar_max_le_10pct": false,
+      "elapsed_s": 1332.1
+    },
+    {
+      "name": "cb15360",
+      "levels": [
+        8,
+        8,
+        8,
+        6,
+        5
+      ],
+      "codebook_size": 15360,
+      "patch": 32,
+      "epochs": 30,
+      "per_curve": {
+        "GR": {
+          "raw_rmse": 25.684157483715403,
+          "recon_rmse": 27.66804368588542,
+          "degradation": 0.07724163050424623,
+          "n_samples": 5487809,
+          "n_wells": 559,
+          "degenerate": false,
+          "cause": null
+        },
+        "RHOB": {
+          "raw_rmse": 0.1975571430533653,
+          "recon_rmse": 0.20269069927997668,
+          "degradation": 0.025985171415566954,
+          "n_samples": 2994770,
+          "n_wells": 483,
+          "degenerate": false,
+          "cause": null
+        },
+        "NPHI": {
+          "raw_rmse": 0.07329760749644937,
+          "recon_rmse": 0.07494546708162753,
+          "degradation": 0.02248176497790848,
+          "n_samples": 1189400,
+          "n_wells": 273,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTC": {
+          "raw_rmse": 14.100294683511459,
+          "recon_rmse": 15.509298837046332,
+          "degradation": 0.09992728415687144,
+          "n_samples": 3266374,
+          "n_wells": 319,
+          "degenerate": false,
+          "cause": null
+        },
+        "PEF": {
+          "raw_rmse": 1.4653819179102283,
+          "recon_rmse": 1.7597828910587159,
+          "degradation": 0.20090392105310736,
+          "n_samples": 510985,
+          "n_wells": 125,
+          "degenerate": false,
+          "cause": null
+        },
+        "SP": {
+          "raw_rmse": 65.00689080133135,
+          "recon_rmse": 65.16122827571522,
+          "degradation": 0.002374170991434413,
+          "n_samples": 2773570,
+          "n_wells": 401,
+          "degenerate": false,
+          "cause": null
+        },
+        "CALI": {
+          "raw_rmse": 2.2271015120593085,
+          "recon_rmse": 2.2400212949441833,
+          "degradation": 0.005801164794203046,
+          "n_samples": 2659658,
+          "n_wells": 453,
+          "degenerate": false,
+          "cause": null
+        },
+        "RDEP": {
+          "raw_rmse": 2031.9850373112602,
+          "recon_rmse": 2143.358507054674,
+          "degradation": 0.054810182013340196,
+          "n_samples": 2832967,
+          "n_wells": 422,
+          "degenerate": false,
+          "cause": null
+        },
+        "RMED": {
+          "raw_rmse": 988.185931002003,
+          "recon_rmse": 1003.7706358992292,
+          "degradation": 0.01577102487324785,
+          "n_samples": 2329153,
+          "n_wells": 350,
+          "degenerate": false,
+          "cause": null
+        },
+        "RSHA": {
+          "raw_rmse": 1563.9602491419687,
+          "recon_rmse": 1570.1479104622463,
+          "degradation": 0.003956405748593869,
+          "n_samples": 640414,
+          "n_wells": 112,
+          "degenerate": false,
+          "cause": null
+        },
+        "DTS": {
+          "raw_rmse": 23.742481028372705,
+          "recon_rmse": 25.612336304202096,
+          "degradation": 0.07875568158167122,
+          "n_samples": 27164,
+          "n_wells": 3,
+          "degenerate": false,
+          "cause": null
+        }
+      },
+      "n_curves_scored": 11,
+      "degenerate_curves": [],
+      "median_degradation": 0.025985171415566954,
+      "max_degradation": 0.20090392105310736,
+      "bar_median_le_5pct": true,
+      "bar_max_le_10pct": false,
+      "elapsed_s": 1252.6
+    }
+  ],
+  "n_configs_done": 6,
+  "provisional_selected": null,
+  "selection_reason": "NO config meets the R8 bar -> ESCALATE to advisor (bar unchanged)",
+  "total_wall_s": 8304.4,
+  "est_cost_usd": 1.01,
+  "money_gate": "UNDER",
+  "note": "Provisional pending GATE APPROVED. R8 pass/fail is the advisor's gate; not self-certified."
+}

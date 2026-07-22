@@ -1,0 +1,169 @@
+=== 6.3 Phase B FSQ sweep START epochs=30 grid=['cb64', 'cb125', 'cb240', 'cb1000', 'cb4375', 'cb15360'] ===
+[bank GR] n=1658934 mean=64.15 std=35.39
+[bank RHOB] n=1071988 mean=2.325 std=0.3548
+[bank NPHI] n=503140 mean=0.2099 std=0.129
+[bank DTC] n=769698 mean=92.58 std=32.09
+[bank PEF] n=201437 mean=3.832 std=1.84
+[bank SP] n=1143629 mean=-15.65 std=80.82
+[bank CALI] n=749652 mean=9.387 std=3.201
+[bank RDEP] n=1127664 mean=0.7789 std=0.6028
+[bank RMED] n=1045052 mean=0.795 std=0.5706
+[bank RSHA] n=191151 mean=0.5265 std=0.7903
+[bank DTS] n=14760 mean=173.8 std=91.07
+[imp GR] raw_RMSE=25.6842 n=5487809 wells=559
+[imp RHOB] raw_RMSE=0.197557 n=2994770 wells=483
+[imp NPHI] raw_RMSE=0.0732976 n=1189400 wells=273
+[imp DTC] raw_RMSE=14.1003 n=3266374 wells=319
+[imp PEF] raw_RMSE=1.46538 n=510985 wells=125
+[imp SP] raw_RMSE=65.0069 n=2773570 wells=401
+[imp CALI] raw_RMSE=2.2271 n=2659658 wells=453
+[imp RDEP] raw_RMSE=2031.99 n=2832967 wells=422
+[imp RMED] raw_RMSE=988.186 n=2329153 wells=350
+[imp RSHA] raw_RMSE=1563.96 n=640414 wells=112
+[imp DTS] raw_RMSE=23.7425 n=27164 wells=3
+=== prep done in 465s (banks+imputers+raw) ===
+  [tok cb64/GR] recon_mse_train=0.20577
+  [tok cb64/RHOB] recon_mse_train=0.07921
+  [tok cb64/NPHI] recon_mse_train=0.12928
+  [tok cb64/DTC] recon_mse_train=0.05941
+  [tok cb64/PEF] recon_mse_train=0.06636
+  [tok cb64/SP] recon_mse_train=0.02827
+  [tok cb64/CALI] recon_mse_train=0.02137
+  [tok cb64/RDEP] recon_mse_train=0.09786
+  [tok cb64/RMED] recon_mse_train=0.10717
+  [tok cb64/RSHA] recon_mse_train=0.07956
+  [tok cb64/DTS] recon_mse_train=0.09735
+  [deg cb64/GR] raw=25.6842 recon=28.2038 deg=+9.81%
+  [deg cb64/RHOB] raw=0.197557 recon=0.208955 deg=+5.77%
+  [deg cb64/NPHI] raw=0.0732976 recon=0.0797341 deg=+8.78%
+  [deg cb64/DTC] raw=14.1003 recon=15.9134 deg=+12.86%
+  [deg cb64/PEF] raw=1.46538 recon=1.7506 deg=+19.46%
+  [deg cb64/SP] raw=65.0069 recon=65.4808 deg=+0.73%
+  [deg cb64/CALI] raw=2.2271 recon=2.2427 deg=+0.70%
+  [deg cb64/RDEP] raw=2031.99 recon=2279.76 deg=+12.19%
+  [deg cb64/RMED] raw=988.186 recon=1006.2 deg=+1.82%
+  [deg cb64/RSHA] raw=1563.96 recon=1571.43 deg=+0.48%
+  [deg cb64/DTS] raw=23.7425 recon=27.7507 deg=+16.88%
+CONFIG_DONE cb64 cb=64 median=0.08781249665151461 max=0.19464010837194717 elapsed=1337.8s
+[projection] elapsed=1803s avg_cfg=1338s remaining=5 projected_total=8492s (guard 13248s)
+  [tok cb125/GR] recon_mse_train=0.16905
+  [tok cb125/RHOB] recon_mse_train=0.06441
+  [tok cb125/NPHI] recon_mse_train=0.10963
+  [tok cb125/DTC] recon_mse_train=0.05344
+  [tok cb125/PEF] recon_mse_train=0.06151
+  [tok cb125/SP] recon_mse_train=0.02016
+  [tok cb125/CALI] recon_mse_train=0.01817
+  [tok cb125/RDEP] recon_mse_train=0.08301
+  [tok cb125/RMED] recon_mse_train=0.09343
+  [tok cb125/RSHA] recon_mse_train=0.07619
+  [tok cb125/DTS] recon_mse_train=0.09602
+  [deg cb125/GR] raw=25.6842 recon=28.504 deg=+10.98%
+  [deg cb125/RHOB] raw=0.197557 recon=0.2082 deg=+5.39%
+  [deg cb125/NPHI] raw=0.0732976 recon=0.0786525 deg=+7.31%
+  [deg cb125/DTC] raw=14.1003 recon=15.7962 deg=+12.03%
+  [deg cb125/PEF] raw=1.46538 recon=1.74405 deg=+19.02%
+  [deg cb125/SP] raw=65.0069 recon=65.227 deg=+0.34%
+  [deg cb125/CALI] raw=2.2271 recon=2.23382 deg=+0.30%
+  [deg cb125/RDEP] raw=2031.99 recon=2291.68 deg=+12.78%
+  [deg cb125/RMED] raw=988.186 recon=1005.84 deg=+1.79%
+  [deg cb125/RSHA] raw=1563.96 recon=1571.14 deg=+0.46%
+  [deg cb125/DTS] raw=23.7425 recon=27.4412 deg=+15.58%
+CONFIG_DONE cb125 cb=125 median=0.07305646658555742 max=0.1901692400203455 elapsed=1333.2s
+[projection] elapsed=3136s avg_cfg=1336s remaining=4 projected_total=8478s (guard 13248s)
+  [tok cb240/GR] recon_mse_train=0.15877
+  [tok cb240/RHOB] recon_mse_train=0.05883
+  [tok cb240/NPHI] recon_mse_train=0.10224
+  [tok cb240/DTC] recon_mse_train=0.04502
+  [tok cb240/PEF] recon_mse_train=0.05563
+  [tok cb240/SP] recon_mse_train=0.01868
+  [tok cb240/CALI] recon_mse_train=0.01567
+  [tok cb240/RDEP] recon_mse_train=0.07357
+  [tok cb240/RMED] recon_mse_train=0.08597
+  [tok cb240/RSHA] recon_mse_train=0.07186
+  [tok cb240/DTS] recon_mse_train=0.09607
+  [deg cb240/GR] raw=25.6842 recon=27.8425 deg=+8.40%
+  [deg cb240/RHOB] raw=0.197557 recon=0.20666 deg=+4.61%
+  [deg cb240/NPHI] raw=0.0732976 recon=0.0767186 deg=+4.67%
+  [deg cb240/DTC] raw=14.1003 recon=15.8217 deg=+12.21%
+  [deg cb240/PEF] raw=1.46538 recon=1.75494 deg=+19.76%
+  [deg cb240/SP] raw=65.0069 recon=65.316 deg=+0.48%
+  [deg cb240/CALI] raw=2.2271 recon=2.26718 deg=+1.80%
+  [deg cb240/RDEP] raw=2031.99 recon=2220.4 deg=+9.27%
+  [deg cb240/RMED] raw=988.186 recon=1005.21 deg=+1.72%
+  [deg cb240/RSHA] raw=1563.96 recon=1570.91 deg=+0.44%
+  [deg cb240/DTS] raw=23.7425 recon=26.021 deg=+9.60%
+CONFIG_DONE cb240 cb=240 median=0.04667300508115383 max=0.1975966997446777 elapsed=1312.5s
+[projection] elapsed=4449s avg_cfg=1328s remaining=3 projected_total=8432s (guard 13248s)
+  [tok cb1000/GR] recon_mse_train=0.12271
+  [tok cb1000/RHOB] recon_mse_train=0.04483
+  [tok cb1000/NPHI] recon_mse_train=0.08191
+  [tok cb1000/DTC] recon_mse_train=0.03717
+  [tok cb1000/PEF] recon_mse_train=0.04459
+  [tok cb1000/SP] recon_mse_train=0.01497
+  [tok cb1000/CALI] recon_mse_train=0.01344
+  [tok cb1000/RDEP] recon_mse_train=0.05843
+  [tok cb1000/RMED] recon_mse_train=0.06499
+  [tok cb1000/RSHA] recon_mse_train=0.06060
+  [tok cb1000/DTS] recon_mse_train=0.07927
+  [deg cb1000/GR] raw=25.6842 recon=27.7418 deg=+8.01%
+  [deg cb1000/RHOB] raw=0.197557 recon=0.205087 deg=+3.81%
+  [deg cb1000/NPHI] raw=0.0732976 recon=0.0753779 deg=+2.84%
+  [deg cb1000/DTC] raw=14.1003 recon=15.6088 deg=+10.70%
+  [deg cb1000/PEF] raw=1.46538 recon=1.76557 deg=+20.49%
+  [deg cb1000/SP] raw=65.0069 recon=65.0876 deg=+0.12%
+  [deg cb1000/CALI] raw=2.2271 recon=2.24459 deg=+0.79%
+  [deg cb1000/RDEP] raw=2031.99 recon=2154.76 deg=+6.04%
+  [deg cb1000/RMED] raw=988.186 recon=1005.06 deg=+1.71%
+  [deg cb1000/RSHA] raw=1563.96 recon=1570.54 deg=+0.42%
+  [deg cb1000/DTS] raw=23.7425 recon=26.6228 deg=+12.13%
+CONFIG_DONE cb1000 cb=1000 median=0.03811441123040799 max=0.20485435313520797 elapsed=1270.6s
+[projection] elapsed=5720s avg_cfg=1314s remaining=2 projected_total=8347s (guard 13248s)
+  [tok cb4375/GR] recon_mse_train=0.09980
+  [tok cb4375/RHOB] recon_mse_train=0.03608
+  [tok cb4375/NPHI] recon_mse_train=0.06694
+  [tok cb4375/DTC] recon_mse_train=0.03199
+  [tok cb4375/PEF] recon_mse_train=0.04554
+  [tok cb4375/SP] recon_mse_train=0.01190
+  [tok cb4375/CALI] recon_mse_train=0.01149
+  [tok cb4375/RDEP] recon_mse_train=0.04919
+  [tok cb4375/RMED] recon_mse_train=0.05367
+  [tok cb4375/RSHA] recon_mse_train=0.05562
+  [tok cb4375/DTS] recon_mse_train=0.06339
+  [deg cb4375/GR] raw=25.6842 recon=27.7514 deg=+8.05%
+  [deg cb4375/RHOB] raw=0.197557 recon=0.20269 deg=+2.60%
+  [deg cb4375/NPHI] raw=0.0732976 recon=0.075837 deg=+3.46%
+  [deg cb4375/DTC] raw=14.1003 recon=15.4947 deg=+9.89%
+  [deg cb4375/PEF] raw=1.46538 recon=1.76465 deg=+20.42%
+  [deg cb4375/SP] raw=65.0069 recon=65.0197 deg=+0.02%
+  [deg cb4375/CALI] raw=2.2271 recon=2.2424 deg=+0.69%
+  [deg cb4375/RDEP] raw=2031.99 recon=2183.05 deg=+7.43%
+  [deg cb4375/RMED] raw=988.186 recon=1004.4 deg=+1.64%
+  [deg cb4375/RSHA] raw=1563.96 recon=1570.53 deg=+0.42%
+  [deg cb4375/DTS] raw=23.7425 recon=25.6535 deg=+8.05%
+CONFIG_DONE cb4375 cb=4375 median=0.03464563440626106 max=0.20422569029990545 elapsed=1332.1s
+[projection] elapsed=7052s avg_cfg=1317s remaining=1 projected_total=8369s (guard 13248s)
+  [tok cb15360/GR] recon_mse_train=0.09195
+  [tok cb15360/RHOB] recon_mse_train=0.03165
+  [tok cb15360/NPHI] recon_mse_train=0.06403
+  [tok cb15360/DTC] recon_mse_train=0.02765
+  [tok cb15360/PEF] recon_mse_train=0.03732
+  [tok cb15360/SP] recon_mse_train=0.00977
+  [tok cb15360/CALI] recon_mse_train=0.01170
+  [tok cb15360/RDEP] recon_mse_train=0.04733
+  [tok cb15360/RMED] recon_mse_train=0.04987
+  [tok cb15360/RSHA] recon_mse_train=0.05433
+  [tok cb15360/DTS] recon_mse_train=0.06627
+  [deg cb15360/GR] raw=25.6842 recon=27.668 deg=+7.72%
+  [deg cb15360/RHOB] raw=0.197557 recon=0.202691 deg=+2.60%
+  [deg cb15360/NPHI] raw=0.0732976 recon=0.0749455 deg=+2.25%
+  [deg cb15360/DTC] raw=14.1003 recon=15.5093 deg=+9.99%
+  [deg cb15360/PEF] raw=1.46538 recon=1.75978 deg=+20.09%
+  [deg cb15360/SP] raw=65.0069 recon=65.1612 deg=+0.24%
+  [deg cb15360/CALI] raw=2.2271 recon=2.24002 deg=+0.58%
+  [deg cb15360/RDEP] raw=2031.99 recon=2143.36 deg=+5.48%
+  [deg cb15360/RMED] raw=988.186 recon=1003.77 deg=+1.58%
+  [deg cb15360/RSHA] raw=1563.96 recon=1570.15 deg=+0.40%
+  [deg cb15360/DTS] raw=23.7425 recon=25.6123 deg=+7.88%
+CONFIG_DONE cb15360 cb=15360 median=0.025985171415566954 max=0.20090392105310736 elapsed=1252.6s
+=== SWEEP DONE configs=6/6 provisional_select=None wall=8304s (~$1.01) gate=UNDER ===
+SWEEP_COMPLETE

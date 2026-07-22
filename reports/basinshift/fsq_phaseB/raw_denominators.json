@@ -1,0 +1,79 @@
+{
+  "GR": {
+    "raw_rmse": 25.684157483715403,
+    "n_samples": 5487809,
+    "n_wells": 559,
+    "degenerate": false,
+    "cause": null
+  },
+  "RHOB": {
+    "raw_rmse": 0.1975571430533653,
+    "n_samples": 2994770,
+    "n_wells": 483,
+    "degenerate": false,
+    "cause": null
+  },
+  "NPHI": {
+    "raw_rmse": 0.07329760749644937,
+    "n_samples": 1189400,
+    "n_wells": 273,
+    "degenerate": false,
+    "cause": null
+  },
+  "DTC": {
+    "raw_rmse": 14.100294683511459,
+    "n_samples": 3266374,
+    "n_wells": 319,
+    "degenerate": false,
+    "cause": null
+  },
+  "PEF": {
+    "raw_rmse": 1.4653819179102283,
+    "n_samples": 510985,
+    "n_wells": 125,
+    "degenerate": false,
+    "cause": null
+  },
+  "SP": {
+    "raw_rmse": 65.00689080133135,
+    "n_samples": 2773570,
+    "n_wells": 401,
+    "degenerate": false,
+    "cause": null
+  },
+  "CALI": {
+    "raw_rmse": 2.2271015120593085,
+    "n_samples": 2659658,
+    "n_wells": 453,
+    "degenerate": false,
+    "cause": null
+  },
+  "RDEP": {
+    "raw_rmse": 2031.9850373112602,
+    "n_samples": 2832967,
+    "n_wells": 422,
+    "degenerate": false,
+    "cause": null
+  },
+  "RMED": {
+    "raw_rmse": 988.185931002003,
+    "n_samples": 2329153,
+    "n_wells": 350,
+    "degenerate": false,
+    "cause": null
+  },
+  "RSHA": {
+    "raw_rmse": 1563.9602491419687,
+    "n_samples": 640414,
+    "n_wells": 112,
+    "degenerate": false,
+    "cause": null
+  },
+  "DTS": {
+    "raw_rmse": 23.742481028372705,
+    "n_samples": 27164,
+    "n_wells": 3,
+    "degenerate": false,
+    "cause": null
+  }
+}
