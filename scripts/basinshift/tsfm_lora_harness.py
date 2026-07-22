@@ -133,13 +133,11 @@ class TSFMBaseline(nn.Module):
         model = MOMENTPipeline.from_pretrained(
             "AutonLab/MOMENT-1-large", model_kwargs={"task_name": "reconstruction"})
         model.init()
-        # MOMENT enables gradient checkpointing on the encoder; with the frozen patch-embedding
-        # feeding it, that zeroes LoRA gradients (inputs have no requires_grad). Disable it so the
-        # LoRA adapters actually train. (Memory/time cost noted in the A40 estimate.)
-        try:
-            model.encoder.gradient_checkpointing_disable()
-        except Exception:
-            pass
+        # MOMENT keeps gradient checkpointing ON (required to fit batch 32 on the A40 48GB). But with
+        # the frozen patch-embedding feeding the encoder, reentrant checkpointing sees no input that
+        # requires grad and returns None gradients for the LoRA adapters. Fix: in encode() during
+        # training we mark the encoder input as requiring grad, so gradients flow to the LoRA adapters
+        # while activation memory stays low. (Confirmed by the grad-norm check in the smoke/report.)
         if init == "random":
             _randomize_backbone(model)
         # frozen backbone pieces we use
@@ -164,6 +162,8 @@ class TSFMBaseline(nn.Module):
         enc_in = self.patch_embedding(xe, mask=input_mask)
         n_patches = enc_in.shape[2]
         enc_in = enc_in.reshape(B * C, n_patches, DMODEL)
+        if self.training and not enc_in.requires_grad:
+            enc_in.requires_grad_(True)   # let reentrant grad-checkpointing flow grads to LoRA
         pv = Masking.convert_seq_to_patch_view(input_mask, PATCH).to(x_enc.device)
         attn = pv.repeat_interleave(C, dim=0)
         out = self.encoder(inputs_embeds=enc_in, attention_mask=attn).last_hidden_state

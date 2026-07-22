@@ -1,0 +1,10 @@
+{
+  "winner": "A",
+  "dev_metric_A": 0.936859769495339,
+  "dev_metric_B": 0.9502131232595339,
+  "steps": 600,
+  "batch": 32,
+  "lr": 0.001,
+  "n_fits": 36,
+  "elapsed_s": 80378.3
+}

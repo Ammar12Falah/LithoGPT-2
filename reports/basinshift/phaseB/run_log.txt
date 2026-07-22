@@ -1,0 +1,229 @@
+
+=== PHASE B RUN @ 2026-07-21 18:23:01 ===
+36 adapter fits = 3 systems x 12 cells. steps=600 batch=32 lr=0.001 LoRA q,v r=8 a=16 seed=20260715
+
+--- SYSTEM pretrained-A (12 cells) ---
+      step 1/600 loss=0.8253
+      step 150/600 loss=0.8431
+      step 300/600 loss=0.6832
+      step 450/600 loss=0.7070
+      step 600/600 loss=1.1217
+  [pretrained/A/A_cross_to_norway/DTC] tparams=1,326,600 gn0=5.17e-03 test_rmse=33.5732 n=135604 dev={'kgs_dev': 21.475, 'nlog_dev': 34.304} t=2249s
+      step 1/600 loss=0.7746
+      step 150/600 loss=0.9831
+      step 300/600 loss=0.5247
+      step 450/600 loss=0.4539
+      step 600/600 loss=0.9932
+  [pretrained/A/A_cross_to_norway/RHOB] tparams=1,326,600 gn0=1.97e-03 test_rmse=0.2385 n=119506 dev={'kgs_dev': 0.32, 'nlog_dev': 0.327} t=2237s
+      step 1/600 loss=1.2392
+      step 150/600 loss=0.6549
+      step 300/600 loss=1.4022
+      step 450/600 loss=0.6474
+      step 600/600 loss=1.0459
+  [pretrained/A/A_cross_to_norway/NPHI] tparams=1,326,600 gn0=3.80e-03 test_rmse=0.1541 n=103766 dev={'kgs_dev': 0.098, 'nlog_dev': 0.143} t=2244s
+      step 1/600 loss=0.5488
+      step 150/600 loss=0.8610
+      step 300/600 loss=0.8228
+      step 450/600 loss=1.3222
+      step 600/600 loss=0.9415
+  [pretrained/A/B_cross_to_kansas/DTC] tparams=1,326,600 gn0=3.98e-03 test_rmse=31.4051 n=69373 dev={'nlog_dev': 34.891} t=2229s
+      step 1/600 loss=0.3543
+      step 150/600 loss=1.0819
+      step 300/600 loss=0.7732
+      step 450/600 loss=0.7518
+      step 600/600 loss=1.5004
+  [pretrained/A/B_cross_to_kansas/RHOB] tparams=1,326,600 gn0=3.21e-03 test_rmse=0.2131 n=575579 dev={'nlog_dev': 0.281} t=2257s
+      step 1/600 loss=0.9538
+      step 150/600 loss=0.6895
+      step 300/600 loss=1.1694
+      step 450/600 loss=1.5288
+      step 600/600 loss=1.3185
+  [pretrained/A/B_cross_to_kansas/NPHI] tparams=1,326,600 gn0=1.54e-03 test_rmse=0.1389 n=457578 dev={'nlog_dev': 0.143} t=2255s
+      step 1/600 loss=1.4688
+      step 150/600 loss=0.7412
+      step 300/600 loss=0.5836
+      step 450/600 loss=0.5516
+      step 600/600 loss=0.6519
+  [pretrained/A/C1_in_kansas/DTC] tparams=1,326,600 gn0=5.86e-03 test_rmse=18.4085 n=69373 dev={'kgs_dev': 19.281} t=2197s
+      step 1/600 loss=1.5657
+      step 150/600 loss=0.6578
+      step 300/600 loss=0.7841
+      step 450/600 loss=0.9114
+      step 600/600 loss=0.5410
+  [pretrained/A/C1_in_kansas/RHOB] tparams=1,326,600 gn0=6.66e-03 test_rmse=0.2088 n=575579 dev={'kgs_dev': 0.274} t=2229s
+      step 1/600 loss=0.9112
+      step 150/600 loss=0.6714
+      step 300/600 loss=0.8354
+      step 450/600 loss=0.4100
+      step 600/600 loss=0.8764
+  [pretrained/A/C1_in_kansas/NPHI] tparams=1,326,600 gn0=2.34e-03 test_rmse=0.1019 n=457578 dev={'kgs_dev': 0.096} t=2222s
+      step 1/600 loss=1.0223
+      step 150/600 loss=0.8922
+      step 300/600 loss=0.6978
+      step 450/600 loss=0.6394
+      step 600/600 loss=0.4565
+  [pretrained/A/C2_in_norway/DTC] tparams=1,326,600 gn0=2.50e-03 test_rmse=24.1182 n=135604 dev={} t=2186s
+      step 1/600 loss=1.3976
+      step 150/600 loss=0.9490
+      step 300/600 loss=0.9845
+      step 450/600 loss=0.6384
+      step 600/600 loss=0.7129
+  [pretrained/A/C2_in_norway/RHOB] tparams=1,326,600 gn0=1.64e-03 test_rmse=0.2270 n=119506 dev={} t=2184s
+      step 1/600 loss=0.9612
+      step 150/600 loss=1.3504
+      step 300/600 loss=0.7792
+      step 450/600 loss=0.6910
+      step 600/600 loss=0.5772
+  [pretrained/A/C2_in_norway/NPHI] tparams=1,326,600 gn0=3.92e-03 test_rmse=0.1161 n=103766 dev={} t=2180s
+
+--- SYSTEM pretrained-B (12 cells) ---
+      step 1/600 loss=0.7983
+      step 150/600 loss=0.9341
+      step 300/600 loss=0.8016
+      step 450/600 loss=0.7184
+      step 600/600 loss=1.2548
+  [pretrained/B/A_cross_to_norway/DTC] tparams=2,379,272 gn0=4.34e-03 test_rmse=32.4701 n=135604 dev={'kgs_dev': 25.277, 'nlog_dev': 34.788} t=2230s
+      step 1/600 loss=0.7638
+      step 150/600 loss=1.0583
+      step 300/600 loss=0.6278
+      step 450/600 loss=0.4187
+      step 600/600 loss=1.3396
+  [pretrained/B/A_cross_to_norway/RHOB] tparams=2,379,272 gn0=1.11e-03 test_rmse=0.2424 n=119506 dev={'kgs_dev': 0.361, 'nlog_dev': 0.287} t=2218s
+      step 1/600 loss=1.2194
+      step 150/600 loss=0.6761
+      step 300/600 loss=1.4851
+      step 450/600 loss=0.8618
+      step 600/600 loss=1.1213
+  [pretrained/B/A_cross_to_norway/NPHI] tparams=2,379,272 gn0=3.00e-03 test_rmse=0.1570 n=103766 dev={'kgs_dev': 0.119, 'nlog_dev': 0.147} t=2228s
+      step 1/600 loss=0.5295
+      step 150/600 loss=0.8390
+      step 300/600 loss=0.9280
+      step 450/600 loss=1.3236
+      step 600/600 loss=0.9398
+  [pretrained/B/B_cross_to_kansas/DTC] tparams=2,379,272 gn0=3.07e-03 test_rmse=31.5309 n=69373 dev={'nlog_dev': 34.903} t=2209s
+      step 1/600 loss=0.3758
+      step 150/600 loss=1.0214
+      step 300/600 loss=0.8183
+      step 450/600 loss=0.7435
+      step 600/600 loss=1.5077
+  [pretrained/B/B_cross_to_kansas/RHOB] tparams=2,379,272 gn0=3.77e-03 test_rmse=0.2088 n=575579 dev={'nlog_dev': 0.28} t=2240s
+      step 1/600 loss=0.9580
+      step 150/600 loss=1.1152
+      step 300/600 loss=1.1101
+      step 450/600 loss=1.9122
+      step 600/600 loss=1.5916
+  [pretrained/B/B_cross_to_kansas/NPHI] tparams=2,379,272 gn0=1.83e-03 test_rmse=0.1262 n=457578 dev={'nlog_dev': 0.147} t=2233s
+      step 1/600 loss=1.4977
+      step 150/600 loss=0.7674
+      step 300/600 loss=0.5060
+      step 450/600 loss=0.7031
+      step 600/600 loss=0.7207
+  [pretrained/B/C1_in_kansas/DTC] tparams=2,379,272 gn0=6.43e-03 test_rmse=16.5200 n=69373 dev={'kgs_dev': 18.394} t=2184s
+      step 1/600 loss=1.5200
+      step 150/600 loss=0.6121
+      step 300/600 loss=1.1646
+      step 450/600 loss=0.8689
+      step 600/600 loss=0.3957
+  [pretrained/B/C1_in_kansas/RHOB] tparams=2,379,272 gn0=5.56e-03 test_rmse=0.2066 n=575579 dev={'kgs_dev': 0.272} t=2214s
+      step 1/600 loss=0.8996
+      step 150/600 loss=0.6535
+      step 300/600 loss=0.7659
+      step 450/600 loss=0.3645
+      step 600/600 loss=0.8492
+  [pretrained/B/C1_in_kansas/NPHI] tparams=2,379,272 gn0=1.51e-03 test_rmse=0.1121 n=457578 dev={'kgs_dev': 0.101} t=2215s
+      step 1/600 loss=1.0321
+      step 150/600 loss=0.9049
+      step 300/600 loss=0.7717
+      step 450/600 loss=0.7537
+      step 600/600 loss=0.6799
+  [pretrained/B/C2_in_norway/DTC] tparams=2,379,272 gn0=2.96e-03 test_rmse=24.9409 n=135604 dev={} t=2178s
+      step 1/600 loss=1.4064
+      step 150/600 loss=0.8266
+      step 300/600 loss=1.0604
+      step 450/600 loss=0.7361
+      step 600/600 loss=0.5926
+  [pretrained/B/C2_in_norway/RHOB] tparams=2,379,272 gn0=2.25e-03 test_rmse=0.1944 n=119506 dev={} t=2167s
+      step 1/600 loss=0.9385
+      step 150/600 loss=1.6728
+      step 300/600 loss=0.8154
+      step 450/600 loss=0.8125
+      step 600/600 loss=0.7804
+  [pretrained/B/C2_in_norway/NPHI] tparams=2,379,272 gn0=3.24e-03 test_rmse=0.1147 n=103766 dev={} t=2175s
+
+=== DEV SELECTION: rel-metric A=0.9369 B=0.9502 -> WINNER pretrained-A ===
+
+--- SYSTEM control random-A (12 cells) ---
+      step 1/600 loss=0.8768
+      step 150/600 loss=0.9969
+      step 300/600 loss=0.7965
+      step 450/600 loss=0.7727
+      step 600/600 loss=1.2541
+  [random/A/A_cross_to_norway/DTC] tparams=1,326,600 gn0=2.52e-01 test_rmse=32.4065 n=135604 dev={'kgs_dev': 25.344, 'nlog_dev': 34.778} t=2252s
+      step 1/600 loss=0.7980
+      step 150/600 loss=1.0521
+      step 300/600 loss=0.6270
+      step 450/600 loss=0.4112
+      step 600/600 loss=1.3104
+  [random/A/A_cross_to_norway/RHOB] tparams=1,326,600 gn0=1.17e-01 test_rmse=0.2417 n=119506 dev={'kgs_dev': 0.359, 'nlog_dev': 0.291} t=2241s
+      step 1/600 loss=1.2822
+      step 150/600 loss=0.6840
+      step 300/600 loss=1.5504
+      step 450/600 loss=0.8461
+      step 600/600 loss=1.2586
+  [random/A/A_cross_to_norway/NPHI] tparams=1,326,600 gn0=1.89e-01 test_rmse=0.1629 n=103766 dev={'kgs_dev': 0.126, 'nlog_dev': 0.147} t=2247s
+      step 1/600 loss=0.5890
+      step 150/600 loss=0.8699
+      step 300/600 loss=0.7975
+      step 450/600 loss=1.3215
+      step 600/600 loss=0.9396
+  [random/A/B_cross_to_kansas/DTC] tparams=1,326,600 gn0=1.94e-01 test_rmse=31.5590 n=69373 dev={'nlog_dev': 34.907} t=2234s
+      step 1/600 loss=0.3428
+      step 150/600 loss=1.0758
+      step 300/600 loss=0.7791
+      step 450/600 loss=0.7615
+      step 600/600 loss=1.5098
+  [random/A/B_cross_to_kansas/RHOB] tparams=1,326,600 gn0=1.15e-01 test_rmse=0.2080 n=575579 dev={'nlog_dev': 0.28} t=2265s
+      step 1/600 loss=0.9581
+      step 150/600 loss=0.7482
+      step 300/600 loss=1.3522
+      step 450/600 loss=1.9125
+      step 600/600 loss=1.5921
+  [random/A/B_cross_to_kansas/NPHI] tparams=1,326,600 gn0=6.22e-02 test_rmse=0.1262 n=457578 dev={'nlog_dev': 0.147} t=2263s
+      step 1/600 loss=1.4344
+      step 150/600 loss=1.1189
+      step 300/600 loss=0.9758
+      step 450/600 loss=0.9402
+      step 600/600 loss=1.1521
+  [random/A/C1_in_kansas/DTC] tparams=1,326,600 gn0=2.31e-01 test_rmse=23.1251 n=69373 dev={'kgs_dev': 24.271} t=2200s
+      step 1/600 loss=1.6220
+      step 150/600 loss=0.7132
+      step 300/600 loss=1.2629
+      step 450/600 loss=1.1035
+      step 600/600 loss=0.6407
+  [random/A/C1_in_kansas/RHOB] tparams=1,326,600 gn0=3.22e-01 test_rmse=0.2448 n=575579 dev={'kgs_dev': 0.359} t=2237s
+      step 1/600 loss=0.9403
+      step 150/600 loss=0.9120
+      step 300/600 loss=0.9503
+      step 450/600 loss=0.6483
+      step 600/600 loss=1.0306
+  [random/A/C1_in_kansas/NPHI] tparams=1,326,600 gn0=1.32e-01 test_rmse=0.1184 n=457578 dev={'kgs_dev': 0.126} t=2231s
+      step 1/600 loss=1.0166
+      step 150/600 loss=1.0334
+      step 300/600 loss=0.9380
+      step 450/600 loss=0.9438
+      step 600/600 loss=0.9230
+  [random/A/C2_in_norway/DTC] tparams=1,326,600 gn0=8.64e-02 test_rmse=27.5846 n=135604 dev={} t=2188s
+      step 1/600 loss=1.3995
+      step 150/600 loss=0.9072
+      step 300/600 loss=1.1829
+      step 450/600 loss=0.7650
+      step 600/600 loss=0.7829
+  [random/A/C2_in_norway/RHOB] tparams=1,326,600 gn0=6.72e-02 test_rmse=0.2445 n=119506 dev={} t=2188s
+      step 1/600 loss=1.0073
+      step 150/600 loss=1.7856
+      step 300/600 loss=1.1000
+      step 450/600 loss=0.8610
+      step 600/600 loss=1.0693
+  [random/A/C2_in_norway/NPHI] tparams=1,326,600 gn0=2.11e-01 test_rmse=0.1204 n=103766 dev={} t=2186s
+
+[done] winner=pretrained-A elapsed=80378s
