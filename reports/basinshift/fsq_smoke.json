@@ -1,0 +1,42 @@
+{
+  "levels": [
+    8,
+    6,
+    5
+  ],
+  "codebook_size": 240,
+  "patch": 32,
+  "epochs": 3,
+  "cap": 30000,
+  "per_curve": {
+    "DTC": {
+      "raw_rmse": 14.112876282339403,
+      "recon_rmse": 21.808820950922595,
+      "degradation": 0.545313691881063,
+      "n_samples": 3266374,
+      "n_wells": 319
+    },
+    "NPHI": {
+      "raw_rmse": 0.07431425216776641,
+      "recon_rmse": 0.11416575022737102,
+      "degradation": 0.5362564635601633,
+      "n_samples": 1189400,
+      "n_wells": 273
+    }
+  },
+  "n_curves_scored": 2,
+  "median_degradation": 0.5407850777206131,
+  "max_degradation": 0.545313691881063,
+  "bar_median_le_5pct": false,
+  "bar_max_le_10pct": false,
+  "elapsed_s": 366.2,
+  "wall_s_total": 366.2,
+  "env": {
+    "numpy": "1.26.3",
+    "pandas": "2.2.3",
+    "pyarrow": "25.0.0",
+    "xgboost": "3.2.0",
+    "sklearn": "1.9.0",
+    "torch": "2.4.1+cu124"
+  }
+}

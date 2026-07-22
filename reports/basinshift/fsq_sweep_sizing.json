@@ -1,0 +1,20 @@
+{
+  "patch_bank_sizes": {
+    "GR": 1658934,
+    "RHOB": 1071988,
+    "NPHI": 503140,
+    "DTC": 769698,
+    "PEF": 201437,
+    "SP": 1143629,
+    "CALI": 749652,
+    "RDEP": 1127664,
+    "RMED": 1045052,
+    "RSHA": 191151,
+    "DTS": 14760
+  },
+  "total_train_patches": 8477105,
+  "cpu_throughput_patch_steps_per_sec": 162710.2,
+  "probe_curve": "GR",
+  "probe_patches": 200000,
+  "torch_num_threads": 48
+}

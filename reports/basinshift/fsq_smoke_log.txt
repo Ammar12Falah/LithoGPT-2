@@ -1,0 +1,60 @@
+=== R8 acceptance: FSQ levels=[8, 6, 5] codebook=240 tokenize=11 score=2 epochs=3 cap=30000 ===
+  [tok GR] patches=30000 mean=64.15 std=35.39
+      epoch 1/3 mse=0.98895
+      epoch 2/3 mse=0.88921
+      epoch 3/3 mse=0.76159
+  [tok GR] trained in 213.9s
+  [tok RHOB] patches=30000 mean=2.325 std=0.3548
+      epoch 1/3 mse=0.97401
+      epoch 2/3 mse=0.86936
+      epoch 3/3 mse=0.73310
+  [tok RHOB] trained in 2.8s
+  [tok NPHI] patches=30000 mean=0.2099 std=0.129
+      epoch 1/3 mse=0.96041
+      epoch 2/3 mse=0.85373
+      epoch 3/3 mse=0.72940
+  [tok NPHI] trained in 2.2s
+  [tok DTC] patches=30000 mean=92.58 std=32.09
+      epoch 1/3 mse=0.96374
+      epoch 2/3 mse=0.84596
+      epoch 3/3 mse=0.70646
+  [tok DTC] trained in 2.5s
+  [tok PEF] patches=30000 mean=3.832 std=1.84
+      epoch 1/3 mse=0.98536
+      epoch 2/3 mse=0.88224
+      epoch 3/3 mse=0.77332
+  [tok PEF] trained in 2.3s
+  [tok SP] patches=30000 mean=-15.65 std=80.82
+      epoch 1/3 mse=0.94775
+      epoch 2/3 mse=0.82838
+      epoch 3/3 mse=0.68724
+  [tok SP] trained in 2.7s
+  [tok CALI] patches=30000 mean=9.387 std=3.201
+      epoch 1/3 mse=0.90071
+      epoch 2/3 mse=0.81877
+      epoch 3/3 mse=0.69592
+  [tok CALI] trained in 2.4s
+  [tok RDEP] patches=30000 mean=0.7789 std=0.6028
+      epoch 1/3 mse=0.83562
+      epoch 2/3 mse=0.74095
+      epoch 3/3 mse=0.64245
+  [tok RDEP] trained in 2.8s
+  [tok RMED] patches=30000 mean=0.795 std=0.5706
+      epoch 1/3 mse=0.87475
+      epoch 2/3 mse=0.77837
+      epoch 3/3 mse=0.66880
+  [tok RMED] trained in 2.4s
+  [tok RSHA] patches=30000 mean=0.5265 std=0.7903
+      epoch 1/3 mse=0.66051
+      epoch 2/3 mse=0.58783
+      epoch 3/3 mse=0.49604
+  [tok RSHA] trained in 2.2s
+  [tok DTS] patches=14760 mean=173.8 std=91.07
+      epoch 1/3 mse=0.88255
+      epoch 2/3 mse=0.83372
+      epoch 3/3 mse=0.79151
+  [tok DTS] trained in 2.3s
+  reconstructed 596 dev wells x 11 curves
+  [deg DTC] raw_RMSE=14.1129 recon_RMSE=21.8088 deg=+54.53%  (n=3266374 wells=319)
+  [deg NPHI] raw_RMSE=0.0743 recon_RMSE=0.1142 deg=+53.63%  (n=1189400 wells=273)
+=== median_deg=0.5407850777206131 max_deg=0.545313691881063 (bar: median<=0.05, max<=0.10; REPORT ONLY, advisor gate) elapsed=366.2s ===
