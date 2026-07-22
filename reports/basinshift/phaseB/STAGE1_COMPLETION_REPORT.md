@@ -51,4 +51,5 @@ impr%% = TS-FM RMSE improvement over XGBoost (negative = worse). ctrl_delta = ra
 - `reports/basinshift/phaseB/frozen_adapted_pretrained_A.json.gz` sha256 **9b41fa56f30b9b19ff089b00549b9f4156d9975833d45145074f49feb8122d31** (39168241 bytes)
 - `reports/basinshift/phaseB/frozen_control_random_A.json.gz` sha256 **47ba1cc55d1e4eef767653a7fab45e4b11a3573739cf818bff45c6a8ce54d1a3** (37398226 bytes)
 - Each = gzip(deterministic, mtime=0) of {cell:{target:{metrics, test_preds, dev_preds}}} with sorted keys. Never re-tune. Raw per-fit files (incl. pretrained-B) are in the off-pod tarball.
+- **Durable frozen-prediction identity = the committed `.gz` sha256s above.** The earlier raw-JSON shas (adapted `1ac9c771...09a6b1`, control `b45cd96a...29d5233`) are SUPERSEDED by the deterministic re-serialization to gzip -- predictions unchanged, only the on-disk container changed (R5 stated-cause). No re-commit of the predictions themselves.
 
