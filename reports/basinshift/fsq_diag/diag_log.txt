@@ -1,0 +1,148 @@
+=== 6.3 diagnostic START configs=['cb4375_p32', 'cb15360_p32', 'cb15360_p16'] dirs=['KGS_to_NLOG', 'NLOG_to_KGS'] ===
+stats computed
+PEF per-basin: KGS: median=3.4600000381469727 range[0.5,20.0] in[1.5,6]=0.9273825236230148 | NLOG: median=3.9579999446868896 range[0.5001999735832214,20.0] in[1.5,6]=0.8196265858158057 | FORCE: median=4.2381134033203125 range[0.5006685256958008,19.999828338623047] in[1.5,6]=0.7718296755431233
+  [glob GR] global-dev raw_RMSE=25.6842 n=5487809 wells=559
+  [glob RHOB] global-dev raw_RMSE=0.197006 n=2994770 wells=483
+  [glob NPHI] global-dev raw_RMSE=0.0739637 n=1189400 wells=273
+  [glob DTC] global-dev raw_RMSE=14.1129 n=3266374 wells=319
+  [glob PEF] global-dev raw_RMSE=1.50338 n=510985 wells=125
+  [glob SP] global-dev raw_RMSE=65.297 n=2773570 wells=401
+  [glob CALI] global-dev raw_RMSE=2.23578 n=2659658 wells=453
+  [glob RDEP] global-dev raw_RMSE=2086.34 n=2832967 wells=422
+  [glob RMED] global-dev raw_RMSE=991.826 n=2329153 wells=350
+  [glob RSHA] global-dev raw_RMSE=1562.95 n=640414 wells=112
+  [glob DTS] global-dev raw_RMSE=23.7425 n=27164 wells=3
+  [raw KGS_to_NLOG/GR] raw_ref_RMSE=45.2231 n=3127610 wells=227
+  [raw KGS_to_NLOG/RHOB] raw_ref_RMSE=0.248219 n=1210703 wells=175
+  [raw KGS_to_NLOG/NPHI] raw_ref_RMSE=0.125468 n=580822 wells=124
+  [raw KGS_to_NLOG/DTC] raw_ref_RMSE=31.3092 n=2310123 wells=195
+  [raw KGS_to_NLOG/PEF] raw_ref_RMSE=2.74271 n=187654 wells=46
+  [raw KGS_to_NLOG/SP] raw_ref_RMSE=89.9867 n=654347 wells=98
+  [raw KGS_to_NLOG/CALI] raw_ref_RMSE=5.70543 n=1253777 wells=151
+  [raw KGS_to_NLOG/RDEP] raw_ref_RMSE=4631.12 n=733473 wells=121
+  [raw KGS_to_NLOG/RMED] raw_ref_RMSE=1683.38 n=456853 wells=77
+  [raw KGS_to_NLOG/RSHA] raw_ref_RMSE=1586.13 n=620288 wells=107
+  [raw KGS_to_NLOG/DTS] raw_ref_RMSE=131.695 n=27164 wells=3
+  [raw NLOG_to_KGS/GR] raw_ref_RMSE=37.7583 n=2360199 wells=332
+  [raw NLOG_to_KGS/RHOB] raw_ref_RMSE=0.312937 n=1784067 wells=308
+  [raw NLOG_to_KGS/NPHI] raw_ref_RMSE=0.159846 n=608578 wells=149
+  [raw NLOG_to_KGS/DTC] raw_ref_RMSE=27.0889 n=956251 wells=124
+  [raw NLOG_to_KGS/PEF] raw_ref_RMSE=1.53167 n=323331 wells=79
+  [raw NLOG_to_KGS/SP] raw_ref_RMSE=91.1204 n=2119223 wells=303
+  [raw NLOG_to_KGS/CALI] raw_ref_RMSE=5.60141 n=1405881 wells=302
+  [raw NLOG_to_KGS/RDEP] raw_ref_RMSE=407.703 n=2099494 wells=301
+  [raw NLOG_to_KGS/RMED] raw_ref_RMSE=760.373 n=1872300 wells=273
+  [raw NLOG_to_KGS/RSHA] raw_ref_RMSE=84.9579 n=20126 wells=5
+  [raw NLOG_to_KGS/DTS] DEGENERATE empty eval grid
+=== precompute done in 545s ===
+=== banks built for patch 32 ===
+  [cb4375_p32] tokenizers trained (patch 32)
+  [cb4375_p32] reconstructed 8087 wells
+    [cb4375_p32/GLOBAL_DEV/GR] raw=25.684 literal=27.751 deg=+8.05%
+    [cb4375_p32/GLOBAL_DEV/RHOB] raw=0.19701 literal=0.203 deg=+3.04%
+    [cb4375_p32/GLOBAL_DEV/NPHI] raw=0.073964 literal=0.075704 deg=+2.35%
+    [cb4375_p32/GLOBAL_DEV/DTC] raw=14.113 literal=15.567 deg=+10.30%
+    [cb4375_p32/GLOBAL_DEV/PEF] raw=1.5034 literal=1.7086 deg=+13.65%
+    [cb4375_p32/GLOBAL_DEV/SP] raw=65.297 literal=65.141 deg=-0.24%
+    [cb4375_p32/GLOBAL_DEV/CALI] raw=2.2358 literal=2.2553 deg=+0.87%
+    [cb4375_p32/GLOBAL_DEV/RDEP] raw=2086.3 literal=2227.2 deg=+6.75%
+    [cb4375_p32/GLOBAL_DEV/RMED] raw=991.83 literal=1004 deg=+1.23%
+    [cb4375_p32/GLOBAL_DEV/RSHA] raw=1563 literal=1570.1 deg=+0.46%
+    [cb4375_p32/GLOBAL_DEV/DTS] raw=23.742 literal=25.653 deg=+8.05%
+    [cb4375_p32/KGS_to_NLOG/GR] raw=45.223 lit=47.801(+5.70%) mat=45.598(+0.83%)
+    [cb4375_p32/KGS_to_NLOG/RHOB] raw=0.24822 lit=0.24455(-1.48%) mat=0.26384(+6.29%)
+    [cb4375_p32/KGS_to_NLOG/NPHI] raw=0.12547 lit=0.12634(+0.70%) mat=0.12435(-0.89%)
+    [cb4375_p32/KGS_to_NLOG/DTC] raw=31.309 lit=31.045(-0.84%) mat=31.411(+0.32%)
+    [cb4375_p32/KGS_to_NLOG/PEF] raw=2.7427 lit=2.8446(+3.71%) mat=2.6825(-2.19%)
+    [cb4375_p32/KGS_to_NLOG/SP] raw=89.987 lit=87.359(-2.92%) mat=97.193(+8.01%)
+    [cb4375_p32/KGS_to_NLOG/CALI] raw=5.7054 lit=5.6914(-0.25%) mat=5.7142(+0.15%)
+    [cb4375_p32/KGS_to_NLOG/RDEP] raw=4631.1 lit=4637.1(+0.13%) mat=4623.1(-0.17%)
+    [cb4375_p32/KGS_to_NLOG/RMED] raw=1683.4 lit=1690.3(+0.41%) mat=1684.5(+0.07%)
+    [cb4375_p32/KGS_to_NLOG/RSHA] raw=1586.1 lit=1598.9(+0.81%) mat=1590(+0.25%)
+    [cb4375_p32/KGS_to_NLOG/DTS] raw=131.69 lit=131.95(+0.19%) mat=132.56(+0.65%)
+    [cb4375_p32/NLOG_to_KGS/GR] raw=37.758 lit=38.088(+0.87%) mat=39.67(+5.06%)
+    [cb4375_p32/NLOG_to_KGS/RHOB] raw=0.31294 lit=0.31407(+0.36%) mat=0.31486(+0.61%)
+    [cb4375_p32/NLOG_to_KGS/NPHI] raw=0.15985 lit=0.15877(-0.68%) mat=0.18295(+14.45%)
+    [cb4375_p32/NLOG_to_KGS/DTC] raw=27.089 lit=27.584(+1.83%) mat=25.627(-5.39%)
+    [cb4375_p32/NLOG_to_KGS/PEF] raw=1.5317 lit=1.5168(-0.97%) mat=1.6285(+6.32%)
+    [cb4375_p32/NLOG_to_KGS/SP] raw=91.12 lit=91.179(+0.06%) mat=87.352(-4.14%)
+    [cb4375_p32/NLOG_to_KGS/CALI] raw=5.6014 lit=5.6515(+0.89%) mat=5.8799(+4.97%)
+    [cb4375_p32/NLOG_to_KGS/RDEP] raw=407.7 lit=365.06(-10.46%) mat=394.63(-3.21%)
+    [cb4375_p32/NLOG_to_KGS/RMED] raw=760.37 lit=756.05(-0.57%) mat=777.44(+2.24%)
+    [cb4375_p32/NLOG_to_KGS/RSHA] raw=84.958 lit=85.101(+0.17%) mat=85.523(+0.67%)
+  [cb4375_p32] DONE elapsed=1808.7s
+[projection] elapsed=2374s avg=1809s proj=5991s guard=13248s
+  [cb15360_p32] tokenizers trained (patch 32)
+  [cb15360_p32] reconstructed 8087 wells
+    [cb15360_p32/GLOBAL_DEV/GR] raw=25.684 literal=27.668 deg=+7.72%
+    [cb15360_p32/GLOBAL_DEV/RHOB] raw=0.19701 literal=0.20283 deg=+2.96%
+    [cb15360_p32/GLOBAL_DEV/NPHI] raw=0.073964 literal=0.074767 deg=+1.09%
+    [cb15360_p32/GLOBAL_DEV/DTC] raw=14.113 literal=15.561 deg=+10.26%
+    [cb15360_p32/GLOBAL_DEV/PEF] raw=1.5034 literal=1.7263 deg=+14.83%
+    [cb15360_p32/GLOBAL_DEV/SP] raw=65.297 literal=65.261 deg=-0.06%
+    [cb15360_p32/GLOBAL_DEV/CALI] raw=2.2358 literal=2.2492 deg=+0.60%
+    [cb15360_p32/GLOBAL_DEV/RDEP] raw=2086.3 literal=2194.4 deg=+5.18%
+    [cb15360_p32/GLOBAL_DEV/RMED] raw=991.83 literal=1003.3 deg=+1.16%
+    [cb15360_p32/GLOBAL_DEV/RSHA] raw=1563 literal=1569.7 deg=+0.43%
+    [cb15360_p32/GLOBAL_DEV/DTS] raw=23.742 literal=25.612 deg=+7.88%
+    [cb15360_p32/KGS_to_NLOG/GR] raw=45.223 lit=47.489(+5.01%) mat=46.047(+1.82%)
+    [cb15360_p32/KGS_to_NLOG/RHOB] raw=0.24822 lit=0.24923(+0.41%) mat=0.27992(+12.77%)
+    [cb15360_p32/KGS_to_NLOG/NPHI] raw=0.12547 lit=0.12555(+0.06%) mat=0.12418(-1.03%)
+    [cb15360_p32/KGS_to_NLOG/DTC] raw=31.309 lit=31.184(-0.40%) mat=31.609(+0.96%)
+    [cb15360_p32/KGS_to_NLOG/PEF] raw=2.7427 lit=2.8697(+4.63%) mat=2.6939(-1.78%)
+    [cb15360_p32/KGS_to_NLOG/SP] raw=89.987 lit=91.113(+1.25%) mat=95.891(+6.56%)
+    [cb15360_p32/KGS_to_NLOG/CALI] raw=5.7054 lit=5.7055(+0.00%) mat=5.8294(+2.17%)
+    [cb15360_p32/KGS_to_NLOG/RDEP] raw=4631.1 lit=4634.4(+0.07%) mat=4621.4(-0.21%)
+    [cb15360_p32/KGS_to_NLOG/RMED] raw=1683.4 lit=1690.4(+0.42%) mat=1688.2(+0.29%)
+    [cb15360_p32/KGS_to_NLOG/RSHA] raw=1586.1 lit=1598.4(+0.78%) mat=1592.5(+0.40%)
+    [cb15360_p32/KGS_to_NLOG/DTS] raw=131.69 lit=131.77(+0.06%) mat=135.56(+2.94%)
+    [cb15360_p32/NLOG_to_KGS/GR] raw=37.758 lit=38.041(+0.75%) mat=39.181(+3.77%)
+    [cb15360_p32/NLOG_to_KGS/RHOB] raw=0.31294 lit=0.31405(+0.35%) mat=0.31644(+1.12%)
+    [cb15360_p32/NLOG_to_KGS/NPHI] raw=0.15985 lit=0.15929(-0.34%) mat=0.18779(+17.48%)
+    [cb15360_p32/NLOG_to_KGS/DTC] raw=27.089 lit=27.316(+0.84%) mat=26.45(-2.36%)
+    [cb15360_p32/NLOG_to_KGS/PEF] raw=1.5317 lit=1.5245(-0.47%) mat=1.6732(+9.24%)
+    [cb15360_p32/NLOG_to_KGS/SP] raw=91.12 lit=91.23(+0.12%) mat=86.818(-4.72%)
+    [cb15360_p32/NLOG_to_KGS/CALI] raw=5.6014 lit=5.6634(+1.11%) mat=5.7545(+2.73%)
+    [cb15360_p32/NLOG_to_KGS/RDEP] raw=407.7 lit=361.19(-11.41%) mat=446.69(+9.56%)
+    [cb15360_p32/NLOG_to_KGS/RMED] raw=760.37 lit=755.48(-0.64%) mat=769.62(+1.22%)
+    [cb15360_p32/NLOG_to_KGS/RSHA] raw=84.958 lit=85.235(+0.33%) mat=85.124(+0.20%)
+  [cb15360_p32] DONE elapsed=2553.2s
+=== banks built for patch 16 ===
+[projection] elapsed=4950s avg=2181s proj=7131s guard=13248s
+  [cb15360_p16] tokenizers trained (patch 16)
+  [cb15360_p16] reconstructed 8087 wells
+    [cb15360_p16/GLOBAL_DEV/GR] raw=25.684 literal=27.308 deg=+6.32%
+    [cb15360_p16/GLOBAL_DEV/RHOB] raw=0.19701 literal=0.19974 deg=+1.39%
+    [cb15360_p16/GLOBAL_DEV/NPHI] raw=0.073964 literal=0.073467 deg=-0.67%
+    [cb15360_p16/GLOBAL_DEV/DTC] raw=14.113 literal=15.411 deg=+9.20%
+    [cb15360_p16/GLOBAL_DEV/PEF] raw=1.5034 literal=1.7114 deg=+13.84%
+    [cb15360_p16/GLOBAL_DEV/SP] raw=65.297 literal=65.028 deg=-0.41%
+    [cb15360_p16/GLOBAL_DEV/CALI] raw=2.2358 literal=2.254 deg=+0.81%
+    [cb15360_p16/GLOBAL_DEV/RDEP] raw=2086.3 literal=2140.2 deg=+2.58%
+    [cb15360_p16/GLOBAL_DEV/RMED] raw=991.83 literal=1002.2 deg=+1.05%
+    [cb15360_p16/GLOBAL_DEV/RSHA] raw=1563 literal=1569.2 deg=+0.40%
+    [cb15360_p16/GLOBAL_DEV/DTS] raw=23.742 literal=24.681 deg=+3.95%
+    [cb15360_p16/KGS_to_NLOG/GR] raw=45.223 lit=47.562(+5.17%) mat=45.217(-0.01%)
+    [cb15360_p16/KGS_to_NLOG/RHOB] raw=0.24822 lit=0.24692(-0.52%) mat=0.27124(+9.27%)
+    [cb15360_p16/KGS_to_NLOG/NPHI] raw=0.12547 lit=0.12579(+0.25%) mat=0.12037(-4.06%)
+    [cb15360_p16/KGS_to_NLOG/DTC] raw=31.309 lit=31.119(-0.61%) mat=31.772(+1.48%)
+    [cb15360_p16/KGS_to_NLOG/PEF] raw=2.7427 lit=2.8594(+4.26%) mat=2.7531(+0.38%)
+    [cb15360_p16/KGS_to_NLOG/SP] raw=89.987 lit=89.368(-0.69%) mat=91.025(+1.15%)
+    [cb15360_p16/KGS_to_NLOG/CALI] raw=5.7054 lit=5.6922(-0.23%) mat=5.8295(+2.18%)
+    [cb15360_p16/KGS_to_NLOG/RDEP] raw=4631.1 lit=4633.7(+0.06%) mat=4632.8(+0.04%)
+    [cb15360_p16/KGS_to_NLOG/RMED] raw=1683.4 lit=1690.3(+0.41%) mat=1688(+0.27%)
+    [cb15360_p16/KGS_to_NLOG/RSHA] raw=1586.1 lit=1598.5(+0.78%) mat=1593.2(+0.45%)
+    [cb15360_p16/KGS_to_NLOG/DTS] raw=131.69 lit=131.78(+0.06%) mat=130.99(-0.53%)
+    [cb15360_p16/NLOG_to_KGS/GR] raw=37.758 lit=37.875(+0.31%) mat=39.756(+5.29%)
+    [cb15360_p16/NLOG_to_KGS/RHOB] raw=0.31294 lit=0.31335(+0.13%) mat=0.31499(+0.66%)
+    [cb15360_p16/NLOG_to_KGS/NPHI] raw=0.15985 lit=0.15964(-0.13%) mat=0.15542(-2.77%)
+    [cb15360_p16/NLOG_to_KGS/DTC] raw=27.089 lit=27.244(+0.57%) mat=26.138(-3.51%)
+    [cb15360_p16/NLOG_to_KGS/PEF] raw=1.5317 lit=1.5147(-1.11%) mat=1.8657(+21.81%)
+    [cb15360_p16/NLOG_to_KGS/SP] raw=91.12 lit=91.176(+0.06%) mat=85.375(-6.30%)
+    [cb15360_p16/NLOG_to_KGS/CALI] raw=5.6014 lit=5.6239(+0.40%) mat=5.8469(+4.38%)
+    [cb15360_p16/NLOG_to_KGS/RDEP] raw=407.7 lit=368.95(-9.51%) mat=481.13(+18.01%)
+    [cb15360_p16/NLOG_to_KGS/RMED] raw=760.37 lit=755.95(-0.58%) mat=800.36(+5.26%)
+    [cb15360_p16/NLOG_to_KGS/RSHA] raw=84.958 lit=85.098(+0.17%) mat=85.466(+0.60%)
+  [cb15360_p16] DONE elapsed=4076.2s
+=== DIAG DONE configs=3/3 wall=9027s (~$1.1) gate=UNDER ===
+DIAG_COMPLETE

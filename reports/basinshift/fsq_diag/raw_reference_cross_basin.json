@@ -1,0 +1,156 @@
+{
+  "KGS_to_NLOG|GR": {
+    "raw_rmse": 45.22309270402802,
+    "n_samples": 3127610,
+    "n_wells": 227,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|RHOB": {
+    "raw_rmse": 0.2482194828361026,
+    "n_samples": 1210703,
+    "n_wells": 175,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|NPHI": {
+    "raw_rmse": 0.12546831823121646,
+    "n_samples": 580822,
+    "n_wells": 124,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|DTC": {
+    "raw_rmse": 31.30915613028206,
+    "n_samples": 2310123,
+    "n_wells": 195,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|PEF": {
+    "raw_rmse": 2.7427104885718503,
+    "n_samples": 187654,
+    "n_wells": 46,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|SP": {
+    "raw_rmse": 89.98669715454515,
+    "n_samples": 654347,
+    "n_wells": 98,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|CALI": {
+    "raw_rmse": 5.70543071049123,
+    "n_samples": 1253777,
+    "n_wells": 151,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|RDEP": {
+    "raw_rmse": 4631.119825204595,
+    "n_samples": 733473,
+    "n_wells": 121,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|RMED": {
+    "raw_rmse": 1683.3828548512479,
+    "n_samples": 456853,
+    "n_wells": 77,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|RSHA": {
+    "raw_rmse": 1586.1256153361762,
+    "n_samples": 620288,
+    "n_wells": 107,
+    "degenerate": false,
+    "cause": null
+  },
+  "KGS_to_NLOG|DTS": {
+    "raw_rmse": 131.69493290434644,
+    "n_samples": 27164,
+    "n_wells": 3,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|GR": {
+    "raw_rmse": 37.758300376133455,
+    "n_samples": 2360199,
+    "n_wells": 332,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|RHOB": {
+    "raw_rmse": 0.31293708042710916,
+    "n_samples": 1784067,
+    "n_wells": 308,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|NPHI": {
+    "raw_rmse": 0.15984577429854138,
+    "n_samples": 608578,
+    "n_wells": 149,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|DTC": {
+    "raw_rmse": 27.088888151053315,
+    "n_samples": 956251,
+    "n_wells": 124,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|PEF": {
+    "raw_rmse": 1.531673936903174,
+    "n_samples": 323331,
+    "n_wells": 79,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|SP": {
+    "raw_rmse": 91.1203788245032,
+    "n_samples": 2119223,
+    "n_wells": 303,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|CALI": {
+    "raw_rmse": 5.6014088431786,
+    "n_samples": 1405881,
+    "n_wells": 302,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|RDEP": {
+    "raw_rmse": 407.7029398651279,
+    "n_samples": 2099494,
+    "n_wells": 301,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|RMED": {
+    "raw_rmse": 760.3732183087413,
+    "n_samples": 1872300,
+    "n_wells": 273,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|RSHA": {
+    "raw_rmse": 84.95794114605529,
+    "n_samples": 20126,
+    "n_wells": 5,
+    "degenerate": false,
+    "cause": null
+  },
+  "NLOG_to_KGS|DTS": {
+    "raw_rmse": null,
+    "n_samples": 0,
+    "n_wells": 0,
+    "degenerate": true,
+    "cause": "empty cross-basin eval grid"
+  }
+}

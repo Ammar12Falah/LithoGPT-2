@@ -118,3 +118,23 @@ as patch count doubles) ~88 min; reconstruct kgs/nlog train+dev per config; raw 
 imputers (matched = per config x 2 directions x 11 curves). Projected ~2.5-3.3 h wall, ~$1.1-1.5 at
 the A40 rate $0.44/hr. UNDER the money gate (<=$5 AND <=4 h). A running-projection guard halts before
 any config that would cross ~92% of 4 h; completed work is written incrementally. No paid GPU.
+
+---
+
+## PART C — ERRATUM (appended 2026-07-23 by Pod; original Part A and Part B text above is UNCHANGED)
+
+Stated cause: a basin was mislabeled in Part B.3. `nlog` is the **Netherlands** (Nederlandse Olie-
+en Gasportaal), NOT Norway. **Norway is the FORCE2020 dataset (`force2020`).** Part B.3 wrote
+"nlog_dev (Norway)" and "(Kansas-train, Norway-eval)"; the correct eval-basin label is
+**Netherlands**. The EXPERIMENT is unchanged and correct: the two cross-basin dev directions are
+`kgs_train -> nlog_dev` and `nlog_train -> kgs_dev`, i.e. **Kansas <-> Netherlands**. Only the
+basin name in the prose was wrong; the pools, the driver, and every computed number are correct.
+
+Consequence (surfaced here so it does not sit only in a config line): the cross-basin transfer
+testable on the frozen DEV splits is **Kansas <-> Netherlands only. Kansas <-> Norway is NOT
+testable on dev**, because FORCE (Norway) has no dev split. Norway is available as an eval basin
+only via the **open-10 holdout**, which is a reported BasinShift eval set; selecting the tokenizer
+on it would be selection on a test set. Pod does not use open-10. The advisor's stated concern
+named Norway; the honesty test actually run is the Kansas<->Netherlands cross-basin proxy. Whether
+Norway transfer is worth evaluating on the open-10 holdout is the advisor's call (Plan recommends
+against, for the selection-on-a-test-set reason).

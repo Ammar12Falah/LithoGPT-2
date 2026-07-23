@@ -1,0 +1,441 @@
+{
+  "name": "cb4375_p32",
+  "levels": [
+    7,
+    5,
+    5,
+    5,
+    5
+  ],
+  "codebook_size": 4375,
+  "patch": 32,
+  "epochs": 30,
+  "global_dev_literal": {
+    "GR": {
+      "raw_rmse": 25.684157483715403,
+      "literal_rmse": 27.751368956350298,
+      "literal_deg": 0.08048585880014071,
+      "n_samples": 5487809,
+      "n_wells": 559,
+      "degenerate": false,
+      "cause": null
+    },
+    "RHOB": {
+      "raw_rmse": 0.19700647109494213,
+      "literal_rmse": 0.2030022289127339,
+      "literal_deg": 0.030434319159507558,
+      "n_samples": 2994770,
+      "n_wells": 483,
+      "degenerate": false,
+      "cause": null
+    },
+    "NPHI": {
+      "raw_rmse": 0.07396365409104792,
+      "literal_rmse": 0.07570403824887555,
+      "literal_deg": 0.023530261980908112,
+      "n_samples": 1189400,
+      "n_wells": 273,
+      "degenerate": false,
+      "cause": null
+    },
+    "DTC": {
+      "raw_rmse": 14.112876282339403,
+      "literal_rmse": 15.566848710169593,
+      "literal_deg": 0.10302452871705989,
+      "n_samples": 3266374,
+      "n_wells": 319,
+      "degenerate": false,
+      "cause": null
+    },
+    "PEF": {
+      "raw_rmse": 1.5033826908257812,
+      "literal_rmse": 1.7085529275558695,
+      "literal_deg": 0.13647239520723226,
+      "n_samples": 510985,
+      "n_wells": 125,
+      "degenerate": false,
+      "cause": null
+    },
+    "SP": {
+      "raw_rmse": 65.29702249095166,
+      "literal_rmse": 65.14135831581991,
+      "literal_deg": -0.002383939867293609,
+      "n_samples": 2773570,
+      "n_wells": 401,
+      "degenerate": false,
+      "cause": null
+    },
+    "CALI": {
+      "raw_rmse": 2.235776083420014,
+      "literal_rmse": 2.2552682360425016,
+      "literal_deg": 0.008718293735690613,
+      "n_samples": 2659658,
+      "n_wells": 453,
+      "degenerate": false,
+      "cause": null
+    },
+    "RDEP": {
+      "raw_rmse": 2086.3442025978716,
+      "literal_rmse": 2227.168000968102,
+      "literal_deg": 0.06749787412588959,
+      "n_samples": 2832967,
+      "n_wells": 422,
+      "degenerate": false,
+      "cause": null
+    },
+    "RMED": {
+      "raw_rmse": 991.8259891868028,
+      "literal_rmse": 1004.0092608707323,
+      "literal_deg": 0.0122836786056782,
+      "n_samples": 2329153,
+      "n_wells": 350,
+      "degenerate": false,
+      "cause": null
+    },
+    "RSHA": {
+      "raw_rmse": 1562.9503323595982,
+      "literal_rmse": 1570.0723559502096,
+      "literal_deg": 0.004556781775566252,
+      "n_samples": 640414,
+      "n_wells": 112,
+      "degenerate": false,
+      "cause": null
+    },
+    "DTS": {
+      "raw_rmse": 23.742481028372705,
+      "literal_rmse": 25.653495224133117,
+      "literal_deg": 0.08048923756016546,
+      "n_samples": 27164,
+      "n_wells": 3,
+      "degenerate": false,
+      "cause": null
+    }
+  },
+  "global_dev_literal_summary": {
+    "median": 0.030434319159507558,
+    "max": 0.13647239520723226,
+    "n": 11,
+    "bar_median_le5": true,
+    "bar_max_le10": false,
+    "max_curve": "PEF"
+  },
+  "per_direction": {
+    "KGS_to_NLOG": {
+      "GR": {
+        "raw_rmse": 45.22309270402802,
+        "literal_rmse": 47.800536938347996,
+        "matched_rmse": 45.5980239621756,
+        "literal_deg": 0.05699398427234066,
+        "matched_deg": 0.008290703614664292,
+        "n_samples": 3127610,
+        "n_wells": 227,
+        "degenerate": false,
+        "cause": null
+      },
+      "RHOB": {
+        "raw_rmse": 0.2482194828361026,
+        "literal_rmse": 0.24454659099214235,
+        "matched_rmse": 0.26383827789013375,
+        "literal_deg": -0.014796952285914754,
+        "matched_deg": 0.06292332445291625,
+        "n_samples": 1210703,
+        "n_wells": 175,
+        "degenerate": false,
+        "cause": null
+      },
+      "NPHI": {
+        "raw_rmse": 0.12546831823121646,
+        "literal_rmse": 0.12634249471090245,
+        "matched_rmse": 0.12435200893115456,
+        "literal_deg": 0.006967308496755598,
+        "matched_deg": -0.00889714085435286,
+        "n_samples": 580822,
+        "n_wells": 124,
+        "degenerate": false,
+        "cause": null
+      },
+      "DTC": {
+        "raw_rmse": 31.30915613028206,
+        "literal_rmse": 31.045434306505594,
+        "matched_rmse": 31.410879216527448,
+        "literal_deg": -0.008423153363798069,
+        "matched_deg": 0.0032489884371876515,
+        "n_samples": 2310123,
+        "n_wells": 195,
+        "degenerate": false,
+        "cause": null
+      },
+      "PEF": {
+        "raw_rmse": 2.7427104885718503,
+        "literal_rmse": 2.844570699234787,
+        "matched_rmse": 2.6825112487224296,
+        "literal_deg": 0.037138520849123995,
+        "matched_deg": -0.021948813081167327,
+        "n_samples": 187654,
+        "n_wells": 46,
+        "degenerate": false,
+        "cause": null
+      },
+      "SP": {
+        "raw_rmse": 89.98669715454515,
+        "literal_rmse": 87.3593377478398,
+        "matched_rmse": 97.19314169350324,
+        "literal_deg": -0.02919719791685505,
+        "matched_deg": 0.08008344307360868,
+        "n_samples": 654347,
+        "n_wells": 98,
+        "degenerate": false,
+        "cause": null
+      },
+      "CALI": {
+        "raw_rmse": 5.70543071049123,
+        "literal_rmse": 5.691408083333247,
+        "matched_rmse": 5.714200883675055,
+        "literal_deg": -0.002457768373595015,
+        "matched_deg": 0.0015371623333709158,
+        "n_samples": 1253777,
+        "n_wells": 151,
+        "degenerate": false,
+        "cause": null
+      },
+      "RDEP": {
+        "raw_rmse": 4631.119825204595,
+        "literal_rmse": 4637.145333361854,
+        "matched_rmse": 4623.083040985292,
+        "literal_deg": 0.0013010909638885085,
+        "matched_deg": -0.0017353868011712838,
+        "n_samples": 733473,
+        "n_wells": 121,
+        "degenerate": false,
+        "cause": null
+      },
+      "RMED": {
+        "raw_rmse": 1683.3828548512479,
+        "literal_rmse": 1690.2559139530622,
+        "matched_rmse": 1684.5145329306354,
+        "literal_deg": 0.004082885293744805,
+        "matched_deg": 0.000672264230401399,
+        "n_samples": 456853,
+        "n_wells": 77,
+        "degenerate": false,
+        "cause": null
+      },
+      "RSHA": {
+        "raw_rmse": 1586.1256153361762,
+        "literal_rmse": 1598.9080633320207,
+        "matched_rmse": 1590.0355438876834,
+        "literal_deg": 0.008058912782349357,
+        "matched_deg": 0.0024650812733255445,
+        "n_samples": 620288,
+        "n_wells": 107,
+        "degenerate": false,
+        "cause": null
+      },
+      "DTS": {
+        "raw_rmse": 131.69493290434644,
+        "literal_rmse": 131.94918878794178,
+        "matched_rmse": 132.5568609616678,
+        "literal_deg": 0.001930642872797598,
+        "matched_deg": 0.006544883985380104,
+        "n_samples": 27164,
+        "n_wells": 3,
+        "degenerate": false,
+        "cause": null
+      }
+    },
+    "NLOG_to_KGS": {
+      "GR": {
+        "raw_rmse": 37.758300376133455,
+        "literal_rmse": 38.08788028458932,
+        "matched_rmse": 39.67039787172066,
+        "literal_deg": 0.008728674362265142,
+        "matched_deg": 0.05064045458984211,
+        "n_samples": 2360199,
+        "n_wells": 332,
+        "degenerate": false,
+        "cause": null
+      },
+      "RHOB": {
+        "raw_rmse": 0.31293708042710916,
+        "literal_rmse": 0.31406707551356966,
+        "matched_rmse": 0.31485784593167054,
+        "literal_deg": 0.0036109338174889253,
+        "matched_deg": 0.006137864844715255,
+        "n_samples": 1784067,
+        "n_wells": 308,
+        "degenerate": false,
+        "cause": null
+      },
+      "NPHI": {
+        "raw_rmse": 0.15984577429854138,
+        "literal_rmse": 0.1587668144403463,
+        "matched_rmse": 0.18294826992634866,
+        "literal_deg": -0.006750005515816344,
+        "matched_deg": 0.14452991159252743,
+        "n_samples": 608578,
+        "n_wells": 149,
+        "degenerate": false,
+        "cause": null
+      },
+      "DTC": {
+        "raw_rmse": 27.088888151053315,
+        "literal_rmse": 27.584239294082533,
+        "matched_rmse": 25.627492477501796,
+        "literal_deg": 0.01828613785353745,
+        "matched_deg": -0.05394816005007181,
+        "n_samples": 956251,
+        "n_wells": 124,
+        "degenerate": false,
+        "cause": null
+      },
+      "PEF": {
+        "raw_rmse": 1.531673936903174,
+        "literal_rmse": 1.5168029600948865,
+        "matched_rmse": 1.6284936419376008,
+        "literal_deg": -0.00970897032977823,
+        "matched_deg": 0.06321169454001577,
+        "n_samples": 323331,
+        "n_wells": 79,
+        "degenerate": false,
+        "cause": null
+      },
+      "SP": {
+        "raw_rmse": 91.1203788245032,
+        "literal_rmse": 91.1793505090937,
+        "matched_rmse": 87.35183673143077,
+        "literal_deg": 0.0006471843659042246,
+        "matched_deg": -0.041357840492856256,
+        "n_samples": 2119223,
+        "n_wells": 303,
+        "degenerate": false,
+        "cause": null
+      },
+      "CALI": {
+        "raw_rmse": 5.6014088431786,
+        "literal_rmse": 5.6514547613054305,
+        "matched_rmse": 5.879872104800052,
+        "literal_deg": 0.008934523354383677,
+        "matched_deg": 0.04971307565962887,
+        "n_samples": 1405881,
+        "n_wells": 302,
+        "degenerate": false,
+        "cause": null
+      },
+      "RDEP": {
+        "raw_rmse": 407.7029398651279,
+        "literal_rmse": 365.0624383137848,
+        "matched_rmse": 394.6255208257731,
+        "literal_deg": -0.1045871819453865,
+        "matched_deg": -0.032075851706345214,
+        "n_samples": 2099494,
+        "n_wells": 301,
+        "degenerate": false,
+        "cause": null
+      },
+      "RMED": {
+        "raw_rmse": 760.3732183087413,
+        "literal_rmse": 756.0486681740454,
+        "matched_rmse": 777.4403544211013,
+        "literal_deg": -0.005687404593647913,
+        "matched_deg": 0.022445735464383592,
+        "n_samples": 1872300,
+        "n_wells": 273,
+        "degenerate": false,
+        "cause": null
+      },
+      "RSHA": {
+        "raw_rmse": 84.95794114605529,
+        "literal_rmse": 85.10055938327382,
+        "matched_rmse": 85.52300214786163,
+        "literal_deg": 0.0016786922481248244,
+        "matched_deg": 0.00665106750686105,
+        "n_samples": 20126,
+        "n_wells": 5,
+        "degenerate": false,
+        "cause": null
+      },
+      "DTS": {
+        "raw_rmse": null,
+        "literal_rmse": null,
+        "matched_rmse": null,
+        "literal_deg": null,
+        "matched_deg": null,
+        "n_samples": 0,
+        "n_wells": 0,
+        "degenerate": true,
+        "cause": "empty cross-basin eval grid"
+      }
+    }
+  },
+  "dir_summary": {
+    "KGS_to_NLOG": {
+      "literal": {
+        "median": 0.001930642872797598,
+        "max": 0.05699398427234066,
+        "n": 11,
+        "bar_median_le5": true,
+        "bar_max_le10": true
+      },
+      "matched": {
+        "median": 0.0024650812733255445,
+        "max": 0.08008344307360868,
+        "n": 11,
+        "bar_median_le5": true,
+        "bar_max_le10": true
+      },
+      "symmetry_headline": {
+        "DTC": {
+          "literal": -0.008423153363798069,
+          "matched": 0.0032489884371876515,
+          "matched_worse": true
+        },
+        "RHOB": {
+          "literal": -0.014796952285914754,
+          "matched": 0.06292332445291625,
+          "matched_worse": true
+        },
+        "NPHI": {
+          "literal": 0.006967308496755598,
+          "matched": -0.00889714085435286,
+          "matched_worse": false
+        }
+      },
+      "symmetry_violated": true
+    },
+    "NLOG_to_KGS": {
+      "literal": {
+        "median": 0.0011629383070145246,
+        "max": 0.01828613785353745,
+        "n": 10,
+        "bar_median_le5": true,
+        "bar_max_le10": true
+      },
+      "matched": {
+        "median": 0.014548401485622321,
+        "max": 0.14452991159252743,
+        "n": 10,
+        "bar_median_le5": true,
+        "bar_max_le10": false
+      },
+      "symmetry_headline": {
+        "DTC": {
+          "literal": 0.01828613785353745,
+          "matched": -0.05394816005007181,
+          "matched_worse": false
+        },
+        "RHOB": {
+          "literal": 0.0036109338174889253,
+          "matched": 0.006137864844715255,
+          "matched_worse": true
+        },
+        "NPHI": {
+          "literal": -0.006750005515816344,
+          "matched": 0.14452991159252743,
+          "matched_worse": true
+        }
+      },
+      "symmetry_violated": true
+    }
+  },
+  "elapsed_s": 1808.7
+}
