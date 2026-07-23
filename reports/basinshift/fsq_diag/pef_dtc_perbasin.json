@@ -1,0 +1,70 @@
+{
+  "note": "RAW arm only, NO reconstruction. Degradation split needs recon (not run here).",
+  "xgb_params": {
+    "n_estimators": 400,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "tree_method": "hist",
+    "random_state": 20260715,
+    "n_jobs": 32
+  },
+  "seed": 20260715,
+  "train_cap": 1000000,
+  "patch_min_valid_frac": 0.5,
+  "per_basin_raw": {
+    "PEF|KGS_dev": {
+      "raw_rmse": 0.6645871971454419,
+      "n_wells": 79,
+      "n_samples": 323331
+    },
+    "PEF|NLOG_Netherlands_dev": {
+      "raw_rmse": 2.3223774389202285,
+      "n_wells": 46,
+      "n_samples": 187654
+    },
+    "DTC|KGS_dev": {
+      "raw_rmse": 10.213991753730895,
+      "n_wells": 124,
+      "n_samples": 956251
+    },
+    "DTC|NLOG_Netherlands_dev": {
+      "raw_rmse": 15.441323096960305,
+      "n_wells": 195,
+      "n_samples": 2310123
+    }
+  },
+  "pef_bank_composition": {
+    "patch32": {
+      "KGS": 147325,
+      "NLOG_Netherlands": 33718,
+      "FORCE_Norway": 20394,
+      "TOTAL": 201437
+    },
+    "patch16": {
+      "KGS": 294661,
+      "NLOG_Netherlands": 67400,
+      "FORCE_Norway": 40708,
+      "TOTAL": 402769
+    }
+  },
+  "dev_well_counts": {
+    "PEF|KGS_dev": {
+      "n_wells": 79,
+      "n_samples": 323331
+    },
+    "PEF|NLOG_Netherlands_dev": {
+      "n_wells": 46,
+      "n_samples": 187654
+    },
+    "DTC|KGS_dev": {
+      "n_wells": 124,
+      "n_samples": 956251
+    },
+    "DTC|NLOG_Netherlands_dev": {
+      "n_wells": 195,
+      "n_samples": 2310123
+    }
+  }
+}
