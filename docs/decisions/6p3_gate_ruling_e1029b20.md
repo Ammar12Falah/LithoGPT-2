@@ -138,3 +138,124 @@ on it would be selection on a test set. Pod does not use open-10. The advisor's 
 named Norway; the honesty test actually run is the Kansas<->Netherlands cross-basin proxy. Whether
 Norway transfer is worth evaluating on the open-10 holdout is the advisor's call (Plan recommends
 against, for the selection-on-a-test-set reason).
+
+
+---
+
+## PART D — R8 AMENDMENT (ADVISOR, SIGNED) + D2/R5 RULING + PLAN PRE-REGISTRATION (appended 2026-07-24 by Pod; Parts A/B/C above UNCHANGED)
+
+### D.0 Original R8 text — search result (per R5, before quoting the amendment)
+
+Searched for a committed, non-truncated original of the R8 acceptance-bar signing text: full
+read of `docs/DECISIONS_LOG.md` (226 lines; contains no R8/FSQ tokenizer entry — only the
+unrelated R7/TS-FM tripwire, which IS quoted there in full verbatim), `git grep` (word-boundary,
+case-sensitive) for `R8` across all tracked `*.md`/`*.py` files, and `git log --all -S"R8"`
+across all refs. Every file that mentions R8 was inspected
+(`docs/decisions/6p3_gate_ruling_e1029b20.md`, `reports/basinshift/fsq_stage6p3_phaseA_report.md`,
+`reports/basinshift/fsq_stage6p3_phaseB_milestone.md`, `reports/basinshift/fsq_6p3_diagnostic_report.md`,
+`reports/basinshift/fsq_smoke_log.txt`, `reports/basinshift/fsq_phaseB/fsq_phaseB_summary.json`).
+
+**Result: no committed artifact contains the original R8 signing text in full.** The fullest
+committed instance is the advisor's own quote, already committed above in PART A of this same
+document (commit `93aad272`), and that quote is itself ellipsis-truncated by the advisor:
+
+> R8 was signed as "FSQ accepted when median per-curve relative degradation... is at most 5
+> percent, with no single canonical curve above 10 percent." PEF is a canonical curve.
+
+Source: `docs/decisions/6p3_gate_ruling_e1029b20.md`, PART A, commit `93aad272`. Per instruction,
+this is reported rather than paraphrased or reconstructed — the elided words are not recovered
+here. The two operational restatements elsewhere in this repo (Pod's own paraphrase, not the
+signed text) are: PART B.0 of this document ("R8 bar unchanged: median per-curve relative
+degradation <=5% AND no single canonical curve >10%") and the Phase A report pre-registration
+(`reports/basinshift/fsq_stage6p3_phaseA_report.md`, "median deg<=5% AND no curve>10%").
+
+### D.1 Advisor's R8 amendment — SIGNED (verbatim, relayed by Plan same day)
+
+> Signed as written, no changes. Commit verbatim, original R8 text quoted in full per R5.
+>
+> - Literal arm remains the gating metric, construction unchanged.
+> - Headline curves (DTC, RHOB, NPHI): 10 percent to 8 percent.
+> - Non-headline canonical curves: 10 percent, unchanged.
+> - Median: 5 percent, unchanged.
+> - Directional symmetry guard: retired as defective, reason recorded (it compares two estimators
+>   whose construction makes matched systematically worse, so firing 6 of 6 is consistent with a
+>   trapdoor rather than a guard; advisor drafting error).
+> - Matched arm: computed and reported at every gate attempt, per-curve absolutes and deltas
+>   committed, non-gating.
+> - Anti-ratchet note on the record: the amended bar fails the current best config on two counts,
+>   DTC 9.20 against 8, PEF 13.84 against 10.
+>
+> D2 items 3 and 4 are released.
+
+Attribution: advisor, signed. Relayed by Plan, same day. D2 items 3 and 4 (per-basin degradation
+split; PEF coverage) are RELEASED by this amendment — see D.3.
+
+### D.2 Advisor's D2/R5 ruling — sequencing change + free decomposition (verbatim, relayed by Plan same day)
+
+> R5: sequencing change, and a free decomposition before item 5 runs
+>
+> Your answer is the more expensive one and you gave it straight. Two additions.
+>
+> Decompose the swing before you attribute it. The metric is a ratio and you already have both
+> terms in both reports. Report PEF's absolute raw-imputation RMSE (denominator) and absolute
+> reconstructed RMSE (numerator) for Phase B and D1 separately. If the denominator moved, the
+> 5.26pp is substantially a denominator artifact, which is precisely the failure mode §3.5's
+> shared harness exists to refuse. If the denominator held and the numerator moved, tokenizer
+> training is itself seed-unstable, which is worse and different. This costs nothing and it
+> determines what item 5 is measuring.
+>
+> Item 5 runs and reports before items 3 and 4 are interpreted. This is the part I got wrong in
+> sequencing. I pre-registered "improved by at least 3pp equals partial" against an assumed small
+> noise floor. If the spread turns out to be comparable to 3pp, that threshold is not
+> distinguishable from noise and the entire P1/P2/P3 tree is being read through an instrument
+> that cannot resolve it. So: measure the floor first, then restate the material-improvement
+> thresholds as a multiple of the measured spread, then apply the tree. Vary the imputer
+> subsample seed and the tokenizer seed separately if separable in budget, since collapsing them
+> wastes the run. Minimum 3 seeds, report mean and full spread per curve.
+>
+> Pre-registered consequence, fixed now: if per-curve spread on any headline curve exceeds 1pp,
+> the gating metric becomes the mean over a pre-registered N seeds with spread reported, and the
+> bar applies to the mean. Fix N before seeing results. That is a hardening, not a loosening,
+> because it removes passing on a lucky draw.
+>
+> Provisional-closure flag. "Patch 16 does not rescue PEF" rests on 14.83 to 13.84, a 0.99pp
+> move. If the floor is several pp, that comparison was made against noise and the patch-size
+> axis is unresolved, not closed. Today's ruling is unaffected, because PEF fails 10 percent at
+> every point in the observed 13.84 to 20.09 band, so the gate outcome is robust even where the
+> inference is not. But do not write "patch size does not help PEF" into BENCHMARK.md or the
+> paper. Write that it is not separable from run-to-run variation at the measured spread, until
+> item 5 says otherwise.
+>
+> Relay verbatim, same day.
+
+Attribution: advisor. Relayed by Plan, same day.
+
+**Disclosure (Plan, this session):** the advisor's ruling as relayed contained a personal
+section that Plan did not relay to Pod. This record shows the engineering portion above is
+COMPLETE as delivered to Pod, not silently truncated — the omission is of a non-engineering
+personal section, disclosed here rather than left unstated.
+
+### D.3 Plan's pre-registration — seed count and threshold restatement (Plan's, NOT the advisor's; subject to advisor veto before compute)
+
+Plan pre-registers the following, fixed before item 5 (the seed-repeat) runs or is interpreted,
+per the advisor's instruction in D.2 that N be fixed before seeing results:
+
+- Seed count for spread measurement: minimum 3 seeds, 5 if budget allows. Report mean and full
+  per-curve spread (not just mean).
+- If per-curve spread on any headline curve (DTC, RHOB, NPHI) exceeds 1pp, the gating metric
+  becomes the mean over N = 5 seeds, bar applied to the mean, spread reported alongside. **N is
+  fixed at 5 now, not chosen after seeing results.**
+- Material-improvement threshold restatement: at least max(3pp, 3 x measured per-curve spread).
+  The restatement may only RAISE the threshold from the pre-registered 3pp, never lower it.
+
+This pre-registration is Plan's, not the advisor's ruling text, and is subject to advisor veto
+before any compute against it is interpreted as decisive.
+
+### D.4 Boundaries carried forward
+
+No config sealing, no bar interpretation beyond what D.1 fixes, no carve-out. Pod reports which
+outcome-tree branch (PART B.6, amended bar per D.1) the data indicates; the advisor rules.
+"Patch size does not help PEF" is NOT to be written into BENCHMARK.md or any report until item 5
+(seed-repeat) establishes the noise floor per D.2 — until then, report it as not separable from
+run-to-run variation at the measured spread. Frozen splits (d5b35a00) untouched; blind_force
+never loaded; outside the hashed set.
