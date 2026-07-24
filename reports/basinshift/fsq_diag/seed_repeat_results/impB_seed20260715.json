@@ -1,0 +1,68 @@
+{
+  "GR": {
+    "raw_rmse": 25.684157483715424,
+    "literal_rmse": 27.32570793239424,
+    "literal_deg": 0.06391295683806691,
+    "degenerate": false
+  },
+  "RHOB": {
+    "raw_rmse": 0.19700647109494215,
+    "literal_rmse": 0.19948306999564355,
+    "literal_deg": 0.012571155084077752,
+    "degenerate": false
+  },
+  "NPHI": {
+    "raw_rmse": 0.07396365409104794,
+    "literal_rmse": 0.07340363528776978,
+    "literal_deg": -0.00757154051081344,
+    "degenerate": false
+  },
+  "DTC": {
+    "raw_rmse": 14.112876282339407,
+    "literal_rmse": 15.449517724908986,
+    "literal_deg": 0.09471077446078287,
+    "degenerate": false
+  },
+  "PEF": {
+    "raw_rmse": 1.503382690825781,
+    "literal_rmse": 1.704364266223636,
+    "literal_deg": 0.13368623745924563,
+    "degenerate": false
+  },
+  "SP": {
+    "raw_rmse": 65.2970224909517,
+    "literal_rmse": 65.1189606795442,
+    "literal_deg": -0.0027269514690685445,
+    "degenerate": false
+  },
+  "CALI": {
+    "raw_rmse": 2.2357760834200135,
+    "literal_rmse": 2.2536506066829265,
+    "literal_deg": 0.007994773445993175,
+    "degenerate": false
+  },
+  "RDEP": {
+    "raw_rmse": 2086.344202597872,
+    "literal_rmse": 2144.7274610205263,
+    "literal_deg": 0.027983521774574253,
+    "degenerate": false
+  },
+  "RMED": {
+    "raw_rmse": 991.8259891868029,
+    "literal_rmse": 1002.289825236639,
+    "literal_deg": 0.010550072456172888,
+    "degenerate": false
+  },
+  "RSHA": {
+    "raw_rmse": 1562.950332359598,
+    "literal_rmse": 1569.1994920788206,
+    "literal_deg": 0.003998309856582765,
+    "degenerate": false
+  },
+  "DTS": {
+    "raw_rmse": 23.742481028372705,
+    "literal_rmse": 24.478650541471307,
+    "literal_deg": 0.0310064273493097,
+    "degenerate": false
+  }
+}

@@ -1,0 +1,12 @@
+=== D2 item 5 TOP-UP (imputer-seed axis only) START seeds=[20260715, 20260716, 20260717, 20260718, 20260719] ===
+banks built (topup)
+[imputer canonical seed=20260715] fit in 160.3s (topup)
+[canonical tokenizer rebuild seed=20260715] done in 3323.8s (topup)
+[sanity check] PEF literal_deg rebuild=13.37% cached=13.37% diff=+0.000pp
+[impB seed=20260715] done in 27.7s  PEF_deg=13.37%
+[impB seed=20260716] done in 174.9s  PEF_deg=13.01%
+[impB seed=20260717] done in 175.5s  PEF_deg=16.14%
+[impB seed=20260718] done in 177.7s  PEF_deg=12.79%
+[impB seed=20260719] done in 180.5s  PEF_deg=14.92%
+=== TOP-UP DONE imp_seeds=5/5 wall=4466s (~$0.55) ===
+TOPUP_COMPLETE
