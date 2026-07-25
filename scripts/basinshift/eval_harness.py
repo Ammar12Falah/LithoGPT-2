@@ -104,8 +104,17 @@ def score(grid, preds_by_well, target):
                 n_samples=int(len(T)), n_wells=len(per_well))
 
 # ---------------- XGBoost ADAPTER (mirrors committed baseline exactly) ----------------
-rng = np.random.default_rng(SEED)
-def build_train(train_pools, target):
+def build_train(train_pools, target, seed=SEED):
+    """D2 Phase 1 fix (defect confirmed via code-diff + rng-consumption analysis, 2026-07-25):
+    a MODULE-LEVEL rng here was shared/stateful across every call within one process, so a
+    curve's subsample depended on how many prior build_train() calls had already consumed the
+    rng in that run. fsq_diag.py's build_train_pool() always created a FRESH rng per call with
+    the same nominal seed; same seed VALUE, different CONSUMPTION PATTERN. This is the confirmed
+    cause of the Phase B (raw_rmse 1.465382) vs D1 (raw_rmse 1.503383) PEF denominator drift --
+    not an environment or seed-value difference (those two runs' env docs are byte-identical).
+    Fixed here by making the rng local and fresh per call, matching fsq_diag.py's pattern, so
+    every caller gets the same subsample for the same (train_pools, target, seed) regardless of
+    how many other curves/configs were scored earlier in the same process."""
     feats = feats_for(target); Xs, ys = [], []
     for p in train_pools:
         for (src, safe, wid) in POOLS[p]:
@@ -114,8 +123,27 @@ def build_train(train_pools, target):
             Xs.append(df[feats].to_numpy()[v]); ys.append(y[v])
     X = np.vstack(Xs); y = np.concatenate(ys)
     if len(y) > TRAIN_CAP:
+        rng = np.random.default_rng(seed)
         idx = rng.choice(len(y), TRAIN_CAP, replace=False); X, y = X[idx], y[idx]
     return X, y
+
+
+def assert_build_train_deterministic(train_pools, target, seed=SEED):
+    """D2 Phase 1 determinism assertion: identical seed + identical input must produce a
+    byte-identical raw baseline. Refuses (raises) rather than silently scoring on a
+    non-reproducible subsample. Call before freezing/using a raw baseline as a denominator."""
+    X1, y1 = build_train(train_pools, target, seed=seed)
+    X2, y2 = build_train(train_pools, target, seed=seed)
+    if X1.shape != X2.shape or y1.shape != y2.shape:
+        raise AssertionError(
+            f"DETERMINISM VIOLATION [{target}]: shape mismatch {X1.shape}/{y1.shape} vs "
+            f"{X2.shape}/{y2.shape} across two calls with identical seed {seed}. Refusing to score.")
+    if not (np.array_equal(X1, X2, equal_nan=True) and np.array_equal(y1, y2, equal_nan=True)):
+        raise AssertionError(
+            f"DETERMINISM VIOLATION [{target}]: two build_train() calls with identical "
+            f"train_pools/target/seed={seed} produced different arrays (byte comparison failed). "
+            f"Refusing to score with this baseline.")
+    return True
 
 def xgb_preds(train_pools, target, grid):
     feats = feats_for(target)
