@@ -1,0 +1,20 @@
+{
+  "computed_2026-07-25": true,
+  "train_pools": ["kgs_train", "nlog_train", "force_train"],
+  "n_wells": 7589,
+  "total_depth_samples": 190002994,
+  "context_depth_samples": 4096,
+  "by_patch": {
+    "32": {
+      "patches_per_sequence": 128,
+      "approx_total_patches": 5937593,
+      "approx_n_sequences": 46387
+    },
+    "16": {
+      "patches_per_sequence": 256,
+      "approx_total_patches": 11875187,
+      "approx_n_sequences": 46387
+    }
+  },
+  "note": "Sequence count is context-in-depth-samples-based, so it is identical across patch sizes (46,387 sequences of 4096 depth-samples each, per-well contiguous, no cross-well concatenation). Patch size only changes patches-per-sequence (128 at patch32, 256 at patch16) and therefore attention-sequence-length. approx_* counts ignore per-well remainder padding at the tail of each well (well lengths are not exact multiples of 4096); exact counts require per-well floor-division and will be slightly lower than total_depth_samples // 4096 applied globally. Model size stays at S (12 layers, d512, 8 heads, ~25M) pending review of these counts."
+}
