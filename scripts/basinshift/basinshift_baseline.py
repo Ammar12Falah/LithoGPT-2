@@ -27,7 +27,6 @@ OUT = ROOT / "reports/basinshift"
 OUT.mkdir(parents=True, exist_ok=True)
 LOG = open(OUT / "run_log.txt", "w")
 SEED = 20260715
-rng = np.random.default_rng(SEED)
 
 CANON = ["GR", "RHOB", "NPHI", "DTC", "PEF", "SP", "CALI", "RDEP", "RMED", "RSHA", "DTS"]
 TARGETS = ["DTC", "RHOB", "NPHI"]
@@ -85,7 +84,13 @@ def load_well(src, safe, wid):
 def feats_for(target):
     return [c for c in CANON if c != target] + ["depth_m"]
 
-def build_train(pool_wells, target):
+def build_train(pool_wells, target, seed=SEED):
+    """D2 baseline ruling (2026-07-25): this function had the SAME module-level shared/stateful
+    rng defect independently identified and fixed in eval_harness.py. Fixed here identically
+    (fresh per-call rng) so any FUTURE regeneration through this script is order-independent and
+    reproducible. baseline_results.json itself (generated before this fix) is NOT regenerated --
+    it is frozen and documented as order-dependent; see
+    docs/decisions/d2_baseline_ruling_2026-07-25.md."""
     feats = feats_for(target)
     Xs, ys = [], []
     for (src, safe, wid) in pool_wells:
@@ -100,6 +105,7 @@ def build_train(pool_wells, target):
         return None, None
     X = np.vstack(Xs); y = np.concatenate(ys)
     if len(y) > TRAIN_CAP:
+        rng = np.random.default_rng(seed)
         idx = rng.choice(len(y), TRAIN_CAP, replace=False)
         X, y = X[idx], y[idx]
     return X, y
