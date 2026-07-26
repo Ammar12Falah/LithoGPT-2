@@ -1,0 +1,132 @@
+{
+  "branch": "1: all nine <=10%, median <=5%, every curve >=3 SE clear -> continue to Phase 6",
+  "frozen_baseline_sha256": "d3ecb97c05472f64f0b810f7d323473abd7ee2b470a222469eedb70a9c21fae4",
+  "max_curve": "DTC",
+  "max_pct": 9.19612441954525,
+  "median_pct": 1.0483638061019906,
+  "nine_curves": [
+    "GR",
+    "RHOB",
+    "NPHI",
+    "DTC",
+    "SP",
+    "CALI",
+    "RDEP",
+    "RMED",
+    "RSHA"
+  ],
+  "per_curve": {
+    "CALI": {
+      "degradation_pct": 0.8146040448559051,
+      "gap_to_10pct_bar": 9.185395955144095,
+      "literal_rmse": 2.2539888058294744,
+      "margin_se_imputer_axis": 37.34394501082511,
+      "margin_se_tokenizer_axis": 69.17205426933577,
+      "n_samples": 2659658,
+      "n_wells": 453,
+      "raw_rmse": 2.235776083420014,
+      "se_imputer_axis_n5": 0.24596747752497683,
+      "se_tokenizer_axis_n3": 0.13279056191361394
+    },
+    "DTC": {
+      "degradation_pct": 9.19612441954525,
+      "gap_to_10pct_bar": 0.8038755804547506,
+      "literal_rmse": 15.410713944439827,
+      "margin_se_imputer_axis": 4.730316956181378,
+      "margin_se_tokenizer_axis": 10.710410371627313,
+      "n_samples": 3266374,
+      "n_wells": 319,
+      "raw_rmse": 14.112876282339403,
+      "se_imputer_axis_n5": 0.169941166289984,
+      "se_tokenizer_axis_n3": 0.07505553499465135
+    },
+    "GR": {
+      "degradation_pct": 6.3229347578738295,
+      "gap_to_10pct_bar": 3.6770652421261705,
+      "literal_rmse": 27.308150004520297,
+      "margin_se_imputer_axis": 54.814452260638944,
+      "margin_se_tokenizer_axis": 22.745942221814584,
+      "n_samples": 5487809,
+      "n_wells": 559,
+      "raw_rmse": 25.684157483715403,
+      "se_imputer_axis_n5": 0.06708203932499368,
+      "se_tokenizer_axis_n3": 0.1616580753730952
+    },
+    "NPHI": {
+      "degradation_pct": -0.6715541851714637,
+      "gap_to_10pct_bar": 10.671554185171464,
+      "literal_rmse": 0.07346694807649375,
+      "margin_se_imputer_axis": 38.48761384454157,
+      "margin_se_tokenizer_axis": 97.2824949707435,
+      "n_samples": 1189400,
+      "n_wells": 273,
+      "raw_rmse": 0.07396365409104792,
+      "se_imputer_axis_n5": 0.2772724292099739,
+      "se_tokenizer_axis_n3": 0.1096965511460289
+    },
+    "RDEP": {
+      "degradation_pct": 2.583117495684655,
+      "gap_to_10pct_bar": 7.416882504315344,
+      "literal_rmse": 2140.2369247153797,
+      "margin_se_imputer_axis": 18.634442090761784,
+      "margin_se_tokenizer_axis": 9.586878605405126,
+      "n_samples": 2832967,
+      "n_wells": 422,
+      "raw_rmse": 2086.3442025978716,
+      "se_imputer_axis_n5": 0.3980200999949626,
+      "se_tokenizer_axis_n3": 0.7736493607140986
+    },
+    "RHOB": {
+      "degradation_pct": 1.385609659156674,
+      "gap_to_10pct_bar": 8.614390340843325,
+      "literal_rmse": 0.19973621178759735,
+      "margin_se_imputer_axis": 83.74940168192721,
+      "margin_se_tokenizer_axis": 87.76801027394835,
+      "n_samples": 2994770,
+      "n_wells": 483,
+      "raw_rmse": 0.19700647109494213,
+      "se_imputer_axis_n5": 0.10285912696499032,
+      "se_tokenizer_axis_n3": 0.09814954576223638
+    },
+    "RMED": {
+      "degradation_pct": 1.0483638061019906,
+      "gap_to_10pct_bar": 8.95163619389801,
+      "literal_rmse": 1002.2239338769502,
+      "margin_se_imputer_axis": 12.43258822323195,
+      "margin_se_tokenizer_axis": 516.8229566234613,
+      "n_samples": 2329153,
+      "n_wells": 350,
+      "raw_rmse": 991.8259891868028,
+      "se_imputer_axis_n5": 0.7200138887549322,
+      "se_tokenizer_axis_n3": 0.017320508075688773
+    },
+    "RSHA": {
+      "degradation_pct": 0.3975635298260019,
+      "gap_to_10pct_bar": 9.602436470173998,
+      "literal_rmse": 1569.1640528703542,
+      "margin_se_imputer_axis": 357.86167828220323,
+      "margin_se_tokenizer_axis": 1663.1907842793712,
+      "n_samples": 640414,
+      "n_wells": 112,
+      "raw_rmse": 1562.9503323595982,
+      "se_imputer_axis_n5": 0.026832815729997475,
+      "se_tokenizer_axis_n3": 0.005773502691896258
+    },
+    "SP": {
+      "degradation_pct": -0.41133242943216686,
+      "gap_to_10pct_bar": 10.411332429432166,
+      "literal_rmse": 65.02843466199276,
+      "margin_se_imputer_axis": 179.08036191198735,
+      "margin_se_tokenizer_axis": 450.8239185566506,
+      "n_samples": 2773570,
+      "n_wells": 401,
+      "raw_rmse": 65.29702249095166,
+      "se_imputer_axis_n5": 0.05813776741499453,
+      "se_tokenizer_axis_n3": 0.023094010767585032
+    }
+  },
+  "refit_needed": false,
+  "refit_reason": "Tokenizer is per-curve independent; PEF/DTS exclusion has zero mechanical effect on the other nine curves. Verified by code read, no training run performed.",
+  "source_config": "cb15360_p16 (patch16, levels [8,8,8,6,5]), GLOBAL_DEV, literal arm",
+  "source_result_file": "reports/basinshift/fsq_diag/results/cb15360_p16.json"
+}
