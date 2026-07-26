@@ -1,0 +1,14 @@
+{
+  "correction_date": "2026-07-26",
+  "corrects": "reports/basinshift/phase5_nine_curve_check_2026-07-25.json per_curve.DTC.margin_se_imputer_axis",
+  "retracted_figure": {
+    "value_se": 4.73,
+    "reason": "paired a single draw (DTC=9.19612441954525%, D1 canonical-seed cb15360_p16) with the imputer-seed axis's standard error (derived from N=5 draws whose own mean is 9.30%, not 9.20%) -- not a coherent estimator pairing"
+  },
+  "corrected_record": {
+    "tokenizer_seed_axis": {"mean_pct": 9.57, "std_pct": 0.13, "N": 3, "SE": 0.0751, "gap_to_10pct_bar": 0.43, "margin_se": 5.73},
+    "imputer_seed_axis": {"mean_pct": 9.30, "std_pct": 0.38, "N": 5, "SE": 0.1699, "gap_to_10pct_bar": 0.70, "margin_se": 4.12}
+  },
+  "conclusion": "unchanged: DTC clears the 10% bar on both axes using each axis's own internally-consistent mean+SE; tighter (imputer-seed) margin is 4.1 SE, comfortably above the 3-SE reinstatement threshold. No N=5 reinstatement fires.",
+  "source_data": "reports/basinshift/fsq_diag/seed_repeat_summary.json (tokenizer_seed_axis / imputer_seed_axis, curve DTC) -- recomputed with correct pairing, not new measurements"
+}

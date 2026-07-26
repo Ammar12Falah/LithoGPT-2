@@ -110,3 +110,19 @@ well by well_id or safe_name), **train_test_overlap = 0**. All four runs PASS.
 **Builder / leakage:** `scripts/basinshift/{build_test_manifest.py, leakage_suite.py}` +
 `reports/basinshift/leakage_suite.txt` (CP2 ALL PASS). **Env:** `docs/basinshift_env_2026-07-20.txt`.
 The superseded `test_manifest_PROPOSED.json` is retained for provenance.
+
+### 9. FSQ tokenizer per-curve independence (2026-07-26)
+
+Each of the 11 canonical curves trains its own independent `FSQAutoEncoder` (own
+encoder, own decoder, own patch bank) with no shared weights and no shared codebook
+table -- the FSQ quantizer has no learned embedding, only a fixed rounding operation
+parameterized by the level vector. **PEF had a fully dedicated encoder and decoder at
+every tested level vector (cb64 through cb15360, patch32 and patch16) and still
+exceeded the R8 bar at all of them** (best case 16.01% at cb125/patch32; 13.84% at
+patch16/cb15360). **PEF's limit is not a capacity artifact** -- there was never shared
+capacity to free up by excluding it, superseding the earlier capacity-sharing
+pre-registration that assumed otherwise (see `docs/decisions/
+d2_phase5_no_refit_needed_2026-07-25.md`, VOID-marked with lineage per item F,
+2026-07-26). **Recorded as the one remaining untested lever:** per-curve level
+allocation -- giving PEF's own model a level vector shaped differently from the one
+shared vector applied identically to all 11 curves in every sweep to date.

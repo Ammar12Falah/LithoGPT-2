@@ -19,7 +19,7 @@ The model's intended capabilities: fill missing log curves (imputation) conditio
 
 ## 2. Scientific context and positioning
 
-Predecessor: LithoGPT v1 (SPE-234177-MS, accepted at SPE ATCE 2026) was a 5.2M-parameter transformer trained on the public FORCE 2020 well-log dataset. Its key diagnostic finding was a porosity bias consistent with coordinate-blind learning of compaction trends: the model learned depth-driven trends without a physical handle on them. LithoGPT-2 is designed to close that gap with an explicit, gated physics prior, a larger multi-basin public corpus, a full open release, and a new cross-basin benchmark.
+Predecessor: LithoGPT v1 (SPE-234177-MS, accepted at SPE ATCE 2026) was a 4.8M-parameter transformer (originally reported as 5.2M; corrected per SPE-234177-MS Section 2.2/Table 4 -- see docs/decisions/d2_item_c_param_correction_2026-07-26.md) trained on the public FORCE 2020 well-log dataset. Its key diagnostic finding was a porosity bias consistent with coordinate-blind learning of compaction trends: the model learned depth-driven trends without a physical handle on them. LithoGPT-2 is designed to close that gap with an explicit, gated physics prior, a larger multi-basin public corpus, a full open release, and a new cross-basin benchmark.
 
 Verified landscape (as of 4 July 2026, per the project's positioning documents):
 - A closed 60M-parameter ViT-MAE well-log cross-basin generative transformer for well logs pretrained on roughly 1.1 million North American wells was presented at IMAGE 2025 (closed weights, closed commercial data). LithoGPT-2 does not compete on scale with this; the difference it claims is openness, not size.

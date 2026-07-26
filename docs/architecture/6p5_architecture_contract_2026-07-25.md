@@ -135,3 +135,29 @@ smoke test exercises this contract end-to-end (continuous input -> discrete outp
 combination, as the hardest structural case) with synthetic/tiny data, not real training. Phase 2
 items 3/4 (input/output head disposition) remain swappable until the advisor rules on the
 tokenizer question; nothing here is a selection.
+
+---
+
+## Addendum (2026-07-26): scope deferral + context-unit clarification
+
+### A. 25M three-basin prior-on/prior-off experiment: deferred, not run
+
+The full model-size-S (12 layers, d512, 8 heads, ~25M params) three-basin training pair
+described in Section 6 above is **out of scope for the ATCE submission** and is **not
+run**. It is deferred until after 24 August 2026 and is **scheduled for the second
+paper**. This contract (Sections 1-7 above) stays committed as-is, unmodified -- nothing
+in the design is retracted, it is simply not executed on this timeline. The ATCE-scoped
+experiment is the much smaller v1.5 ablation (6 layers, d256, k-means k=1000 tokenizer,
+context 512 tokens), tracked separately.
+
+### H. Context units: tokens vs metres, stated explicitly
+
+Section 6's measured sequence counts reported "context 4096" without stating the unit,
+which reads ambiguously as either 4096 *tokens* or 4096 *depth-samples*. For the record,
+explicitly in both units at patch16 (the config actually used in this project's own D1/
+Phase 5 work): **256 tokens = 4096 depth-samples = 624 m** (4096 samples x 0.1524 m/sample
+grid step = 624.4896 m, rounded to 624 m). At patch32: **128 tokens = 4096 depth-samples =
+624 m** (same metre span, half the token count, since patch32 packs 32 depth-samples per
+token instead of 16). The metre span is patch-size-invariant for a fixed depth-sample
+context; the token count is not. Do not read "context 4096" as "4096 tokens" for either
+patch size.

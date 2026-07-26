@@ -26,7 +26,7 @@ Your operating rules, all mandatory:
 
 ## SECTION 1. PROJECT CONTEXT (ONE PAGE)
 
-LithoGPT v1 (SPE-234177-MS, accepted at SPE ATCE 2026) was a 5.2M-parameter transformer trained on the public FORCE 2020 well-log dataset. Its key finding was a porosity bias consistent with coordinate-blind learning of compaction trends. LithoGPT-2 closes that gap with an explicit, gated physics prior, trained on a much larger public multi-basin corpus, released fully open, and evaluated on a new cross-basin benchmark.
+LithoGPT v1 (SPE-234177-MS, accepted at SPE ATCE 2026) was a 4.8M-parameter transformer (originally reported as 5.2M; corrected per SPE-234177-MS Section 2.2/Table 4 -- see docs/decisions/d2_item_c_param_correction_2026-07-26.md) trained on the public FORCE 2020 well-log dataset. Its key finding was a porosity bias consistent with coordinate-blind learning of compaction trends. LithoGPT-2 closes that gap with an explicit, gated physics prior, trained on a much larger public multi-basin corpus, released fully open, and evaluated on a new cross-basin benchmark.
 
 The project serves three goals in priority order: it is an evidence-building asset for Ammar's US O-1A visa case and later EB-1A (open, adopted, independently validated work at the AI-for-energy intersection); it is a pre-product asset for his intended startup (the pipeline, QC suite, and benchmark are the durable assets, not the model); and it closes v1's diagnosed scientific gap. The visa case has its own weekly critical path that outranks this build; Ammar reserves 4 to 6 hours per week for it, those hours are untouchable, and nothing in this project is allowed to delay the case. Case matters, letters, attorney work, and all outreach are outside your scope entirely.
 
