@@ -12,7 +12,7 @@ maps (`docs/KGS_ACCESS.md`, `docs/NLOG_ACCESS.md`, `docs/LICENSE_MATRIX.md`).
 
 ## 1. One-paragraph project recap
 
-LithoGPT-2 is an open, physics-gated well-log foundation model plus a QC suite
+LithoGPT-2 is an open, physics-gated well-log cross-basin generative transformer for well logs plus a QC suite
 and a cross-basin benchmark, built on public data (FORCE 2020, NLOG, KGS). It
 serves Ammar's O-1A/EB-1A visa evidence and is a pre-startup asset; the durable
 assets are the pipeline, QC suite, and benchmark, not the model. The scientific

@@ -7,7 +7,7 @@ wells only; **blind-10 never touched**. This document is the "adaptation surgery
 R7 requires. It is a Phase-A (CPU-only, no paid A40) feasibility record — no compute spend.
 
 ## 1. Model selection (feasibility PROVEN this session, read-only/CPU)
-- **Chosen: `AutonLab/MOMENT-1-large`** — a time-series foundation model whose pre-trained head
+- **Chosen: `AutonLab/MOMENT-1-large`** — a time-series cross-basin generative transformer for well logs whose pre-trained head
   is **masked reconstruction (imputation)**. Reachable from the pod (HF `config.json` → HTTP 200),
   downloads to `/workspace/.hf_cache`, loads + inits in ~4.8 s (cached), **341.2M params**,
   backbone frozen by default (0 trainable → LoRA supplies the adapters). Masked-reconstruction

@@ -1,4 +1,4 @@
-"""LithoGPT-2: open, physics-gated well-log foundation model pipeline.
+"""LithoGPT-2: open, physics-gated well-log cross-basin generative transformer for well logs pipeline.
 
 Week 1 scope: repository scaffold, ingestion (FORCE 2020, NLOG), and
 harmonization against configs/mnemonic_aliases.yaml. Later weeks add QC,

@@ -3,7 +3,7 @@
 Open, physics-gated well-log modeling: a reproducible pipeline, QC suite, and
 cross-basin benchmark for signal-level well-log imputation and simulation.
 
-To our knowledge no open-weights well-log foundation model at multi-thousand
+To our knowledge no open-weights well-log cross-basin generative transformer for well logs at multi-thousand
 public-well scale currently exists (this claim stays hedged until a direct
 Hugging Face hub and GitHub search closes it; see `docs/POSITIONING.md`).
 Positioning rests on three compounding doors: open (weights, pipeline, corpus

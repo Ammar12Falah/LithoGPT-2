@@ -34,9 +34,9 @@ The project serves three goals in priority order: it is an evidence-building ass
 
 Verified by live search; details and URLs in POSITIONING.md and FEASIBILITY_ASSESSMENT.md:
 
-- TGS presented a 60M-parameter ViT-MAE well-log foundation model pretrained on 1.1 million North American wells (IMAGE 2025). Closed weights, closed commercial data.
-- WLFM (arXiv 2509.18152) is a research-scale foundation model pretrained on 1,200 wells, interpretation-focused. Its authors report systematic reconstruction offsets in shallow and ultra-deep intervals, which is independent evidence for the depth-trend problem this project attacks; the paper cites it in motivation.
-- Diffusion imputation for well logs is published (SPE Journal 2024, conditional DDPM). GAN-based synthetic log generation and imputation is published (Scientific Reports 2025). LoRA adaptation of foundation models to logs is published (TimeGPT adaptation, arXiv 2412.05681). These are related work and, at most, baselines. They are not directions for this project.
+- TGS presented a 60M-parameter ViT-MAE well-log cross-basin generative transformer for well logs pretrained on 1.1 million North American wells (IMAGE 2025). Closed weights, closed commercial data.
+- WLFM (arXiv 2509.18152) is a research-scale cross-basin generative transformer for well logs pretrained on 1,200 wells, interpretation-focused. Its authors report systematic reconstruction offsets in shallow and ultra-deep intervals, which is independent evidence for the depth-trend problem this project attacks; the paper cites it in motivation.
+- Diffusion imputation for well logs is published (SPE Journal 2024, conditional DDPM). GAN-based synthetic log generation and imputation is published (Scientific Reports 2025). LoRA adaptation of cross-basin generative transformers for well logs to logs is published (TimeGPT adaptation, arXiv 2412.05681). These are related work and, at most, baselines. They are not directions for this project.
 - Existing benchmarks: FORCE 2020 (single-task lithology, one region), SPWLA PDDA contests (property estimation on one field, sonic prediction), a GitHub imputation benchmark, and WellLogBench (2026), which is an LLM question-answering benchmark, a different modality. No verified benchmark covers multi-basin signal-level evaluation with standardized cross-basin transfer splits and calibration metrics. That gap is this project's benchmark deliverable.
 
 Approved positioning: open (weights, pipeline, corpus recipe), generative (calibrated stochastic realizations, positioned against SGS/MPS geostatistics workflows), physics (gated trend-residual decomposition). Banned claims: any "first" without live verification, any unhedged "largest," any comparison to TGS corpus size except to state the openness difference. The wording rules in POSITIONING.md Section 4 are binding for every document you write.
@@ -55,7 +55,7 @@ Approved positioning: open (weights, pipeline, corpus recipe), generative (calib
 ### 3.2 Scope freeze (banned; escalate if you believe one is necessary)
 1. Diffusion or flow-matching backbone.
 2. Synthetic-data corpus inflation of any kind beyond the augmentation transforms in Section 7.4.
-3. Model fusion or LoRA adaptation as the method. One LoRA-adapted open time-series foundation model is permitted as a single baseline row at week 8, time-boxed to two days, then dropped if not done.
+3. Model fusion or LoRA adaptation as the method. One LoRA-adapted open time-series cross-basin generative transformer for well logs is permitted as a single baseline row at week 8, time-boxed to two days, then dropped if not done.
 4. More than one benchmark.
 5. Models above 100M parameters.
 6. Data sources beyond FORCE 2020, NLOG, and KGS.
@@ -111,7 +111,7 @@ Per-batch multitask mix: 50 percent fill-in-the-middle span corruption (spans ma
 Random curve dropout, random span masking (these are the training objective), mild Gaussian noise on inputs, and small depth jitter within the resample grid. Nothing else.
 
 ### 7.5 Baselines (required)
-Gradient-boosted trees (XGBoost or LightGBM) per target curve with engineered features (neighboring curves, depth, rolling statistics); this is the strong classical baseline and is genuinely hard to beat in-basin, and parity there is reported honestly. Linear regression and kNN-by-depth as floors. LithoGPT v1 where comparable. Optional, time-boxed to two days at week 8: one LoRA-adapted open time-series foundation model row; the published diffusion imputer as a comparison row only if its protocol genuinely matches, otherwise stated as non-comparable.
+Gradient-boosted trees (XGBoost or LightGBM) per target curve with engineered features (neighboring curves, depth, rolling statistics); this is the strong classical baseline and is genuinely hard to beat in-basin, and parity there is reported honestly. Linear regression and kNN-by-depth as floors. LithoGPT v1 where comparable. Optional, time-boxed to two days at week 8: one LoRA-adapted open time-series cross-basin generative transformer for well logs row; the published diffusion imputer as a comparison row only if its protocol genuinely matches, otherwise stated as non-comparable.
 
 ## SECTION 8. EVALUATION AND THE BENCHMARK
 

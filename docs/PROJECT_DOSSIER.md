@@ -8,7 +8,7 @@ Positioning discipline: this document follows the project rule of no "first" or 
 
 ## 1. What LithoGPT-2 is
 
-LithoGPT-2 is an open-weights foundation model for well logs (the depth-indexed geophysical sensor traces recorded in boreholes), trained on public multi-basin data and released fully open. Its headline scientific claim is cross-basin transfer: that a model pretrained on wells from some basins gives useful predictions on a geologically distinct basin it was not trained on.
+LithoGPT-2 is an open-weights cross-basin generative transformer for well logs for well logs (the depth-indexed geophysical sensor traces recorded in boreholes), trained on public multi-basin data and released fully open. Its headline scientific claim is cross-basin transfer: that a model pretrained on wells from some basins gives useful predictions on a geologically distinct basin it was not trained on.
 
 The project has three deliverable pillars, and the durable value is in the assets around the model as much as the model itself:
 1. An open, reproducible data pipeline (ingestion, harmonization, quality control) for public well-log repositories.
@@ -22,9 +22,9 @@ The model's intended capabilities: fill missing log curves (imputation) conditio
 Predecessor: LithoGPT v1 (SPE-234177-MS, accepted at SPE ATCE 2026) was a 5.2M-parameter transformer trained on the public FORCE 2020 well-log dataset. Its key diagnostic finding was a porosity bias consistent with coordinate-blind learning of compaction trends: the model learned depth-driven trends without a physical handle on them. LithoGPT-2 is designed to close that gap with an explicit, gated physics prior, a larger multi-basin public corpus, a full open release, and a new cross-basin benchmark.
 
 Verified landscape (as of 4 July 2026, per the project's positioning documents):
-- A closed 60M-parameter ViT-MAE well-log foundation model pretrained on roughly 1.1 million North American wells was presented at IMAGE 2025 (closed weights, closed commercial data). LithoGPT-2 does not compete on scale with this; the difference it claims is openness, not size.
-- A research-scale well-log foundation model (WLFM) pretrained on about 1,200 wells reports systematic reconstruction offsets in shallow and ultra-deep intervals, which is independent evidence for the depth-trend problem this project targets.
-- Related published work exists on diffusion imputation, GAN-based synthetic log generation, and LoRA adaptation of time-series foundation models. These are treated as baselines or related work, not as directions for this project.
+- A closed 60M-parameter ViT-MAE well-log cross-basin generative transformer for well logs pretrained on roughly 1.1 million North American wells was presented at IMAGE 2025 (closed weights, closed commercial data). LithoGPT-2 does not compete on scale with this; the difference it claims is openness, not size.
+- A research-scale well-log cross-basin generative transformer for well logs (WLFM) pretrained on about 1,200 wells reports systematic reconstruction offsets in shallow and ultra-deep intervals, which is independent evidence for the depth-trend problem this project targets.
+- Related published work exists on diffusion imputation, GAN-based synthetic log generation, and LoRA adaptation of time-series cross-basin generative transformers for well logs. These are treated as baselines or related work, not as directions for this project.
 - No verified existing benchmark covers multi-basin signal-level evaluation with standardized cross-basin transfer splits and calibration metrics. That gap is the BasinShift deliverable.
 
 Approved positioning axes: open (weights, pipeline, corpus recipe), generative (calibrated stochastic realizations positioned against geostatistics workflows), and physics (gated trend-residual decomposition). Banned claims: any unverified "first," any unhedged "largest," and any comparison to the closed model's corpus size except to state the openness difference.
@@ -41,7 +41,7 @@ Approved positioning axes: open (weights, pipeline, corpus recipe), generative (
 7. A paper draft with honest limitations.
 
 ### 3.2 Scope freeze (banned unless escalated and approved)
-Diffusion or flow-matching backbone; synthetic-data corpus inflation; model fusion or LoRA adaptation as the primary method (one LoRA-adapted time-series foundation model is permitted as a single baseline only); more than one benchmark; models above 100M parameters; data sources beyond FORCE 2020, NLOG, and KGS; any change to gate dates, splits, or the frozen test manifest.
+Diffusion or flow-matching backbone; synthetic-data corpus inflation; model fusion or LoRA adaptation as the primary method (one LoRA-adapted time-series cross-basin generative transformer for well logs is permitted as a single baseline only); more than one benchmark; models above 100M parameters; data sources beyond FORCE 2020, NLOG, and KGS; any change to gate dates, splits, or the frozen test manifest.
 
 ## 4. Data pipeline
 
@@ -84,7 +84,7 @@ Model-size decision rule: if unique corpus tokens are below 150M, the primary re
 
 Objectives: a per-batch mix of fill-in-the-middle span corruption (imputation) and causal next-patch prediction (simulation). Optimization uses bf16, AdamW, a cosine schedule with warmup, gradient clipping, and a small number of epochs. Every run is launched from a committed config with a logged seed, and every reported result names its config and checkpoint.
 
-Baselines (required): gradient-boosted trees (XGBoost or LightGBM) per target curve are the strong classical baseline and are genuinely hard to beat in-basin; parity there is reported honestly rather than hidden. Linear regression and k-nearest-neighbors by depth are floors. One LoRA-adapted open time-series foundation model runs as a single time-boxed baseline.
+Baselines (required): gradient-boosted trees (XGBoost or LightGBM) per target curve are the strong classical baseline and are genuinely hard to beat in-basin; parity there is reported honestly rather than hidden. Linear regression and k-nearest-neighbors by depth are floors. One LoRA-adapted open time-series cross-basin generative transformer for well logs runs as a single time-boxed baseline.
 
 ## 8. Evaluation and the BasinShift benchmark
 
@@ -100,7 +100,7 @@ Benchmark tracks:
 
 Benchmark name: BasinShift. Confirmed after a public-web collision check (no existing benchmark, dataset, or model of that name; no collision with the existing WellLogBench, which is an LLM question-answering benchmark and a different modality). The name follows the common "[domain]Shift" ML-benchmark convention, chosen for legibility (it states in one word that the benchmark measures performance under basin-to-basin distribution shift). A final direct Hugging Face and GitHub name search is pending before any public use.
 
-Architecture decision on record (transfer track): the method is a from-scratch decoder-only transformer, not an adaptation of a pretrained time-series foundation model. A LoRA-adapted time-series foundation model runs as a two-day baseline immediately after the benchmark freeze, evaluated on dev and open-leaderboard wells only. Pre-registered tripwire: if that adapted baseline beats the from-scratch S-model cross-basin on the dev slice by more than 10 percent relative RMSE on at least two of the three target curves, a scope amendment is brought before further training spend. Reasoning: the transfer problem is cross-curve conditional inference under lithology-regime shift, which generic temporal pretraining does not address, and the physics prior requires owning the backbone.
+Architecture decision on record (transfer track): the method is a from-scratch decoder-only transformer, not an adaptation of a pretrained time-series cross-basin generative transformer for well logs. A LoRA-adapted time-series cross-basin generative transformer for well logs runs as a two-day baseline immediately after the benchmark freeze, evaluated on dev and open-leaderboard wells only. Pre-registered tripwire: if that adapted baseline beats the from-scratch S-model cross-basin on the dev slice by more than 10 percent relative RMSE on at least two of the three target curves, a scope amendment is brought before further training spend. Reasoning: the transfer problem is cross-curve conditional inference under lithology-regime shift, which generic temporal pretraining does not address, and the physics prior requires owning the backbone.
 
 ## 9. Current state and verified progress
 
