@@ -47,3 +47,25 @@ checked for) -- and try `fold -w 1500` first if base64 seems necessary.
 - `ssh -tt ... "command; exit"` (command passed inline as a string) reliably
   hangs and must be killed locally; piping a script file via `ssh -tt ... <
   script.sh` reliably completes. Prefer the piped-script form always.
+
+## Appendix, 2026-07-27 (AA-series brief item AG)
+
+### New gotcha: GIT_SSH_COMMAND overrides core.sshCommand
+
+The repo's `.git/config` has `core.sshCommand = ssh -i /root/.git_ssh_key -o
+IdentitiesOnly=yes` already correctly configured for the deploy key. Setting
+a manual `GIT_SSH_COMMAND=...` environment variable for a `git push` **silently
+overrides** this, and if that override omits `-i /root/.git_ssh_key`, push
+auth breaks with `Permission denied (publickey)` -- this happened once in an
+earlier session. Do not set `GIT_SSH_COMMAND`; run `git push origin HEAD`
+plain and let the pre-configured `core.sshCommand` handle it.
+
+### base64-through-PTY / fold -w 1500: status unchanged
+
+Re-confirmed as still-documented, not re-tested this session (no binary
+transfer was needed this trip -- all four evacuated artifacts were served via
+Jupyter on port 8888 instead, see docs/decisions for this session's AC item).
+`fold -w 1500` remains the documented-but-untried workaround from the
+original finding above; still worth trying first before assuming base64 is
+unusable, next time a binary transfer over the raw PTY is actually needed.
+
