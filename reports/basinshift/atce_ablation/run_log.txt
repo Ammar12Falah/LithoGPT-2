@@ -1,0 +1,55 @@
+=== ATCE v1.5 ablation (Item J) START ===
+device=cuda K=1000 context=512 d_model=256 n_layers=6 n_heads=8 lr=0.0003 batch_size=32 n_steps=3000 seed=20260715
+split: train=80 dev=10 test=8
+tokenizer fit: 628916 train samples, k=1000
+=== Arm A: prior-off (reimplemented from spec, not comparable to v1 Table 3) ===
+  [ArmA] step 0/3000 loss=7.0751 elapsed=1s
+  [ArmA] step 500/3000 loss=1.8384 elapsed=46s
+  [ArmA] step 1000/3000 loss=2.0033 elapsed=91s
+  [ArmA] step 1500/3000 loss=1.7511 elapsed=137s
+  [ArmA] step 2000/3000 loss=1.6508 elapsed=182s
+  [ArmA] step 2500/3000 loss=1.4480 elapsed=228s
+  [ArmA] step 2999/3000 loss=1.4025 elapsed=274s
+[ArmA] trained 3000 steps in 273.8s, final loss=1.4212, n_params=5383144
+=== Arm B: prior-on (additive learned depth embedding) ===
+Arm B parameter delta vs Arm A: 512 (0.0095% of Arm A; vs corrected v1 4.8M: 0.0107%)
+  [ArmB] step 0/3000 loss=7.0729 elapsed=0s
+  [ArmB] step 500/3000 loss=1.8514 elapsed=46s
+  [ArmB] step 1000/3000 loss=2.0137 elapsed=92s
+  [ArmB] step 1500/3000 loss=1.7615 elapsed=138s
+  [ArmB] step 2000/3000 loss=1.6651 elapsed=184s
+  [ArmB] step 2500/3000 loss=1.4532 elapsed=230s
+  [ArmB] step 2999/3000 loss=1.4071 elapsed=276s
+[ArmB] trained 3000 steps in 275.8s, final loss=1.4230, n_params=5383656
+=== Arm C: external baseline (continuous MSE output head) ===
+  [ArmC] step 0/3000 loss=1.1571 elapsed=0s
+  [ArmC] step 500/3000 loss=0.0572 elapsed=54s
+  [ArmC] step 1000/3000 loss=0.0445 elapsed=105s
+  [ArmC] step 1500/3000 loss=0.0280 elapsed=161s
+  [ArmC] step 2000/3000 loss=0.0279 elapsed=218s
+  [ArmC] step 2500/3000 loss=0.0260 elapsed=269s
+  [ArmC] step 2999/3000 loss=0.0226 elapsed=319s
+[ArmC] trained 3000 steps in 319.3s, final loss=0.0291, n_params=5127172
+=== Arm D: explicit trend-residual (Norway Athy phi0=0.6052 lambda_m=4068.0) ===
+  [ArmD] step 0/3000 loss=7.0725 elapsed=0s
+  [ArmD] step 500/3000 loss=1.7647 elapsed=46s
+  [ArmD] step 1000/3000 loss=1.8232 elapsed=92s
+  [ArmD] step 1500/3000 loss=1.6103 elapsed=138s
+  [ArmD] step 2000/3000 loss=1.5780 elapsed=184s
+  [ArmD] step 2500/3000 loss=1.4424 elapsed=230s
+  [ArmD] step 2999/3000 loss=1.3386 elapsed=276s
+[ArmD] trained 3000 steps in 275.5s, final loss=1.3707, n_params=5383656
+=== Generation + evaluation on held-out test wells ===
+[A] generated 8 test wells x 5 realizations
+[B] generated 8 test wells x 5 realizations
+[C] generated 8 test wells x 5 realizations
+[D] generated 8 test wells x 5 realizations
+=== Computing predeclared metrics ===
+[A] NPHI abs_bias={'mean': -0.09858344169627356, 'ci_low': -0.14298454116463075, 'ci_high': -0.0558467161957204} rel_bias%={'mean': -15.576315417334854, 'ci_low': -22.12178766111293, 'ci_high': -8.93907942620191} W1={'mean': 0.11867565822296226, 'ci_low': 0.08010564517408263, 'ci_high': 0.16106869879538113}
+[B] NPHI abs_bias={'mean': -0.08785342526282595, 'ci_low': -0.1272205241380441, 'ci_high': -0.05018650381742549} rel_bias%={'mean': -13.646431343579895, 'ci_low': -20.51016089421184, 'ci_high': -6.521804007485634} W1={'mean': 0.1156102035687961, 'ci_low': 0.08529617588344887, 'ci_high': 0.14947850150366668}
+[C] NPHI abs_bias={'mean': -0.028600375586705685, 'ci_low': -0.03724440262152333, 'ci_high': -0.019922959084941582} rel_bias%={'mean': -6.932439033607099, 'ci_low': -9.401127932217722, 'ci_high': -4.629260817468034} W1={'mean': 0.0432842884491826, 'ci_low': 0.03649074525044942, 'ci_high': 0.050322223582798066}
+[D] NPHI abs_bias={'mean': -0.10016737858686076, 'ci_low': -0.14361922730315116, 'ci_high': -0.06015016439066384} rel_bias%={'mean': -15.909971180141, 'ci_low': -23.1077109493131, 'ci_high': -8.301859695314471} W1={'mean': 0.1310341507328329, 'ci_low': 0.09923124909449166, 'ci_high': 0.16706112030890294}
+WRITTEN /workspace/LithoGPT-2/reports/basinshift/atce_ablation/atce_ablation_summary_2026-07-26.json, sha256=7ed9c52f31f83c3f9ae5e211c7b2a8ff6e7d0819726497ec12d4a0cdbaa1ebcc
+WRITTEN /workspace/LithoGPT-2/reports/basinshift/atce_ablation/atce_ablation_raw_results_2026-07-26.json, sha256=511b82cbd3aa9068ba156bdc2357168fdda93da96e806793e556570e8467862f
+TOTAL WALL TIME: 1370.7s = 0.38h
+ATCE_ABLATION_COMPLETE

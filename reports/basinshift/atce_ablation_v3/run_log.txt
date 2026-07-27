@@ -1,0 +1,97 @@
+=== ATCE v1.5 ablation v3 (Item J amended: T,U,V,W,X,Y,Z on top of K,L,M,N,S,O,P) START ===
+device=cuda K=1000 context=512 d_model=256 n_layers=6 n_heads=8 lr=0.0003 batch_size=32 n_steps=3000 seed=20260715
+PREDECESSOR RUN NOTE: both the original run (item K) and the v2 run (item W) are labeled DIAGNOSTIC/EXPLORATORY, not sealed, not reported in the paper. This v3 run is the manuscript-candidate result, launched only after item U's tokenizer validation gate and item V's B-linear/B2 confound fix.
+item H/P token-to-metre check: CONTEXT=512 tokens is a raw per-depth-sample context (one token per depth sample, NOT the FSQ tokenizer's patch16 grouping used elsewhere in this project). Confirmed against real data below.
+split: train=80 dev=10 test=8
+item P: measured depth-grid spacing (median dz across all 98 wells) = 0.15200 m/sample
+item P/H: CONTEXT=512 tokens = 77.824 m (confirms v1's 512-token context is ~78 m, NOT the patched 256-token/624 m context used by the FSQ tokenizer elsewhere)
+item U tokenizer provenance: REFIT fresh on this ablation's own 80 train wells -- v1's authentic artifacts were validated (item U) and found materially worse at reconstructing this data (NPHI RMSE 3x worse), so this run does NOT use them, reverting item S's decision per the pre-registered validation-gate rule.
+tokenizer ready: 628916 FORCE train samples available, k=1000, provenance=refit_on_force_80_train_wells (item U: reverts item S after v1 tokenizer failed validation gate)
+item V: corpus-wide absolute-depth standardization (80 train wells): mean=2501.461 m, std=996.611 m
+=== item O BLOCKING PRE-CHECK: depth stats fed to B-linear's Linear(1,256) ===
+  depth_norm (per-well min-max normalized, [0,1] by construction): min=0.0000 max=1.0000 mean=0.5007 std=0.2894
+  Standardization applied: per-WELL min-max to [0,1] -- (depth - well_min) / (well_max - well_min). NOT raw metres. Magnitude order matches the token embedding (order 1), so the raw-scale-mismatch failure mode the brief warned about (depth entering at order 2000-4000) does NOT apply here -- that specific defect is CLEARED.
+  DEFECT FOUND (different from the anticipated one, reported per the same 'report, do not silently fix' rule): depth_norm is position-WITHIN-WELL (0=this well's shallowest sample, 1=this well's deepest), not absolute depth. The same normalized value means different real depths in different wells (test wells span 340 m to 2646 m). Arm B-linear and Arm D's depth-embedding path (train_dfeat_lin) therefore cannot represent an absolute-depth compaction trend the same way Arm D's explicit Athy correction does (which correctly uses absolute depth in metres, decoupled from this dnorm feature). This is reported, not silently fixed, per item O's instruction -- Arm B-linear is kept exactly as built. item V adds Arm B-abs (same rank-1 Linear(1,256) mechanism, but on corpus-wide standardized ABSOLUTE depth) specifically to isolate this defect: B-linear vs B-abs varies ONLY the depth reference frame, holding the rank-1 linear mechanism fixed.
+=== Arm A: prior-off (fresh-refit tokenizer per item U, transformer reimplemented from spec) ===
+  [ArmA] step 0/3000 loss=7.0633 elapsed=1s
+  [ArmA] step 500/3000 loss=1.8383 elapsed=46s
+  [ArmA] step 1000/3000 loss=2.0040 elapsed=92s
+  [ArmA] step 1500/3000 loss=1.7559 elapsed=138s
+  [ArmA] step 2000/3000 loss=1.6594 elapsed=184s
+  [ArmA] step 2500/3000 loss=1.4480 elapsed=230s
+  [ArmA] step 2999/3000 loss=1.4137 elapsed=276s
+[ArmA] trained 3000 steps in 276.4s, final loss=1.4262, n_params=5383144
+=== Arm B-linear: prior-on (rank-1 additive linear depth embedding on PER-WELL relative dnorm, renamed from Arm B per item O, kept exactly as built per item V) ===
+Arm B-linear parameter delta vs Arm A: 512 (0.0095% of Arm A)
+  [ArmBlinear] step 0/3000 loss=7.0597 elapsed=0s
+  [ArmBlinear] step 500/3000 loss=1.8522 elapsed=46s
+  [ArmBlinear] step 1000/3000 loss=2.0099 elapsed=92s
+  [ArmBlinear] step 1500/3000 loss=1.7601 elapsed=138s
+  [ArmBlinear] step 2000/3000 loss=1.6626 elapsed=185s
+  [ArmBlinear] step 2500/3000 loss=1.4453 elapsed=231s
+  [ArmBlinear] step 2999/3000 loss=1.4027 elapsed=277s
+[ArmBlinear] trained 3000 steps in 276.8s, final loss=1.4213, n_params=5383656
+=== Arm B-abs: prior-on (rank-1 additive linear depth embedding on corpus-wide standardized ABSOLUTE depth, item V -- isolates the B-linear reference-frame defect) ===
+Arm B-abs parameter delta vs Arm A: 512 (0.0095% of Arm A) -- expected 512, same shape as B-linear's Linear(1,256), only the input feature differs
+  [ArmBabs] step 0/3000 loss=7.0430 elapsed=0s
+  [ArmBabs] step 500/3000 loss=1.8533 elapsed=46s
+  [ArmBabs] step 1000/3000 loss=2.0068 elapsed=92s
+  [ArmBabs] step 1500/3000 loss=1.7726 elapsed=138s
+  [ArmBabs] step 2000/3000 loss=1.6635 elapsed=184s
+  [ArmBabs] step 2500/3000 loss=1.4513 elapsed=230s
+  [ArmBabs] step 2999/3000 loss=1.4249 elapsed=276s
+[ArmBabs] trained 3000 steps in 276.0s, final loss=1.4331, n_params=5383656
+=== Arm B2: prior-on (corpus-wide absolute depth + Athy exp-decay + 5 log-spaced sin/cos pairs, item V amendment to item O's original B2 spec) ===
+Arm B2 feature list (12 dims): [depth_abs_std (shares B-abs's reference frame), exp(-depth_m/4068.0)] + sin/cos at wavelengths_m=['10.00', '47.29', '223.61', '1057.37', '5000.00']
+Arm B2 parameter delta vs Arm A: 3328 (0.0618% of Arm A)
+  [ArmB2] step 0/3000 loss=7.0515 elapsed=0s
+  [ArmB2] step 500/3000 loss=1.8523 elapsed=53s
+  [ArmB2] step 1000/3000 loss=1.9917 elapsed=105s
+  [ArmB2] step 1500/3000 loss=1.7347 elapsed=158s
+  [ArmB2] step 2000/3000 loss=1.6328 elapsed=212s
+  [ArmB2] step 2500/3000 loss=1.3908 elapsed=267s
+  [ArmB2] step 2999/3000 loss=1.3398 elapsed=323s
+[ArmB2] trained 3000 steps in 323.0s, final loss=1.3520, n_params=5386472
+=== Arm C: external baseline (continuous MSE output head) ===
+  [ArmC] step 0/3000 loss=1.1490 elapsed=0s
+  [ArmC] step 500/3000 loss=0.0667 elapsed=52s
+  [ArmC] step 1000/3000 loss=0.0446 elapsed=104s
+  [ArmC] step 1500/3000 loss=0.0274 elapsed=157s
+  [ArmC] step 2000/3000 loss=0.0270 elapsed=209s
+  [ArmC] step 2500/3000 loss=0.0258 elapsed=262s
+  [ArmC] step 2999/3000 loss=0.0235 elapsed=313s
+[ArmC] trained 3000 steps in 313.2s, final loss=0.0292, n_params=5127172
+=== Arm D: explicit trend-residual (Norway Athy phi0=0.6052 lambda_m=4068.0) ===
+  [ArmD] step 0/3000 loss=7.0788 elapsed=0s
+  [ArmD] step 500/3000 loss=1.7656 elapsed=46s
+  [ArmD] step 1000/3000 loss=1.8218 elapsed=92s
+  [ArmD] step 1500/3000 loss=1.6019 elapsed=138s
+  [ArmD] step 2000/3000 loss=1.5744 elapsed=184s
+  [ArmD] step 2500/3000 loss=1.4308 elapsed=230s
+  [ArmD] step 2999/3000 loss=1.3286 elapsed=276s
+[ArmD] trained 3000 steps in 276.0s, final loss=1.3641, n_params=5383656
+=== Generation + evaluation on held-out test wells ===
+item P: generation cap MAX_GEN_LEN=20000 samples (3040.0 m at measured spacing); window start is FIXED (not randomized per realization) at prime_n=max(CONTEXT, PRIME_FRAC*well_len), identical across realizations of a given well/arm; the real interval scored against is feats_real[prime_n:prime_n+gen_len], i.e. matched exactly to the generated window, not an independently chosen reference span.
+[A] generated 8 test wells x 5 realizations
+[B-linear] generated 8 test wells x 5 realizations
+item V: [B-linear] depth signal range actually seen during generation (post prime_n:prime_n+gen_len slice): min=0.2404 max=1.0000 (computed over the FULL well before slicing, not the capped window)
+[B-abs] generated 8 test wells x 5 realizations
+item V: [B-abs] depth signal range actually seen during generation (post prime_n:prime_n+gen_len slice): min=-1.2099 max=1.4006 (computed over the FULL well before slicing, not the capped window)
+[B2] generated 8 test wells x 5 realizations
+item V: [B2] depth signal range actually seen during generation (post prime_n:prime_n+gen_len slice): min=-1.2099 max=1.4006 (computed over the FULL well before slicing, not the capped window)
+[C] generated 8 test wells x 5 realizations
+[D] generated 8 test wells x 5 realizations
+item V: [D] depth signal range actually seen during generation (post prime_n:prime_n+gen_len slice): min=0.2404 max=1.0000 (computed over the FULL well before slicing, not the capped window)
+item P: total depth range spanned across all wells/realizations/arms: min=1295.63 m, max=3897.35 m
+item P: coverage_pct_of_remaining (min/median/max across all well x arm pairs): 100.0% / 100.0% / 100.0%
+=== Computing predeclared metrics ===
+[A] NPHI abs_bias={'mean': -0.04234970378594816, 'ci_low': -0.06120195642275276, 'ci_high': -0.023857806323758543} rel_bias%={'mean': -10.753619501293466, 'ci_low': -15.311958531193154, 'ci_high': -5.794387094889402} W1={'mean': 0.08029155548635991, 'ci_low': 0.0662430893622287, 'ci_high': 0.09255563004250612}
+[B-linear] NPHI abs_bias={'mean': -0.06659196429823348, 'ci_low': -0.07902716577406106, 'ci_high': -0.05253482573102889} rel_bias%={'mean': -19.08107652207741, 'ci_low': -22.35724438294963, 'ci_high': -15.275781750043706} W1={'mean': 0.08296180907015917, 'ci_low': 0.06941529905647596, 'ci_high': 0.0951489337028277}
+[B-abs] NPHI abs_bias={'mean': -0.03398159301993188, 'ci_low': -0.05112464294881257, 'ci_high': -0.017481400044593236} rel_bias%={'mean': -8.133441195656165, 'ci_low': -12.88396791311898, 'ci_high': -3.3201228593865153} W1={'mean': 0.08284627393677313, 'ci_low': 0.06997504768838798, 'ci_high': 0.09412929829312869}
+[B2] NPHI abs_bias={'mean': -0.04475730223845083, 'ci_low': -0.06191716658176786, 'ci_high': -0.028928031456203682} rel_bias%={'mean': -12.353779207635172, 'ci_low': -16.3316819188076, 'ci_high': -8.45404941267703} W1={'mean': 0.07743633277115203, 'ci_low': 0.06467935632885603, 'ci_high': 0.09114745112617938}
+[C] NPHI abs_bias={'mean': 0.033183125649056025, 'ci_low': 0.015614568479743553, 'ci_high': 0.051301804727937494} rel_bias%={'mean': 9.853396423879698, 'ci_low': 4.788581692314427, 'ci_high': 15.266711747690573} W1={'mean': 0.1008188363782299, 'ci_low': 0.08429485207069981, 'ci_high': 0.11666672243300742}
+[D] NPHI abs_bias={'mean': -0.031147506593164148, 'ci_low': -0.04909460769386975, 'ci_high': -0.012099402287236797} rel_bias%={'mean': -7.131449591122139, 'ci_low': -12.188102437883192, 'ci_high': -1.4041944911094313} W1={'mean': 0.07633782346687154, 'ci_low': 0.0643281686297112, 'ci_high': 0.08820559648681392}
+WRITTEN /workspace/LithoGPT-2/reports/basinshift/atce_ablation_v3/atce_ablation_v3_summary_2026-07-26.json, sha256=82b5e9e49ef091a3bb5a24316016c3e555c8099a755b2a143f13cc1f97122c26
+WRITTEN /workspace/LithoGPT-2/reports/basinshift/atce_ablation_v3/atce_ablation_v3_raw_results_2026-07-26.json, sha256=ac963f2c56ec27ac8f2fd837faa90108dc580a53560dbeb3c50a41c35f0110ed
+TOTAL WALL TIME: 3757.1s = 1.04h
+ATCE_ABLATION_V3_COMPLETE

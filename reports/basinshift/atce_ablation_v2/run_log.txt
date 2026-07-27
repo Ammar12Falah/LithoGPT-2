@@ -1,0 +1,80 @@
+=== ATCE v1.5 ablation v2 (Item J amended: K,L,M,N,S,O,P) START ===
+device=cuda K=1000 context=512 d_model=256 n_layers=6 n_heads=8 lr=0.0003 batch_size=32 n_steps=3000 seed=20260715
+EXPLORATORY PREDECESSOR RUN NOTE: this v2 script supersedes the run committed under item K (labeled EXPLORATORY, not sealed, not reported in the paper).
+item H/P token-to-metre check: CONTEXT=512 tokens is a raw per-depth-sample context (one token per depth sample, NOT the FSQ tokenizer's patch16 grouping used elsewhere in this project). Confirmed against real data below.
+split: train=80 dev=10 test=8
+item P: measured depth-grid spacing (median dz across all 98 wells) = 0.15200 m/sample
+item P/H: CONTEXT=512 tokens = 77.824 m (confirms v1's 512-token context is ~78 m, NOT the patched 256-token/624 m context used by the FSQ tokenizer elsewhere)
+item S tokenizer provenance: LOADED v1's authentic kmeans_pure.joblib + scaler_pure.joblib directly -- NOT refit on FORCE data.
+tokenizer ready: 628916 FORCE train samples available, k=1000, provenance=v1_authentic_artifacts_loaded
+=== item O BLOCKING PRE-CHECK: depth stats fed to B-linear's Linear(1,256) ===
+  depth_norm (per-well min-max normalized, [0,1] by construction): min=0.0000 max=1.0000 mean=0.5007 std=0.2894
+  Standardization applied: per-WELL min-max to [0,1] -- (depth - well_min) / (well_max - well_min). NOT raw metres. Magnitude order matches the token embedding (order 1), so the raw-scale-mismatch failure mode the brief warned about (depth entering at order 2000-4000) does NOT apply here -- that specific defect is CLEARED.
+  DEFECT FOUND (different from the anticipated one, reported per the same 'report, do not silently fix' rule): depth_norm is position-WITHIN-WELL (0=this well's shallowest sample, 1=this well's deepest), not absolute depth. The same normalized value means different real depths in different wells (test wells span 340 m to 2646 m). Arm B-linear and Arm D's depth-embedding path (train_dfeat_lin) therefore cannot represent an absolute-depth compaction trend the same way Arm D's explicit Athy correction does (which correctly uses absolute depth in metres, decoupled from this dnorm feature). This is reported, not silently fixed, per item O's instruction. It bears on how any B-linear or D null/positive result should be read.
+=== Arm A: prior-off (v1 authentic tokenizer, transformer reimplemented from spec) ===
+  [ArmA] step 0/3000 loss=7.0692 elapsed=1s
+  [ArmA] step 500/3000 loss=1.8398 elapsed=46s
+  [ArmA] step 1000/3000 loss=1.9751 elapsed=92s
+  [ArmA] step 1500/3000 loss=1.7416 elapsed=137s
+  [ArmA] step 2000/3000 loss=1.6501 elapsed=183s
+  [ArmA] step 2500/3000 loss=1.4734 elapsed=230s
+  [ArmA] step 2999/3000 loss=1.3861 elapsed=276s
+[ArmA] trained 3000 steps in 275.6s, final loss=1.4200, n_params=5383144
+=== Arm B-linear: prior-on (rank-1 additive linear depth embedding, renamed from Arm B per item O) ===
+Arm B-linear parameter delta vs Arm A: 512 (0.0095% of Arm A)
+  [ArmBlinear] step 0/3000 loss=7.0490 elapsed=0s
+  [ArmBlinear] step 500/3000 loss=1.8550 elapsed=46s
+  [ArmBlinear] step 1000/3000 loss=1.9736 elapsed=92s
+  [ArmBlinear] step 1500/3000 loss=1.7409 elapsed=138s
+  [ArmBlinear] step 2000/3000 loss=1.6446 elapsed=184s
+  [ArmBlinear] step 2500/3000 loss=1.4813 elapsed=231s
+  [ArmBlinear] step 2999/3000 loss=1.3859 elapsed=277s
+[ArmBlinear] trained 3000 steps in 276.5s, final loss=1.4193, n_params=5383656
+=== Arm B2: prior-on (normalized depth + Athy exp-decay + 5 log-spaced sin/cos pairs, item O) ===
+Arm B2 feature list (12 dims): [dnorm, exp(-depth_m/4068.0)] + sin/cos at wavelengths_m=['10.00', '47.29', '223.61', '1057.37', '5000.00']
+Arm B2 parameter delta vs Arm A: 3328 (0.0618% of Arm A)
+  [ArmB2] step 0/3000 loss=7.1104 elapsed=0s
+  [ArmB2] step 500/3000 loss=1.8455 elapsed=54s
+  [ArmB2] step 1000/3000 loss=1.9627 elapsed=108s
+  [ArmB2] step 1500/3000 loss=1.7237 elapsed=163s
+  [ArmB2] step 2000/3000 loss=1.6274 elapsed=219s
+  [ArmB2] step 2500/3000 loss=1.4184 elapsed=274s
+  [ArmB2] step 2999/3000 loss=1.3059 elapsed=330s
+[ArmB2] trained 3000 steps in 329.8s, final loss=1.3463, n_params=5386472
+=== Arm C: external baseline (continuous MSE output head) ===
+  [ArmC] step 0/3000 loss=1.2320 elapsed=0s
+  [ArmC] step 500/3000 loss=0.0997 elapsed=53s
+  [ArmC] step 1000/3000 loss=0.0793 elapsed=110s
+  [ArmC] step 1500/3000 loss=0.0487 elapsed=167s
+  [ArmC] step 2000/3000 loss=0.0352 elapsed=223s
+  [ArmC] step 2500/3000 loss=0.0340 elapsed=278s
+  [ArmC] step 2999/3000 loss=0.0359 elapsed=333s
+[ArmC] trained 3000 steps in 333.0s, final loss=0.0654, n_params=5127172
+=== Arm D: explicit trend-residual (Norway Athy phi0=0.6052 lambda_m=4068.0) ===
+  [ArmD] step 0/3000 loss=7.0912 elapsed=0s
+  [ArmD] step 500/3000 loss=1.7190 elapsed=46s
+  [ArmD] step 1000/3000 loss=1.8073 elapsed=92s
+  [ArmD] step 1500/3000 loss=1.5428 elapsed=138s
+  [ArmD] step 2000/3000 loss=1.5247 elapsed=184s
+  [ArmD] step 2500/3000 loss=1.4256 elapsed=230s
+  [ArmD] step 2999/3000 loss=1.2700 elapsed=276s
+[ArmD] trained 3000 steps in 275.8s, final loss=1.3262, n_params=5383656
+=== Generation + evaluation on held-out test wells ===
+item P: generation cap MAX_GEN_LEN=20000 samples (3040.0 m at measured spacing); window start is FIXED (not randomized per realization) at prime_n=max(CONTEXT, PRIME_FRAC*well_len), identical across realizations of a given well/arm; the real interval scored against is feats_real[prime_n:prime_n+gen_len], i.e. matched exactly to the generated window, not an independently chosen reference span.
+[A] generated 8 test wells x 5 realizations
+[B-linear] generated 8 test wells x 5 realizations
+[B2] generated 8 test wells x 5 realizations
+[C] generated 8 test wells x 5 realizations
+[D] generated 8 test wells x 5 realizations
+item P: total depth range spanned across all wells/realizations/arms: min=1295.63 m, max=3897.35 m
+item P: coverage_pct_of_remaining (min/median/max across all well x arm pairs): 100.0% / 100.0% / 100.0%
+=== Computing predeclared metrics ===
+[A] NPHI abs_bias={'mean': -0.05776736060801173, 'ci_low': -0.08047660545823743, 'ci_high': -0.03390934289874534} rel_bias%={'mean': -14.747893082246048, 'ci_low': -20.727479738158863, 'ci_high': -8.409700781649082} W1={'mean': 0.09721882953217648, 'ci_low': 0.07818918880907094, 'ci_high': 0.1160646251065324}
+[B-linear] NPHI abs_bias={'mean': -0.03783097584157671, 'ci_low': -0.05468464007630475, 'ci_high': -0.021328365800486707} rel_bias%={'mean': -9.725680860902205, 'ci_low': -14.225697402894355, 'ci_high': -5.135137461675382} W1={'mean': 0.07471016368168487, 'ci_low': 0.06145772422028555, 'ci_high': 0.08759201971766664}
+[B2] NPHI abs_bias={'mean': -0.02997020146120465, 'ci_low': -0.04339351442915196, 'ci_high': -0.01623738710143435} rel_bias%={'mean': -7.655977676342369, 'ci_low': -11.510564866279035, 'ci_high': -3.3396215421810034} W1={'mean': 0.0659751114429507, 'ci_low': 0.05635598672949459, 'ci_high': 0.07505084227564805}
+[C] NPHI abs_bias={'mean': 0.06186619376766121, 'ci_low': 0.024674550695087664, 'ci_high': 0.10078744275708997} rel_bias%={'mean': 19.821195050562903, 'ci_low': 9.355717071221978, 'ci_high': 30.853664559273444} W1={'mean': 0.1272312925376719, 'ci_low': 0.09847363619343555, 'ci_high': 0.15748420996907933}
+[D] NPHI abs_bias={'mean': -0.05175858903462057, 'ci_low': -0.07151453009639959, 'ci_high': -0.03273841926799434} rel_bias%={'mean': -13.65046513583992, 'ci_low': -18.98659017807723, 'ci_high': -8.064521138531386} W1={'mean': 0.0848526365456561, 'ci_low': 0.07085070825094061, 'ci_high': 0.09892861445928158}
+WRITTEN /workspace/LithoGPT-2/reports/basinshift/atce_ablation_v2/atce_ablation_v2_summary_2026-07-26.json, sha256=bcd35671942265b2937f6fd9f1d69734d1ff213d7293e7574829cffb562b4a48
+WRITTEN /workspace/LithoGPT-2/reports/basinshift/atce_ablation_v2/atce_ablation_v2_raw_results_2026-07-26.json, sha256=45fcf2477552bf0347cc7cb3cdb0ed1535f98d4e85d5ed6f1b7723a762cb3bfe
+TOTAL WALL TIME: 3215.7s = 0.89h
+ATCE_ABLATION_V2_COMPLETE
